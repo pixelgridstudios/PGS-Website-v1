@@ -56,7 +56,7 @@ const motionServices = [
 ];
 
 export const Home: React.FC = () => {
-  const [openService, setOpenService] = useState<number>(0);
+  const [openService, setOpenService] = useState<number | null>(null);
 
   return (
     <div className="px-3 sm:px-5">
@@ -244,68 +244,73 @@ export const Home: React.FC = () => {
             {/* Seamless Borderless Sibling Card Architecture */}
             <div data-reveal data-reveal-delay="100" className="w-full flex flex-col lg:grid lg:grid-cols-[400px_1fr] xl:grid-cols-[440px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
               
-              {/* Left Column: Context & Direct CTA (Refined Grey Palette) */}
-              <div className="p-6 sm:p-10 lg:p-12 flex flex-col justify-between gap-8 bg-[#303238] dark:bg-[#24262b] text-neutral-100">
+              {/* Left Column: Context & Direct CTA (Slightly Darker for Subtle Differentiation) */}
+              <div className="p-6 sm:p-10 lg:p-12 flex flex-col justify-between gap-8 bg-black/[0.045] dark:bg-black/30 text-brand-foreground">
                 <div>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-400 font-semibold">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-brand-subtle font-semibold">
                     Studio Deliverables
                   </span>
-                  <h3 className="mt-3 font-display text-2xl sm:text-3xl font-bold tracking-tight text-white leading-snug">
+                  <h3 className="mt-3 font-display text-2xl sm:text-3xl font-bold tracking-tight text-brand-foreground leading-snug">
                     Cinema 4D &amp; After Effects motion systems built for impact.
                   </h3>
-                  <p className="mt-4 text-base leading-relaxed text-neutral-300 font-normal">
+                  <p className="mt-4 text-base leading-relaxed text-brand-subtle font-normal">
                     Every asset is engineered with precision lighting, procedural shaders, and cinematic pacing — turning intricate engineering into clear, captivating visuals.
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-white/15 flex flex-col gap-4">
-                  <div className="flex items-center gap-2 font-mono text-[11px] text-neutral-300 uppercase tracking-wider font-medium">
-                    <span className="size-1.5 rounded-full bg-emerald-400" />
+                <div className="pt-6 border-t border-brand-foreground/10 flex flex-col gap-4">
+                  <div className="flex items-center gap-2 font-mono text-[11px] text-brand-subtle uppercase tracking-wider font-medium">
+                    <span className="size-1.5 rounded-full bg-emerald-500" />
                     <span>05 Specialized Output Formats</span>
                   </div>
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-neutral-100 text-neutral-900 hover:bg-white px-6 py-3 font-mono text-xs font-medium uppercase tracking-wider shadow-sm transition-colors duration-150 border-0"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground px-7 py-3 font-display text-sm font-medium shadow-md transition-opacity duration-150 hover:opacity-90 border-0 self-start select-none cursor-pointer"
                   >
-                    Start a Project <ArrowRight className="size-3.5" />
+                    <span>Start a Project</span>
+                    <ArrowRight className="size-4" />
                   </Link>
                 </div>
               </div>
 
-              {/* Right Column: Service Accordion with Soft Grey Active States */}
-              <div className="border-t lg:border-t-0 lg:border-l border-brand-foreground/10 bg-brand-muted/70 p-6 sm:p-8 lg:p-10 flex flex-col gap-3">
+              {/* Right Column: Cohesive Service Accordion (Auto-Collapsing when not viewing) */}
+              <div
+                onMouseLeave={() => setOpenService(null)}
+                className="border-t lg:border-t-0 lg:border-l border-brand-foreground/10 bg-brand-bg/50 p-6 sm:p-8 lg:p-10 flex flex-col gap-3"
+              >
                 {motionServices.map((service, i) => {
                   const isOpen = openService === i;
                   return (
                     <div
                       key={service.id}
                       onMouseEnter={() => setOpenService(i)}
-                      onClick={() => setOpenService(i)}
-                      className={`overflow-hidden rounded-xl sm:rounded-2xl transition-colors duration-200 shadow-xs cursor-pointer border-0 ${
+                      onClick={() => setOpenService((prev) => (prev === i ? null : i))}
+                      tabIndex={-1}
+                      className={`overflow-hidden rounded-xl sm:rounded-2xl transition-all duration-200 cursor-pointer border-0 outline-none ring-0 select-none ${
                         isOpen
-                          ? "bg-[#303238] dark:bg-[#24262b] text-white shadow-md"
-                          : "bg-brand-bg text-brand-foreground hover:bg-brand-muted/70"
+                          ? "bg-brand-bg text-brand-foreground shadow-sm"
+                          : "bg-brand-muted/70 text-brand-foreground hover:bg-brand-muted"
                       }`}
                     >
                       <div
                         aria-expanded={isOpen}
-                        className="flex w-full items-center justify-between gap-4 p-4 sm:p-5 text-left select-none"
+                        className="flex w-full items-center justify-between gap-4 p-4 sm:p-5 text-left select-none outline-none focus:outline-none ring-0"
                       >
                         <div className="flex items-center gap-3 sm:gap-4 min-w-0">
                           <span
                             className={`font-mono text-xs font-medium transition-colors ${
-                              isOpen ? "text-neutral-400" : "text-brand-subtle"
+                              isOpen ? "text-brand-foreground font-semibold" : "text-brand-subtle"
                             }`}
                           >
                             {service.id}
                           </span>
                           <div className="flex flex-col min-w-0">
-                            <span className="truncate font-display text-base sm:text-lg font-semibold tracking-tight">
+                            <span className="truncate font-display text-base sm:text-lg font-semibold tracking-tight text-brand-foreground">
                               {service.title}
                             </span>
                             <span
                               className={`font-mono text-[10px] uppercase tracking-wider transition-colors ${
-                                isOpen ? "text-neutral-400" : "text-brand-subtle"
+                                isOpen ? "text-emerald-500 font-semibold" : "text-brand-subtle"
                               }`}
                             >
                               {service.tag}
@@ -314,10 +319,10 @@ export const Home: React.FC = () => {
                         </div>
 
                         <span
-                          className={`flex size-7 sm:size-8 shrink-0 items-center justify-center rounded-full ${
+                          className={`flex size-7 sm:size-8 shrink-0 items-center justify-center rounded-full transition-all duration-200 ${
                             isOpen
-                              ? "bg-white/20 text-white rotate-45"
-                              : "bg-brand-muted text-brand-foreground"
+                              ? "bg-brand-panel text-brand-panel-foreground rotate-45 shadow-xs"
+                              : "bg-brand-bg text-brand-foreground"
                           }`}
                         >
                           <Plus className="size-4" />
@@ -331,7 +336,7 @@ export const Home: React.FC = () => {
                         }`}
                       >
                         <div className="overflow-hidden">
-                          <div className="border-t border-white/15 px-5 pb-5 pt-3 text-sm sm:text-base leading-relaxed text-neutral-300 font-normal">
+                          <div className="border-t border-brand-foreground/10 px-5 pb-5 pt-3 text-sm sm:text-base leading-relaxed text-brand-subtle font-normal">
                             <p>{service.copy}</p>
                           </div>
                         </div>

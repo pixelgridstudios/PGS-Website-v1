@@ -22,7 +22,7 @@
 .dark {
   --brand-bg: oklch(12% 0.002 90);
   --brand-muted: oklch(18% 0.003 90);
-  --brand-border: transparent;
+  --brand-border: #2c2c2c;
   --brand-foreground: oklch(97% 0 0);
   --brand-subtle: oklch(65% 0 0);
   --brand-panel: oklch(97% 0 0);
@@ -32,6 +32,20 @@
   
   --background: var(--brand-bg);
   --foreground: var(--brand-foreground);
+}
+
+/* DARK MODE: SUBDUED MATTE GREY STRAIGHT LINES & DIVIDERS (NO HARSH WHITE GLARE) */
+.dark [class*="border-brand-foreground/10"],
+.dark [class*="border-brand-foreground/15"],
+.dark [class*="border-brand-foreground/20"],
+.dark [class*="border-neutral-900/35"] {
+  border-color: #282828 !important;
+}
+
+.dark [class*="bg-brand-foreground/10"],
+.dark [class*="bg-brand-foreground/15"],
+.dark [class*="bg-brand-foreground/20"] {
+  background-color: #282828 !important;
 }
 
 /* Lenis Smooth Scrolling Engine Setup */
@@ -168,6 +182,15 @@ body {
   backdrop-filter: blur(36px) saturate(200%);
 }
 
+/* GLOBAL FOCUS & OUTLINE RESET: ZERO BROWSER BLUE RINGS OR FOCUS BORDERS */
+*, *::before, *::after {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+*:focus, *:focus-visible {
+  outline: none !important;
+}
+
 /* GLOBAL SETTING: ABSOLUTE ZERO BUTTON SIZE / DIMENSION / PADDING EXPANSION ON HOVER / ACTIVE / CLICK / FOCUS */
 button, a, [role="button"], input[type="submit"], input[type="button"] {
   box-sizing: border-box !important;
@@ -191,3 +214,4 @@ button:focus-visible, a:focus-visible, [role="button"]:focus-visible {
 button *, a *, [role="button"] * {
   box-sizing: border-box !important;
 }
+

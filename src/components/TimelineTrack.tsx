@@ -499,7 +499,7 @@ export const TimelineTrack: React.FC = () => {
                 >
                   <path
                     d="M1 0.5 H15 V8.5 L8 13.5 L1 8.5 Z"
-                    className="fill-black dark:fill-neutral-200"
+                    className="fill-black dark:fill-neutral-500"
                     style={{ shapeRendering: "geometricPrecision" }}
                   />
                   <circle
@@ -512,7 +512,7 @@ export const TimelineTrack: React.FC = () => {
                 </svg>
                 {/* Refined 1.5px Non-Flickering Line */}
                 <div
-                  className="w-[1.5px] flex-1 bg-black dark:bg-neutral-300 -mt-[1px]"
+                  className="w-[1.5px] flex-1 bg-black dark:bg-neutral-600 -mt-[1px]"
                   style={{ shapeRendering: "crispEdges" }}
                 />
               </div>
