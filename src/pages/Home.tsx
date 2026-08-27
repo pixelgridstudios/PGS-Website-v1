@@ -1,0 +1,351 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Plus, Play } from "lucide-react";
+import DotDivider from "../components/DotDivider";
+import ApproachSlider from "../components/ApproachSlider";
+import TimelineTrack from "../components/TimelineTrack";
+
+const highlightedProjects = [
+  {
+    slug: "xiaomi-redmi-note-12",
+    title: "Xiaomi Redmi Note 12",
+    meta: "Product Launch · 3D Animation",
+    image: "/assets/chrono-morph.jpg",
+    tags: ["3D CGI", "Product Launch", "Cinema 4D"],
+  },
+  {
+    slug: "tata-power-ez-homes",
+    title: "TATA Power EZ Homes",
+    meta: "Brand Film · Product System",
+    image: "/assets/void-textiles.jpg",
+    tags: ["Brand Film", "3D Motion", "Storytelling"],
+  },
+];
+
+const motionServices = [
+  {
+    id: "01",
+    title: "Product Launch Films",
+    tag: "3D Animation & CGI",
+    copy: "High-impact launch films that visually articulate what a new product does, its engineering precision, and why it matters to the market — built in Cinema 4D and After Effects.",
+  },
+  {
+    id: "02",
+    title: "3D Technical & System Explainer",
+    tag: "Visualization & Diagrams",
+    copy: "Transform complex cloud architectures, hardware internals, and enterprise software platforms into clear, elegant, and cinematic 3D motion graphics that close deals.",
+  },
+  {
+    id: "03",
+    title: "Brand Film Systems",
+    tag: "Identity & Visual Language",
+    copy: "Cohesive visual identity packages, channel branding kits, and master design languages engineered for enterprise scale and multi-platform consistency.",
+  },
+  {
+    id: "04",
+    title: "Event Visuals & Keynotes",
+    tag: "Immersive & Large Scale",
+    copy: "Cinematic, stage-ready visual assets for major product keynotes, global summits, trade displays, and immersive brand experiences.",
+  },
+  {
+    id: "05",
+    title: "Broadcast & Digital Campaigns",
+    tag: "High-Reach Motion",
+    copy: "Multi-format master deliverables optimized across 16:9, 9:16, and custom aspect ratios for high-performance marketing and global digital campaigns.",
+  },
+];
+
+export const Home: React.FC = () => {
+  const [openService, setOpenService] = useState<number>(0);
+
+  return (
+    <div className="px-3 sm:px-5">
+      <div className="mx-auto max-w-[1600px]">
+        {/* Dot4 Style Hero Canvas with Background Video */}
+        <section className="relative mt-3 overflow-hidden rounded-[1.4rem] bg-black text-white px-6 py-12 sm:px-12 lg:h-[calc(100vh-6rem)] lg:min-h-[640px] shadow-2xl flex flex-col justify-between border-0">
+          {/* Background Video */}
+          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="h-full w-full object-cover opacity-60 transition-opacity duration-700"
+              poster="/assets/showreel-card.jpg"
+            >
+              <source src="/assets/hero-bg.mp4" type="video/mp4" />
+            </video>
+            {/* Cinematic Gradient Overlays for High Contrast Text Legibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/60" />
+          </div>
+
+          {/* Main Hero Headline */}
+          <div data-reveal data-reveal-delay="50" className="relative z-10 my-auto py-8">
+            <h1 className="max-w-[22ch] font-display text-[8.5vw] font-bold leading-[1.05] tracking-tight sm:text-[5.5vw] lg:text-[3.2vw] text-white drop-shadow-md">
+              We make complex products and systems visually understandable through motion design, 3D visualization, and brand film.
+            </h1>
+          </div>
+
+          {/* Bottom Row: Showreel Overlay */}
+          <div data-reveal data-reveal-delay="150" className="relative z-10 flex items-center justify-end">
+            {/* Interactive Showreel Hover Card */}
+            <Link
+              to="/showreel"
+              className="group flex w-full sm:w-auto max-w-[340px] items-center gap-3.5 rounded-2xl bg-white text-black p-2.5 pr-4 shadow-2xl transition-shadow duration-300 hover:shadow-2xl cursor-pointer select-none backdrop-blur-md border-0"
+            >
+              <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-xl bg-neutral-900 shadow-inner">
+                <img
+                  src="/assets/showreel-card.jpg"
+                  alt="Pixel Grid showreel preview"
+                  className="h-full w-full object-cover ease-out"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-500 font-medium">
+                  Studio Reel
+                </span>
+                <span className="font-display text-[14px] font-bold leading-tight text-black">
+                  Watch Full Showreel
+                </span>
+              </div>
+              <span className="ml-auto flex size-8 shrink-0 items-center justify-center rounded-full bg-black text-white shadow-sm">
+                <Play className="size-3.5 fill-current ml-0.5" />
+              </span>
+            </Link>
+          </div>
+        </section>
+
+        {/* We are Pixel Grid Section */}
+        <section data-reveal className="grid gap-10 py-10 lg:grid-cols-12 lg:py-14">
+          <div className="lg:col-span-5">
+            <h2 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl text-brand-foreground">
+              We are Pixel Grid
+            </h2>
+            <Link
+              to="/about"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-[13px] font-medium text-brand-foreground shadow-xs transition-colors duration-200 hover:bg-brand-panel hover:text-brand-panel-foreground border-0"
+            >
+              More about us <ArrowRight className="size-4" />
+            </Link>
+          </div>
+          <div className="lg:col-span-7">
+            <h3 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl text-brand-foreground">
+              Founder-led, based in Pune — working globally
+            </h3>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-brand-subtle font-normal">
+              Pixel Grid Studios was founded in 2020 by Subhanshu Gajbhiye, Creative Director. We work in Cinema 4D and After Effects to turn complex engineering, products, and technical concepts into motion that audiences immediately understand.
+            </p>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-brand-subtle font-normal">
+              There is no permanent bench here. For every brief, we curate seasoned specialists chosen specifically for that project, coordinated directly by the founder — delivering campaign-defining work for leading technology and consumer brands globally.
+            </p>
+          </div>
+        </section>
+
+        <DotDivider />
+
+        {/* Highlighted Work: Clean Borderless Project Cards */}
+        <section className="py-6 sm:py-8">
+          <div data-reveal className="flex items-end justify-between mb-6 sm:mb-8">
+            <div>
+              <h2 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl text-brand-foreground">
+                Highlighted Work
+              </h2>
+            </div>
+            <Link
+              to="/work"
+              className="hidden sm:inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-[13px] font-medium text-brand-foreground shadow-xs transition-colors duration-150 hover:bg-brand-panel hover:text-brand-panel-foreground border-0"
+            >
+              Discover More <ArrowRight className="size-4" />
+            </Link>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            {highlightedProjects.map((project, i) => (
+              <Link
+                key={project.title}
+                to={`/work/${project.slug}`}
+                data-reveal
+                data-reveal-delay={i === 0 ? "100" : "200"}
+                className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 shadow-sm hover:shadow-xl dark:shadow-2xl transition-colors duration-200 border-0"
+              >
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-neutral-950 shadow-inner">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-full w-full object-cover ease-out"
+                  />
+                </div>
+                <div className="flex items-end justify-between px-1 pb-1">
+                  <div>
+                    <span className="font-mono text-xs uppercase tracking-widest text-brand-subtle font-medium">
+                      {project.meta}
+                    </span>
+                    <h3 className="mt-1 font-display text-2xl font-bold tracking-tight sm:text-3xl text-brand-foreground">
+                      {project.title}
+                    </h3>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-brand-bg px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-brand-foreground font-medium border-0"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md shrink-0">
+                    <ArrowRight className="size-4" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-8 text-center sm:hidden">
+            <Link
+              to="/work"
+              className="inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-[13px] font-medium text-brand-foreground shadow-xs border-0"
+            >
+              Discover More <ArrowRight className="size-4" />
+            </Link>
+          </div>
+        </section>
+
+        <DotDivider />
+
+        {/* The Power of Our Approach Slider */}
+        <div data-reveal>
+          <ApproachSlider />
+        </div>
+
+        <DotDivider />
+
+        {/* From Concept to Delivery Timeline */}
+        <div data-reveal>
+          <TimelineTrack />
+        </div>
+
+        <DotDivider />
+
+        {/* How Our Motion Can Work for You */}
+        <section className="py-6 sm:py-8 overflow-hidden w-full">
+          <div className="mx-auto max-w-[1600px]">
+            {/* Section Header */}
+            <div data-reveal className="flex flex-col gap-3 md:items-center md:text-center mb-6 sm:mb-8">
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-brand-foreground">
+                How Our Motion Can Work for You
+              </h2>
+              <p className="max-w-2xl text-base sm:text-lg text-brand-subtle font-normal">
+                Tailored 3D motion design, visualization, and brand film systems engineered for high-growth tech, enterprise products, and campaigns.
+              </p>
+            </div>
+
+            {/* Seamless Borderless Sibling Card Architecture */}
+            <div data-reveal data-reveal-delay="100" className="w-full flex flex-col lg:grid lg:grid-cols-[400px_1fr] xl:grid-cols-[440px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
+              
+              {/* Left Column: Context & Direct CTA (Refined Grey Palette) */}
+              <div className="p-6 sm:p-10 lg:p-12 flex flex-col justify-between gap-8 bg-[#303238] dark:bg-[#24262b] text-neutral-100">
+                <div>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-400 font-semibold">
+                    Studio Deliverables
+                  </span>
+                  <h3 className="mt-3 font-display text-2xl sm:text-3xl font-bold tracking-tight text-white leading-snug">
+                    Cinema 4D &amp; After Effects motion systems built for impact.
+                  </h3>
+                  <p className="mt-4 text-base leading-relaxed text-neutral-300 font-normal">
+                    Every asset is engineered with precision lighting, procedural shaders, and cinematic pacing — turning intricate engineering into clear, captivating visuals.
+                  </p>
+                </div>
+
+                <div className="pt-6 border-t border-white/15 flex flex-col gap-4">
+                  <div className="flex items-center gap-2 font-mono text-[11px] text-neutral-300 uppercase tracking-wider font-medium">
+                    <span className="size-1.5 rounded-full bg-emerald-400" />
+                    <span>05 Specialized Output Formats</span>
+                  </div>
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-neutral-100 text-neutral-900 hover:bg-white px-6 py-3 font-mono text-xs font-medium uppercase tracking-wider shadow-sm transition-colors duration-150 border-0"
+                  >
+                    Start a Project <ArrowRight className="size-3.5" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right Column: Service Accordion with Soft Grey Active States */}
+              <div className="border-t lg:border-t-0 lg:border-l border-brand-foreground/10 bg-brand-muted/70 p-6 sm:p-8 lg:p-10 flex flex-col gap-3">
+                {motionServices.map((service, i) => {
+                  const isOpen = openService === i;
+                  return (
+                    <div
+                      key={service.id}
+                      onMouseEnter={() => setOpenService(i)}
+                      onClick={() => setOpenService(i)}
+                      className={`overflow-hidden rounded-xl sm:rounded-2xl transition-colors duration-200 shadow-xs cursor-pointer border-0 ${
+                        isOpen
+                          ? "bg-[#303238] dark:bg-[#24262b] text-white shadow-md"
+                          : "bg-brand-bg text-brand-foreground hover:bg-brand-muted/70"
+                      }`}
+                    >
+                      <div
+                        aria-expanded={isOpen}
+                        className="flex w-full items-center justify-between gap-4 p-4 sm:p-5 text-left select-none"
+                      >
+                        <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+                          <span
+                            className={`font-mono text-xs font-medium transition-colors ${
+                              isOpen ? "text-neutral-400" : "text-brand-subtle"
+                            }`}
+                          >
+                            {service.id}
+                          </span>
+                          <div className="flex flex-col min-w-0">
+                            <span className="truncate font-display text-base sm:text-lg font-semibold tracking-tight">
+                              {service.title}
+                            </span>
+                            <span
+                              className={`font-mono text-[10px] uppercase tracking-wider transition-colors ${
+                                isOpen ? "text-neutral-400" : "text-brand-subtle"
+                              }`}
+                            >
+                              {service.tag}
+                            </span>
+                          </div>
+                        </div>
+
+                        <span
+                          className={`flex size-7 sm:size-8 shrink-0 items-center justify-center rounded-full ${
+                            isOpen
+                              ? "bg-white/20 text-white rotate-45"
+                              : "bg-brand-muted text-brand-foreground"
+                          }`}
+                        >
+                          <Plus className="size-4" />
+                        </span>
+                      </div>
+
+                      {/* Pure CSS Morphing Grid Height Expansion */}
+                      <div
+                        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                        }`}
+                      >
+                        <div className="overflow-hidden">
+                          <div className="border-t border-white/15 px-5 pb-5 pt-3 text-sm sm:text-base leading-relaxed text-neutral-300 font-normal">
+                            <p>{service.copy}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
