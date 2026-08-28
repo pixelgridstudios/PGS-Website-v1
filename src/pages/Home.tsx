@@ -181,13 +181,13 @@ export const Home: React.FC = () => {
                 to={`/work/${project.slug}`}
                 data-reveal
                 data-reveal-delay={i === 0 ? "100" : "200"}
-                className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 shadow-sm transition-all duration-[500ms] ease-spring-vibe hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-accent/5 active:scale-[0.98] border-0"
+                className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 border-0"
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-neutral-950 shadow-inner">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="h-full w-full object-cover transition-transform duration-[600ms] ease-spring-vibe group-hover:scale-105"
+                    className="h-full w-full object-cover ease-out"
                   />
                 </div>
                 <div className="flex items-end justify-between px-1 pb-1">
