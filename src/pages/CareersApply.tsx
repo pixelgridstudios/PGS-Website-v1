@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import {
   ArrowLeft,
@@ -75,6 +75,29 @@ export const CareersApply: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
+  // Live Pune / India Standard Time Digital Clock
+  const [timeString, setTimeString] = useState<string>("");
+  const [colonVisible, setColonVisible] = useState<boolean>(true);
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const options: Intl.DateTimeFormatOptions = {
+        timeZone: "Asia/Kolkata",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      };
+      const formatted = new Intl.DateTimeFormat([], options).format(now);
+      setTimeString(formatted);
+      setColonVisible((prev) => !prev);
+    };
+
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   // Sync position with search param
   useEffect(() => {
     if (roleParam) {
@@ -141,6 +164,9 @@ export const CareersApply: React.FC = () => {
     setNote("");
     setErrorMessage(null);
   };
+
+  const hours = timeString.split(":")[0] || "16";
+  const minutes = timeString.split(":")[1] || "45";
 
   return (
     <div className="px-3 sm:px-5">
@@ -209,233 +235,162 @@ export const CareersApply: React.FC = () => {
         ) : (
           <div className="space-y-8">
             {/* ============================================================ */}
-            {/* 1. TOP SECTION: 100% FULL-WIDTH JOB DESCRIPTION HERO TAB    */}
+            {/* 1. TOP BLOCK: ONE UNIFIED JOB DESCRIPTION & RESPONSIBILITY   */}
             {/* ============================================================ */}
-            <section data-reveal className="rounded-2xl sm:rounded-3xl bg-brand-muted p-8 sm:p-12 lg:p-14 border-0 shadow-xs space-y-6">
-              {/* Badges */}
-              <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-brand-subtle">
-                <span className="rounded-full bg-brand-bg px-3.5 py-1 font-semibold text-brand-foreground shadow-2xs">
-                  {selectedPosition.department}
-                </span>
-                <span className="flex items-center gap-1">
-                  <MapPin className="size-3.5" />
-                  {selectedPosition.location}
-                </span>
-                <span>·</span>
-                <span className="flex items-center gap-1">
-                  <Clock className="size-3.5" />
-                  {selectedPosition.type}
-                </span>
-                <span>·</span>
-                <span>{selectedPosition.experience}</span>
-              </div>
-
-              {/* Title & Overview */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-emerald-500 font-semibold">
-                  <Sparkles className="size-4" />
-                  <span>Job Description</span>
-                </div>
-                <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brand-foreground leading-[1.06]">
-                  {selectedPosition.title}
-                </h1>
-                <p className="text-lg sm:text-xl text-brand-subtle leading-relaxed max-w-4xl pt-1">
-                  {selectedPosition.overview}
-                </p>
-              </div>
-
-              {/* Tool Stack Tags & Quick Jump in Full-Width Header */}
-              <div className="pt-6 border-t border-brand-foreground/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="font-mono text-xs uppercase text-brand-subtle font-semibold mr-2">
-                    Primary Stack:
+            <section data-reveal className="rounded-2xl sm:rounded-3xl bg-brand-muted p-8 sm:p-12 lg:p-14 border-0 shadow-xs space-y-8">
+              
+              {/* Top Header: Badges & Overview */}
+              <div className="space-y-6">
+                {/* Role Badges */}
+                <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-brand-subtle">
+                  <span className="rounded-full bg-brand-bg px-3.5 py-1 font-semibold text-brand-foreground shadow-2xs">
+                    {selectedPosition.department}
                   </span>
-                  {selectedPosition.tools.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full bg-brand-bg px-3.5 py-1.5 font-mono text-xs font-medium text-brand-foreground shadow-2xs"
-                    >
-                      {t}
-                    </span>
-                  ))}
+                  <span className="flex items-center gap-1">
+                    <MapPin className="size-3.5" />
+                    {selectedPosition.location}
+                  </span>
+                  <span>·</span>
+                  <span className="flex items-center gap-1">
+                    <Clock className="size-3.5" />
+                    {selectedPosition.type}
+                  </span>
+                  <span>·</span>
+                  <span>{selectedPosition.experience}</span>
                 </div>
 
-                <a
-                  href="#application-form"
-                  className="h-10 px-6 inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-opacity hover:opacity-90 border-0 shrink-0"
-                >
-                  <span>Apply Now ↓</span>
-                </a>
+                {/* Role Title & Overview */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-emerald-500 font-semibold">
+                    <Sparkles className="size-4" />
+                    <span>Job Description</span>
+                  </div>
+                  <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brand-foreground leading-[1.06]">
+                    {selectedPosition.title}
+                  </h1>
+                  <p className="text-lg sm:text-xl text-brand-subtle leading-relaxed max-w-4xl pt-1">
+                    {selectedPosition.overview}
+                  </p>
+                </div>
+
+                {/* Tool Stack Tags & Quick Jump Anchor */}
+                <div className="pt-6 border-t border-brand-foreground/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono text-xs uppercase text-brand-subtle font-semibold mr-2">
+                      Primary Stack:
+                    </span>
+                    {selectedPosition.tools.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full bg-brand-bg px-3.5 py-1.5 font-mono text-xs font-medium text-brand-foreground shadow-2xs"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <a
+                    href="#application-card"
+                    className="h-10 px-6 inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-opacity hover:opacity-90 border-0 shrink-0"
+                  >
+                    <span>Apply for Role ↓</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Core Breakdown Grid: Responsibilities, Requirements & Studio Perks in One Card */}
+              <div className="pt-8 border-t border-brand-foreground/10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                
+                {/* 1. Core Responsibilities */}
+                <div className="space-y-4 p-6 sm:p-7 rounded-2xl bg-brand-bg/60 border-0 shadow-2xs">
+                  <h3 className="font-mono text-xs uppercase tracking-wider text-brand-foreground font-semibold flex items-center gap-2">
+                    <Briefcase className="size-4 text-emerald-500" />
+                    <span>Core Responsibilities</span>
+                  </h3>
+                  <ul className="space-y-2.5">
+                    {selectedPosition.responsibilities.map((r, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5 text-sm text-brand-subtle leading-relaxed">
+                        <CheckCircle2 className="size-4 text-emerald-500 shrink-0 mt-0.5" />
+                        <span>{r}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* 2. What We're Looking For */}
+                <div className="space-y-4 p-6 sm:p-7 rounded-2xl bg-brand-bg/60 border-0 shadow-2xs">
+                  <h3 className="font-mono text-xs uppercase tracking-wider text-brand-foreground font-semibold flex items-center gap-2">
+                    <Sparkles className="size-4 text-emerald-500" />
+                    <span>What We Look For</span>
+                  </h3>
+                  <ul className="space-y-2.5">
+                    {selectedPosition.requirements.map((req, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5 text-sm text-brand-subtle leading-relaxed">
+                        <CheckCircle2 className="size-4 text-emerald-500 shrink-0 mt-0.5" />
+                        <span>{req}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* 3. What Pixel Grid Offers */}
+                <div className="space-y-4 p-6 sm:p-7 rounded-2xl bg-brand-bg/60 md:col-span-2 lg:col-span-1 border-0 shadow-2xs">
+                  <h3 className="font-mono text-xs uppercase tracking-wider text-brand-foreground font-semibold flex items-center gap-2">
+                    <Gift className="size-4 text-amber-500" />
+                    <span>Studio Ecosystem</span>
+                  </h3>
+                  <ul className="space-y-2.5">
+                    {(selectedPosition.whatWeOffer || [
+                      "15% Dedicated Lab & R&D time for personal motion experiments",
+                      "Direct creative mentorship alongside Founder Subhanshu Gajbhiye",
+                      "Dedicated multi-RTX GPU compute & cloud farm render credits",
+                      "Full public creative attribution and portfolio freedom",
+                      "Top-tier compensation packages & milestone project bonuses",
+                    ]).map((offer, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5 text-sm text-brand-subtle leading-relaxed">
+                        <CheckCircle2 className="size-4 text-amber-500 shrink-0 mt-0.5" />
+                        <span>{offer}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </section>
 
             <DotDivider className="my-6 sm:my-8" />
 
             {/* ============================================================ */}
-            {/* 2. TWO COLUMNS SIDE-BY-SIDE BELOW                           */}
+            {/* 2. BOTTOM BLOCK: 50% APPLICATION FORM + 50% TIME & PROTOCOL  */}
+            {/* (Styled Identical to the Contact Section Architecture)         */}
             {/* ============================================================ */}
-            <div className="grid gap-8 lg:grid-cols-12 items-start">
-              
-              {/* LEFT COLUMN (5 Columns Sticky): Studio Application Protocol */}
-              <aside className="lg:col-span-5 lg:sticky lg:top-24 space-y-6">
-                <div data-reveal className="rounded-2xl sm:rounded-3xl bg-brand-muted p-6 sm:p-8 space-y-6 border-0 shadow-xs">
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-emerald-500 font-semibold">
-                      <Sparkles className="size-4" />
-                      <span>Direct Studio Review</span>
+            <section
+              id="application-card"
+              data-reveal
+              className="rounded-2xl sm:rounded-3xl bg-brand-muted shadow-xl border-0 overflow-hidden"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                
+                {/* LEFT (50%): Candidate Application Form */}
+                <div className="p-8 sm:p-10 lg:p-12 xl:p-14 bg-brand-bg/95 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-brand-subtle font-medium mb-1">
+                      <Mail className="size-4 text-emerald-500" />
+                      <span>Direct Submission</span>
                     </div>
-                    <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-brand-foreground">
-                      Application Protocol
+                    <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl text-brand-foreground">
+                      Apply for this Position
                     </h2>
-                    <p className="text-sm text-brand-subtle leading-relaxed">
-                      We evaluate artists based on craft, kinematic intuition, and visual taste. Here is our direct commitment to every applicant:
+                    <p className="mt-2 text-sm text-brand-subtle leading-relaxed">
+                      Submit your showreel and background details. Subhanshu Gajbhiye and the lead team review every applicant within 48 hours.
                     </p>
                   </div>
 
-                  {/* Protocol Commitments */}
-                  <ul className="space-y-3 font-mono text-xs text-brand-subtle">
-                    <li className="flex items-start gap-2.5">
-                      <ShieldCheck className="size-4 text-emerald-500 shrink-0 mt-0.5" />
-                      <span><strong>48-Hour Turnaround:</strong> Every reel receives direct review from Subhanshu Gajbhiye.</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <ShieldCheck className="size-4 text-emerald-500 shrink-0 mt-0.5" />
-                      <span><strong>No Free Spec Work:</strong> We will never ask you to complete unpaid test projects.</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <ShieldCheck className="size-4 text-emerald-500 shrink-0 mt-0.5" />
-                      <span><strong>Full Creative Credit:</strong> Complete public attribution and portfolio freedom.</span>
-                    </li>
-                  </ul>
-
-                  {/* 3-Step Hiring Timeline */}
-                  <div className="pt-4 border-t border-brand-foreground/10 space-y-3">
-                    <span className="font-mono text-[11px] uppercase tracking-wider text-brand-subtle font-semibold block">
-                      Recruitment Milestones
-                    </span>
-                    <div className="space-y-2.5 font-mono text-xs">
-                      <div className="flex items-center gap-3 p-3 rounded-xl bg-brand-bg">
-                        <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground text-[11px] font-bold">1</span>
-                        <span className="text-brand-foreground font-medium">Reel &amp; Craft Assessment (48h)</span>
-                      </div>
-                      <div className="flex items-center gap-3 p-3 rounded-xl bg-brand-bg">
-                        <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground text-[11px] font-bold">2</span>
-                        <span className="text-brand-foreground font-medium">30-Min Creative Call with CD</span>
-                      </div>
-                      <div className="flex items-center gap-3 p-3 rounded-xl bg-brand-bg">
-                        <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground text-[11px] font-bold">3</span>
-                        <span className="text-brand-foreground font-medium">Offer &amp; Farm Onboarding</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Studio Base & Compute */}
-                  <div className="pt-4 border-t border-brand-foreground/10 space-y-2 font-mono text-xs text-brand-subtle">
-                    <div className="flex items-center gap-2">
-                      <MapPin className="size-3.5 text-brand-foreground" />
-                      <span><strong>Studio Base:</strong> Pune, Maharashtra, India</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Cpu className="size-3.5 text-brand-foreground" />
-                      <span><strong>Compute:</strong> Dedicated Multi-RTX GPU + Cloud Farm</span>
-                    </div>
-                  </div>
-
-                  {/* Direct Contact */}
-                  <div className="pt-4 border-t border-brand-foreground/10 text-xs font-mono text-brand-subtle">
-                    Confidential reels or inquiries? Email us at{" "}
-                    <a href="mailto:careers@pixelgridstudios.com" className="text-brand-foreground underline font-medium">
-                      careers@pixelgridstudios.com
-                    </a>
-                  </div>
-                </div>
-              </aside>
-
-              {/* RIGHT COLUMN (7 Columns): JD Breakdown + Application Form */}
-              <main className="lg:col-span-7 space-y-8">
-                
-                {/* 1. Responsibilities, Requirements & What We Offer */}
-                <section data-reveal className="rounded-2xl sm:rounded-3xl bg-brand-muted p-6 sm:p-10 lg:p-12 border-0 shadow-xs space-y-8">
-                  
-                  {/* Core Responsibilities */}
-                  <div className="space-y-3.5">
-                    <h3 className="font-mono text-xs uppercase tracking-wider text-brand-foreground font-semibold flex items-center gap-2">
-                      <Briefcase className="size-4 text-emerald-500" />
-                      <span>Core Responsibilities</span>
-                    </h3>
-                    <ul className="space-y-2.5">
-                      {selectedPosition.responsibilities.map((r, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-sm text-brand-subtle leading-relaxed">
-                          <CheckCircle2 className="size-4 text-emerald-500 shrink-0 mt-0.5" />
-                          <span>{r}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* What We're Looking For */}
-                  <div className="space-y-3.5 pt-6 border-t border-brand-foreground/10">
-                    <h3 className="font-mono text-xs uppercase tracking-wider text-brand-foreground font-semibold flex items-center gap-2">
-                      <Sparkles className="size-4 text-emerald-500" />
-                      <span>What We're Looking For</span>
-                    </h3>
-                    <ul className="space-y-2.5">
-                      {selectedPosition.requirements.map((req, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-sm text-brand-subtle leading-relaxed">
-                          <CheckCircle2 className="size-4 text-emerald-500 shrink-0 mt-0.5" />
-                          <span>{req}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* What Pixel Grid Offers */}
-                  {selectedPosition.whatWeOffer && selectedPosition.whatWeOffer.length > 0 && (
-                    <div className="space-y-3.5 pt-6 border-t border-brand-foreground/10">
-                      <h3 className="font-mono text-xs uppercase tracking-wider text-brand-foreground font-semibold flex items-center gap-2">
-                        <Gift className="size-4 text-amber-500" />
-                        <span>What Pixel Grid Offers</span>
-                      </h3>
-                      <ul className="space-y-2.5">
-                        {selectedPosition.whatWeOffer.map((offer, idx) => (
-                          <li key={idx} className="flex items-start gap-3 text-sm text-brand-subtle leading-relaxed">
-                            <CheckCircle2 className="size-4 text-amber-500 shrink-0 mt-0.5" />
-                            <span>{offer}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </section>
-
-                <DotDivider className="my-6 sm:my-8" />
-
-                {/* 2. Candidate Application Form */}
-                <section
-                  id="application-form"
-                  data-reveal
-                  className="rounded-2xl sm:rounded-3xl bg-brand-muted p-6 sm:p-10 lg:p-12 border-0 shadow-xs"
-                >
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="mt-8 space-y-6">
                     
-                    {/* Form Headline */}
-                    <div className="space-y-1 pb-4 border-b border-brand-foreground/10">
-                      <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-brand-subtle font-medium">
-                        <Mail className="size-4 text-emerald-500" />
-                        <span>Direct Submission</span>
-                      </div>
-                      <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-brand-foreground">
-                        Apply for this Position
-                      </h2>
-                      <p className="text-sm text-brand-subtle leading-relaxed">
-                        Fill in your showreel and background details. Subhanshu Gajbhiye and the lead team will review your application within 48 hours.
-                      </p>
-                    </div>
-
-                    {/* Target Role Selector (Dynamic) */}
+                    {/* Target Role Selector (Dynamic Role Switcher) */}
                     <div>
-                      <label className="font-mono text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-2">
-                        Selected Role <span className="text-emerald-500">*</span>
+                      <label className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                        Target Position <span className="text-emerald-500">*</span>
                       </label>
                       <select
                         value={selectedPosition.title}
@@ -449,14 +404,14 @@ export const CareersApply: React.FC = () => {
                         ))}
                       </select>
                       <span className="mt-1 block font-mono text-[11px] text-brand-subtle">
-                        Changing the role automatically updates the Job Description above.
+                        Changing role updates the Job Description block above in real-time.
                       </span>
                     </div>
 
-                    {/* Candidate Identity */}
+                    {/* Candidate Identity: Name & Email */}
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>
-                        <label className="font-mono text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5">
+                        <label className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
                           Full Name <span className="text-emerald-500">*</span>
                         </label>
                         <input
@@ -464,13 +419,13 @@ export const CareersApply: React.FC = () => {
                           required
                           value={name}
                           onChange={(e) => setName(e.target.value)}
-                          placeholder="Subhanshu Gajbhiye"
+                          placeholder="Your full name"
                           className="w-full rounded-xl bg-brand-bg px-4 py-3 text-sm text-brand-foreground placeholder:text-brand-subtle/50 border-0 focus:outline-none focus:ring-2 focus:ring-brand-foreground/20 transition-all shadow-2xs"
                         />
                       </div>
 
                       <div>
-                        <label className="font-mono text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5">
+                        <label className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
                           Email Address <span className="text-emerald-500">*</span>
                         </label>
                         <input
@@ -478,7 +433,7 @@ export const CareersApply: React.FC = () => {
                           required
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          placeholder="artist@pixelgridstudios.com"
+                          placeholder="artist@domain.com"
                           className="w-full rounded-xl bg-brand-bg px-4 py-3 text-sm text-brand-foreground placeholder:text-brand-subtle/50 border-0 focus:outline-none focus:ring-2 focus:ring-brand-foreground/20 transition-all shadow-2xs"
                         />
                       </div>
@@ -486,7 +441,7 @@ export const CareersApply: React.FC = () => {
 
                     {/* Showreel Link */}
                     <div>
-                      <label className="font-mono text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5">
+                      <label className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
                         Showreel / Portfolio URL <span className="text-emerald-500">*</span>
                       </label>
                       <div className="relative flex items-center">
@@ -500,28 +455,25 @@ export const CareersApply: React.FC = () => {
                           className="w-full rounded-xl bg-brand-bg pl-10 pr-4 py-3 text-sm text-brand-foreground placeholder:text-brand-subtle/50 border-0 focus:outline-none focus:ring-2 focus:ring-brand-foreground/20 transition-all shadow-2xs"
                         />
                       </div>
-                      <span className="mt-1 block font-mono text-[11px] text-brand-subtle">
-                        Vimeo, Behance, Artstation, YouTube, or personal website (include password if protected).
-                      </span>
                     </div>
 
                     {/* Location & Phone */}
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>
-                        <label className="font-mono text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5">
+                        <label className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
                           Location &amp; Timezone
                         </label>
                         <input
                           type="text"
                           value={location}
                           onChange={(e) => setLocation(e.target.value)}
-                          placeholder="Pune, India (IST) or Remote"
+                          placeholder="Pune, India or Remote"
                           className="w-full rounded-xl bg-brand-bg px-4 py-3 text-sm text-brand-foreground placeholder:text-brand-subtle/50 border-0 focus:outline-none focus:ring-2 focus:ring-brand-foreground/20 transition-all shadow-2xs"
                         />
                       </div>
 
                       <div>
-                        <label className="font-mono text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5">
+                        <label className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
                           Phone / WhatsApp (Optional)
                         </label>
                         <input
@@ -534,63 +486,62 @@ export const CareersApply: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Experience & Availability */}
-                    <div className="grid gap-6 sm:grid-cols-2">
-                      <div>
-                        <label className="font-mono text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-2">
-                          Experience Level
-                        </label>
-                        <div className="flex flex-wrap gap-2">
-                          {experienceOptions.map((opt) => {
-                            const isSelected = experience === opt;
-                            return (
-                              <button
-                                key={opt}
-                                type="button"
-                                onClick={() => setExperience(opt)}
-                                className={`h-9 px-3.5 inline-flex items-center justify-center rounded-full font-mono text-xs font-medium transition-colors border-0 cursor-pointer select-none ${
-                                  isSelected
-                                    ? "bg-brand-foreground text-brand-bg font-semibold shadow-xs"
-                                    : "bg-brand-bg text-brand-subtle hover:text-brand-foreground hover:bg-brand-bg/80"
-                                }`}
-                              >
-                                {opt}
-                              </button>
-                            );
-                          })}
-                        </div>
-                      </div>
-
-                      <div>
-                        <label className="font-mono text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-2">
-                          Availability
-                        </label>
-                        <div className="flex flex-wrap gap-2">
-                          {availabilityOptions.map((opt) => {
-                            const isSelected = availability === opt;
-                            return (
-                              <button
-                                key={opt}
-                                type="button"
-                                onClick={() => setAvailability(opt)}
-                                className={`h-9 px-3.5 inline-flex items-center justify-center rounded-full font-mono text-xs font-medium transition-colors border-0 cursor-pointer select-none ${
-                                  isSelected
-                                    ? "bg-brand-foreground text-brand-bg font-semibold shadow-xs"
-                                    : "bg-brand-bg text-brand-subtle hover:text-brand-foreground hover:bg-brand-bg/80"
-                                }`}
-                              >
-                                {opt}
-                              </button>
-                            );
-                          })}
-                        </div>
+                    {/* Experience Level */}
+                    <div>
+                      <label className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                        Experience Level
+                      </label>
+                      <div className="flex flex-wrap gap-2">
+                        {experienceOptions.map((opt) => {
+                          const isSelected = experience === opt;
+                          return (
+                            <button
+                              key={opt}
+                              type="button"
+                              onClick={() => setExperience(opt)}
+                              className={`rounded-full px-4 py-2 font-mono text-[11px] font-medium transition-colors duration-150 cursor-pointer select-none border-0 ${
+                                isSelected
+                                  ? "bg-brand-foreground text-brand-bg font-semibold shadow-xs"
+                                  : "bg-brand-bg text-brand-subtle hover:text-brand-foreground"
+                              }`}
+                            >
+                              {opt}
+                            </button>
+                          );
+                        })}
                       </div>
                     </div>
 
-                    {/* Software Stack */}
+                    {/* Availability */}
                     <div>
-                      <label className="font-mono text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-2">
-                        Primary Software &amp; Render Engines (Select all that apply)
+                      <label className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                        Availability
+                      </label>
+                      <div className="flex flex-wrap gap-2">
+                        {availabilityOptions.map((opt) => {
+                          const isSelected = availability === opt;
+                          return (
+                            <button
+                              key={opt}
+                              type="button"
+                              onClick={() => setAvailability(opt)}
+                              className={`rounded-full px-4 py-2 font-mono text-[11px] font-medium transition-colors duration-150 cursor-pointer select-none border-0 ${
+                                isSelected
+                                  ? "bg-brand-foreground text-brand-bg font-semibold shadow-xs"
+                                  : "bg-brand-bg text-brand-subtle hover:text-brand-foreground"
+                              }`}
+                            >
+                              {opt}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Primary Software Stack */}
+                    <div>
+                      <label className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                        Primary Tools &amp; Renderers (Select all that apply)
                       </label>
                       <div className="flex flex-wrap gap-2">
                         {softwareOptions.map((tool) => {
@@ -600,13 +551,13 @@ export const CareersApply: React.FC = () => {
                               key={tool}
                               type="button"
                               onClick={() => toggleTool(tool)}
-                              className={`h-9 px-3.5 inline-flex items-center justify-center gap-1.5 rounded-full font-mono text-xs font-medium transition-colors border-0 cursor-pointer select-none ${
+                              className={`rounded-full px-3.5 py-1.5 font-mono text-[11px] font-medium transition-colors duration-150 cursor-pointer select-none border-0 ${
                                 isSelected
                                   ? "bg-brand-foreground text-brand-bg font-semibold shadow-xs"
-                                  : "bg-brand-bg text-brand-subtle hover:text-brand-foreground hover:bg-brand-bg/80"
+                                  : "bg-brand-bg text-brand-subtle hover:text-brand-foreground"
                               }`}
                             >
-                              {isSelected && <Check className="size-3" />}
+                              {isSelected && <Check className="inline-block size-3 mr-1" />}
                               <span>{tool}</span>
                             </button>
                           );
@@ -614,13 +565,13 @@ export const CareersApply: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Notes */}
+                    {/* Creative Focus / Notes */}
                     <div>
-                      <label className="font-mono text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5">
-                        Creative Focus &amp; Notes
+                      <label className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
+                        Creative Focus &amp; Breakdown Notes
                       </label>
                       <textarea
-                        rows={4}
+                        rows={3}
                         value={note}
                         onChange={(e) => setNote(e.target.value)}
                         placeholder="Tell us about your creative focus, preferred projects, or breakdown reel details you'd like to highlight..."
@@ -628,7 +579,7 @@ export const CareersApply: React.FC = () => {
                       />
                     </div>
 
-                    {/* Error */}
+                    {/* Error Notice */}
                     {errorMessage && (
                       <div className="flex items-center gap-2 rounded-xl bg-red-500/10 p-3.5 text-xs font-mono text-red-500 border-0">
                         <AlertCircle className="size-4 shrink-0" />
@@ -637,11 +588,11 @@ export const CareersApply: React.FC = () => {
                     )}
 
                     {/* Submit Button */}
-                    <div className="pt-4 border-t border-brand-foreground/10 flex items-center justify-end">
+                    <div className="pt-2">
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="h-12 px-8 inline-flex items-center justify-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-opacity hover:opacity-90 disabled:opacity-50 border-0 cursor-pointer select-none"
+                        className="w-full sm:w-auto h-12 px-8 inline-flex items-center justify-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-opacity hover:opacity-90 disabled:opacity-50 border-0 cursor-pointer select-none"
                       >
                         {isSubmitting ? (
                           <>
@@ -658,9 +609,76 @@ export const CareersApply: React.FC = () => {
                       </button>
                     </div>
                   </form>
-                </section>
-              </main>
-            </div>
+                </div>
+
+                {/* RIGHT (50%): Dot4 Live Studio Clock, Direct Review Desk & Protocol */}
+                <div className="relative flex min-h-[360px] lg:min-h-full flex-col justify-between bg-brand-panel p-8 sm:p-10 lg:p-12 xl:p-14 text-brand-panel-foreground border-0">
+                  
+                  {/* Top Bar: Review Desk & Status */}
+                  <div className="flex items-center justify-between border-b border-brand-panel-foreground/15 pb-4">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-brand-panel-foreground/60">
+                      Recruitment Protocol
+                    </span>
+                    <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-emerald-400">
+                      <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
+                      Active Review Queue
+                    </span>
+                  </div>
+
+                  {/* Big Digital Clock (Pune, India IST) */}
+                  <div className="my-6 py-4">
+                    <span className="font-mono text-xs uppercase tracking-[0.2em] text-brand-panel-foreground/60">
+                      Pune, Maharashtra (IST)
+                    </span>
+                    <div className="mt-2 font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight flex items-center">
+                      <span>{hours}</span>
+                      <span className={colonVisible ? "opacity-100" : "opacity-20"}>:</span>
+                      <span>{minutes}</span>
+                    </div>
+                    <span className="mt-2 block font-mono text-xs text-brand-panel-foreground/50">
+                      UTC +05:30 Standard Time · 48-Hour Review Window
+                    </span>
+                  </div>
+
+                  {/* Direct Commitments Protocol Checklist */}
+                  <div className="space-y-3 font-mono text-xs text-brand-panel-foreground/80 my-4">
+                    <div className="flex items-start gap-2.5">
+                      <ShieldCheck className="size-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <span><strong>48-Hour Turnaround:</strong> Every reel receives direct review from Subhanshu Gajbhiye.</span>
+                    </div>
+                    <div className="flex items-start gap-2.5">
+                      <ShieldCheck className="size-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <span><strong>No Free Spec Work:</strong> We will never ask you for unpaid test deliverables.</span>
+                    </div>
+                    <div className="flex items-start gap-2.5">
+                      <ShieldCheck className="size-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <span><strong>Full Creative Credit:</strong> Complete public attribution and styleframe freedom.</span>
+                    </div>
+                  </div>
+
+                  {/* 3-Step Hiring Flow Summary */}
+                  <div className="p-4 rounded-xl bg-brand-panel-foreground/5 border border-brand-panel-foreground/10 font-mono text-xs text-brand-panel-foreground/85 space-y-1.5 mb-4">
+                    <div className="text-[10px] uppercase tracking-wider text-brand-panel-foreground/60 font-semibold">
+                      3-Stage Pipeline:
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="size-1.5 rounded-full bg-emerald-400" />
+                      <span>1. Reel Assessment (48h) → 2. Creative Call with CD → 3. Onboarding</span>
+                    </div>
+                  </div>
+
+                  {/* Bottom Line: Direct Contact */}
+                  <div className="border-t border-brand-panel-foreground/15 pt-4">
+                    <p className="font-mono text-xs text-brand-panel-foreground/75">
+                      Confidential reels or direct CD inquiries:{" "}
+                      <a href="mailto:careers@pixelgridstudios.com" className="underline font-semibold text-brand-panel-foreground">
+                        careers@pixelgridstudios.com
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         )}
       </div>
