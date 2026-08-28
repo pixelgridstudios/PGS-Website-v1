@@ -348,10 +348,10 @@ export const PrivacyPolicy: React.FC = () => {
           </span>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground px-6 py-2.5 font-display text-xs font-semibold shadow-xs hover:opacity-90 transition-opacity border-0"
+            className="group inline-flex items-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground px-6 py-2.5 font-display text-xs font-semibold shadow-xs transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] border-0"
           >
             <span>Have a Question? Contact Us</span>
-            <ChevronRight className="size-3.5" />
+            <ChevronRight className="size-3.5 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
           </Link>
         </section>
       </div>

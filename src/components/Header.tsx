@@ -63,11 +63,11 @@ export const Header: React.FC = () => {
           <Link
             to="/contact"
             onClick={() => setIsOpen(false)}
-            className="group inline-flex h-9 sm:h-10 items-center justify-center gap-2 rounded-full bg-black px-4 sm:px-5 text-[12px] sm:text-[13px] font-medium uppercase tracking-wider text-white shadow-sm transition-colors duration-200 hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200 select-none border-0 shrink-0"
+            className="group inline-flex h-9 sm:h-10 items-center justify-center gap-2 rounded-full bg-black px-4 sm:px-5 text-[12px] sm:text-[13px] font-medium uppercase tracking-wider text-white shadow-sm transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] dark:bg-white dark:text-black hover:shadow-lg dark:hover:shadow-white/20 select-none border-0 shrink-0"
           >
             <span>CONTACT</span>
             <span className="w-3.5 flex items-center justify-center shrink-0">
-              <ArrowRight className="size-3.5" />
+              <ArrowRight className="size-3.5 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-0.5" />
             </span>
           </Link>
 
@@ -81,12 +81,12 @@ export const Header: React.FC = () => {
             <button
               type="button"
               onClick={toggleClick}
-              className="flex h-9 sm:h-10 items-center justify-center gap-2 rounded-full bg-white/50 backdrop-blur-xl hover:bg-white/75 dark:bg-white/10 dark:hover:bg-white/20 px-3.5 sm:px-4 text-[12px] sm:text-[13px] font-medium uppercase tracking-wider text-black dark:text-white shadow-sm transition-colors duration-200 cursor-pointer select-none border-0 shrink-0"
+              className="group flex h-9 sm:h-10 items-center justify-center gap-2 rounded-full bg-white/50 backdrop-blur-xl hover:bg-white/75 dark:bg-white/10 dark:hover:bg-white/20 px-3.5 sm:px-4 text-[12px] sm:text-[13px] font-medium uppercase tracking-wider text-black dark:text-white shadow-sm transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] hover:shadow-md cursor-pointer select-none border-0 shrink-0"
               aria-expanded={isOpen}
             >
               <span>MENU</span>
               <span
-                className={`size-1.5 rounded-full bg-black dark:bg-white transition-transform duration-200 ${
+                className={`size-1.5 rounded-full bg-black dark:bg-white transition-transform duration-[400ms] ease-spring-vibe group-hover:scale-150 ${
                   isOpen ? "rotate-45" : ""
                 }`}
               />

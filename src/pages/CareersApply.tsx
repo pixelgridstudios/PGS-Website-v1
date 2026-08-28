@@ -190,15 +190,15 @@ export const CareersApply: React.FC = () => {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
                 to="/careers"
-                className="h-11 sm:h-12 px-8 inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-opacity hover:opacity-90 border-0"
+                className="group h-11 sm:h-12 px-8 inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] border-0"
               >
                 <span>Return to Careers</span>
-                <ArrowRight className="size-4" />
+                <ArrowRight className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
               </Link>
               <button
                 type="button"
                 onClick={handleReset}
-                className="h-11 sm:h-12 px-7 inline-flex items-center justify-center gap-2 rounded-full bg-brand-bg text-brand-foreground text-xs sm:text-sm font-medium hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors border-0 cursor-pointer"
+                className="h-11 sm:h-12 px-7 inline-flex items-center justify-center gap-2 rounded-full bg-brand-bg text-brand-foreground text-xs sm:text-sm font-medium transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] hover:bg-brand-muted hover:shadow-md border-0 cursor-pointer"
               >
                 <span>Submit Another Role</span>
               </button>
@@ -263,7 +263,7 @@ export const CareersApply: React.FC = () => {
 
                   <a
                     href="#application-card"
-                    className="h-10 px-6 inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-opacity hover:opacity-90 border-0 shrink-0"
+                    className="h-10 px-6 inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] border-0 shrink-0"
                   >
                     <span>Apply for Role ↓</span>
                   </a>
@@ -564,7 +564,7 @@ export const CareersApply: React.FC = () => {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full sm:w-auto h-12 px-8 inline-flex items-center justify-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-opacity hover:opacity-90 disabled:opacity-50 border-0 cursor-pointer select-none"
+                        className="group w-full sm:w-auto h-12 px-8 inline-flex items-center justify-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none border-0 cursor-pointer select-none"
                       >
                         {isSubmitting ? (
                           <>
@@ -573,9 +573,9 @@ export const CareersApply: React.FC = () => {
                           </>
                         ) : (
                           <>
-                            <Send className="size-4" />
+                            <Send className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:-translate-y-0.5 group-hover:rotate-12" />
                             <span>Submit Application</span>
-                            <ArrowRight className="size-4" />
+                            <ArrowRight className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
                           </>
                         )}
                       </button>

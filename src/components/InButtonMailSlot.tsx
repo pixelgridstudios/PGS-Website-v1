@@ -74,12 +74,12 @@ export const InButtonMailSlot: React.FC<InButtonMailSlotProps> = ({
         type="button"
         onClick={handleClick}
         disabled={phase !== "idle"}
-        className={`group relative h-[44px] w-[156px] rounded-full px-3.5 flex items-center justify-center gap-2.5 shadow-md cursor-pointer select-none transition-colors duration-200 border-0 overflow-hidden shrink-0 ${
+        className={`group relative h-[44px] w-[156px] rounded-full px-3.5 flex items-center justify-center gap-2.5 shadow-md cursor-pointer select-none transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] border-0 overflow-hidden shrink-0 ${
           phase === "delivered"
             ? "bg-emerald-600 dark:bg-emerald-500 text-white dark:text-black"
             : phase === "inserting"
             ? "bg-brand-panel text-brand-panel-foreground"
-            : "bg-brand-panel text-brand-panel-foreground hover:opacity-90"
+            : "bg-brand-panel text-brand-panel-foreground hover:shadow-lg"
         }`}
       >
         {/* Left: Mechanical Mail Slot Flap Hatch */}

@@ -130,10 +130,10 @@ export const Careers: React.FC = () => {
                     <div className="flex items-center gap-3 shrink-0">
                       <Link
                         to={`/careers/apply?role=${encodeURIComponent(position.title)}`}
-                        className="h-10 sm:h-11 px-5 sm:px-6 inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-opacity duration-150 hover:opacity-90 border-0 select-none cursor-pointer shrink-0"
+                        className="group h-10 sm:h-11 px-5 sm:px-6 inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0 select-none cursor-pointer shrink-0"
                       >
                         <span>Apply Now</span>
-                        <ArrowRight className="size-3.5" />
+                        <ArrowRight className="size-3.5 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
                       </Link>
 
                       <button
@@ -204,11 +204,11 @@ export const Careers: React.FC = () => {
 
                         <Link
                           to={`/careers/apply?role=${encodeURIComponent(position.title)}`}
-                          className="h-11 sm:h-12 px-7 inline-flex items-center justify-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-opacity hover:opacity-90 border-0 shrink-0 select-none cursor-pointer"
+                          className="group h-11 sm:h-12 px-7 inline-flex items-center justify-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0 shrink-0 select-none cursor-pointer"
                         >
-                          <Mail className="size-4" />
+                          <Mail className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:-translate-y-0.5 group-hover:-rotate-12" />
                           <span>Apply for {position.title}</span>
-                          <ArrowRight className="size-3.5" />
+                          <ArrowRight className="size-3.5 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
                         </Link>
                       </div>
                     </div>
@@ -240,16 +240,16 @@ export const Careers: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
               <Link
                 to="/careers/apply?role=Freelance+Roster+%26+General+Specialist"
-                className="h-12 px-7 sm:px-8 inline-flex items-center justify-center gap-2 rounded-full bg-white text-black text-xs sm:text-sm font-medium shadow-md transition-opacity hover:opacity-90 border-0 select-none cursor-pointer shrink-0"
+                className="group h-12 px-7 sm:px-8 inline-flex items-center justify-center gap-2 rounded-full bg-white text-black text-xs sm:text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] border-0 select-none cursor-pointer shrink-0"
               >
                 <span>Join Freelance Network</span>
-                <ArrowRight className="size-4" />
+                <ArrowRight className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
               </Link>
 
               <button
                 type="button"
                 onClick={handleCopyEmail}
-                className="h-12 px-6 inline-flex items-center justify-center gap-2 rounded-full bg-white/10 text-white text-xs sm:text-sm font-mono font-medium transition-colors hover:bg-white/20 border-0 cursor-pointer"
+                className="h-12 px-6 inline-flex items-center justify-center gap-2 rounded-full bg-white/10 text-white text-xs sm:text-sm font-mono font-medium transition-all duration-[400ms] ease-spring-vibe hover:bg-white/20 active:scale-95 border-0 cursor-pointer"
               >
                 {copiedEmail ? (
                   <>

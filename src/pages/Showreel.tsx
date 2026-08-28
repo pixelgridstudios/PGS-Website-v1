@@ -59,9 +59,9 @@ export const Showreel: React.FC = () => {
         <div data-reveal className="mb-6 sm:mb-8">
           <Link
             to="/work"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-brand-subtle hover:text-brand-foreground transition-colors group"
+            className="group inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-brand-subtle hover:text-brand-foreground transition-all duration-[400ms] ease-spring-vibe"
           >
-            <ArrowLeft className="size-4" />
+            <ArrowLeft className="size-4 transition-transform duration-[400ms] ease-spring-vibe group-hover:-translate-x-1" />
             <span>Back to All Work</span>
           </Link>
         </div>
@@ -88,27 +88,27 @@ export const Showreel: React.FC = () => {
                 href="https://vimeo.com/1182784182"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground px-6 py-3 text-xs sm:text-sm font-medium shadow-md transition-opacity duration-200 hover:opacity-90 border-0"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground px-6 py-3 text-xs sm:text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
               >
                 <span>Watch 4K on Vimeo</span>
-                <ExternalLink className="size-4" />
+                <ExternalLink className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
 
               <a
                 href="https://www.behance.net/search/projects?search=pixel+grid+studios"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-muted px-5 py-3 text-xs sm:text-sm font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 shadow-xs border-0"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-brand-muted px-5 py-3 text-xs sm:text-sm font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-md active:scale-95 shadow-xs border-0"
               >
                 <span>Behance Gallery</span>
-                <ExternalLink className="size-4" />
+                <ExternalLink className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
 
               <button
                 type="button"
                 onClick={handleShare}
                 aria-label="Share Showreel Link"
-                className="group relative inline-flex size-10 sm:size-11 items-center justify-center rounded-full bg-brand-muted/70 text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 cursor-pointer shadow-xs border-0 shrink-0"
+                className="group relative inline-flex size-10 sm:size-11 items-center justify-center rounded-full bg-brand-muted/70 text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.05] hover:shadow-md active:scale-95 cursor-pointer shadow-xs border-0 shrink-0"
               >
                 {copied ? (
                   <Check className="size-4.5 text-emerald-500 animate-in zoom-in duration-200" />
@@ -156,7 +156,7 @@ export const Showreel: React.FC = () => {
                 to={`/work/${ch.slug}`}
                 data-reveal
                 data-reveal-delay={`${(idx % 3) * 100}`}
-                className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 flex flex-col gap-3 shadow-xs hover:shadow-md dark:shadow-xl transition-colors duration-200 border-0"
+                className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 flex flex-col gap-3 transition-transform duration-[400ms] ease-spring-vibe hover:-translate-y-2 active:scale-[0.98] border-0"
               >
                 <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-neutral-950 shadow-inner">
                   <img
@@ -177,7 +177,7 @@ export const Showreel: React.FC = () => {
                       {ch.discipline}
                     </span>
                   </div>
-                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-xs">
+                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-xs transition-transform duration-[400ms] ease-spring-vibe group-hover:-rotate-45">
                     <ArrowRight className="size-3.5" />
                   </span>
                 </div>
@@ -207,17 +207,17 @@ export const Showreel: React.FC = () => {
             <div className="flex items-center gap-3 shrink-0">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground px-7 py-3.5 font-display text-sm font-medium shadow-md transition-opacity duration-150 hover:opacity-90 border-0"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground px-7 py-3.5 font-display text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
               >
                 <span>Commission a Project</span>
-                <ArrowRight className="size-4" />
+                <ArrowRight className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
               </Link>
 
               <button
                 type="button"
                 onClick={handleShare}
                 aria-label="Share Showreel Link"
-                className="group relative inline-flex size-11 items-center justify-center rounded-full bg-brand-bg text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 cursor-pointer shadow-xs border-0 shrink-0"
+                className="group relative inline-flex size-11 items-center justify-center rounded-full bg-brand-bg text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.05] hover:shadow-md active:scale-95 cursor-pointer shadow-xs border-0 shrink-0"
               >
                 {copied ? (
                   <Check className="size-4 text-emerald-500 animate-in zoom-in duration-200" />

@@ -91,7 +91,7 @@ export const Home: React.FC = () => {
             {/* Interactive Showreel Hover Card */}
             <Link
               to="/showreel"
-              className="group flex w-full sm:w-auto max-w-[340px] items-center gap-3.5 rounded-2xl bg-white text-black p-2.5 pr-4 shadow-2xl transition-shadow duration-300 hover:shadow-2xl cursor-pointer select-none backdrop-blur-md border-0"
+              className="group flex w-full sm:w-auto max-w-[340px] items-center gap-3.5 rounded-2xl bg-white text-black p-2.5 pr-4 shadow-2xl transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] cursor-pointer select-none backdrop-blur-md border-0"
             >
               <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-xl bg-neutral-900 shadow-inner">
                 <img
@@ -108,7 +108,7 @@ export const Home: React.FC = () => {
                   Watch Full Showreel
                 </span>
               </div>
-              <span className="ml-auto flex size-8 shrink-0 items-center justify-center rounded-full bg-black text-white shadow-sm">
+              <span className="ml-auto flex size-8 shrink-0 items-center justify-center rounded-full bg-black text-white shadow-sm transition-transform duration-[400ms] ease-spring-vibe group-hover:scale-[1.1]">
                 <Play className="size-3.5 fill-current ml-0.5" />
               </span>
             </Link>
@@ -220,9 +220,9 @@ export const Home: React.FC = () => {
           <div className="mt-8 text-center sm:hidden">
             <Link
               to="/work"
-              className="inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-[13px] font-medium text-brand-foreground shadow-xs border-0"
+              className="group inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-[13px] font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] shadow-xs border-0"
             >
-              Discover More <ArrowRight className="size-4" />
+              Discover More <ArrowRight className="size-4 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
             </Link>
           </div>
         </section>

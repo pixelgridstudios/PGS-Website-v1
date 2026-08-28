@@ -39,11 +39,11 @@ export const Work: React.FC = () => {
             <div>
               <Link
                 to="/showreel"
-                className="inline-flex items-center gap-2.5 rounded-full bg-brand-panel px-6 py-3 text-xs sm:text-sm font-medium text-brand-panel-foreground shadow-md transition-opacity duration-200 hover:opacity-90 group select-none"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-brand-panel px-6 py-3 text-xs sm:text-sm font-medium text-brand-panel-foreground shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 select-none"
               >
                 <Play className="size-3.5 fill-current" />
                 <span>Watch Studio Showreel</span>
-                <ArrowRight className="size-3.5" />
+                <ArrowRight className="size-3.5 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
@@ -57,7 +57,7 @@ export const Work: React.FC = () => {
                   key={cat}
                   type="button"
                   onClick={() => setActiveCategory(cat)}
-                  className={`rounded-full px-5 py-2.5 text-xs sm:text-[13px] font-medium tracking-normal transition-colors duration-150 cursor-pointer select-none whitespace-nowrap border ${
+                  className={`rounded-full px-5 py-2.5 text-xs sm:text-[13px] font-medium tracking-normal transition-all duration-200 active:scale-95 cursor-pointer select-none whitespace-nowrap border ${
                     isSelected
                       ? "border-brand-foreground bg-brand-foreground text-brand-bg font-semibold"
                       : "border-brand-border bg-brand-bg text-brand-subtle hover:text-brand-foreground hover:border-brand-foreground/40"
@@ -105,7 +105,7 @@ export const Work: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-2.5 shrink-0">
-                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md transition-colors duration-200">
+                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md transition-transform duration-[400ms] ease-spring-vibe group-hover:-rotate-45">
                     <ArrowRight className="size-4" />
                   </span>
                 </div>

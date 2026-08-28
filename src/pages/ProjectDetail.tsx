@@ -224,20 +224,20 @@ export const ProjectDetail: React.FC = () => {
                   href={project.behanceUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground px-6 py-3 text-xs sm:text-sm font-medium shadow-md transition-opacity duration-200 hover:opacity-90 border-0"
+                  className="group inline-flex items-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground px-6 py-3 text-xs sm:text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
                 >
                   <span>View on Behance</span>
-                  <ExternalLink className="size-4" />
+                  <ExternalLink className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
 
                 <a
                   href={project.vimeoUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-brand-muted text-brand-foreground px-6 py-3 text-xs sm:text-sm font-medium shadow-xs transition-colors duration-150 hover:bg-brand-panel hover:text-brand-panel-foreground border-0"
+                  className="group inline-flex items-center gap-2.5 rounded-full bg-brand-muted text-brand-foreground px-6 py-3 text-xs sm:text-sm font-medium shadow-xs transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:bg-brand-panel hover:text-brand-panel-foreground hover:shadow-md active:scale-95 border-0"
                 >
                   <span>Watch on Vimeo</span>
-                  <ExternalLink className="size-4" />
+                  <ExternalLink className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               </div>
             </div>
@@ -250,7 +250,7 @@ export const ProjectDetail: React.FC = () => {
 
               <Link
                 to={`/work/${project.nextProject.slug}`}
-                className="group block overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 shadow-sm hover:shadow-xl dark:shadow-2xl transition-colors duration-200 border-0"
+                className="group block overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 transition-transform duration-[400ms] ease-spring-vibe hover:-translate-y-2 active:scale-[0.98] border-0"
               >
                 <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-neutral-950 shadow-inner">
                   <img
@@ -269,7 +269,7 @@ export const ProjectDetail: React.FC = () => {
                       {project.nextProject.title}
                     </h4>
                   </div>
-                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md shrink-0">
+                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:-rotate-45">
                     <ArrowRight className="size-4" />
                   </span>
                 </div>
