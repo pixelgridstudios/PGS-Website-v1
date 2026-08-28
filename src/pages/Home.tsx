@@ -123,18 +123,12 @@ export const Home: React.FC = () => {
             
             {/* Left Column: Context, Branding & Action */}
             <div className="p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-between gap-8 bg-black/[0.045] dark:bg-black/30 text-brand-foreground">
-              <div className="flex flex-col gap-3.5 sm:gap-4.5">
-                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-foreground leading-[1.05] flex items-center">
+              <div>
+                <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brand-foreground leading-[1.05]">
                   <span className="animate-wave mr-2.5 sm:mr-3.5 inline-block select-none">👋</span>
                   <span>Hi, we're</span>
+                  <span className="block mt-1 sm:mt-1.5">Pixel Grid</span>
                 </h2>
-                <div>
-                  <img
-                    src="/assets/pixel-grid-logo.png"
-                    alt="Pixel Grid Studios"
-                    className="h-11 sm:h-14 md:h-16 lg:h-[72px] w-auto max-w-full object-contain dark:invert select-none"
-                  />
-                </div>
               </div>
 
               <div className="pt-3 sm:pt-4">
