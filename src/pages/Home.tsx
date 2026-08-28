@@ -119,21 +119,21 @@ export const Home: React.FC = () => {
 
         {/* We are Pixel Grid: Signature Dot4 Asymmetric Split Card */}
         <section data-reveal className="my-6 sm:my-8">
-          <div className="w-full flex flex-col lg:grid lg:grid-cols-[460px_1fr] xl:grid-cols-[520px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
+          <div className="w-full flex flex-col lg:grid lg:grid-cols-[360px_1fr] xl:grid-cols-[400px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
             
             {/* Left Column: Context, Branding & Action */}
-            <div className="p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-between gap-8 bg-black/[0.045] dark:bg-black/30 text-brand-foreground">
+            <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center gap-6 sm:gap-7 bg-black/[0.045] dark:bg-black/30 text-brand-foreground">
               <div>
-                <h2 className="font-display text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] font-bold tracking-tight text-brand-foreground leading-[1.1]">
+                <h2 className="font-display text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-brand-foreground leading-[1.08]">
                   <span className="block whitespace-nowrap">Hi, we're</span>
-                  <span className="block mt-1 sm:mt-1.5 whitespace-nowrap">Pixel Grid</span>
+                  <span className="block mt-1 whitespace-nowrap">Pixel Grid</span>
                 </h2>
               </div>
 
-              <div className="pt-3 sm:pt-4">
+              <div>
                 <Link
                   to="/about"
-                  className="group inline-flex items-center gap-3 rounded-full bg-brand-panel text-brand-panel-foreground px-7 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-medium tracking-wide shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
+                  className="group inline-flex items-center gap-3 rounded-full bg-brand-panel text-brand-panel-foreground px-6 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-medium tracking-wide shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
                 >
                   <span>More about us</span>
                   <ArrowRight className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
@@ -141,9 +141,9 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Column: Lead Statement & Narrative */}
-            <div className="p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-center gap-6 bg-brand-muted text-brand-foreground">
-              <div className="max-w-2xl space-y-4 text-base sm:text-lg leading-relaxed text-brand-subtle font-normal">
+            {/* Right Column: Narrative */}
+            <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center bg-brand-muted text-brand-foreground">
+              <div className="space-y-3.5 sm:space-y-4 text-base sm:text-lg lg:text-[17px] leading-relaxed text-brand-subtle font-normal">
                 <p>
                   Pixel Grid Studios was founded in 2020 by Subhanshu Gajbhiye, Creative Director. We turn complex engineering, products, and technical concepts into motion that audiences immediately understand.
                 </p>
