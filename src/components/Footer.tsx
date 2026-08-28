@@ -25,10 +25,10 @@ export const Footer: React.FC = () => {
               <div className="flex flex-wrap items-center gap-4 sm:gap-5 pt-2">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground px-7 sm:px-8 py-3 sm:py-3.5 font-display text-sm sm:text-[15px] font-medium shadow-md transition-opacity duration-200 hover:opacity-90 group select-none cursor-pointer border-0"
+                  className="group inline-flex items-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground px-7 sm:px-8 py-3 sm:py-3.5 font-display text-sm sm:text-[15px] font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 select-none cursor-pointer border-0"
                 >
                   <span>Say Hi</span>
-                  <ArrowRight className="size-4" />
+                  <ArrowRight className="size-4 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
                 </Link>
 
                 <div className="flex items-center gap-2.5">

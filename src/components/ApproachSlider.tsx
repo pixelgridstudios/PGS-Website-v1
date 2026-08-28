@@ -129,7 +129,7 @@ export const ApproachSlider: React.FC = () => {
             <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] xl:aspect-[1/1] max-h-[460px] rounded-xl sm:rounded-2xl overflow-hidden bg-brand-muted shadow-md group border-0">
               {/* Continuous Horizontal Strip */}
               <div
-                className="flex h-full w-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                className="flex h-full w-full transition-transform duration-[800ms] ease-spring-vibe"
                 style={{ transform: `translateX(-${activeIndex * 100}%)` }}
               >
                 {approachItems.map((item) => (
@@ -137,7 +137,7 @@ export const ApproachSlider: React.FC = () => {
                     <img
                       src={item.image}
                       alt={item.imageAlt}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover transition-transform duration-[600ms] ease-spring-vibe group-hover:scale-105"
                     />
                   </div>
                 ))}

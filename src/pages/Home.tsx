@@ -133,10 +133,10 @@ export const Home: React.FC = () => {
               <div className="pt-3 sm:pt-4">
                 <Link
                   to="/about"
-                  className="inline-flex items-center gap-3 rounded-full bg-brand-panel text-brand-panel-foreground px-7 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-medium tracking-wide shadow-md transition-opacity duration-150 hover:opacity-90 border-0"
+                  className="group inline-flex items-center gap-3 rounded-full bg-brand-panel text-brand-panel-foreground px-7 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-medium tracking-wide shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
                 >
                   <span>More about us</span>
-                  <ArrowRight className="size-4 shrink-0" />
+                  <ArrowRight className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>
@@ -168,9 +168,9 @@ export const Home: React.FC = () => {
             </div>
             <Link
               to="/work"
-              className="hidden sm:inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-[13px] font-medium text-brand-foreground shadow-xs transition-colors duration-150 hover:bg-brand-panel hover:text-brand-panel-foreground border-0"
+              className="group hidden sm:inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-[13px] font-medium text-brand-foreground shadow-xs transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-brand-panel hover:text-brand-panel-foreground hover:shadow-md active:scale-95 border-0"
             >
-              Discover More <ArrowRight className="size-4" />
+              Discover More <ArrowRight className="size-4 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
             </Link>
           </div>
 
@@ -181,13 +181,13 @@ export const Home: React.FC = () => {
                 to={`/work/${project.slug}`}
                 data-reveal
                 data-reveal-delay={i === 0 ? "100" : "200"}
-                className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 shadow-sm hover:shadow-xl dark:shadow-2xl transition-colors duration-200 border-0"
+                className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 shadow-sm transition-all duration-[500ms] ease-spring-vibe hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-accent/5 active:scale-[0.98] border-0"
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-neutral-950 shadow-inner">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="h-full w-full object-cover ease-out"
+                    className="h-full w-full object-cover transition-transform duration-[600ms] ease-spring-vibe group-hover:scale-105"
                   />
                 </div>
                 <div className="flex items-end justify-between px-1 pb-1">
@@ -209,7 +209,7 @@ export const Home: React.FC = () => {
                       ))}
                     </div>
                   </div>
-                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md shrink-0">
+                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:-rotate-45">
                     <ArrowRight className="size-4" />
                   </span>
                 </div>

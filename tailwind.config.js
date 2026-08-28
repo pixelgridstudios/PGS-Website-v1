@@ -25,6 +25,10 @@ export default {
       letterSpacing: {
         widest: ".25em",
       },
+      transitionTimingFunction: {
+        'spring-vibe': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+        'spring-soft': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+      },
     },
   },
   plugins: [],

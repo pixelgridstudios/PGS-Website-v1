@@ -124,8 +124,8 @@ body {
    ========================================================================== */
 [data-reveal] {
   opacity: 0;
-  transform: translateY(20px) translateZ(0);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(24px) translateZ(0);
+  transition: opacity 0.6s ease-out, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   backface-visibility: hidden;
@@ -140,7 +140,7 @@ body {
 [data-reveal="fade"] {
   opacity: 0;
   transform: none;
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.75s ease-out;
 }
 
 [data-reveal="fade"].is-revealed {
@@ -195,22 +195,16 @@ body {
   outline: none !important;
 }
 
-/* GLOBAL SETTING: ABSOLUTE ZERO BUTTON SIZE / DIMENSION / PADDING EXPANSION ON HOVER / ACTIVE / CLICK / FOCUS */
+/* GLOBAL BUTTON FONT SETTINGS */
 button, a, [role="button"], input[type="submit"], input[type="button"] {
-  box-sizing: border-box !important;
-  scale: 1 !important;
-  transform: none !important;
   font-family: 'Outfit', sans-serif;
   font-variation-settings: 'wght' 550 !important;
-  transition: background-color 0.18s ease, color 0.18s ease, opacity 0.18s ease, border-color 0.18s ease !important;
 }
 
 button:hover, a:hover, [role="button"]:hover,
 button:active, a:active, [role="button"]:active,
 button:focus, a:focus, [role="button"]:focus,
 button:focus-visible, a:focus-visible, [role="button"]:focus-visible {
-  scale: 1 !important;
-  transform: none !important;
   outline: none !important;
   font-variation-settings: 'wght' 550 !important;
 }
