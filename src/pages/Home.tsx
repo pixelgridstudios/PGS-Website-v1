@@ -122,9 +122,9 @@ export const Home: React.FC = () => {
           <div className="w-full flex flex-col md:grid md:grid-cols-[280px_1fr] lg:grid-cols-[340px_1fr] xl:grid-cols-[400px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
             
             {/* Left/Top Column: Context, Branding & Action */}
-            <div className="p-5 sm:p-6 md:p-8 lg:p-10 xl:p-11 flex flex-col sm:flex-row md:flex-col justify-between sm:items-center md:items-start gap-4 sm:gap-6 md:gap-7 bg-black/[0.045] dark:bg-black/30 text-brand-foreground">
+            <div className="p-5 sm:p-6 md:p-8 lg:p-10 xl:p-11 pb-2 sm:pb-3 md:pb-8 lg:pb-10 xl:pb-11 flex flex-row md:flex-col justify-between items-center md:items-start gap-3 sm:gap-4 md:gap-7 bg-transparent md:bg-black/[0.045] md:dark:bg-black/30 text-brand-foreground">
               <div>
-                <h2 className="font-display text-2xl sm:text-[28px] md:text-3xl lg:text-4xl xl:text-[44px] font-bold tracking-tight text-brand-foreground leading-tight md:leading-[1.08]">
+                <h2 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[44px] font-bold tracking-tight text-brand-foreground leading-tight md:leading-[1.08]">
                   <span className="inline md:block whitespace-nowrap">Hi, we're </span>
                   <span className="inline md:block md:mt-1 whitespace-nowrap">Pixel Grid</span>
                 </h2>
@@ -133,7 +133,7 @@ export const Home: React.FC = () => {
               <div className="shrink-0">
                 <Link
                   to="/about"
-                  className="group inline-flex items-center gap-2.5 sm:gap-3 rounded-full bg-brand-panel text-brand-panel-foreground px-5 sm:px-6 md:px-6 lg:px-7 py-2.5 sm:py-3 md:py-3 lg:py-3.5 text-xs sm:text-sm font-medium tracking-wide shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
+                  className="group inline-flex items-center gap-2 sm:gap-2.5 md:gap-3 rounded-full bg-brand-panel text-brand-panel-foreground px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3 lg:py-3.5 text-xs sm:text-sm font-medium tracking-wide shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
                 >
                   <span>More about us</span>
                   <ArrowRight className="size-3.5 sm:size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
@@ -142,8 +142,8 @@ export const Home: React.FC = () => {
             </div>
 
             {/* Right/Bottom Column: Narrative */}
-            <div className="p-5 sm:p-6 md:p-8 lg:p-10 xl:p-11 flex flex-col justify-center bg-brand-muted text-brand-foreground">
-              <div className="space-y-3 sm:space-y-3.5 md:space-y-4 lg:space-y-4.5 text-[15px] sm:text-base md:text-[16px] lg:text-[17.5px] xl:text-[18.5px] leading-relaxed text-brand-subtle font-normal">
+            <div className="p-5 sm:p-6 md:p-8 lg:p-10 xl:p-11 pt-2 sm:pt-3 md:pt-8 lg:pt-10 xl:pt-11 flex flex-col justify-center bg-brand-muted text-brand-foreground">
+              <div className="space-y-2.5 sm:space-y-3 md:space-y-4 lg:space-y-4.5 text-[14.5px] sm:text-base md:text-[16px] lg:text-[17.5px] xl:text-[18.5px] leading-relaxed text-brand-subtle font-normal">
                 <p>
                   Pixel Grid Studios was founded in 2020 by Subhanshu Gajbhiye, Creative Director. We turn complex engineering, products, and technical concepts into motion that audiences immediately understand.
                 </p>
