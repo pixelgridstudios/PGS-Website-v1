@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import {
   ArrowLeft,
@@ -22,16 +22,14 @@ import DotDivider from "@/components/DotDivider";
 import { openPositions, JobPosition } from "@/data/careers";
 
 const softwareOptions = [
-  "Cinema 4D",
-  "Redshift",
-  "Houdini",
-  "Unreal Engine 5",
-  "Octane",
-  "After Effects",
-  "Blender",
-  "VEX / Python",
-  "DaVinci Resolve",
-  "Figma / Notion",
+  "3D Motion Design",
+  "Look Development",
+  "Simulation & FX",
+  "Realtime / UE5",
+  "Compositing & Grade",
+  "Procedural Systems",
+  "Art Direction",
+  "Sound & Pacing",
 ];
 
 const experienceOptions = [
@@ -66,37 +64,14 @@ export const CareersApply: React.FC = () => {
   const [experience, setExperience] = useState<string>("3-5 Years");
   const [availability, setAvailability] = useState<string>("Immediate");
   const [selectedTools, setSelectedTools] = useState<string[]>([
-    "Cinema 4D",
-    "Redshift",
+    "3D Motion Design",
+    "Look Development",
   ]);
   const [note, setNote] = useState<string>("");
 
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-
-  // Live Pune / India Standard Time Digital Clock
-  const [timeString, setTimeString] = useState<string>("");
-  const [colonVisible, setColonVisible] = useState<boolean>(true);
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const options: Intl.DateTimeFormatOptions = {
-        timeZone: "Asia/Kolkata",
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: false,
-      };
-      const formatted = new Intl.DateTimeFormat([], options).format(now);
-      setTimeString(formatted);
-      setColonVisible((prev) => !prev);
-    };
-
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
   // Sync position with search param
   useEffect(() => {
@@ -164,9 +139,6 @@ export const CareersApply: React.FC = () => {
     setNote("");
     setErrorMessage(null);
   };
-
-  const hours = timeString.split(":")[0] || "16";
-  const minutes = timeString.split(":")[1] || "45";
 
   return (
     <div className="px-3 sm:px-5">
@@ -360,8 +332,8 @@ export const CareersApply: React.FC = () => {
             <DotDivider className="my-6 sm:my-8" />
 
             {/* ============================================================ */}
-            {/* 2. BOTTOM BLOCK: 50% APPLICATION FORM + 50% TIME & PROTOCOL  */}
-            {/* (Styled Identical to the Contact Section Architecture)         */}
+            {/* 2. BOTTOM BLOCK: 50% APPLICATION FORM + 50% STUDIO PROTOCOL   */}
+            {/* (50/50 Split Card Architecture matching the Contact Page)      */}
             {/* ============================================================ */}
             <section
               id="application-card"
@@ -467,7 +439,7 @@ export const CareersApply: React.FC = () => {
                           type="text"
                           value={location}
                           onChange={(e) => setLocation(e.target.value)}
-                          placeholder="Pune, India or Remote"
+                          placeholder="Your City / Timezone"
                           className="w-full rounded-xl bg-brand-bg px-4 py-3 text-sm text-brand-foreground placeholder:text-brand-subtle/50 border-0 focus:outline-none focus:ring-2 focus:ring-brand-foreground/20 transition-all shadow-2xs"
                         />
                       </div>
@@ -611,70 +583,80 @@ export const CareersApply: React.FC = () => {
                   </form>
                 </div>
 
-                {/* RIGHT (50%): Dot4 Live Studio Clock, Direct Review Desk & Protocol */}
-                <div className="relative flex min-h-[360px] lg:min-h-full flex-col justify-between bg-brand-panel p-8 sm:p-10 lg:p-12 xl:p-14 text-brand-panel-foreground border-0">
+                {/* RIGHT (50%): Studio Application Protocol, Milestones & Direct Review Desk */}
+                <div className="relative flex min-h-[360px] lg:min-h-full flex-col justify-between bg-brand-panel p-8 sm:p-10 lg:p-12 xl:p-14 text-brand-panel-foreground border-0 space-y-6">
                   
                   {/* Top Bar: Review Desk & Status */}
-                  <div className="flex items-center justify-between border-b border-brand-panel-foreground/15 pb-4">
-                    <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-brand-panel-foreground/60">
-                      Recruitment Protocol
-                    </span>
-                    <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-emerald-400">
-                      <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
-                      Active Review Queue
-                    </span>
-                  </div>
-
-                  {/* Big Digital Clock (Pune, India IST) */}
-                  <div className="my-6 py-4">
-                    <span className="font-mono text-xs uppercase tracking-[0.2em] text-brand-panel-foreground/60">
-                      Pune, Maharashtra (IST)
-                    </span>
-                    <div className="mt-2 font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight flex items-center">
-                      <span>{hours}</span>
-                      <span className={colonVisible ? "opacity-100" : "opacity-20"}>:</span>
-                      <span>{minutes}</span>
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between border-b border-brand-panel-foreground/15 pb-4">
+                      <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-brand-panel-foreground/60">
+                        Direct Studio Review
+                      </span>
+                      <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-emerald-400">
+                        <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
+                        Active Queue
+                      </span>
                     </div>
-                    <span className="mt-2 block font-mono text-xs text-brand-panel-foreground/50">
-                      UTC +05:30 Standard Time · 48-Hour Review Window
-                    </span>
+
+                    <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-brand-panel-foreground pt-1">
+                      Application Protocol
+                    </h3>
+                    <p className="text-sm text-brand-panel-foreground/80 leading-relaxed">
+                      We evaluate artists based on craft, kinematic intuition, and visual taste. Here is our direct commitment to every applicant:
+                    </p>
                   </div>
 
-                  {/* Direct Commitments Protocol Checklist */}
-                  <div className="space-y-3 font-mono text-xs text-brand-panel-foreground/80 my-4">
+                  {/* Protocol Commitments */}
+                  <div className="space-y-3 font-mono text-xs text-brand-panel-foreground/85">
                     <div className="flex items-start gap-2.5">
                       <ShieldCheck className="size-4 text-emerald-400 shrink-0 mt-0.5" />
                       <span><strong>48-Hour Turnaround:</strong> Every reel receives direct review from Subhanshu Gajbhiye.</span>
                     </div>
                     <div className="flex items-start gap-2.5">
                       <ShieldCheck className="size-4 text-emerald-400 shrink-0 mt-0.5" />
-                      <span><strong>No Free Spec Work:</strong> We will never ask you for unpaid test deliverables.</span>
+                      <span><strong>No Free Spec Work:</strong> We will never ask you to complete unpaid test projects.</span>
                     </div>
                     <div className="flex items-start gap-2.5">
                       <ShieldCheck className="size-4 text-emerald-400 shrink-0 mt-0.5" />
-                      <span><strong>Full Creative Credit:</strong> Complete public attribution and styleframe freedom.</span>
+                      <span><strong>Full Creative Credit:</strong> Complete public attribution and portfolio freedom.</span>
                     </div>
                   </div>
 
-                  {/* 3-Step Hiring Flow Summary */}
-                  <div className="p-4 rounded-xl bg-brand-panel-foreground/5 border border-brand-panel-foreground/10 font-mono text-xs text-brand-panel-foreground/85 space-y-1.5 mb-4">
-                    <div className="text-[10px] uppercase tracking-wider text-brand-panel-foreground/60 font-semibold">
-                      3-Stage Pipeline:
+                  {/* 3-Step Hiring Flow / Recruitment Milestones */}
+                  <div className="pt-4 border-t border-brand-panel-foreground/15 space-y-3">
+                    <span className="font-mono text-[11px] uppercase tracking-wider text-brand-panel-foreground/60 font-semibold block">
+                      Recruitment Milestones
+                    </span>
+                    <div className="space-y-2 font-mono text-xs">
+                      <div className="flex items-center gap-3 p-3 rounded-xl bg-brand-panel-foreground/5 border border-brand-panel-foreground/10">
+                        <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-400 text-neutral-950 text-[11px] font-bold">1</span>
+                        <span className="text-brand-panel-foreground font-medium">Reel &amp; Craft Assessment (48h)</span>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 rounded-xl bg-brand-panel-foreground/5 border border-brand-panel-foreground/10">
+                        <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-400 text-neutral-950 text-[11px] font-bold">2</span>
+                        <span className="text-brand-panel-foreground font-medium">30-Min Creative Call with CD</span>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 rounded-xl bg-brand-panel-foreground/5 border border-brand-panel-foreground/10">
+                        <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-400 text-neutral-950 text-[11px] font-bold">3</span>
+                        <span className="text-brand-panel-foreground font-medium">Offer &amp; Farm Onboarding</span>
+                      </div>
                     </div>
+                  </div>
+
+                  {/* Studio Base & Compute */}
+                  <div className="pt-4 border-t border-brand-panel-foreground/15 space-y-2 font-mono text-xs text-brand-panel-foreground/80">
                     <div className="flex items-center gap-2">
-                      <span className="size-1.5 rounded-full bg-emerald-400" />
-                      <span>1. Reel Assessment (48h) → 2. Creative Call with CD → 3. Onboarding</span>
+                      <Cpu className="size-3.5 text-brand-panel-foreground" />
+                      <span><strong>Compute:</strong> Dedicated Multi-RTX GPU + Cloud Farm</span>
                     </div>
                   </div>
 
                   {/* Bottom Line: Direct Contact */}
-                  <div className="border-t border-brand-panel-foreground/15 pt-4">
-                    <p className="font-mono text-xs text-brand-panel-foreground/75">
-                      Confidential reels or direct CD inquiries:{" "}
-                      <a href="mailto:careers@pixelgridstudios.com" className="underline font-semibold text-brand-panel-foreground">
-                        careers@pixelgridstudios.com
-                      </a>
-                    </p>
+                  <div className="border-t border-brand-panel-foreground/15 pt-4 text-xs font-mono text-brand-panel-foreground/75">
+                    Confidential reels or direct CD inquiries? Email us at{" "}
+                    <a href="mailto:careers@pixelgridstudios.com" className="underline font-semibold text-brand-panel-foreground">
+                      careers@pixelgridstudios.com
+                    </a>
                   </div>
                 </div>
               </div>

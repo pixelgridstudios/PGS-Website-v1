@@ -28,7 +28,7 @@ const reelChapters = [
   {
     time: "00:52",
     title: "boAt Lifestyle",
-    discipline: "Acoustic Simulation · Cinema 4D",
+    discipline: "Acoustic Simulation · 3D CGI",
     slug: "boat-lifestyle",
     image: "/assets/chrono-morph.jpg",
   },
@@ -197,7 +197,7 @@ export const Showreel: React.FC = () => {
                 <span>Reel Production Details</span>
               </div>
               <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-brand-foreground">
-                Crafted in Cinema 4D, Redshift & After Effects
+                Crafted with precision 3D motion &amp; procedural visual systems
               </h3>
               <p className="text-sm sm:text-base leading-relaxed text-brand-subtle font-normal">
                 Audio mastered with custom dynamic sound design, transient shaping, and procedural motion synchronization for high-impact viewing.

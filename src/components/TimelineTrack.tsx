@@ -102,8 +102,7 @@ const pipelineSteps: TimelineStep[] = [
     description:
       "Optimized master exports for all your marketing channels in multiple formats, resolutions, and a final delivery package with usage guidelines.",
     deliverables: [
-      "Optimized exports for all your channels",
-      "Multiple formats & resolutions",
+      "Optimized exports for all channels & resolutions",
       "Final delivery package with usage guidelines",
     ],
   },
@@ -558,7 +557,7 @@ export const TimelineTrack: React.FC = () => {
               </div>
 
               {/* Vertical Scrolling Content Reel */}
-              <div className="relative h-[225px] overflow-hidden mt-5">
+              <div className="relative h-[300px] sm:h-[280px] overflow-hidden mt-5">
                 <div
                   className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] h-full"
                   style={{ transform: `translateY(-${activeStep * 100}%) translateZ(0)` }}
@@ -568,7 +567,7 @@ export const TimelineTrack: React.FC = () => {
                     return (
                       <div
                         key={s.id}
-                        className={`h-[225px] shrink-0 flex flex-col justify-start transition-opacity duration-300 ease-out ${
+                        className={`h-[300px] sm:h-[280px] shrink-0 flex flex-col justify-start transition-opacity duration-300 ease-out ${
                           isActive ? "opacity-100" : "opacity-0 pointer-events-none"
                         }`}
                         style={{ backfaceVisibility: "hidden" }}

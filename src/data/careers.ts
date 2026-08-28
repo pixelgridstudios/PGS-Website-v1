@@ -17,7 +17,7 @@ export const openPositions: JobPosition[] = [
     id: "senior-3d-motion-designer",
     title: "Senior 3D Motion Designer & LookDev",
     department: "3D & Motion",
-    location: "Pune Studio / Global Remote",
+    location: "Flexible / Global",
     type: "Full-Time",
     experience: "4+ Years in Commercial 3D",
     overview:
@@ -31,11 +31,11 @@ export const openPositions: JobPosition[] = [
     ],
     requirements: [
       "A standout reel highlighting high-craft 3D product animation, elegant kinetic pacing, and lighting mastery.",
-      "Expert knowledge of Cinema 4D and Redshift (Octane familiarity is a strong plus).",
-      "Proficiency with After Effects for multi-pass compositing, motion graphics, and color finishing.",
+      "Expert knowledge of modern 3D lighting, procedural shaders, and look development workflows.",
+      "Proficiency with compositing, motion graphics, and color finishing.",
       "Strong understanding of camera mechanics, focal lengths, depth of field, and editorial pacing.",
     ],
-    tools: ["Cinema 4D", "Redshift", "After Effects", "ACEScg", "Photoshop"],
+    tools: ["3D Animation", "Lighting & LookDev", "Procedural Shaders", "Compositing", "ACEScg"],
     whatWeOffer: [
       "Dedicated multi-RTX GPU workstation + dedicated cloud farm nodes.",
       "15% allocated studio R&D time for personal motion experiments.",
@@ -46,7 +46,7 @@ export const openPositions: JobPosition[] = [
     id: "procedural-houdini-fx-artist",
     title: "Procedural & Houdini FX Specialist",
     department: "FX & Simulation",
-    location: "Global Remote / Contract",
+    location: "Flexible / Global",
     type: "Contract or Full-Time",
     experience: "3+ Years in FX/Simulation",
     overview:
@@ -55,7 +55,7 @@ export const openPositions: JobPosition[] = [
       "Architect custom Houdini SOP/VOP networks for procedural asset generation and deformation.",
       "Execute high-end particle flows, fluid dynamics, dynamic cloth, and micro-destruction simulations.",
       "Develop procedural animation rigs and generative mathematical motion systems.",
-      "Bridge Houdini simulation caches (Alembic / VDB) seamlessly into our Cinema 4D and Redshift pipeline.",
+      "Bridge simulation caches (Alembic / VDB) seamlessly into our lighting and lookdev pipeline.",
     ],
     requirements: [
       "Demonstrated mastery of Houdini dynamics (Vellum, Pyro, FLIP, POPs) and procedural nodal workflows.",
@@ -63,9 +63,9 @@ export const openPositions: JobPosition[] = [
       "Reel showcasing innovative procedural effects, organic simulations, and abstract visual storytelling.",
       "Ability to optimize high-density simulation data for reliable render farm dispatch.",
     ],
-    tools: ["Houdini", "VEX", "Solaris / Karma", "Redshift", "Alembic / VDB"],
+    tools: ["Houdini", "VEX", "Solaris / Karma", "Simulation FX", "Alembic / VDB"],
     whatWeOffer: [
-      "Full Houdini license coverage and high-core compute node access.",
+      "Full license coverage and high-core compute node access.",
       "Freedom to architect generative toolkits used across commercial projects.",
       "Flexible asynchronous working hours across timezones.",
     ],
@@ -74,11 +74,11 @@ export const openPositions: JobPosition[] = [
     id: "realtime-spatial-unreal-artist",
     title: "Realtime & Spatial LED Canvas Artist",
     department: "3D & Motion",
-    location: "Global Remote / Pune Studio",
+    location: "Flexible / Global",
     type: "Full-Time or Project Contract",
     experience: "2+ Years in Unreal Engine",
     overview:
-      "Help engineer immersive 8K LED visual canvases, interactive stage environments, and real-time simulations for architectural venues (like Yas Mall) and broadcast stages.",
+      "Help engineer immersive 8K LED visual canvases, interactive stage environments, and real-time simulations for architectural venues and broadcast stages.",
     responsibilities: [
       "Author real-time scenes and cinematic environments in Unreal Engine 5 utilizing Nanite and Lumen.",
       "Design ultra-wide, non-standard resolution spatial canvas visualizers (up to 8K resolution).",
@@ -90,7 +90,7 @@ export const openPositions: JobPosition[] = [
       "Experience formatting content for large-scale LED walls, architectural projection, or live stage visuals.",
       "Understanding of real-time render pipelines, performance profiling, and GPU hardware optimization.",
     ],
-    tools: ["Unreal Engine 5", "Niagara", "Cinema 4D", "Notch / Disguise", "DaVinci Resolve"],
+    tools: ["Unreal Engine 5", "Niagara", "Realtime Lighting", "Spatial Canvas", "Color Grading"],
     whatWeOffer: [
       "Direct involvement in architectural LED canvas spectacles and experiential staging.",
       "Opportunity to shape our real-time interactive spatial division.",
@@ -101,7 +101,7 @@ export const openPositions: JobPosition[] = [
     id: "commercial-art-director",
     title: "Commercial Art Director / Motion Lead",
     department: "Art Direction & LookDev",
-    location: "Pune Studio / Hybrid",
+    location: "Flexible / Global",
     type: "Full-Time",
     experience: "5+ Years in Agency / Studio",
     overview:
@@ -117,18 +117,18 @@ export const openPositions: JobPosition[] = [
       "Mastery of visual storytelling, design typography, cinematic framing, and art direction.",
       "Clear, empathetic communication and the ability to mentor and inspire multidisciplinary artists.",
     ],
-    tools: ["Cinema 4D", "Figma", "Photoshop", "Illustrator", "Premiere Pro", "Frame.io"],
+    tools: ["Art Direction", "LookDev", "Styleframes", "Design Systems", "Pacing & Story"],
     whatWeOffer: [
       "Leadership seat shaping the studio's portfolio direction and aesthetic identity.",
       "Significant campaign profit-sharing bonuses.",
-      "Collaborative studio workspaces in Pune with flexible remote options.",
+      "Collaborative studio culture with flexible options.",
     ],
   },
   {
     id: "creative-producer-coordinator",
     title: "Creative Producer & Studio Coordinator",
     department: "Production & Pipeline",
-    location: "Pune Studio / Hybrid",
+    location: "Flexible / Global",
     type: "Full-Time",
     experience: "3+ Years in Studio Production",
     overview:
@@ -144,18 +144,18 @@ export const openPositions: JobPosition[] = [
       "Meticulous organizational skills with expertise in Notion, Slack, and Google Workspace.",
       "A calm, solution-oriented mindset when managing fast-moving client deadlines.",
     ],
-    tools: ["Notion", "Frame.io", "Slack", "Google Workspace", "Figma"],
+    tools: ["Production Pipeline", "Milestone Tracking", "Client Coordination", "Resource Scoping"],
     whatWeOffer: [
       "Competitive base salary with milestone project delivery bonuses.",
       "Healthy, sustainable production scheduling without toxic crunch culture.",
-      "Hybrid flexibility with comprehensive health and wellness coverage.",
+      "Comprehensive health and wellness coverage.",
     ],
   },
   {
     id: "freelance-roster-specialist",
     title: "Freelance Roster & General Specialist",
     department: "Freelance Network",
-    location: "Global Remote / Project-Based",
+    location: "Global / Project-Based",
     type: "Contract / Sprint-Based",
     experience: "All Experience Levels Welcome",
     overview:
@@ -163,14 +163,14 @@ export const openPositions: JobPosition[] = [
     responsibilities: [
       "Collaborate on sprint-based commercial productions with well-defined scopes and milestones.",
       "Deliver production-ready scene files, simulation caches, or lookdev styleframes adhering to ACEScg color workflows.",
-      "Maintain active communication on studio Slack and Frame.io during project sprint cycles.",
+      "Maintain active communication on studio channels during project sprint cycles.",
     ],
     requirements: [
       "Standout portfolio or showreel showcasing mastery in your core discipline.",
-      "Disciplined timeline management and clear communication across remote timezones.",
+      "Disciplined timeline management and clear communication.",
       "High standard of aesthetic craft and attention to nuance.",
     ],
-    tools: ["Cinema 4D", "Redshift", "Houdini", "Unreal Engine 5", "After Effects", "Blender", "DaVinci Resolve"],
+    tools: ["3D Animation", "LookDev", "FX Simulation", "Realtime", "Compositing", "Sound Design"],
     whatWeOffer: [
       "Competitive day and project rates paid promptly upon milestone approval.",
       "Access to studio render farm clusters for heavy project delivery passes.",

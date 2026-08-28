@@ -65,7 +65,7 @@ export const About: React.FC = () => {
             </div>
 
             <p className="text-base leading-relaxed text-brand-subtle font-normal">
-              With deep expertise across Cinema 4D, Redshift, and After Effects, Subhanshu has directed and produced commercial campaigns for leading technology brands, alongside in-show screen design for landmark Netflix series.
+              With deep expertise in 3D design, simulation, and motion direction, Subhanshu has directed and produced commercial campaigns for leading technology brands, alongside in-show screen design for landmark Netflix series.
             </p>
 
             <div className="pt-4 border-t border-brand-foreground/10 flex flex-col gap-3">

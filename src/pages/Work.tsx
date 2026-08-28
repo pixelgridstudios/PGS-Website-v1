@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
 import { projects } from "@/data/projects";
+import DotDivider from "@/components/DotDivider";
 
 const filterCategories = [
   "All",
@@ -69,8 +70,10 @@ export const Work: React.FC = () => {
           </div>
         </div>
 
+        <DotDivider />
+
         {/* 2-Column Project Grid: Preserves Grey Hierarchy across Modes */}
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           {filteredProjects.map((project, idx) => (
             <Link
               key={project.id}

@@ -52,8 +52,8 @@ export const projects: ProjectData[] = [
     client: "Xiaomi Global",
     year: "2023",
     category: "Product Animation",
-    tags: ["Motion Design", "3D Animation", "Product CGI", "Cinema 4D"],
-    award: "Best of 3D Motion â€” Behance Curated",
+    tags: ["Motion Design", "3D Animation", "Product CGI", "LookDev"],
+    award: "Best of 3D Motion — Behance Curated",
     behanceUrl: "https://www.behance.net/search/projects?search=xiaomi+redmi+note+12+motion",
     vimeoUrl: "https://vimeo.com/1182784182",
     vimeoId: "1182784182",
@@ -61,10 +61,10 @@ export const projects: ProjectData[] = [
     heroVideo: "/assets/hero-bg.mp4",
     heroVideoPoster: "/assets/chrono-morph.jpg",
     brief: {
-      title: "Xiaomi Redmi Note 12 â€” Global Launch Film",
+      title: "Xiaomi Redmi Note 12 — Global Launch Film",
       description: [
         "To introduce Xiaomi's flagship Redmi Note 12 device across global digital campaigns and launch events, Pixel Grid Studios was commissioned to direct and produce the primary 3D product launch film. A high-energy sequence highlighting the architectural camera bump, 120Hz AMOLED display, and ultra-slim chassis.",
-        "By developing a procedural shader system in Cinema 4D and Redshift, we captured the intricate light reflections on metallic and matte glass surfaces with supreme photorealism, establishing a refined visual standard for the campaign.",
+        "By developing custom procedural shader networks and physical lighting rigs, we captured the intricate light reflections on metallic and matte glass surfaces with supreme photorealism, establishing a refined visual standard for the campaign.",
       ],
     },
     sections: [
@@ -84,7 +84,7 @@ export const projects: ProjectData[] = [
       },
       {
         heading: "Procedural Shading & Physical Lighting Systems",
-        copy: "Achieving true-to-life reflections across curved sapphire glass required custom HDRI environments mapped to procedural noise fields. The pacing was crafted in After Effects with custom optical flares and typographic badges synchronized to an energetic electronic score.",
+        copy: "Achieving true-to-life reflections across curved sapphire glass required custom HDRI environments mapped to procedural noise fields. The pacing was crafted with custom optical flares and typographic badges synchronized to an energetic electronic score.",
         layout: "two-column-images",
         images: [
           { src: "/assets/styleframe-glass.jpg", alt: "Procedural Glass Dispersion" },
@@ -103,7 +103,7 @@ export const projects: ProjectData[] = [
       { role: "Production Studio", names: ["Pixel Grid Studios"] },
       { role: "3D Animation & Shading", names: ["Subhanshu Gajbhiye", "Pixel Grid Motion Team"] },
       { role: "Sound Design & Mix", names: ["Master Sound Lab"] },
-      { role: "Pipeline Tools", names: ["Cinema 4D", "Redshift", "After Effects", "Octane"] },
+      { role: "Core Disciplines", names: ["3D Animation", "LookDev", "Compositing", "Lighting"] },
     ],
     nextProject: {
       slug: "tata-power-ez-homes",
@@ -166,7 +166,7 @@ export const projects: ProjectData[] = [
       { role: "Production Studio", names: ["Pixel Grid Studios"] },
       { role: "3D Animation & Compositing", names: ["Subhanshu Gajbhiye", "Pixel Grid Core"] },
       { role: "Original Score", names: ["Resonance Audio Studio"] },
-      { role: "Pipeline Tools", names: ["Cinema 4D", "After Effects", "Redshift"] },
+      { role: "Core Disciplines", names: ["3D Animation", "Lighting & LookDev", "Compositing"] },
     ],
     nextProject: {
       slug: "yas-mall",
@@ -233,7 +233,7 @@ export const projects: ProjectData[] = [
     nextProject: {
       slug: "boat-lifestyle",
       title: "boAt Lifestyle",
-      meta: "Product Motion Â· Short-form",
+      meta: "Product Motion · Short-form",
       thumbnail: "/assets/chrono-morph.jpg",
     },
   },
@@ -245,7 +245,7 @@ export const projects: ProjectData[] = [
     client: "boAt Audio India",
     year: "2023",
     category: "Product Motion",
-    tags: ["Product Motion", "Acoustic Simulation", "Cinema 4D", "Short-Form"],
+    tags: ["Product Motion", "Acoustic Simulation", "3D CGI", "Short-Form"],
     award: "Featured on Behance Motion Graphics",
     behanceUrl: "https://www.behance.net/search/projects?search=boat+audio+3d+motion",
     vimeoUrl: "https://vimeo.com/1184766382",
@@ -254,7 +254,7 @@ export const projects: ProjectData[] = [
     heroVideo: "/assets/hero-bg.mp4",
     heroVideoPoster: "/assets/chrono-morph.jpg",
     brief: {
-      title: "boAt Audio â€” Bass Physics & Acoustic Motion Design",
+      title: "boAt Audio — Bass Physics & Acoustic Motion Design",
       description: [
         "boAt needed a fast, high-impact motion sequence for their flagship wireless earbuds launch, focusing on the proprietary bass-boost diaphragm, water-resistant silicone sealing, and ultra-low latency gaming mode.",
         "We visualized sound waves as physical pressure ripples propagating through microscopic acoustic chambers, blending intense product lighting with tactile material textures.",
@@ -280,7 +280,7 @@ export const projects: ProjectData[] = [
       { role: "Client", names: ["boAt Lifestyle India"] },
       { role: "Creative Direction", names: ["Subhanshu Gajbhiye"] },
       { role: "3D Animation", names: ["Pixel Grid Studios"] },
-      { role: "Pipeline Tools", names: ["Cinema 4D", "Redshift", "After Effects"] },
+      { role: "Core Disciplines", names: ["3D Animation", "Acoustic Simulation", "Compositing"] },
     ],
     nextProject: {
       slug: "netflix-screens",

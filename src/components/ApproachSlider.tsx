@@ -87,7 +87,7 @@ export const ApproachSlider: React.FC = () => {
                 </ul>
 
                 {/* Vertical Sliding Text Reel */}
-                <div className="relative h-[160px] sm:h-[150px] overflow-hidden border-t md:border-t-0 md:border-l border-brand-foreground/10 pt-5 md:pt-0 md:pl-8">
+                <div className="relative h-[180px] sm:h-[170px] overflow-hidden border-t md:border-t-0 md:border-l border-brand-foreground/10 pt-5 md:pt-0 md:pl-8">
                   <div
                     className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] h-full"
                     style={{ transform: `translateY(-${activeIndex * 100}%) translateZ(0)` }}
@@ -97,7 +97,7 @@ export const ApproachSlider: React.FC = () => {
                       return (
                         <div
                           key={item.title}
-                          className={`h-[160px] sm:h-[150px] shrink-0 flex flex-col justify-start transition-opacity duration-300 ease-out ${
+                          className={`h-[180px] sm:h-[170px] shrink-0 flex flex-col justify-start transition-opacity duration-300 ease-out ${
                             isActive ? "opacity-100" : "opacity-0 pointer-events-none"
                           }`}
                           style={{ backfaceVisibility: "hidden" }}

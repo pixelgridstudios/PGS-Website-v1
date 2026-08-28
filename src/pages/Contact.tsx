@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Globe, ChevronDown, CheckCircle2, ArrowRight } from "lucide-react";
+import { Mail, Globe, MapPin, ChevronDown, CheckCircle2, ArrowRight } from "lucide-react";
 import DotDivider from "@/components/DotDivider";
 import InButtonMailSlot from "@/components/InButtonMailSlot";
 
 const socials = [
   { name: "Instagram", href: "https://instagram.com" },
+  { name: "X", href: "https://x.com" },
   { name: "Vimeo", href: "https://vimeo.com" },
   { name: "Behance", href: "https://behance.net" },
   { name: "LinkedIn", href: "https://linkedin.com" },
@@ -49,21 +50,39 @@ export const Contact: React.FC = () => {
 
   const formRef = useRef<HTMLFormElement>(null);
 
-  // Live Pune / India Standard Time Digital Clock
+  // Live Pune / India Standard Time Master Studio Timepiece
   const [timeString, setTimeString] = useState<string>("");
+  const [seconds, setSeconds] = useState<string>("00");
+  const [secNum, setSecNum] = useState<number>(0);
   const [colonVisible, setColonVisible] = useState<boolean>(true);
+  const [dateString, setDateString] = useState<string>("");
 
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
-      const options: Intl.DateTimeFormatOptions = {
+      const timeOpts: Intl.DateTimeFormatOptions = {
         timeZone: "Asia/Kolkata",
         hour: "2-digit",
         minute: "2-digit",
+        second: "2-digit",
         hour12: false,
       };
-      const formatted = new Intl.DateTimeFormat([], options).format(now);
-      setTimeString(formatted);
+      const dateOpts: Intl.DateTimeFormatOptions = {
+        timeZone: "Asia/Kolkata",
+        weekday: "short",
+        month: "short",
+        day: "numeric",
+      };
+
+      const formattedTime = new Intl.DateTimeFormat([], timeOpts).format(now);
+      const formattedDate = new Intl.DateTimeFormat([], dateOpts).format(now);
+      const parts = formattedTime.split(":");
+
+      setTimeString(`${parts[0]}:${parts[1]}`);
+      const s = parseInt(parts[2] || "0", 10);
+      setSeconds(parts[2] || "00");
+      setSecNum(s);
+      setDateString(formattedDate);
       setColonVisible((prev) => !prev);
     };
 
@@ -305,36 +324,43 @@ export const Contact: React.FC = () => {
               )}
             </div>
 
-            {/* Right (50%): Dot4 Live Studio Clock & Location Widget */}
+            {/* Right (50%): Studio Clock & Headquarters */}
             <div className="relative flex min-h-[360px] lg:min-h-full flex-col justify-between bg-brand-panel p-8 sm:p-10 lg:p-12 xl:p-14 text-brand-panel-foreground border-0">
+              {/* 1. Top Bar: Studio HQ & Live Status */}
               <div className="flex items-center justify-between border-b border-brand-panel-foreground/15 pb-4">
-                <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-brand-panel-foreground/60">
+                <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-brand-panel-foreground/60 font-medium">
                   Studio Headquarters
                 </span>
-                <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-emerald-400">
+                <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-emerald-400 font-medium">
                   <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
                   Online
                 </span>
               </div>
 
-              {/* Big Digital Clock */}
-              <div className="my-auto py-8">
-                <span className="font-mono text-xs uppercase tracking-[0.2em] text-brand-panel-foreground/60">
-                  Pune, India (IST)
-                </span>
-                <div className="mt-2 font-display text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight flex items-center">
-                  <span>{hours}</span>
-                  <span className={colonVisible ? "opacity-100" : "opacity-20"}>:</span>
-                  <span>{minutes}</span>
+              {/* 2. Main Studio Clock Display (Harmonious Unified Lockup) */}
+              <div className="my-auto py-6 select-none space-y-3">
+                <div className="flex items-baseline gap-1.5 sm:gap-2.5">
+                  <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-display font-bold tracking-tight tabular-nums text-brand-panel-foreground leading-none">
+                    <span>{hours}</span>
+                    <span className={`mx-0.5 transition-opacity duration-150 ${colonVisible ? "opacity-100" : "opacity-25"}`}>
+                      :
+                    </span>
+                    <span>{minutes}</span>
+                  </div>
+                  <span className="font-mono text-lg sm:text-xl lg:text-2xl font-semibold text-emerald-400 tabular-nums">
+                    :{seconds}
+                  </span>
                 </div>
-                <span className="mt-2 block font-mono text-xs text-brand-panel-foreground/50">
-                  UTC +05:30 Standard Time
-                </span>
+
+                <div className="font-mono text-xs sm:text-sm text-brand-panel-foreground/60 tracking-wider">
+                  {dateString}
+                </div>
               </div>
 
+              {/* 3. Bottom Bar */}
               <div className="border-t border-brand-panel-foreground/15 pt-4">
-                <p className="font-mono text-xs text-brand-panel-foreground/70">
-                  Direct Line: <a href="mailto:hello@pixelgridstudios.com" className="underline font-medium text-brand-panel-foreground">hello@pixelgridstudios.com</a>
+                <p className="font-mono text-xs text-brand-panel-foreground/60">
+                  We respond to all project inquiries within 24 hours.
                 </p>
               </div>
             </div>

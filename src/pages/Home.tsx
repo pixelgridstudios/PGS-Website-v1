@@ -11,7 +11,7 @@ const highlightedProjects = [
     title: "Xiaomi Redmi Note 12",
     meta: "Product Launch · 3D Animation",
     image: "/assets/chrono-morph.jpg",
-    tags: ["3D CGI", "Product Launch", "Cinema 4D"],
+    tags: ["3D CGI", "Product Launch", "Motion Design"],
   },
   {
     slug: "tata-power-ez-homes",
@@ -27,7 +27,7 @@ const motionServices = [
     id: "01",
     title: "Product Launch Films",
     tag: "3D Animation & CGI",
-    copy: "High-impact launch films that visually articulate what a new product does, its engineering precision, and why it matters to the market — built in Cinema 4D and After Effects.",
+    copy: "High-impact launch films that visually articulate what a new product does, its engineering precision, and why it matters to the market.",
   },
   {
     id: "02",
@@ -115,29 +115,46 @@ export const Home: React.FC = () => {
           </div>
         </section>
 
-        {/* We are Pixel Grid Section */}
-        <section data-reveal className="grid gap-10 py-10 lg:grid-cols-12 lg:py-14">
-          <div className="lg:col-span-5">
-            <h2 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl text-brand-foreground">
-              We are Pixel Grid
-            </h2>
-            <Link
-              to="/about"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-[13px] font-medium text-brand-foreground shadow-xs transition-colors duration-200 hover:bg-brand-panel hover:text-brand-panel-foreground border-0"
-            >
-              More about us <ArrowRight className="size-4" />
-            </Link>
-          </div>
-          <div className="lg:col-span-7">
-            <h3 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl text-brand-foreground">
-              Founder-led, based in Pune — working globally
-            </h3>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-brand-subtle font-normal">
-              Pixel Grid Studios was founded in 2020 by Subhanshu Gajbhiye, Creative Director. We work in Cinema 4D and After Effects to turn complex engineering, products, and technical concepts into motion that audiences immediately understand.
-            </p>
-            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-brand-subtle font-normal">
-              There is no permanent bench here. For every brief, we curate seasoned specialists chosen specifically for that project, coordinated directly by the founder — delivering campaign-defining work for leading technology and consumer brands globally.
-            </p>
+        <DotDivider />
+
+        {/* We are Pixel Grid: Signature Dot4 Asymmetric Split Card */}
+        <section data-reveal className="my-6 sm:my-8">
+          <div className="w-full flex flex-col lg:grid lg:grid-cols-[380px_1fr] xl:grid-cols-[420px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
+            
+            {/* Left Column: Context, Branding & Action */}
+            <div className="p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-between gap-8 bg-black/[0.045] dark:bg-black/30 text-brand-foreground">
+              <div>
+                <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brand-foreground leading-[1.05]">
+                  We are Pixel Grid
+                </h2>
+              </div>
+
+              <div>
+                <Link
+                  to="/about"
+                  className="inline-flex items-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground px-6 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-medium shadow-md transition-opacity duration-150 hover:opacity-90 border-0"
+                >
+                  <span>More about us</span>
+                  <ArrowRight className="size-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: Lead Statement & Narrative */}
+            <div className="p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-center gap-6 bg-brand-muted text-brand-foreground">
+              <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-brand-foreground leading-snug">
+                Founder-led studio — working globally
+              </h3>
+              <div className="space-y-4 text-base sm:text-lg leading-relaxed text-brand-subtle font-normal">
+                <p>
+                  Pixel Grid Studios was founded in 2020 by Subhanshu Gajbhiye, Creative Director. We turn complex engineering, products, and technical concepts into motion that audiences immediately understand.
+                </p>
+                <p>
+                  There is no permanent bench here. For every brief, we curate seasoned specialists chosen specifically for that project, coordinated directly by the founder — delivering campaign-defining work for leading technology and consumer brands globally.
+                </p>
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -247,25 +264,18 @@ export const Home: React.FC = () => {
               {/* Left Column: Context & Direct CTA (Slightly Darker for Subtle Differentiation) */}
               <div className="p-6 sm:p-10 lg:p-12 flex flex-col justify-between gap-8 bg-black/[0.045] dark:bg-black/30 text-brand-foreground">
                 <div>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-brand-subtle font-semibold">
-                    Studio Deliverables
-                  </span>
-                  <h3 className="mt-3 font-display text-2xl sm:text-3xl font-bold tracking-tight text-brand-foreground leading-snug">
-                    Cinema 4D &amp; After Effects motion systems built for impact.
+                  <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-brand-foreground leading-snug">
+                    Precision 3D &amp; motion systems built for impact.
                   </h3>
                   <p className="mt-4 text-base leading-relaxed text-brand-subtle font-normal">
                     Every asset is engineered with precision lighting, procedural shaders, and cinematic pacing — turning intricate engineering into clear, captivating visuals.
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-brand-foreground/10 flex flex-col gap-4">
-                  <div className="flex items-center gap-2 font-mono text-[11px] text-brand-subtle uppercase tracking-wider font-medium">
-                    <span className="size-1.5 rounded-full bg-emerald-500" />
-                    <span>05 Specialized Output Formats</span>
-                  </div>
+                <div>
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground px-7 py-3 font-display text-sm font-medium shadow-md transition-opacity duration-150 hover:opacity-90 border-0 self-start select-none cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground px-7 py-3.5 font-display text-sm font-medium shadow-md transition-opacity duration-150 hover:opacity-90 border-0 self-start select-none cursor-pointer"
                   >
                     <span>Start a Project</span>
                     <ArrowRight className="size-4" />

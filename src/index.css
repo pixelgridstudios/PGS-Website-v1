@@ -38,13 +38,17 @@
 .dark [class*="border-brand-foreground/10"],
 .dark [class*="border-brand-foreground/15"],
 .dark [class*="border-brand-foreground/20"],
-.dark [class*="border-neutral-900/35"] {
+.dark [class*="border-neutral-900/15"],
+.dark [class*="border-neutral-900/35"],
+.dark [class*="divide-brand-foreground/10"],
+.dark [class*="divide-neutral-900/15"] {
   border-color: #282828 !important;
 }
 
 .dark [class*="bg-brand-foreground/10"],
 .dark [class*="bg-brand-foreground/15"],
-.dark [class*="bg-brand-foreground/20"] {
+.dark [class*="bg-brand-foreground/20"],
+.dark [class*="bg-neutral-900/15"] {
   background-color: #282828 !important;
 }
 

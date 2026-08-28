@@ -134,8 +134,7 @@ export const workflowStages: WorkflowStage[] = [
   {
     title: "Delivery & Implementation",
     items: [
-      "Optimized exports for all your channels",
-      "Multiple formats & resolutions",
+      "Optimized exports for all channels & resolutions",
       "Final delivery package with usage guidelines",
     ],
   },
@@ -144,7 +143,7 @@ export const workflowStages: WorkflowStage[] = [
 export const motionServices: ServiceItem[] = [
   {
     title: "Product Launch Films",
-    copy: "Launch films that explain what a new product does and why it matters, built in Cinema 4D and After Effects.",
+    copy: "Launch films that explain what a new product does and why it matters with cinematic precision.",
   },
   {
     title: "Brand & Real Estate Films",
@@ -169,8 +168,8 @@ export const motionServices: ServiceItem[] = [
 ];
 
 export const toolsAndCraft: string[] = [
-  "Cinema 4D",
-  "After Effects",
+  "3D Animation",
+  "Kinematic Pacing",
   "Motion Design",
   "3D Visualization",
   "Brand Film",
@@ -180,11 +179,12 @@ export const studioStats: StatItem[] = [
   { value: "2020", label: "Founded" },
   { value: "10+", label: "Yas Mall campaigns" },
   { value: "6+", label: "Boat campaigns" },
-  { value: "100%", label: "Global remote delivery" },
+  { value: "100%", label: "Global client delivery" },
 ];
 
 export const socialLinks = [
   { name: "Instagram", href: "https://instagram.com" },
+  { name: "X", href: "https://x.com" },
   { name: "Vimeo", href: "https://vimeo.com" },
   { name: "Behance", href: "https://behance.net" },
   { name: "LinkedIn", href: "https://linkedin.com" },
