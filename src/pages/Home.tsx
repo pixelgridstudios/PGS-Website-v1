@@ -119,15 +119,17 @@ export const Home: React.FC = () => {
 
         {/* We are Pixel Grid: Signature Dot4 Asymmetric Split Card */}
         <section data-reveal className="my-6 sm:my-8">
-          <div className="w-full flex flex-col lg:grid lg:grid-cols-[380px_1fr] xl:grid-cols-[420px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
+          <div className="w-full flex flex-col lg:grid lg:grid-cols-[460px_1fr] xl:grid-cols-[520px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
             
             {/* Left Column: Context, Branding & Action */}
             <div className="p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-between gap-8 bg-black/[0.045] dark:bg-black/30 text-brand-foreground">
               <div>
-                <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brand-foreground leading-[1.05]">
-                  <span className="animate-wave mr-2.5 sm:mr-3.5 inline-block select-none">👋</span>
-                  <span>Hi, we're</span>
-                  <span className="block mt-1 sm:mt-1.5">Pixel Grid</span>
+                <h2 className="font-display text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] font-bold tracking-tight text-brand-foreground leading-[1.1]">
+                  <span className="flex items-center whitespace-nowrap">
+                    <span className="animate-wave mr-2.5 sm:mr-3 inline-block select-none">👋</span>
+                    <span>Hi, we're</span>
+                  </span>
+                  <span className="block mt-1 sm:mt-1.5 whitespace-nowrap">Pixel Grid</span>
                 </h2>
               </div>
 
@@ -144,7 +146,7 @@ export const Home: React.FC = () => {
 
             {/* Right Column: Lead Statement & Narrative */}
             <div className="p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-center gap-6 bg-brand-muted text-brand-foreground">
-              <div className="space-y-4 text-base sm:text-lg leading-relaxed text-brand-subtle font-normal">
+              <div className="max-w-2xl space-y-4 text-base sm:text-lg leading-relaxed text-brand-subtle font-normal">
                 <p>
                   Pixel Grid Studios was founded in 2020 by Subhanshu Gajbhiye, Creative Director. We turn complex engineering, products, and technical concepts into motion that audiences immediately understand.
                 </p>
