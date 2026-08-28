@@ -82,7 +82,7 @@ export const Home: React.FC = () => {
           {/* Main Hero Headline */}
           <div data-reveal data-reveal-delay="50" className="relative z-10 my-auto py-8">
             <h1 className="max-w-[22ch] font-display text-[8.5vw] font-bold leading-[1.05] tracking-tight sm:text-[5.5vw] lg:text-[3.2vw] text-white drop-shadow-md">
-              We take complex products and turn them into 3D magic that people actually want to watch.
+              We make complex products and systems visually understandable through motion design, 3D visualization, and brand film.
             </h1>
           </div>
 

@@ -77,65 +77,65 @@ export const allProjects: Project[] = [
 
 export const approachItems: ApproachItem[] = [
   {
-    title: "Craft first, ego last.",
-    copy: "No bloat, no layers of middle management. Just a tight crew of absolute 3D nerds making ridiculously good art on supercomputers.",
+    title: "Design a Strong Visual Identity",
+    copy: "From established brands to fresh beginnings, we make sure every visual element communicates clearly, feels considered, and amplifies your identity. We focus on clarity and character, so your brand resonates wherever it appears.",
   },
   {
-    title: "Zero bureaucracy.",
-    copy: "Skip the red tape and endless zoom calls. You'll work directly with our founder to make decisions fast and keep the creative juice flowing.",
+    title: "Build to Scale",
+    copy: "We approach every project with a design system in mind, built for flexibility and scalability across campaigns, platforms, and applications. Each system is modular, forming a foundation that can grow, adapt, and support the brand over time.",
   },
   {
-    title: "The A-Team model.",
-    copy: "We don't keep people on standby. When you bring us a brief, we assemble a custom dream-team of freelance specialists just for your project.",
+    title: "Launch with Impact",
+    copy: "From strategy to execution, we deliver work that captures attention and communicates the idea clearly. Coupled with proven results, our work drives high engagement, generates views, and creates scroll-stopping moments.",
   },
 ];
 
 export const workflowStages: WorkflowStage[] = [
   {
-    title: "Let's figure this out",
+    title: "Discovery & Strategy",
     items: [
-      "We sit down (virtually) and geek out over your product",
-      "Vibes, moodboards, and exploring the visual direction",
-      "A solid game plan for the whole project",
+      "Strategy session to explore your objectives",
+      "Research your brand, industry, and target audience",
+      "Develop a clear roadmap for the project",
     ],
   },
   {
-    title: "Making it look pretty",
+    title: "Concept & Storytelling",
     items: [
-      "Designing super-crisp 3D styleframes",
-      "Color, texture, and lighting tests",
-      "A sneak peek of exactly how gorgeous the final video will look",
+      "Scriptwriting (if necessary)",
+      "Storyboarding to visualize the flow",
+      "Style frames to define the visual direction",
     ],
   },
   {
-    title: "Making it move",
+    title: "Design & Art Direction",
     items: [
-      "Rough motion tests (so we know it works)",
-      "Smooth camera swoops and dynamic framing",
-      "The actual high-fidelity 3D animation",
+      "Moodboards and style development",
+      "Color palette, typography, and overall aesthetic",
+      "Custom illustrations, 3D models, or motion graphics",
     ],
   },
   {
-    title: "The glossy details",
+    title: "Animation & Motion Design",
     items: [
-      "Hyper-realistic lighting and shadow passes",
-      "Delicious textures and material details",
-      "Custom sound effects that actually slap",
+      "Keyframe animation & fluid motion design",
+      "3D rendering and compositing (if applicable)",
+      "Sound design & music selection for maximum impact",
     ],
   },
   {
-    title: "Tweaks & Polish",
+    title: "Feedback & Refinements",
     items: [
-      "Your honest, no-filter feedback",
-      "A few pixel-perfect tweaks and timing adjustments",
-      "The final, beautiful layer of polish",
+      "Review and revisions based on your input",
+      "Edit adjustments to timing, pacing, or transitions",
+      "Final quality checks before delivery",
     ],
   },
   {
-    title: "Wrap it up",
+    title: "Delivery & Implementation",
     items: [
-      "Videos ready for literally any screen or platform",
-      "A neat little package with everything you need",
+      "Optimized exports for all channels & resolutions",
+      "Final delivery package with usage guidelines",
     ],
   },
 ];

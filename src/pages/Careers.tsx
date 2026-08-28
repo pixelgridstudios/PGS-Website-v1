@@ -233,7 +233,7 @@ export const Careers: React.FC = () => {
                 Don’t see your exact role listed?
               </h2>
               <p className="text-base text-brand-panel-foreground/80 leading-relaxed">
-                No worries! We're always on the lookout for 3D wizards, sound geeks, and motion nerds to join our freelance roster for upcoming sprints. Show us what you've got!
+                We are constantly expanding our global roster of specialist freelance animators, sound designers, lookdev artists, and realtime creators for upcoming commercial sprints. Send over your reel anytime.
               </p>
             </div>
 

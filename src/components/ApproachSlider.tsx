@@ -11,25 +11,25 @@ interface ApproachItem {
 
 const approachItems: ApproachItem[] = [
   {
-    title: "Craft first, ego last.",
-    tagline: "01 The Work",
-    copy: "No bloat, no layers of middle management. Just a tight crew of absolute 3D nerds making ridiculously good art on supercomputers.",
-    image: "/assets/approach-1.jpg",
-    imageAlt: "3D artists collaborating in studio",
+    title: "Design a Strong Visual Identity",
+    tagline: "Clarity & Character",
+    copy: "From established brands to fresh beginnings, we ensure every visual element communicates clearly, feels intentional, and amplifies your identity across every touchpoint.",
+    image: "/assets/chrono-morph.jpg",
+    imageAlt: "Design a Strong Visual Identity — styleframe render",
   },
   {
-    title: "Zero bureaucracy.",
-    tagline: "02 The Vibe",
-    copy: "Skip the red tape and endless zoom calls. You'll work directly with our founder to make decisions fast and keep the creative juice flowing.",
-    image: "/assets/approach-2.jpg",
-    imageAlt: "Direct creative direction sessions",
+    title: "Build to Scale",
+    tagline: "Modular Systems",
+    copy: "We engineer modular 3D design systems built for flexibility and consistency across marketing campaigns, platforms, and international broadcast formats.",
+    image: "/assets/void-textiles.jpg",
+    imageAlt: "Build to Scale — modular 3D simulation system",
   },
   {
-    title: "The A-Team model.",
-    tagline: "03 The Setup",
-    copy: "We don't keep people on standby. When you bring us a brief, we assemble a custom dream-team of freelance specialists just for your project.",
-    image: "/assets/approach-3.jpg",
-    imageAlt: "Agile 3D specialist teams",
+    title: "Launch with Impact",
+    tagline: "Engagement & Reach",
+    copy: "We craft scroll-stopping motion and high-fidelity visuals that command attention, clarify technical value, and drive meaningful audience engagement.",
+    image: "/assets/precision-archive.jpg",
+    imageAlt: "Launch with Impact — high-end product visualization",
   },
 ];
 
