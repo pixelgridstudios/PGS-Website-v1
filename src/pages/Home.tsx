@@ -125,10 +125,7 @@ export const Home: React.FC = () => {
             <div className="p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-between gap-8 bg-black/[0.045] dark:bg-black/30 text-brand-foreground">
               <div>
                 <h2 className="font-display text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] font-bold tracking-tight text-brand-foreground leading-[1.1]">
-                  <span className="flex items-center whitespace-nowrap">
-                    <span className="animate-wave mr-2.5 sm:mr-3 inline-block select-none">👋</span>
-                    <span>Hi, we're</span>
-                  </span>
+                  <span className="block whitespace-nowrap">Hi, we're</span>
                   <span className="block mt-1 sm:mt-1.5 whitespace-nowrap">Pixel Grid</span>
                 </h2>
               </div>
