@@ -215,7 +215,20 @@ button:focus-visible, a:focus-visible, [role="button"]:focus-visible {
   font-variation-settings: 'wght' 550 !important;
 }
 
-button *, a *, [role="button"] * {
-  box-sizing: border-box !important;
+/* WAVING HAND ANIMATION */
+@keyframes wave-hand {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
 }
 
+.animate-wave {
+  display: inline-block;
+  transform-origin: 70% 70% !important;
+  animation: wave-hand 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}

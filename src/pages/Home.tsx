@@ -125,17 +125,18 @@ export const Home: React.FC = () => {
             <div className="p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-between gap-8 bg-black/[0.045] dark:bg-black/30 text-brand-foreground">
               <div>
                 <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brand-foreground leading-[1.05]">
-                  Hi, we're Pixel Grid. 👋
+                  <span className="animate-wave mr-2.5 sm:mr-3.5 inline-block select-none">👋</span>
+                  <span>Hi, we're Pixel Grid.</span>
                 </h2>
               </div>
 
-              <div>
+              <div className="pt-3 sm:pt-4">
                 <Link
                   to="/about"
-                  className="inline-flex items-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground px-6 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-medium shadow-md transition-opacity duration-150 hover:opacity-90 border-0"
+                  className="inline-flex items-center gap-3 rounded-full bg-brand-panel text-brand-panel-foreground px-7 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-medium tracking-wide shadow-md transition-opacity duration-150 hover:opacity-90 border-0"
                 >
                   <span>More about us</span>
-                  <ArrowRight className="size-4" />
+                  <ArrowRight className="size-4 shrink-0" />
                 </Link>
               </div>
             </div>
