@@ -132,7 +132,7 @@ export const Home: React.FC = () => {
                   <img
                     src="/assets/pixel-grid-logo.png"
                     alt="Pixel Grid Studios"
-                    className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-full object-contain dark:invert select-none"
+                    className="h-11 sm:h-14 md:h-16 lg:h-[72px] w-auto max-w-full object-contain dark:invert select-none"
                   />
                 </div>
               </div>
@@ -150,9 +150,6 @@ export const Home: React.FC = () => {
 
             {/* Right Column: Lead Statement & Narrative */}
             <div className="p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-center gap-6 bg-brand-muted text-brand-foreground">
-              <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-brand-foreground leading-snug">
-                Founder-led studio — working globally
-              </h3>
               <div className="space-y-4 text-base sm:text-lg leading-relaxed text-brand-subtle font-normal">
                 <p>
                   Pixel Grid Studios was founded in 2020 by Subhanshu Gajbhiye, Creative Director. We turn complex engineering, products, and technical concepts into motion that audiences immediately understand.
