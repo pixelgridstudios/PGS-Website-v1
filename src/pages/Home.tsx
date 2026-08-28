@@ -82,7 +82,7 @@ export const Home: React.FC = () => {
           {/* Main Hero Headline */}
           <div data-reveal data-reveal-delay="50" className="relative z-10 my-auto py-8">
             <h1 className="max-w-[22ch] font-display text-[8.5vw] font-bold leading-[1.05] tracking-tight sm:text-[5.5vw] lg:text-[3.2vw] text-white drop-shadow-md">
-              We make complex products and systems visually understandable through motion design, 3D visualization, and brand film.
+              We take complex products and turn them into 3D magic that people actually want to watch.
             </h1>
           </div>
 
@@ -125,7 +125,7 @@ export const Home: React.FC = () => {
             <div className="p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-between gap-8 bg-black/[0.045] dark:bg-black/30 text-brand-foreground">
               <div>
                 <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brand-foreground leading-[1.05]">
-                  We are Pixel Grid
+                  Hi, we're Pixel Grid. 👋
                 </h2>
               </div>
 

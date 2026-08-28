@@ -37,10 +37,10 @@ export const About: React.FC = () => {
         {/* Page Header */}
         <section data-reveal className="flex flex-col gap-4 max-w-4xl">
           <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-foreground leading-[1.05]">
-            Crafting campaign-defining 3D motion for products that matter.
+            We make ridiculously good 3D animations for products people actually care about.
           </h1>
           <p className="mt-2 text-lg sm:text-xl text-brand-subtle font-normal leading-relaxed">
-            Founded in 2020 by Subhanshu Gajbhiye, Pixel Grid Studios turns complex engineering, physical products, and technical narratives into captivating visual films.
+            Founded in 2020 by Subhanshu Gajbhiye, we take complex engineering and technical specs and turn them into visual magic that audiences immediately understand (and love).
           </p>
         </section>
 

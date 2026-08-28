@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
             {/* Left Side: Headline, Let's Talk CTA & Clean Email Line */}
             <div className="max-w-[620px] flex flex-col gap-6">
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-neutral-950 dark:text-brand-foreground leading-[1.08]">
-                Building something that needs explaining?
+                Got a complex product? Let's make it look like magic. ✨
               </h2>
 
               <div className="flex flex-wrap items-center gap-4 sm:gap-5 pt-2">
@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
                   to="/contact"
                   className="inline-flex items-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground px-7 sm:px-8 py-3 sm:py-3.5 font-display text-sm sm:text-[15px] font-medium shadow-md transition-opacity duration-200 hover:opacity-90 group select-none cursor-pointer border-0"
                 >
-                  <span>Let's Talk!</span>
+                  <span>Say Hi</span>
                   <ArrowRight className="size-4" />
                 </Link>
 
