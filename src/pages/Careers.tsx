@@ -140,11 +140,11 @@ export const Careers: React.FC = () => {
                         type="button"
                         onClick={() => setExpandedPosition(isExpanded ? null : position.id)}
                         aria-label="Expand role details"
-                        className="size-10 sm:size-11 inline-flex items-center justify-center rounded-full bg-brand-bg text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors border-0 cursor-pointer shrink-0"
+                        className="group size-10 sm:size-11 inline-flex items-center justify-center rounded-full bg-brand-bg text-brand-foreground transition-all duration-[400ms] ease-spring-vibe hover:bg-brand-panel hover:text-brand-panel-foreground hover:-translate-y-1 hover:scale-[1.03] hover:shadow-md active:scale-95 border-0 cursor-pointer shrink-0"
                       >
                         <ChevronDown
-                          className={`size-4 transition-transform duration-200 ${
-                            isExpanded ? "rotate-180" : ""
+                          className={`size-4 transition-transform duration-[400ms] ease-spring-vibe ${
+                            isExpanded ? "rotate-180" : "group-hover:translate-y-0.5"
                           }`}
                         />
                       </button>
@@ -152,9 +152,14 @@ export const Careers: React.FC = () => {
                   </div>
 
                   {/* Expandable Full Breakdown Drawer */}
-                  {isExpanded && (
-                    <div className="px-6 sm:px-8 pb-8 pt-2 border-t border-brand-foreground/10 animate-in fade-in duration-200">
-                      <div className="grid gap-8 lg:grid-cols-2 pt-6">
+                  <div
+                    className={`grid transition-all duration-[400ms] ease-spring-vibe ${
+                      isExpanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0 pointer-events-none"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-6 sm:px-8 pb-8 pt-2 border-t border-brand-foreground/10">
+                        <div className="grid gap-8 lg:grid-cols-2 pt-6">
                         {/* Responsibilities */}
                         <div className="space-y-3">
                           <h4 className="font-mono text-xs uppercase tracking-wider text-brand-subtle font-semibold">
@@ -210,9 +215,10 @@ export const Careers: React.FC = () => {
                           <span>Apply for {position.title}</span>
                           <ArrowRight className="size-3.5 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
                         </Link>
+                        </div>
                       </div>
                     </div>
-                  )}
+                  </div>
                 </div>
               );
             })}

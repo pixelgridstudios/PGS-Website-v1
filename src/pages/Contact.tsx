@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Globe, MapPin, ChevronDown, CheckCircle2, ArrowRight } from "lucide-react";
+import { Mail, Globe, ChevronDown, CheckCircle2, ArrowRight } from "lucide-react";
 import DotDivider from "@/components/DotDivider";
 import InButtonMailSlot from "@/components/InButtonMailSlot";
 
@@ -53,7 +53,6 @@ export const Contact: React.FC = () => {
   // Live Pune / India Standard Time Master Studio Timepiece
   const [timeString, setTimeString] = useState<string>("");
   const [seconds, setSeconds] = useState<string>("00");
-  const [secNum, setSecNum] = useState<number>(0);
   const [colonVisible, setColonVisible] = useState<boolean>(true);
   const [dateString, setDateString] = useState<string>("");
 
@@ -79,9 +78,7 @@ export const Contact: React.FC = () => {
       const parts = formattedTime.split(":");
 
       setTimeString(`${parts[0]}:${parts[1]}`);
-      const s = parseInt(parts[2] || "0", 10);
       setSeconds(parts[2] || "00");
-      setSecNum(s);
       setDateString(formattedDate);
       setColonVisible((prev) => !prev);
     };

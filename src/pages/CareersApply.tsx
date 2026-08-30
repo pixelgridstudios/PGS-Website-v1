@@ -9,7 +9,6 @@ import {
   MapPin,
   Clock,
   Briefcase,
-  Layers,
   AlertCircle,
   Mail,
   Check,
