@@ -38,59 +38,13 @@ export const SmoothScrollProvider: React.FC<{ children: React.ReactNode }> = ({ 
     };
   }, []);
 
-  // 2. Global Viewport Intersection Reveal Engine & Route Reset
+  // 2. Route Reset
   useEffect(() => {
     if (lenisRef.current) {
       lenisRef.current.scrollTo(0, { immediate: true });
     } else {
       window.scrollTo(0, 0);
     }
-
-    const unrevealed = document.querySelectorAll("[data-reveal]:not(.is-revealed)");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-revealed");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: "0px 0px -40px 0px",
-        threshold: 0.05,
-      }
-    );
-
-    unrevealed.forEach((el) => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        el.classList.add("is-revealed");
-      } else {
-        observer.observe(el);
-      }
-    });
-
-    const mutationObserver = new MutationObserver(() => {
-      const newItems = document.querySelectorAll("[data-reveal]:not(.is-revealed)");
-      newItems.forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          el.classList.add("is-revealed");
-        } else {
-          observer.observe(el);
-        }
-      });
-    });
-
-    mutationObserver.observe(document.body, { childList: true, subtree: true });
-
-    return () => {
-      observer.disconnect();
-      mutationObserver.disconnect();
-    };
   }, [pathname]);
 
   return <>{children}</>;

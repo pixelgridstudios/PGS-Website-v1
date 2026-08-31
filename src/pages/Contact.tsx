@@ -1,7 +1,21 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, Globe, ChevronDown, CheckCircle2, ArrowRight } from "lucide-react";
+import {
+  Mail,
+  Send,
+  MapPin,
+  Clock,
+  MessageSquare,
+  Sparkles,
+  CheckCircle2,
+  ArrowRight,
+  Phone,
+  Globe,
+  ChevronDown
+} from "lucide-react";
 import DotDivider from "@/components/DotDivider";
+import FadeIn from "@/components/animations/FadeIn";
+import TextReveal from "@/components/animations/TextReveal";
 import InButtonMailSlot from "@/components/InButtonMailSlot";
 
 const socials = [
@@ -116,17 +130,19 @@ export const Contact: React.FC = () => {
     <div className="px-3 sm:px-5">
       <div className="mx-auto max-w-[1600px] pt-8 sm:pt-12 pb-2 sm:pb-3">
         {/* Top Title */}
-        <div data-reveal className="flex flex-col gap-2 max-w-3xl">
-          <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-foreground">
-            Contact us
-          </h1>
-          <p className="mt-2 text-base sm:text-lg text-brand-subtle font-normal">
+        {/* Top Title */}
+        <div className="flex flex-col gap-2 max-w-3xl">
+          <TextReveal
+            text="Contact us"
+            className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-foreground"
+          />
+          <FadeIn delay={0.2} direction="up" className="mt-2 text-base sm:text-lg text-brand-subtle font-normal">
             Tell us about your upcoming launch, timeline, or design brief.
-          </p>
+          </FadeIn>
         </div>
 
         {/* 1. Original Dot4 Split Contact Card (50% Form Left + 50% Studio Clock Right) */}
-        <section data-reveal data-reveal-delay="100" className="mt-8 rounded-2xl sm:rounded-3xl bg-brand-muted shadow-xl border-0 overflow-hidden">
+        <FadeIn delay={0.2} fullWidth className="mt-8 rounded-2xl sm:rounded-3xl bg-brand-muted shadow-xl border-0 overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left (50%): Project Intake Form */}
             <div className="p-8 sm:p-10 lg:p-12 xl:p-14 bg-brand-bg/95 flex flex-col justify-between">
@@ -368,10 +384,10 @@ export const Contact: React.FC = () => {
               </div>
             </div>
           </div>
-        </section>
+        </FadeIn>
 
         {/* 2. Info Cards (General Inquiries + Social Networks Placed BELOW the form) */}
-        <div data-reveal data-reveal-delay="150" className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <FadeIn delay={0.25} className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {/* Email Card */}
           <div className="flex items-center gap-4 rounded-2xl bg-brand-muted/70 p-5 backdrop-blur-sm shadow-xs border-0">
             <div className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground">
@@ -414,12 +430,12 @@ export const Contact: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </FadeIn>
 
         <DotDivider className="my-6 sm:my-8" />
 
         {/* 3. Studio & Legal Notice Accordion */}
-        <section data-reveal data-reveal-delay="200" className="w-full">
+        <FadeIn delay={0.3} fullWidth className="w-full">
           <button
             type="button"
             onClick={() => setLegalOpen(!legalOpen)}
@@ -470,7 +486,7 @@ export const Contact: React.FC = () => {
               </div>
             </div>
           </div>
-        </section>
+        </FadeIn>
       </div>
     </div>
   );

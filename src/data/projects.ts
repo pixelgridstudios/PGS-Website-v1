@@ -49,7 +49,7 @@ export const projects: ProjectData[] = [
     id: "01",
     slug: "thinking-architecture",
     title: "Thinking Architecture",
-    subtitle: "Architectural Form & Spatial CGI · Brand Film",
+    subtitle: "Architectural Form and Spatial CGI · Brand Film",
     client: "Thinking Architecture",
     year: "2024",
     category: "Brand Film",
@@ -63,7 +63,7 @@ export const projects: ProjectData[] = [
     heroVideo: "/assets/hero-bg.mp4",
     heroVideoPoster: "/assets/chrono-morph.jpg",
     brief: {
-      title: "Thinking Architecture — Sculpting Light & Materiality in Motion",
+      title: "Thinking Architecture — Sculpting Light and Materiality in Motion",
       description: [
         "Thinking Architecture required a cinematic brand film to express their design philosophy: translating structural geometry, spatial light dispersion, and material textures into living spaces.",
         "Pixel Grid Studios directed and produced a conceptual 3D narrative exploring architectural volumes from micro material textures to monumental facades with photorealistic lighting and acoustic ambiance.",
@@ -71,7 +71,7 @@ export const projects: ProjectData[] = [
     },
     sections: [
       {
-        heading: "Structural Light & Spatial Volumes",
+        heading: "Structural Light and Spatial Volumes",
         copy: "Every visual sequence was engineered to explore spatial proportions, raw brutalist textures, and natural sunlight evolution across architectural surfaces.",
         layout: "two-column-images",
         images: [
@@ -85,7 +85,7 @@ export const projects: ProjectData[] = [
         videoPoster: "/assets/chrono-morph.jpg",
       },
       {
-        heading: "Procedural Shading & Physical Atmosphere",
+        heading: "Procedural Shading and Physical Atmosphere",
         copy: "Through procedural concrete, stone, and glass shaders, we captured atmospheric depth and material imperfections with high-fidelity photorealism.",
         layout: "two-column-images",
         images: [
@@ -103,7 +103,7 @@ export const projects: ProjectData[] = [
       { role: "Client", names: ["Thinking Architecture"] },
       { role: "Creative Direction", names: ["Subhanshu Gajbhiye"] },
       { role: "Production Studio", names: ["Pixel Grid Studios"] },
-      { role: "3D Motion & Lighting", names: ["Subhanshu Gajbhiye", "Pixel Grid Motion Team"] },
+      { role: "3D Motion and Lighting", names: ["Subhanshu Gajbhiye", "Pixel Grid Motion Team"] },
       { role: "Sound Design", names: ["Resonance Audio Lab"] },
       { role: "Core Disciplines", names: ["3D Animation", "Architectural CGI", "Spatial Lighting", "LookDev"] },
     ],
@@ -167,9 +167,9 @@ export const projects: ProjectData[] = [
       { role: "Client", names: ["TATA Power India"] },
       { role: "Creative Direction", names: ["Subhanshu Gajbhiye"] },
       { role: "Production Studio", names: ["Pixel Grid Studios"] },
-      { role: "3D Animation & Compositing", names: ["Subhanshu Gajbhiye", "Pixel Grid Core"] },
+      { role: "3D Animation and Compositing", names: ["Subhanshu Gajbhiye", "Pixel Grid Core"] },
       { role: "Original Score", names: ["Resonance Audio Studio"] },
-      { role: "Core Disciplines", names: ["3D Animation", "Lighting & LookDev", "Compositing"] },
+      { role: "Core Disciplines", names: ["3D Animation", "Lighting and LookDev", "Compositing"] },
     ],
     nextProject: {
       slug: "raymond-invictus",
@@ -182,7 +182,7 @@ export const projects: ProjectData[] = [
     id: "03",
     slug: "raymond-invictus",
     title: "Invictus by Raymond Realty",
-    subtitle: "Luxury Living & Architectural Visualization · Campaign Film",
+    subtitle: "Luxury Living and Architectural Visualization · Campaign Film",
     client: "Raymond Realty",
     year: "2024",
     category: "Brand Film",
@@ -204,12 +204,12 @@ export const projects: ProjectData[] = [
     },
     sections: [
       {
-        heading: "Architectural Form & Monumental Proportions",
+        heading: "Architectural Form and Monumental Proportions",
         copy: "Every visual sequence was engineered to highlight the soaring facade, geometric balance, and spatial luxury of the development.",
         layout: "two-column-images",
         images: [
           { src: "/assets/styleframe-abstract.jpg", alt: "Tower Facade Architectural Lighting" },
-          { src: "/assets/styleframe-glass.jpg", alt: "Reflective Glass & Interior Volume" },
+          { src: "/assets/styleframe-glass.jpg", alt: "Reflective Glass and Interior Volume" },
         ],
       },
       {
@@ -218,12 +218,12 @@ export const projects: ProjectData[] = [
         videoPoster: "/assets/precision-archive.jpg",
       },
       {
-        heading: "Materiality, Lighting & Atmospheric Depth",
+        heading: "Materiality, Lighting and Atmospheric Depth",
         copy: "Delivered with custom physical lighting rigs, daytime-to-dusk transitions, and atmospheric particles to establish a world of refined elegance.",
         layout: "two-column-images",
         images: [
           { src: "/assets/styleframe-tech.jpg", alt: "Spatial Amenity Deck Render" },
-          { src: "/assets/styleframe-hardware.jpg", alt: "Lighting & Texture Breakdown" },
+          { src: "/assets/styleframe-hardware.jpg", alt: "Lighting and Texture Breakdown" },
         ],
       },
     ],
@@ -249,7 +249,7 @@ export const projects: ProjectData[] = [
     id: "04",
     slug: "realme-x-kyra",
     title: "Realme X Kyra",
-    subtitle: "Virtual Human & Next-Gen Smartphone CGI",
+    subtitle: "Virtual Human and Next-Gen Smartphone CGI",
     client: "Realme",
     year: "2023",
     category: "Product Launch",
@@ -271,7 +271,7 @@ export const projects: ProjectData[] = [
     },
     sections: [
       {
-        heading: "Kinetic Holography & Optical Engineering",
+        heading: "Kinetic Holography and Optical Engineering",
         copy: "We developed stylized volumetric laser effects and refractive glass dispersion to highlight the futuristic camera array and high-refresh holographic display.",
         layout: "two-column-images",
         images: [
@@ -289,7 +289,7 @@ export const projects: ProjectData[] = [
       { role: "Client", names: ["Realme"] },
       { role: "Creative Direction", names: ["Subhanshu Gajbhiye"] },
       { role: "Production Studio", names: ["Pixel Grid Studios"] },
-      { role: "3D Motion & Hologram Design", names: ["Subhanshu Gajbhiye", "Pixel Grid Team"] },
+      { role: "3D Motion and Hologram Design", names: ["Subhanshu Gajbhiye", "Pixel Grid Team"] },
       { role: "Sound Design", names: ["Pulse Audio Studio"] },
       { role: "Core Disciplines", names: ["3D Animation", "Holographic Motion", "Lighting", "Compositing"] },
     ],

@@ -1,7 +1,7 @@
 export interface JobPosition {
   id: string;
   title: string;
-  department: "3D & Motion" | "Art Direction & LookDev" | "Production & Pipeline" | "Freelance Network";
+  department: "3D and Motion" | "Art Direction and LookDev" | "Production and Pipeline" | "Freelance Network";
   location: string;
   type: string;
   experience: string;
@@ -15,8 +15,8 @@ export interface JobPosition {
 export const openPositions: JobPosition[] = [
   {
     id: "3d-motion-designer",
-    title: "3D Motion Designer & LookDev",
-    department: "3D & Motion",
+    title: "3D Motion Designer and LookDev",
+    department: "3D and Motion",
     location: "Remote",
     type: "Full-Time",
     experience: "2+ Years in Commercial 3D",
@@ -35,7 +35,7 @@ export const openPositions: JobPosition[] = [
       "Proficiency with compositing, motion graphics, and color finishing.",
       "Strong understanding of camera mechanics, focal lengths, depth of field, and editorial pacing.",
     ],
-    tools: ["3D Animation", "Lighting & LookDev", "Procedural Shaders", "Compositing", "ACEScg"],
+    tools: ["3D Animation", "Lighting and LookDev", "Procedural Shaders", "Compositing", "ACEScg"],
     whatWeOffer: [
       "Dedicated multi-RTX GPU workstation + dedicated cloud farm nodes.",
       "15% allocated studio R&D time for personal motion experiments.",
@@ -45,7 +45,7 @@ export const openPositions: JobPosition[] = [
   {
     id: "commercial-art-director",
     title: "Commercial Art Director / Motion Lead",
-    department: "Art Direction & LookDev",
+    department: "Art Direction and LookDev",
     location: "Remote",
     type: "Full-Time",
     experience: "5+ Years in Agency / Studio",
@@ -62,7 +62,7 @@ export const openPositions: JobPosition[] = [
       "Mastery of visual storytelling, design typography, cinematic framing, and art direction.",
       "Clear, empathetic communication and the ability to mentor and inspire multidisciplinary artists.",
     ],
-    tools: ["Art Direction", "LookDev", "Styleframes", "Design Systems", "Pacing & Story"],
+    tools: ["Art Direction", "LookDev", "Styleframes", "Design Systems", "Pacing and Story"],
     whatWeOffer: [
       "Leadership seat shaping the studio's portfolio direction and aesthetic identity.",
       "Significant campaign profit-sharing bonuses.",
@@ -71,8 +71,8 @@ export const openPositions: JobPosition[] = [
   },
   {
     id: "creative-producer-coordinator",
-    title: "Creative Producer & Studio Coordinator",
-    department: "Production & Pipeline",
+    title: "Creative Producer and Studio Coordinator",
+    department: "Production and Pipeline",
     location: "Remote",
     type: "Full-Time",
     experience: "3+ Years in Studio Production",
@@ -100,7 +100,7 @@ export const openPositions: JobPosition[] = [
 
 export const generalRosterPosition: JobPosition = {
   id: "freelance-roster-specialist",
-  title: "Freelance Roster & General Specialist",
+  title: "Freelance Roster and General Specialist",
   department: "Freelance Network",
   location: "Remote / Project-Based",
   type: "Contract / Sprint-Based",

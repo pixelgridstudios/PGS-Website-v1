@@ -18,6 +18,8 @@ import {
   Gift,
 } from "lucide-react";
 import DotDivider from "@/components/DotDivider";
+import FadeIn from "@/components/animations/FadeIn";
+import TextReveal from "@/components/animations/TextReveal";
 import { openPositions, allApplicableRoles, JobPosition } from "@/data/careers";
 
 const softwareOptions = [
@@ -143,7 +145,7 @@ export const CareersApply: React.FC = () => {
     <div className="px-3 sm:px-5">
       <div className="mx-auto max-w-[1600px] pt-8 sm:pt-12 pb-2 sm:pb-3">
         {/* Top Navigation: Back Link */}
-        <div data-reveal className="mb-6 sm:mb-8">
+        <FadeIn delay={0.1} direction="none" className="mb-6 sm:mb-8">
           <Link
             to="/careers"
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-brand-subtle hover:text-brand-foreground transition-colors group"
@@ -151,11 +153,11 @@ export const CareersApply: React.FC = () => {
             <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" />
             <span>Back to Careers &amp; All Roles</span>
           </Link>
-        </div>
+        </FadeIn>
 
         {isSubmitted ? (
           /* SUCCESS CONFIRMATION STATE */
-          <section data-reveal className="rounded-2xl sm:rounded-3xl bg-brand-muted p-8 sm:p-12 lg:p-16 max-w-4xl mx-auto text-center border-0 shadow-sm">
+          <FadeIn delay={0.1} fullWidth className="rounded-2xl sm:rounded-3xl bg-brand-muted p-8 sm:p-12 lg:p-16 max-w-4xl mx-auto text-center border-0 shadow-sm">
             <div className="mx-auto flex size-16 sm:size-20 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-500 shadow-inner mb-6">
               <CheckCircle2 className="size-10 sm:size-12" />
             </div>
@@ -202,13 +204,13 @@ export const CareersApply: React.FC = () => {
                 <span>Submit Another Role</span>
               </button>
             </div>
-          </section>
+          </FadeIn>
         ) : (
           <div className="space-y-8">
             {/* ============================================================ */}
             {/* 1. TOP BLOCK: ONE UNIFIED JOB DESCRIPTION & RESPONSIBILITY   */}
             {/* ============================================================ */}
-            <section data-reveal className="rounded-2xl sm:rounded-3xl bg-brand-muted p-8 sm:p-12 lg:p-14 border-0 shadow-xs space-y-8">
+            <FadeIn delay={0.1} fullWidth className="rounded-2xl sm:rounded-3xl bg-brand-muted p-8 sm:p-12 lg:p-14 border-0 shadow-xs space-y-8">
               
               {/* Top Header: Badges & Overview */}
               <div className="space-y-6">
@@ -326,7 +328,7 @@ export const CareersApply: React.FC = () => {
                   </ul>
                 </div>
               </div>
-            </section>
+            </FadeIn>
 
             <DotDivider className="my-6 sm:my-8" />
 
@@ -334,12 +336,12 @@ export const CareersApply: React.FC = () => {
             {/* 2. BOTTOM BLOCK: 50% APPLICATION FORM + 50% STUDIO PROTOCOL   */}
             {/* (50/50 Split Card Architecture matching the Contact Page)      */}
             {/* ============================================================ */}
-            <section
-              id="application-card"
-              data-reveal
+            <FadeIn
+              delay={0.1}
+              fullWidth
               className="rounded-2xl sm:rounded-3xl bg-brand-muted shadow-xl border-0 overflow-hidden"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div id="application-card" className="grid grid-cols-1 lg:grid-cols-2">
                 
                 {/* LEFT (50%): Candidate Application Form */}
                 <div className="p-8 sm:p-10 lg:p-12 xl:p-14 bg-brand-bg/95 flex flex-col justify-between">
@@ -659,7 +661,7 @@ export const CareersApply: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </section>
+            </FadeIn>
           </div>
         )}
       </div>

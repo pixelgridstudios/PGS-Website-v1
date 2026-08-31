@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import DotDivider from "@/components/DotDivider";
 import { openPositions } from "@/data/careers";
+import FadeIn from "@/components/animations/FadeIn";
+import TextReveal from "@/components/animations/TextReveal";
 
 export const Careers: React.FC = () => {
   const [selectedDept, setSelectedDept] = useState<string>("All");
@@ -43,19 +45,20 @@ export const Careers: React.FC = () => {
     <div className="px-3 sm:px-5">
       <div className="mx-auto max-w-[1600px] pt-8 sm:pt-12 pb-2 sm:pb-3">
         {/* 1. Page Header */}
-        <section data-reveal className="flex flex-col gap-4 max-w-4xl">
-          <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-foreground leading-[1.05]">
-            Join the Studio
-          </h1>
-          <p className="mt-2 text-lg sm:text-xl text-brand-subtle font-normal leading-relaxed max-w-3xl">
+        <div className="flex flex-col gap-4 max-w-4xl">
+          <TextReveal
+            text="Join the Studio"
+            className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-foreground leading-[1.05]"
+          />
+          <FadeIn delay={0.2} direction="up" className="mt-2 text-lg sm:text-xl text-brand-subtle font-normal leading-relaxed max-w-3xl">
             We build campaign-defining 3D launch films, procedural visual systems, and spatial CGI for products that matter. We are always looking for visionary artists, technical directors, and motion storytellers.
-          </p>
-        </section>
+          </FadeIn>
+        </div>
 
         <DotDivider className="my-6 sm:my-8" />
 
         {/* 2. Open Positions Section */}
-        <section data-reveal className="space-y-6">
+        <FadeIn delay={0.1} className="space-y-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
               <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-brand-subtle font-medium mb-1">
@@ -222,12 +225,12 @@ export const Careers: React.FC = () => {
               );
             })}
           </div>
-        </section>
+        </FadeIn>
 
         <DotDivider />
 
         {/* 3. Spontaneous / Freelance General Roster Card */}
-        <section data-reveal className="rounded-2xl sm:rounded-3xl bg-brand-panel text-brand-panel-foreground p-8 sm:p-12 shadow-md border-0">
+        <FadeIn delay={0.2} fullWidth className="rounded-2xl sm:rounded-3xl bg-brand-panel text-brand-panel-foreground p-8 sm:p-12 shadow-md border-0">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div className="max-w-2xl space-y-3">
               <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-emerald-400 font-semibold">
@@ -270,7 +273,7 @@ export const Careers: React.FC = () => {
               </button>
             </div>
           </div>
-        </section>
+        </FadeIn>
       </div>
     </div>
   );

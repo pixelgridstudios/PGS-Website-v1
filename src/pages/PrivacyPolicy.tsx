@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ShieldCheck, Mail, ArrowLeft, ChevronRight, Lock, Eye, FileText, Globe } from "lucide-react";
 import DotDivider from "@/components/DotDivider";
+import FadeIn from "@/components/animations/FadeIn";
+import TextReveal from "@/components/animations/TextReveal";
 
 const privacySections = [
   {
@@ -228,7 +230,7 @@ export const PrivacyPolicy: React.FC = () => {
     <div className="px-3 sm:px-5">
       <div className="mx-auto max-w-[1600px] py-8 sm:py-12">
         {/* Back Link */}
-        <div data-reveal className="mb-6 sm:mb-8">
+        <FadeIn delay={0.1} direction="none" className="mb-6 sm:mb-8">
           <Link
             to="/"
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-brand-subtle hover:text-brand-foreground transition-colors group"
@@ -236,16 +238,17 @@ export const PrivacyPolicy: React.FC = () => {
             <ArrowLeft className="size-4" />
             <span>Back to Home</span>
           </Link>
-        </div>
+        </FadeIn>
 
         {/* Hero Header */}
-        <div data-reveal className="flex flex-col gap-3 max-w-3xl">
-          <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-foreground">
-            Privacy Policy
-          </h1>
-          <p className="mt-2 text-base sm:text-lg text-brand-subtle font-normal">
+        <div className="flex flex-col gap-3 max-w-3xl">
+          <TextReveal
+            text="Privacy Policy"
+            className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-foreground"
+          />
+          <FadeIn delay={0.2} direction="up" className="mt-2 text-base sm:text-lg text-brand-subtle font-normal">
             Safeguarding your project briefs, intellectual assets, and telemetry with transparency and integrity.
-          </p>
+          </FadeIn>
         </div>
 
         {/* Main Content Layout: Sidebar Navigation Left + Content Cards Right */}
@@ -296,7 +299,7 @@ export const PrivacyPolicy: React.FC = () => {
           {/* Right Structured Clause Cards */}
           <div className="space-y-6">
             {/* Overview Intro Banner */}
-            <div data-reveal className="rounded-2xl sm:rounded-3xl bg-brand-panel text-brand-panel-foreground p-6 sm:p-10 shadow-lg border-0">
+            <FadeIn delay={0.1} fullWidth className="rounded-2xl sm:rounded-3xl bg-brand-panel text-brand-panel-foreground p-6 sm:p-10 shadow-lg border-0">
               <span className="font-mono text-xs uppercase tracking-widest text-emerald-400 font-semibold block mb-2">
                 Commitment to Confidentiality
               </span>
@@ -306,35 +309,35 @@ export const PrivacyPolicy: React.FC = () => {
               <p className="mt-3 text-sm sm:text-base text-brand-panel-foreground/80 leading-relaxed font-normal">
                 At Pixel Grid Studios, we frequently collaborate with pre-launch consumer tech, automotive, and digital entertainment brands under strict NDAs. We treat your briefing data, proprietary CAD geometries, and styleframes with absolute security protocols.
               </p>
-            </div>
+            </FadeIn>
 
             {/* Structured Section Loop with Strictly In-Line Icon & Header */}
             {privacySections.map((sec) => (
-              <section
-                key={sec.id}
-                id={sec.id}
-                data-reveal
-                className="rounded-2xl sm:rounded-3xl bg-brand-muted/70 p-6 sm:p-10 shadow-xs border-0 scroll-mt-28"
-              >
-                {/* Header Block: Clause badge above, Icon and Heading strictly in-line */}
-                <div className="mb-5 pb-4 border-b border-brand-foreground/10">
-                  <span className="font-mono text-xs uppercase tracking-widest text-emerald-500 font-semibold block mb-2">
-                    Clause {sec.number}
-                  </span>
-                  <div className="flex items-center gap-3.5">
-                    <span className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-xl bg-brand-bg text-brand-foreground shadow-xs">
-                      {sec.icon}
+              <FadeIn delay={0.1} fullWidth key={sec.id}>
+                <section
+                  id={sec.id}
+                  className="rounded-2xl sm:rounded-3xl bg-brand-muted/70 p-6 sm:p-10 shadow-xs border-0 scroll-mt-28"
+                >
+                  {/* Header Block: Clause badge above, Icon and Heading strictly in-line */}
+                  <div className="mb-5 pb-4 border-b border-brand-foreground/10">
+                    <span className="font-mono text-xs uppercase tracking-widest text-emerald-500 font-semibold block mb-2">
+                      Clause {sec.number}
                     </span>
-                    <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-brand-foreground leading-tight">
-                      {sec.title}
-                    </h3>
+                    <div className="flex items-center gap-3.5">
+                      <span className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-xl bg-brand-bg text-brand-foreground shadow-xs">
+                        {sec.icon}
+                      </span>
+                      <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-brand-foreground leading-tight">
+                        {sec.title}
+                      </h3>
+                    </div>
                   </div>
-                </div>
 
-                <div className="text-sm sm:text-[15px] leading-relaxed text-brand-subtle font-normal">
-                  {sec.content}
-                </div>
-              </section>
+                  <div className="text-sm sm:text-[15px] leading-relaxed text-brand-subtle font-normal">
+                    {sec.content}
+                  </div>
+                </section>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -342,7 +345,7 @@ export const PrivacyPolicy: React.FC = () => {
         <DotDivider />
 
         {/* Footer Contact Quick Link */}
-        <section data-reveal className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <FadeIn delay={0.1} fullWidth className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="font-mono text-xs text-brand-subtle">
             Pixel Grid Studios · Legal &amp; Privacy Standards · Updated August 2026
           </span>
@@ -353,7 +356,7 @@ export const PrivacyPolicy: React.FC = () => {
             <span>Have a Question? Contact Us</span>
             <ChevronRight className="size-3.5 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
           </Link>
-        </section>
+        </FadeIn>
       </div>
     </div>
   );

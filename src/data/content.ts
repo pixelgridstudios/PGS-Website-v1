@@ -92,7 +92,7 @@ export const approachItems: ApproachItem[] = [
 
 export const workflowStages: WorkflowStage[] = [
   {
-    title: "Discovery & Strategy",
+    title: "Discovery and Strategy",
     items: [
       "Strategy session to explore your objectives",
       "Research your brand, industry, and target audience",
@@ -100,7 +100,7 @@ export const workflowStages: WorkflowStage[] = [
     ],
   },
   {
-    title: "Concept & Storytelling",
+    title: "Concept and Storytelling",
     items: [
       "Scriptwriting (if necessary)",
       "Storyboarding to visualize the flow",
@@ -108,7 +108,7 @@ export const workflowStages: WorkflowStage[] = [
     ],
   },
   {
-    title: "Design & Art Direction",
+    title: "Design and Art Direction",
     items: [
       "Moodboards and style development",
       "Color palette, typography, and overall aesthetic",
@@ -116,15 +116,15 @@ export const workflowStages: WorkflowStage[] = [
     ],
   },
   {
-    title: "Animation & Motion Design",
+    title: "Animation and Motion Design",
     items: [
-      "Keyframe animation & fluid motion design",
+      "Keyframe animation and fluid motion design",
       "3D rendering and compositing (if applicable)",
-      "Sound design & music selection for maximum impact",
+      "Sound design and music selection for maximum impact",
     ],
   },
   {
-    title: "Feedback & Refinements",
+    title: "Feedback and Refinements",
     items: [
       "Review and revisions based on your input",
       "Edit adjustments to timing, pacing, or transitions",
@@ -132,9 +132,9 @@ export const workflowStages: WorkflowStage[] = [
     ],
   },
   {
-    title: "Delivery & Implementation",
+    title: "Delivery and Implementation",
     items: [
-      "Optimized exports for all channels & resolutions",
+      "Optimized exports for all channels and resolutions",
       "Final delivery package with usage guidelines",
     ],
   },
@@ -146,7 +146,7 @@ export const motionServices: ServiceItem[] = [
     copy: "Launch films that explain what a new product does and why it matters with cinematic precision.",
   },
   {
-    title: "Brand & Real Estate Films",
+    title: "Brand and Real Estate Films",
     copy: "Narrative films for brands and developments, from concept and script through final grade.",
   },
   {
@@ -154,15 +154,15 @@ export const motionServices: ServiceItem[] = [
     copy: "Accurate 3D renders and animations of products and systems, including parts that are hard to film.",
   },
   {
-    title: "Live Visuals & Stage Content",
+    title: "Live Visuals and Stage Content",
     copy: "Screen content and looping visuals for events, activations and retail environments.",
   },
   {
-    title: "Commercial & Digital Motion",
+    title: "Commercial and Digital Motion",
     copy: "Campaign assets produced for leading brands, adapted per market and channel.",
   },
   {
-    title: "Short-form & Social Motion",
+    title: "Short-form and Social Motion",
     copy: "Vertical cutdowns and social-first motion built from the same 3D and design system.",
   },
 ];
@@ -195,5 +195,5 @@ export const projectTypes = [
   "Brand Film",
   "3D Visualization",
   "Live Visuals",
-  "Social & Digital Motion",
+  "Social and Digital Motion",
 ];

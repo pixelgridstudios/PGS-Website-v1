@@ -4,6 +4,9 @@ import { ArrowRight, Plus, Play } from "lucide-react";
 import DotDivider from "../components/DotDivider";
 import ApproachSlider from "../components/ApproachSlider";
 import TimelineTrack from "../components/TimelineTrack";
+import TextReveal from "../components/animations/TextReveal";
+import Marquee from "../components/animations/Marquee";
+import FadeIn from "../components/animations/FadeIn";
 
 const highlightedProjects = [
   {
@@ -80,14 +83,16 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Main Hero Headline */}
-          <div data-reveal data-reveal-delay="50" className="relative z-10 my-auto py-8">
-            <h1 className="max-w-[22ch] font-display text-[8.5vw] font-bold leading-[1.05] tracking-tight sm:text-[5.5vw] lg:text-[3.2vw] text-white drop-shadow-md">
-              We make complex products and systems visually understandable through motion design, 3D visualization, and brand film.
-            </h1>
+          <div className="relative z-10 my-auto py-8">
+            <TextReveal
+              text="We make complex products and systems visually understandable through motion design, 3D visualization, and brand film."
+              className="max-w-[22ch] font-display text-[8.5vw] font-bold leading-[1.05] tracking-tight sm:text-[5.5vw] lg:text-[3.2vw] text-white drop-shadow-md"
+              delay={0.1}
+            />
           </div>
 
           {/* Bottom Row: Showreel Overlay */}
-          <div data-reveal data-reveal-delay="150" className="relative z-10 flex items-center justify-end">
+          <FadeIn delay={0.6} direction="up" className="relative z-10 flex items-center justify-end">
             {/* Interactive Showreel Hover Card */}
             <Link
               to="/showreel"
@@ -112,13 +117,17 @@ export const Home: React.FC = () => {
                 <Play className="size-3.5 fill-current ml-0.5" />
               </span>
             </Link>
-          </div>
+          </FadeIn>
         </section>
 
-        <DotDivider />
+        <div className="py-8 w-full border-y border-brand-foreground/10 bg-brand-bg">
+          <Marquee baseVelocity={-2.5} className="text-[12vw] text-brand-foreground opacity-90 leading-none py-1">
+            CREATIVE DIRECTION · 3D MOTION · BRAND FILM · LOOKDEV
+          </Marquee>
+        </div>
 
         {/* We are Pixel Grid: Signature Dot4 Asymmetric Split Card */}
-        <section data-reveal className="my-6 sm:my-8">
+        <FadeIn delay={0.1} className="my-6 sm:my-8">
           <div className="w-full flex flex-col md:grid md:grid-cols-[280px_1fr] lg:grid-cols-[340px_1fr] xl:grid-cols-[400px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
             
             {/* Left/Top Column: Context, Branding & Action */}
@@ -154,13 +163,13 @@ export const Home: React.FC = () => {
             </div>
 
           </div>
-        </section>
+        </FadeIn>
 
         <DotDivider />
 
         {/* Highlighted Work: Clean Borderless Project Cards */}
         <section className="py-6 sm:py-8">
-          <div data-reveal className="flex items-end justify-between mb-6 sm:mb-8">
+          <FadeIn delay={0.1} className="flex items-end justify-between mb-6 sm:mb-8">
             <div>
               <h2 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl text-brand-foreground">
                 Highlighted Work
@@ -172,18 +181,16 @@ export const Home: React.FC = () => {
             >
               Discover More <ArrowRight className="size-4 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
             </Link>
-          </div>
+          </FadeIn>
 
           <div className="grid gap-6 md:grid-cols-2">
             {highlightedProjects.map((project, i) => (
-              <Link
-                key={project.title}
-                to={`/work/${project.slug}`}
-                data-reveal
-                data-reveal-delay={i === 0 ? "100" : "200"}
-                className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 transition-transform duration-300 ease-out hover:-translate-y-2 border-0 transform-gpu select-none cursor-pointer"
-              >
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-neutral-950 shadow-inner">
+              <FadeIn key={project.title} delay={0.2 + (i * 0.1)} className="h-full">
+                <Link
+                  to={`/work/${project.slug}`}
+                  className="block h-full group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 transition-transform duration-300 ease-out hover:-translate-y-2 border-0 transform-gpu select-none cursor-pointer"
+                >
+                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-neutral-950 shadow-inner">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -214,6 +221,7 @@ export const Home: React.FC = () => {
                   </span>
                 </div>
               </Link>
+              </FadeIn>
             ))}
           </div>
 
@@ -230,16 +238,16 @@ export const Home: React.FC = () => {
         <DotDivider />
 
         {/* The Power of Our Approach Slider */}
-        <div data-reveal>
+        <FadeIn delay={0.1} fullWidth>
           <ApproachSlider />
-        </div>
+        </FadeIn>
 
         <DotDivider />
 
         {/* From Concept to Delivery Timeline */}
-        <div data-reveal>
+        <FadeIn delay={0.1} direction="up" fullWidth>
           <TimelineTrack />
-        </div>
+        </FadeIn>
 
         <DotDivider />
 
@@ -247,23 +255,23 @@ export const Home: React.FC = () => {
         <section className="py-6 sm:py-8 overflow-hidden w-full">
           <div className="mx-auto max-w-[1600px]">
             {/* Section Header */}
-            <div data-reveal className="flex flex-col gap-3 md:items-center md:text-center mb-6 sm:mb-8">
+            <FadeIn delay={0.1} className="flex flex-col gap-3 md:items-center md:text-center mb-6 sm:mb-8">
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-brand-foreground">
                 How Our Motion Can Work for You
               </h2>
               <p className="max-w-2xl text-base sm:text-lg text-brand-subtle font-normal">
                 Tailored 3D motion design, visualization, and brand film systems engineered for high-growth tech, enterprise products, and campaigns.
               </p>
-            </div>
+            </FadeIn>
 
             {/* Seamless Borderless Sibling Card Architecture */}
-            <div data-reveal data-reveal-delay="100" className="w-full flex flex-col lg:grid lg:grid-cols-[400px_1fr] xl:grid-cols-[440px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
+            <FadeIn delay={0.2} className="w-full flex flex-col lg:grid lg:grid-cols-[400px_1fr] xl:grid-cols-[440px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
               
               {/* Left Column: Context & Direct CTA (Slightly Darker for Subtle Differentiation) */}
               <div className="p-6 sm:p-10 lg:p-12 flex flex-col justify-between gap-8 bg-black/[0.045] dark:bg-black/30 text-brand-foreground">
                 <div>
                   <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-brand-foreground leading-snug">
-                    Precision 3D &amp; motion systems built for impact.
+                    Precision 3D and motion systems built for impact.
                   </h3>
                   <p className="mt-4 text-base leading-relaxed text-brand-subtle font-normal">
                     Every asset is engineered with precision lighting, procedural shaders, and cinematic pacing — turning intricate engineering into clear, captivating visuals.
@@ -353,7 +361,7 @@ export const Home: React.FC = () => {
                   );
                 })}
               </div>
-            </div>
+            </FadeIn>
           </div>
         </section>
       </div>

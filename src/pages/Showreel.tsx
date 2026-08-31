@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, ExternalLink, Sparkles, Share2, Check } from "lucide-react";
 import DotDivider from "@/components/DotDivider";
+import BackButton from "@/components/BackButton";
+import FadeIn from "@/components/animations/FadeIn";
+import TextReveal from "@/components/animations/TextReveal";
 
 const reelChapters = [
   {
@@ -49,34 +52,30 @@ export const Showreel: React.FC = () => {
     <div className="px-3 sm:px-5">
       <div className="mx-auto max-w-[1600px] py-8 sm:py-12">
         {/* Top Back Nav */}
-        <div data-reveal className="mb-6 sm:mb-8">
-          <Link
-            to="/work"
-            className="group inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-brand-subtle hover:text-brand-foreground transition-all duration-[400ms] ease-spring-vibe"
-          >
-            <ArrowLeft className="size-4 transition-transform duration-[400ms] ease-spring-vibe group-hover:-translate-x-1" />
-            <span>Back to All Work</span>
-          </Link>
-        </div>
+        <FadeIn delay={0.1} direction="none" className="mb-6 sm:mb-8">
+          <BackButton to="/work" label="Back to All Work" />
+        </FadeIn>
 
         {/* Header Block */}
-        <section data-reveal className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
-              <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-brand-subtle font-medium mb-2">
+              <FadeIn delay={0.1} className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-brand-subtle font-medium mb-2">
                 <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span>Pixel Grid Studios · 2026 Edition</span>
-              </div>
-              <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-foreground">
-                Studio Showreel
-              </h1>
-              <p className="mt-3 max-w-2xl text-base sm:text-lg text-brand-subtle font-normal">
+              </FadeIn>
+              <TextReveal
+                text="Studio Showreel"
+                className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-foreground"
+                delay={0.1}
+              />
+              <FadeIn delay={0.3} direction="up" className="mt-3 max-w-2xl text-base sm:text-lg text-brand-subtle font-normal">
                 A curated high-energy compilation of 3D product visualization, procedural CGI, commercial launch films, and spatial LED motion.
-              </p>
+              </FadeIn>
             </div>
 
             {/* Action Controls */}
-            <div className="flex flex-wrap items-center gap-3">
+            <FadeIn delay={0.4} direction="left" className="flex flex-wrap items-center gap-3">
               <a
                 href="https://vimeo.com/1182784182"
                 target="_blank"
@@ -112,12 +111,12 @@ export const Showreel: React.FC = () => {
                   </span>
                 )}
               </button>
-            </div>
+            </FadeIn>
           </div>
-        </section>
+        </div>
 
         {/* Main Cinema Vimeo Player Container */}
-        <section data-reveal data-reveal-delay="100" className="mt-8 overflow-hidden rounded-2xl sm:rounded-3xl bg-black shadow-2xl border-0">
+        <FadeIn delay={0.2} fullWidth className="mt-8 overflow-hidden rounded-2xl sm:rounded-3xl bg-black shadow-2xl border-0">
           <div className="aspect-[16/9] w-full overflow-hidden">
             <iframe
               title="Pixel Grid Studios Showreel · Vimeo 4K Player"
@@ -127,54 +126,57 @@ export const Showreel: React.FC = () => {
               allowFullScreen
             />
           </div>
-        </section>
+        </FadeIn>
 
         <DotDivider />
 
         {/* Featured Projects in this Reel: Seamless Borderless Cards */}
         <section className="py-6 sm:py-8">
-          <div data-reveal className="flex flex-col gap-2 mb-6">
+          <FadeIn delay={0.1} className="flex flex-col gap-2 mb-6">
             <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-brand-foreground">
               Featured Case Studies in this Reel
             </h2>
             <p className="text-sm sm:text-base text-brand-subtle font-normal">
               Click on any featured project below to explore the in-depth breakdown, styleframes, and production credits.
             </p>
-          </div>
+          </FadeIn>
 
           <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {reelChapters.map((ch, idx) => (
-              <Link
-                key={ch.slug}
-                to={`/work/${ch.slug}`}
-                data-reveal
-                data-reveal-delay={`${(idx % 3) * 100}`}
-                className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 flex flex-col gap-3 transition-transform duration-300 ease-out hover:-translate-y-2 border-0 transform-gpu select-none cursor-pointer"
-              >
-                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-neutral-950 shadow-inner">
-                  <img
-                    src={ch.image}
-                    alt={ch.title}
-                    className="h-full w-full object-cover"
-                  />
-                  <span className="absolute bottom-2 left-2 rounded-md bg-black/80 px-2 py-0.5 font-mono text-[10px] font-medium text-white backdrop-blur-sm">
-                    {ch.time}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between px-1">
-                  <div>
-                    <h3 className="font-display text-base font-bold text-brand-foreground">
-                      {ch.title}
-                    </h3>
-                    <span className="font-mono text-xs text-brand-subtle font-medium">
-                      {ch.discipline}
+              <FadeIn key={ch.title} delay={0.1 + (idx * 0.1)} className="h-full">
+                <Link
+                  to={`/work/${ch.slug}`}
+                  className="group block h-full overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3 sm:p-4 flex flex-col gap-3.5 transition-transform duration-300 ease-out hover:-translate-y-2 border-0 transform-gpu cursor-pointer shadow-xs"
+                >
+                  <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-neutral-950 shadow-inner">
+                    <img
+                      src={ch.image}
+                      alt={ch.title}
+                      className="h-full w-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-transparent" />
+                    <div className="absolute bottom-2 left-2 rounded-md bg-black/60 px-2 py-1 backdrop-blur-md">
+                      <span className="font-mono text-[10px] text-white">
+                        {ch.time}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-end justify-between px-1 pb-1">
+                    <div>
+                      <span className="font-mono text-[10px] uppercase tracking-wider text-brand-subtle font-medium">
+                        {ch.discipline}
+                      </span>
+                      <h3 className="mt-1 font-display text-lg font-bold tracking-tight text-brand-foreground">
+                        {ch.title}
+                      </h3>
+                    </div>
+                    <span className="flex size-8 items-center justify-center rounded-full bg-brand-bg shadow-sm transition-transform duration-300 ease-out group-hover:-rotate-45">
+                      <ArrowRight className="size-3.5 text-brand-foreground" />
                     </span>
                   </div>
-                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-xs transition-transform duration-300 ease-out group-hover:-rotate-45">
-                    <ArrowRight className="size-3.5" />
-                  </span>
-                </div>
-              </Link>
+                </Link>
+              </FadeIn>
             ))}
           </div>
         </section>
@@ -183,14 +185,14 @@ export const Showreel: React.FC = () => {
 
         {/* Reel Production & Soundtrack Credits */}
         <section className="py-6 sm:py-8">
-          <div data-reveal className="rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-6 sm:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 shadow-sm dark:shadow-xl border-0">
+          <FadeIn delay={0.2} fullWidth className="rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-6 sm:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 shadow-sm dark:shadow-xl border-0">
             <div className="max-w-2xl flex flex-col gap-3">
               <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-brand-subtle font-medium">
                 <Sparkles className="size-4 text-brand-foreground" />
                 <span>Reel Production Details</span>
               </div>
               <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-brand-foreground">
-                Crafted with precision 3D motion &amp; procedural visual systems
+                Crafted with precision 3D motion and procedural visual systems
               </h3>
               <p className="text-sm sm:text-base leading-relaxed text-brand-subtle font-normal">
                 Audio mastered with custom dynamic sound design, transient shaping, and procedural motion synchronization for high-impact viewing.
@@ -222,7 +224,7 @@ export const Showreel: React.FC = () => {
                 )}
               </button>
             </div>
-          </div>
+          </FadeIn>
         </section>
       </div>
     </div>

@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Trophy, ExternalLink, Share2, Check } from "lucide-react";
 import { getProjectBySlug } from "@/data/projects";
+import BackButton from "@/components/BackButton";
 import DotDivider from "@/components/DotDivider";
+import FadeIn from "@/components/animations/FadeIn";
+import TextReveal from "@/components/animations/TextReveal";
 
 export const ProjectDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -78,7 +81,7 @@ export const ProjectDetail: React.FC = () => {
     <div className="px-3 sm:px-5">
       <div className="mx-auto max-w-[1600px] py-8 sm:py-12">
         {/* Back Link */}
-        <div data-reveal className="mb-6 sm:mb-8">
+        <FadeIn delay={0.1} direction="none" className="mb-6 sm:mb-8">
           <Link
             to="/work"
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-brand-subtle hover:text-brand-foreground transition-colors group"
@@ -86,22 +89,23 @@ export const ProjectDetail: React.FC = () => {
             <ArrowLeft className="size-4" />
             <span>Back to All Work</span>
           </Link>
-        </div>
+        </FadeIn>
 
         {/* 1. Project Header */}
-        <section data-reveal className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
-              <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-foreground">
-                {project.title}
-              </h1>
-              <p className="mt-2 text-lg sm:text-xl text-brand-subtle font-normal">
+              <TextReveal
+                text={project.title}
+                className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-foreground"
+              />
+              <FadeIn delay={0.2} direction="up" className="mt-2 text-lg sm:text-xl text-brand-subtle font-normal">
                 {project.subtitle}
-              </p>
+              </FadeIn>
             </div>
 
             {/* Top Action Controls */}
-            <div className="flex flex-wrap items-center gap-2.5">
+            <FadeIn delay={0.3} direction="left" className="flex flex-wrap items-center gap-2.5">
               <a
                 href={project.behanceUrl}
                 target="_blank"
@@ -137,7 +141,7 @@ export const ProjectDetail: React.FC = () => {
                   </span>
                 )}
               </button>
-            </div>
+            </FadeIn>
           </div>
 
           {/* Metadata & Award Bar */}
@@ -160,10 +164,10 @@ export const ProjectDetail: React.FC = () => {
               </div>
             )}
           </div>
-        </section>
+        </div>
 
         {/* 2. Direct Vimeo Video Player Container (Dynamic Responsive Aspect Ratio) */}
-        <section data-reveal data-reveal-delay="100" className="mt-8 overflow-hidden rounded-2xl sm:rounded-3xl bg-black shadow-2xl border-0">
+        <FadeIn delay={0.2} fullWidth className="mt-8 overflow-hidden rounded-2xl sm:rounded-3xl bg-black shadow-2xl border-0">
           <div
             className="w-full overflow-hidden transition-[aspect-ratio] duration-300 ease-out"
             style={{ aspectRatio: videoAspectRatio }}
@@ -180,12 +184,12 @@ export const ProjectDetail: React.FC = () => {
               allowFullScreen
             />
           </div>
-        </section>
+        </FadeIn>
 
         <DotDivider />
 
         {/* 3. The Brief & Narrative Overview */}
-        <section data-reveal className="py-6 sm:py-8">
+        <FadeIn delay={0.1} fullWidth className="py-6 sm:py-8">
           <div className="max-w-4xl flex flex-col gap-4">
             <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-brand-foreground">
               {project.brief.title}
@@ -196,13 +200,13 @@ export const ProjectDetail: React.FC = () => {
               </p>
             ))}
           </div>
-        </section>
+        </FadeIn>
 
         {/* 4. Mixed Visual & Video Story Blocks */}
         {project.sections.map((sec, idx) => (
           <React.Fragment key={idx}>
             {sec.heading && (
-              <div data-reveal className="pt-8 pb-4 max-w-3xl">
+              <FadeIn delay={0.1} className="pt-8 pb-4 max-w-3xl">
                 <h3 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-brand-foreground">
                   {sec.heading}
                 </h3>
@@ -211,12 +215,12 @@ export const ProjectDetail: React.FC = () => {
                     {sec.copy}
                   </p>
                 )}
-              </div>
+              </FadeIn>
             )}
 
             {/* Layout Type: Two Column Images */}
             {sec.layout === "two-column-images" && sec.images && (
-              <div data-reveal data-reveal-delay="100" className="mt-4 grid gap-4 sm:gap-6 md:grid-cols-2">
+              <FadeIn delay={0.2} className="mt-4 grid gap-4 sm:gap-6 md:grid-cols-2">
                 {sec.images.map((img, imgIdx) => (
                   <div
                     key={imgIdx}
@@ -229,12 +233,12 @@ export const ProjectDetail: React.FC = () => {
                     />
                   </div>
                 ))}
-              </div>
+              </FadeIn>
             )}
 
             {/* Layout Type: Single Looping Video */}
             {sec.layout === "single-video" && (
-              <div data-reveal data-reveal-delay="100" className="mt-6 overflow-hidden rounded-2xl sm:rounded-3xl bg-black shadow-lg border-0">
+              <FadeIn delay={0.2} fullWidth className="mt-6 overflow-hidden rounded-2xl sm:rounded-3xl bg-black shadow-lg border-0">
                 <div className="aspect-[16/9] w-full">
                   <video
                     autoPlay
@@ -247,7 +251,7 @@ export const ProjectDetail: React.FC = () => {
                     <source src={sec.videoSrc || "/assets/render-loop.mp4"} type="video/mp4" />
                   </video>
                 </div>
-              </div>
+              </FadeIn>
             )}
           </React.Fragment>
         ))}
@@ -255,7 +259,7 @@ export const ProjectDetail: React.FC = () => {
         <DotDivider />
 
         {/* 5. Dual Section: Structured Credits + Next Project Card */}
-        <section data-reveal className="py-8 sm:py-12">
+        <FadeIn delay={0.1} fullWidth className="py-8 sm:py-12">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-start">
             {/* Left: Credits Table & External Links */}
             <div className="lg:col-span-6 flex flex-col justify-between">
@@ -336,7 +340,7 @@ export const ProjectDetail: React.FC = () => {
               </Link>
             </div>
           </div>
-        </section>
+        </FadeIn>
       </div>
     </div>
   );

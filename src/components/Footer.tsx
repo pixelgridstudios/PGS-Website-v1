@@ -113,7 +113,7 @@ export const Footer: React.FC = () => {
                   to="/terms-conditions"
                   className="text-neutral-800 hover:text-black dark:text-brand-subtle dark:hover:text-brand-foreground hover:underline transition-colors border-0"
                 >
-                  Terms &amp; Conditions
+                  Terms and Conditions
                 </Link>
               </div>
               <p className="font-normal">
