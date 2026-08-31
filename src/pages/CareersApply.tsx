@@ -18,7 +18,7 @@ import {
   Gift,
 } from "lucide-react";
 import DotDivider from "@/components/DotDivider";
-import { openPositions, JobPosition } from "@/data/careers";
+import { openPositions, allApplicableRoles, JobPosition } from "@/data/careers";
 
 const softwareOptions = [
   "3D Motion Design",
@@ -50,9 +50,9 @@ export const CareersApply: React.FC = () => {
 
   const roleParam = searchParams.get("role");
   const defaultPosition =
-    openPositions.find((p) => p.title.toLowerCase() === roleParam?.toLowerCase()) ||
-    openPositions.find((p) => p.id === roleParam) ||
-    openPositions[0];
+    allApplicableRoles.find((p) => p.title.toLowerCase() === roleParam?.toLowerCase()) ||
+    allApplicableRoles.find((p) => p.id === roleParam) ||
+    allApplicableRoles[0];
 
   const [selectedPosition, setSelectedPosition] = useState<JobPosition>(defaultPosition);
   const [name, setName] = useState<string>("");
@@ -76,8 +76,8 @@ export const CareersApply: React.FC = () => {
   useEffect(() => {
     if (roleParam) {
       const match =
-        openPositions.find((p) => p.title.toLowerCase() === roleParam.toLowerCase()) ||
-        openPositions.find((p) => p.id === roleParam);
+        allApplicableRoles.find((p) => p.title.toLowerCase() === roleParam.toLowerCase()) ||
+        allApplicableRoles.find((p) => p.id === roleParam);
       if (match) {
         setSelectedPosition(match);
       }
@@ -85,7 +85,7 @@ export const CareersApply: React.FC = () => {
   }, [roleParam]);
 
   const handleRoleChange = (roleTitle: string) => {
-    const match = openPositions.find((p) => p.title === roleTitle);
+    const match = allApplicableRoles.find((p) => p.title === roleTitle);
     if (match) {
       setSelectedPosition(match);
       setSearchParams({ role: match.title });
@@ -162,13 +162,13 @@ export const CareersApply: React.FC = () => {
 
             <div className="space-y-3 max-w-xl mx-auto">
               <span className="font-mono text-xs uppercase tracking-widest text-emerald-500 font-semibold">
-                Application Received · 48-Hour Turnaround
+                Application Received
               </span>
               <h1 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-brand-foreground">
                 Thank you, {name.split(" ")[0]}!
               </h1>
               <p className="text-base sm:text-lg text-brand-subtle leading-relaxed">
-                Your portfolio and submission for <strong className="text-brand-foreground">{selectedPosition.title}</strong> have been received. Founder &amp; Creative Director Subhanshu Gajbhiye will review your reel within 48 hours.
+                Your portfolio and submission for <strong className="text-brand-foreground">{selectedPosition.title}</strong> have been received. Founder &amp; Creative Director Subhanshu Gajbhiye will review your reel directly.
               </p>
             </div>
 
@@ -352,7 +352,7 @@ export const CareersApply: React.FC = () => {
                       Apply for this Position
                     </h2>
                     <p className="mt-2 text-sm text-brand-subtle leading-relaxed">
-                      Submit your showreel and background details. Subhanshu Gajbhiye and the lead team review every applicant within 48 hours.
+                      Submit your showreel and background details. Subhanshu Gajbhiye and the lead team review every applicant directly.
                     </p>
                   </div>
 
@@ -368,7 +368,7 @@ export const CareersApply: React.FC = () => {
                         onChange={(e) => handleRoleChange(e.target.value)}
                         className="w-full rounded-xl bg-brand-bg px-4 py-3 text-sm font-medium text-brand-foreground border-0 focus:outline-none focus:ring-2 focus:ring-brand-foreground/20 transition-all cursor-pointer shadow-2xs"
                       >
-                        {openPositions.map((p) => (
+                        {allApplicableRoles.map((p) => (
                           <option key={p.id} value={p.title} className="bg-neutral-900 text-white">
                             {p.title} ({p.department})
                           </option>
@@ -609,7 +609,7 @@ export const CareersApply: React.FC = () => {
                   <div className="space-y-3 font-mono text-xs text-brand-panel-foreground/85">
                     <div className="flex items-start gap-2.5">
                       <ShieldCheck className="size-4 text-emerald-400 shrink-0 mt-0.5" />
-                      <span><strong>48-Hour Turnaround:</strong> Every reel receives direct review from Subhanshu Gajbhiye.</span>
+                      <span><strong>Direct Founder Review:</strong> Every reel receives direct review from Subhanshu Gajbhiye.</span>
                     </div>
                     <div className="flex items-start gap-2.5">
                       <ShieldCheck className="size-4 text-emerald-400 shrink-0 mt-0.5" />

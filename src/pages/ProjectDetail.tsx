@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Trophy, ExternalLink, Share2, Check } from "lucide-react";
 import { getProjectBySlug } from "@/data/projects";
@@ -8,6 +8,59 @@ export const ProjectDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? getProjectBySlug(slug) : undefined;
   const [copied, setCopied] = useState(false);
+  const [videoAspectRatio, setVideoAspectRatio] = useState<string>(
+    project?.aspectRatio || "16/9"
+  );
+
+  useEffect(() => {
+    if (!project) return;
+
+    // 1. Initialize from project config if present, or fallback
+    setVideoAspectRatio(project.aspectRatio || "16/9");
+
+    // 2. Dynamically detect exact video aspect ratio from Vimeo oEmbed API
+    if (project.vimeoId) {
+      const cleanVimeoId = project.vimeoId.split("?")[0];
+      const controller = new AbortController();
+
+      fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${cleanVimeoId}`, {
+        signal: controller.signal,
+      })
+        .then((res) => {
+          if (res.ok) return res.json();
+          throw new Error("oEmbed failed");
+        })
+        .then((data) => {
+          if (data && data.width && data.height) {
+            setVideoAspectRatio(`${data.width}/${data.height}`);
+          }
+        })
+        .catch(() => {
+          // Keep current/configured aspect ratio on error or offline
+        });
+
+      return () => controller.abort();
+    }
+  }, [project?.vimeoId, project?.aspectRatio, slug]);
+
+  // 3. Listen to Vimeo Player iframe postMessage for real-time dimension resolution
+  useEffect(() => {
+    const handleVimeoMessage = (event: MessageEvent) => {
+      try {
+        const data = typeof event.data === "string" ? JSON.parse(event.data) : event.data;
+        if (data && data.event === "ready" && data.data) {
+          if (data.data.width && data.data.height) {
+            setVideoAspectRatio(`${data.data.width}/${data.data.height}`);
+          }
+        }
+      } catch {
+        // Non-JSON message from external scripts
+      }
+    };
+
+    window.addEventListener("message", handleVimeoMessage);
+    return () => window.removeEventListener("message", handleVimeoMessage);
+  }, []);
 
   if (!project) {
     return <Navigate to="/work" replace />;
@@ -109,14 +162,21 @@ export const ProjectDetail: React.FC = () => {
           </div>
         </section>
 
-        {/* 2. Direct Vimeo Video Player Container */}
+        {/* 2. Direct Vimeo Video Player Container (Dynamic Responsive Aspect Ratio) */}
         <section data-reveal data-reveal-delay="100" className="mt-8 overflow-hidden rounded-2xl sm:rounded-3xl bg-black shadow-2xl border-0">
-          <div className="aspect-[16/9] w-full overflow-hidden">
+          <div
+            className="w-full overflow-hidden transition-[aspect-ratio] duration-300 ease-out"
+            style={{ aspectRatio: videoAspectRatio }}
+          >
             <iframe
               title={`${project.title} Film · Vimeo Player`}
-              src={`https://player.vimeo.com/video/${project.vimeoId}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
+              src={
+                project.vimeoId.includes("?")
+                  ? `https://player.vimeo.com/video/${project.vimeoId}&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`
+                  : `https://player.vimeo.com/video/${project.vimeoId}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`
+              }
               className="h-full w-full border-0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
               allowFullScreen
             />
           </div>
@@ -165,7 +225,7 @@ export const ProjectDetail: React.FC = () => {
                     <img
                       src={img.src}
                       alt={img.alt}
-                      className="h-full w-full object-cover ease-out"
+                      className="h-full w-full object-cover"
                     />
                   </div>
                 ))}
@@ -242,7 +302,7 @@ export const ProjectDetail: React.FC = () => {
               </div>
             </div>
 
-            {/* Right: Next Project Preview Card (Clean Borderless) */}
+            {/* Right: Next Project Preview Card (Clean Borderless & Normalized Physics) */}
             <div className="lg:col-span-6">
               <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-brand-foreground mb-6">
                 Next Project
@@ -250,17 +310,17 @@ export const ProjectDetail: React.FC = () => {
 
               <Link
                 to={`/work/${project.nextProject.slug}`}
-                className="group block overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 transition-transform duration-[400ms] ease-spring-vibe hover:-translate-y-2 active:scale-[0.98] border-0"
+                className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 transition-transform duration-300 ease-out hover:-translate-y-2 border-0 transform-gpu select-none cursor-pointer"
               >
                 <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-neutral-950 shadow-inner">
                   <img
                     src={project.nextProject.thumbnail}
                     alt={project.nextProject.title}
-                    className="h-full w-full object-cover ease-out"
+                    className="h-full w-full object-cover"
                   />
                 </div>
-                
-                <div className="mt-4 px-1 pb-1 flex items-end justify-between">
+
+                <div className="flex items-end justify-between gap-4 px-1 pb-1">
                   <div>
                     <span className="font-mono text-xs uppercase tracking-widest text-brand-subtle font-medium">
                       {project.nextProject.meta}
@@ -269,7 +329,7 @@ export const ProjectDetail: React.FC = () => {
                       {project.nextProject.title}
                     </h4>
                   </div>
-                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:-rotate-45">
+                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md shrink-0 transition-transform duration-300 ease-out group-hover:-rotate-45">
                     <ArrowRight className="size-4" />
                   </span>
                 </div>

@@ -23,7 +23,6 @@ export const Careers: React.FC = () => {
     "All",
     "3D & Motion",
     "Art Direction & LookDev",
-    "FX & Simulation",
     "Production & Pipeline",
   ];
 
@@ -140,10 +139,10 @@ export const Careers: React.FC = () => {
                         type="button"
                         onClick={() => setExpandedPosition(isExpanded ? null : position.id)}
                         aria-label="Expand role details"
-                        className="group size-10 sm:size-11 inline-flex items-center justify-center rounded-full bg-brand-bg text-brand-foreground transition-all duration-[400ms] ease-spring-vibe hover:bg-brand-panel hover:text-brand-panel-foreground hover:-translate-y-1 hover:scale-[1.03] hover:shadow-md active:scale-95 border-0 cursor-pointer shrink-0"
+                        className="group size-10 sm:size-11 inline-flex items-center justify-center rounded-full bg-brand-bg text-brand-foreground transition-all duration-300 ease-out hover:bg-brand-panel hover:text-brand-panel-foreground hover:-translate-y-0.5 hover:shadow-md active:scale-95 border-0 cursor-pointer shrink-0"
                       >
                         <ChevronDown
-                          className={`size-4 transition-transform duration-[400ms] ease-spring-vibe ${
+                          className={`size-4 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                             isExpanded ? "rotate-180" : "group-hover:translate-y-0.5"
                           }`}
                         />
@@ -153,11 +152,11 @@ export const Careers: React.FC = () => {
 
                   {/* Expandable Full Breakdown Drawer */}
                   <div
-                    className={`grid transition-all duration-[400ms] ease-spring-vibe ${
+                    className={`grid transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                       isExpanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0 pointer-events-none"
                     }`}
                   >
-                    <div className="overflow-hidden">
+                    <div className={`overflow-hidden transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isExpanded ? "translate-y-0" : "-translate-y-2"}`}>
                       <div className="px-6 sm:px-8 pb-8 pt-2 border-t border-brand-foreground/10">
                         <div className="grid gap-8 lg:grid-cols-2 pt-6">
                         {/* Responsibilities */}

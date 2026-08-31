@@ -7,16 +7,16 @@ import TimelineTrack from "../components/TimelineTrack";
 
 const highlightedProjects = [
   {
-    slug: "xiaomi-redmi-note-12",
-    title: "Xiaomi Redmi Note 12",
-    meta: "Product Launch · 3D Animation",
+    slug: "thinking-architecture",
+    title: "Thinking Architecture",
+    meta: "Brand Film · Architectural CGI",
     image: "/assets/chrono-morph.jpg",
-    tags: ["3D CGI", "Product Launch", "Motion Design"],
+    tags: ["Architectural CGI", "Spatial Motion", "3D LookDev"],
   },
   {
     slug: "tata-power-ez-homes",
     title: "TATA Power EZ Homes",
-    meta: "Brand Film · Product System",
+    meta: "Brand Film · Smart System",
     image: "/assets/void-textiles.jpg",
     tags: ["Brand Film", "3D Motion", "Storytelling"],
   },
@@ -181,13 +181,13 @@ export const Home: React.FC = () => {
                 to={`/work/${project.slug}`}
                 data-reveal
                 data-reveal-delay={i === 0 ? "100" : "200"}
-                className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 transition-transform duration-[400ms] ease-spring-vibe hover:-translate-y-2 active:scale-[0.98] border-0"
+                className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 transition-transform duration-300 ease-out hover:-translate-y-2 border-0 transform-gpu select-none cursor-pointer"
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-neutral-950 shadow-inner">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="h-full w-full object-cover ease-out"
+                    className="h-full w-full object-cover"
                   />
                 </div>
                 <div className="flex items-end justify-between px-1 pb-1">
@@ -209,7 +209,7 @@ export const Home: React.FC = () => {
                       ))}
                     </div>
                   </div>
-                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:-rotate-45">
+                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md shrink-0 transition-transform duration-300 ease-out group-hover:-rotate-45">
                     <ArrowRight className="size-4" />
                   </span>
                 </div>

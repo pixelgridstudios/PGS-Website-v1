@@ -1,25 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
 import { projects } from "@/data/projects";
 import DotDivider from "@/components/DotDivider";
 
-const filterCategories = [
-  "All",
-  "Product Animation",
-  "Brand Design",
-  "Event Visuals",
-  "Product Motion",
-  "Motion Design",
-];
-
 export const Work: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const filteredProjects = activeCategory === "All"
-    ? projects
-    : projects.filter((p) => p.category === activeCategory);
-
   return (
     <div className="px-3 sm:px-5">
       <div className="mx-auto max-w-[1600px] py-8 sm:py-12">
@@ -47,47 +32,26 @@ export const Work: React.FC = () => {
               </Link>
             </div>
           </div>
-
-          {/* Filter Pills */}
-          <div data-reveal data-reveal-delay="100" className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-2">
-            {filterCategories.map((cat) => {
-              const isSelected = activeCategory === cat;
-              return (
-                <button
-                  key={cat}
-                  type="button"
-                  onClick={() => setActiveCategory(cat)}
-                  className={`rounded-full px-5 py-2.5 text-xs sm:text-[13px] font-medium tracking-normal transition-all duration-200 active:scale-95 cursor-pointer select-none whitespace-nowrap border ${
-                    isSelected
-                      ? "border-brand-foreground bg-brand-foreground text-brand-bg font-semibold"
-                      : "border-brand-border bg-brand-bg text-brand-subtle hover:text-brand-foreground hover:border-brand-foreground/40"
-                  }`}
-                >
-                  {cat}
-                </button>
-              );
-            })}
-          </div>
         </div>
 
         <DotDivider />
 
         {/* 2-Column Project Grid: Preserves Grey Hierarchy across Modes */}
         <div className="grid gap-6 md:grid-cols-2">
-          {filteredProjects.map((project, idx) => (
+          {projects.map((project, idx) => (
             <Link
               key={project.id}
               to={`/work/${project.slug}`}
               data-reveal
               data-reveal-delay={idx % 2 === 0 ? "100" : "200"}
-              className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 transition-transform duration-[400ms] ease-spring-vibe hover:-translate-y-2 active:scale-[0.98] border-0"
+              className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 transition-transform duration-300 ease-out hover:-translate-y-2 border-0 transform-gpu select-none cursor-pointer"
             >
               {/* 16:9 Aspect Video Container */}
               <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-neutral-950 shadow-inner">
                 <img
                   src={project.thumbnail}
                   alt={`${project.title} — project by Pixel Grid Studios`}
-                  className="h-full w-full object-cover ease-out"
+                  className="h-full w-full object-cover"
                 />
               </div>
 
@@ -105,7 +69,7 @@ export const Work: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-2.5 shrink-0">
-                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md transition-transform duration-[400ms] ease-spring-vibe group-hover:-rotate-45">
+                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md transition-transform duration-300 ease-out group-hover:-rotate-45">
                     <ArrowRight className="size-4" />
                   </span>
                 </div>

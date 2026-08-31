@@ -6,9 +6,9 @@ import DotDivider from "@/components/DotDivider";
 const reelChapters = [
   {
     time: "00:00",
-    title: "Xiaomi Redmi Note 12",
-    discipline: "Product Launch · 3D CGI",
-    slug: "xiaomi-redmi-note-12",
+    title: "Thinking Architecture",
+    discipline: "Architectural Form · Spatial CGI",
+    slug: "thinking-architecture",
     image: "/assets/chrono-morph.jpg",
   },
   {
@@ -20,24 +20,17 @@ const reelChapters = [
   },
   {
     time: "00:35",
-    title: "Yas Mall Abu Dhabi",
-    discipline: "Experiential · 8K LED Canvas",
-    slug: "yas-mall",
+    title: "Invictus by Raymond Realty",
+    discipline: "Architectural CGI · Luxury Living",
+    slug: "raymond-invictus",
     image: "/assets/precision-archive.jpg",
   },
   {
     time: "00:52",
-    title: "boAt Lifestyle",
-    discipline: "Acoustic Simulation · 3D CGI",
-    slug: "boat-lifestyle",
+    title: "Realme X Kyra",
+    discipline: "Virtual Human · 3D Product Launch",
+    slug: "realme-x-kyra",
     image: "/assets/chrono-morph.jpg",
-  },
-  {
-    time: "01:10",
-    title: "Netflix India Originals",
-    discipline: "Broadcast UI · Screen Design",
-    slug: "netflix-screens",
-    image: "/assets/void-textiles.jpg",
   },
 ];
 
@@ -156,7 +149,7 @@ export const Showreel: React.FC = () => {
                 to={`/work/${ch.slug}`}
                 data-reveal
                 data-reveal-delay={`${(idx % 3) * 100}`}
-                className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 flex flex-col gap-3 transition-transform duration-[400ms] ease-spring-vibe hover:-translate-y-2 active:scale-[0.98] border-0"
+                className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 flex flex-col gap-3 transition-transform duration-300 ease-out hover:-translate-y-2 border-0 transform-gpu select-none cursor-pointer"
               >
                 <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-neutral-950 shadow-inner">
                   <img
@@ -177,7 +170,7 @@ export const Showreel: React.FC = () => {
                       {ch.discipline}
                     </span>
                   </div>
-                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-xs transition-transform duration-[400ms] ease-spring-vibe group-hover:-rotate-45">
+                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-xs transition-transform duration-300 ease-out group-hover:-rotate-45">
                     <ArrowRight className="size-3.5" />
                   </span>
                 </div>

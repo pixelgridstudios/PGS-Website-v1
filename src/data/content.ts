@@ -31,47 +31,47 @@ export interface StatItem {
 
 export const highlightedProjects: Project[] = [
   {
-    id: "xiaomi-redmi-note-12",
-    title: "Xiaomi Redmi Note 12",
-    image: "/assets/chrono-morph-Db8Qrzc2.jpg",
+    id: "thinking-architecture",
+    title: "Thinking Architecture",
+    image: "/assets/chrono-morph.jpg",
     width: 1200,
     height: 800,
-    tags: ["Product Launch", "3D Animation"],
+    tags: ["Brand Film", "Architectural CGI"],
   },
   {
     id: "tata-power-ez-homes",
     title: "TATA Power EZ Homes",
-    image: "/assets/void-textiles-DxX08qfd.jpg",
+    image: "/assets/void-textiles.jpg",
     width: 1200,
     height: 800,
-    tags: ["Brand Film", "Product System"],
+    tags: ["Brand Film", "Smart System"],
   },
 ];
 
 export const allProjects: Project[] = [
   {
-    id: "xiaomi-redmi-note-12",
-    title: "Xiaomi Redmi Note 12",
-    meta: "Product Launch · 3D Animation",
-    image: "/assets/chrono-morph-Db8Qrzc2.jpg",
+    id: "thinking-architecture",
+    title: "Thinking Architecture",
+    meta: "Brand Film · Architectural CGI",
+    image: "/assets/chrono-morph.jpg",
   },
   {
     id: "tata-power-ez-homes",
     title: "TATA Power EZ Homes",
-    meta: "Brand Film · Product System",
-    image: "/assets/void-textiles-DxX08qfd.jpg",
+    meta: "Brand Film · Smart System",
+    image: "/assets/void-textiles.jpg",
   },
   {
-    id: "yas-mall",
-    title: "Yas Mall",
-    meta: "Spatial Canvas · Immersive 3D",
-    image: "/assets/precision-archive-D1t0VcXE.jpg",
+    id: "raymond-invictus",
+    title: "Invictus by Raymond Realty",
+    meta: "Brand Film · Architectural CGI",
+    image: "/assets/precision-archive.jpg",
   },
   {
-    id: "boat",
-    title: "Boat",
-    meta: "Product Motion · Short-form",
-    image: "/assets/chrono-morph-Db8Qrzc2.jpg",
+    id: "realme-x-kyra",
+    title: "Realme X Kyra",
+    meta: "Product Launch · 3D CGI",
+    image: "/assets/chrono-morph.jpg",
   },
 ];
 
@@ -177,9 +177,9 @@ export const toolsAndCraft: string[] = [
 
 export const studioStats: StatItem[] = [
   { value: "2020", label: "Founded" },
-  { value: "10+", label: "Yas Mall campaigns" },
-  { value: "6+", label: "Boat campaigns" },
-  { value: "100%", label: "Global client delivery" },
+  { value: "4+", label: "Master Case Studies" },
+  { value: "50+", label: "Commercial Deliverables" },
+  { value: "100%", label: "Global Client Delivery" },
 ];
 
 export const socialLinks = [

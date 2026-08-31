@@ -1,7 +1,7 @@
 export interface JobPosition {
   id: string;
   title: string;
-  department: "3D & Motion" | "Art Direction & LookDev" | "FX & Simulation" | "Production & Pipeline" | "Freelance Network";
+  department: "3D & Motion" | "Art Direction & LookDev" | "Production & Pipeline" | "Freelance Network";
   location: string;
   type: string;
   experience: string;
@@ -14,20 +14,20 @@ export interface JobPosition {
 
 export const openPositions: JobPosition[] = [
   {
-    id: "senior-3d-motion-designer",
-    title: "Senior 3D Motion Designer & LookDev",
+    id: "3d-motion-designer",
+    title: "3D Motion Designer & LookDev",
     department: "3D & Motion",
-    location: "Flexible / Global",
+    location: "Remote",
     type: "Full-Time",
-    experience: "4+ Years in Commercial 3D",
+    experience: "2+ Years in Commercial 3D",
     overview:
-      "We are looking for a Senior 3D Motion Designer with exceptional taste in kinematic motion, photoreal lighting, and visual storytelling to lead commercial launch films and brand campaigns.",
+      "We are looking for a 3D Motion Designer with exceptional taste in kinematic motion, photoreal lighting, and visual storytelling to craft commercial launch films and brand campaigns.",
     responsibilities: [
-      "Lead look development, texturing, studio lighting, and kinematic camera animation for flagship product launch films.",
+      "Develop look development, texturing, studio lighting, and kinematic camera animation for flagship product launch films.",
       "Collaborate directly with Creative Director Subhanshu Gajbhiye to translate client briefs into cinematic sequences.",
       "Construct photoreal PBR shader networks, procedural materials, and ACEScg color-managed scenes.",
       "Optimize complex scenes for multi-GPU render farm distribution and multi-pass EXR compositing.",
-      "Mentor mid-level motion designers and maintain high aesthetic consistency across deliverables.",
+      "Maintain high aesthetic consistency and technical precision across deliverables.",
     ],
     requirements: [
       "A standout reel highlighting high-craft 3D product animation, elegant kinetic pacing, and lighting mastery.",
@@ -43,65 +43,10 @@ export const openPositions: JobPosition[] = [
     ],
   },
   {
-    id: "procedural-houdini-fx-artist",
-    title: "Procedural & Houdini FX Specialist",
-    department: "FX & Simulation",
-    location: "Flexible / Global",
-    type: "Contract or Full-Time",
-    experience: "3+ Years in FX/Simulation",
-    overview:
-      "Join our technical visual team to create complex particle systems, organic and abstract dynamics, soft-body physics, and procedural environments for flagship tech campaigns.",
-    responsibilities: [
-      "Architect custom Houdini SOP/VOP networks for procedural asset generation and deformation.",
-      "Execute high-end particle flows, fluid dynamics, dynamic cloth, and micro-destruction simulations.",
-      "Develop procedural animation rigs and generative mathematical motion systems.",
-      "Bridge simulation caches (Alembic / VDB) seamlessly into our lighting and lookdev pipeline.",
-    ],
-    requirements: [
-      "Demonstrated mastery of Houdini dynamics (Vellum, Pyro, FLIP, POPs) and procedural nodal workflows.",
-      "Solid understanding of VEX coding, math for 3D graphics, and vector mathematics.",
-      "Reel showcasing innovative procedural effects, organic simulations, and abstract visual storytelling.",
-      "Ability to optimize high-density simulation data for reliable render farm dispatch.",
-    ],
-    tools: ["Houdini", "VEX", "Solaris / Karma", "Simulation FX", "Alembic / VDB"],
-    whatWeOffer: [
-      "Full license coverage and high-core compute node access.",
-      "Freedom to architect generative toolkits used across commercial projects.",
-      "Flexible asynchronous working hours across timezones.",
-    ],
-  },
-  {
-    id: "realtime-spatial-unreal-artist",
-    title: "Realtime & Spatial LED Canvas Artist",
-    department: "3D & Motion",
-    location: "Flexible / Global",
-    type: "Full-Time or Project Contract",
-    experience: "2+ Years in Unreal Engine",
-    overview:
-      "Help engineer immersive 8K LED visual canvases, interactive stage environments, and real-time simulations for architectural venues and broadcast stages.",
-    responsibilities: [
-      "Author real-time scenes and cinematic environments in Unreal Engine 5 utilizing Nanite and Lumen.",
-      "Design ultra-wide, non-standard resolution spatial canvas visualizers (up to 8K resolution).",
-      "Develop dynamic Niagara particle systems and Blueprint interactive triggers for live events.",
-      "Collaborate with display engineers to ensure color calibration and framerate consistency on media servers.",
-    ],
-    requirements: [
-      "Proficiency in Unreal Engine 5 lighting, scene optimization, Sequencer, and Niagara systems.",
-      "Experience formatting content for large-scale LED walls, architectural projection, or live stage visuals.",
-      "Understanding of real-time render pipelines, performance profiling, and GPU hardware optimization.",
-    ],
-    tools: ["Unreal Engine 5", "Niagara", "Realtime Lighting", "Spatial Canvas", "Color Grading"],
-    whatWeOffer: [
-      "Direct involvement in architectural LED canvas spectacles and experiential staging.",
-      "Opportunity to shape our real-time interactive spatial division.",
-      "Access to cutting-edge real-time render compute nodes.",
-    ],
-  },
-  {
     id: "commercial-art-director",
     title: "Commercial Art Director / Motion Lead",
     department: "Art Direction & LookDev",
-    location: "Flexible / Global",
+    location: "Remote",
     type: "Full-Time",
     experience: "5+ Years in Agency / Studio",
     overview:
@@ -128,7 +73,7 @@ export const openPositions: JobPosition[] = [
     id: "creative-producer-coordinator",
     title: "Creative Producer & Studio Coordinator",
     department: "Production & Pipeline",
-    location: "Flexible / Global",
+    location: "Remote",
     type: "Full-Time",
     experience: "3+ Years in Studio Production",
     overview:
@@ -151,30 +96,36 @@ export const openPositions: JobPosition[] = [
       "Comprehensive health and wellness coverage.",
     ],
   },
-  {
-    id: "freelance-roster-specialist",
-    title: "Freelance Roster & General Specialist",
-    department: "Freelance Network",
-    location: "Global / Project-Based",
-    type: "Contract / Sprint-Based",
-    experience: "All Experience Levels Welcome",
-    overview:
-      "We regularly partner with specialized freelance 3D animators, lookdev specialists, character riggers, sound designers, colorists, and Houdini technical directors for high-visibility commercial launch sprints.",
-    responsibilities: [
-      "Collaborate on sprint-based commercial productions with well-defined scopes and milestones.",
-      "Deliver production-ready scene files, simulation caches, or lookdev styleframes adhering to ACEScg color workflows.",
-      "Maintain active communication on studio channels during project sprint cycles.",
-    ],
-    requirements: [
-      "Standout portfolio or showreel showcasing mastery in your core discipline.",
-      "Disciplined timeline management and clear communication.",
-      "High standard of aesthetic craft and attention to nuance.",
-    ],
-    tools: ["3D Animation", "LookDev", "FX Simulation", "Realtime", "Compositing", "Sound Design"],
-    whatWeOffer: [
-      "Competitive day and project rates paid promptly upon milestone approval.",
-      "Access to studio render farm clusters for heavy project delivery passes.",
-      "Full public credit and portfolio permissions for completed commercial work.",
-    ],
-  },
+];
+
+export const generalRosterPosition: JobPosition = {
+  id: "freelance-roster-specialist",
+  title: "Freelance Roster & General Specialist",
+  department: "Freelance Network",
+  location: "Remote / Project-Based",
+  type: "Contract / Sprint-Based",
+  experience: "All Experience Levels Welcome",
+  overview:
+    "We regularly partner with specialized freelance 3D animators, lookdev specialists, character riggers, sound designers, colorists, and Houdini technical directors for high-visibility commercial launch sprints.",
+  responsibilities: [
+    "Collaborate on sprint-based commercial productions with well-defined scopes and milestones.",
+    "Deliver production-ready scene files, simulation caches, or lookdev styleframes adhering to ACEScg color workflows.",
+    "Maintain active communication on studio channels during project sprint cycles.",
+  ],
+  requirements: [
+    "Standout portfolio or showreel showcasing mastery in your core discipline.",
+    "Disciplined timeline management and clear communication.",
+    "High standard of aesthetic craft and attention to nuance.",
+  ],
+  tools: ["3D Animation", "LookDev", "FX Simulation", "Realtime", "Compositing", "Sound Design"],
+  whatWeOffer: [
+    "Competitive day and project rates paid promptly upon milestone approval.",
+    "Access to studio render farm clusters for heavy project delivery passes.",
+    "Full public credit and portfolio permissions for completed commercial work.",
+  ],
+};
+
+export const allApplicableRoles: JobPosition[] = [
+  ...openPositions,
+  generalRosterPosition,
 ];
