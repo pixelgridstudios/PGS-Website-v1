@@ -134,7 +134,7 @@ export const Contact: React.FC = () => {
         <div className="flex flex-col gap-2 max-w-3xl">
           <TextReveal
             text="Contact us"
-            className="font-display text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-brand-foreground"
+            className="font-serif text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-brand-foreground"
           />
           <FadeIn delay={0.2} direction="up" className="mt-2 text-base sm:text-lg text-brand-subtle font-normal">
             Tell us about your upcoming launch, timeline, or design brief.
@@ -147,7 +147,7 @@ export const Contact: React.FC = () => {
             {/* Left (50%): Project Intake Form */}
             <div className="p-8 sm:p-10 lg:p-12 xl:p-14 bg-brand-bg/95 flex flex-col justify-between">
               <div>
-                <h2 className="font-display text-4xl font-bold tracking-tight sm:text-4xl text-brand-foreground">
+                <h2 className="font-serif text-4xl font-bold tracking-tight sm:text-4xl text-brand-foreground">
                   Let's Connect!
                 </h2>
               </div>
@@ -366,7 +366,7 @@ export const Contact: React.FC = () => {
             <div className="relative flex min-h-[320px] lg:min-h-full flex-col items-center justify-center bg-brand-panel p-8 sm:p-10 lg:p-12 xl:p-14 text-brand-panel-foreground border-0 select-none">
               <div className="text-center space-y-3">
                 <div className="flex items-baseline justify-center gap-1.5 sm:gap-2.5">
-                  <div className="text-6xl lg:text-8xl xl:text-8xl font-display font-bold tracking-tight tabular-nums text-brand-panel-foreground leading-none">
+                  <div className="text-6xl lg:text-8xl xl:text-8xl font-serif font-bold tracking-tight tabular-nums text-brand-panel-foreground leading-none">
                     <span>{hours}</span>
                     <span className={`mx-0.5 transition-opacity duration-150 ${colonVisible ? "opacity-100" : "opacity-25"}`}>
                       :

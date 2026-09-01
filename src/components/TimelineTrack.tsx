@@ -334,7 +334,7 @@ export const TimelineTrack: React.FC = () => {
       <div className="mx-auto max-w-[1600px]">
         {/* Section Header */}
         <div className="flex flex-col gap-3 md:items-center md:text-center mb-6 sm:mb-8">
-          <h2 className="font-display text-4xl lg:text-6xl font-bold tracking-tight text-brand-foreground">
+          <h2 className="font-serif text-4xl lg:text-6xl font-bold tracking-tight text-brand-foreground">
             From Concept to Delivery
           </h2>
           <p className="max-w-2xl text-base sm:text-lg text-brand-subtle font-normal">

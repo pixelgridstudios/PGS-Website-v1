@@ -40,7 +40,7 @@ export const About: React.FC = () => {
         <div className="flex flex-col gap-4 max-w-4xl">
           <TextReveal
             text="Crafting campaign-defining 3D motion for products that matter."
-            className="font-display text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-brand-foreground leading-[1.05]"
+            className="font-serif text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-brand-foreground leading-[1.05]"
           />
           <FadeIn delay={0.2} direction="up" className="mt-2 text-lg sm:text-2xl text-brand-subtle font-normal leading-relaxed">
             Founded in 2020 by Subhanshu Gajbhiye, Pixel Grid Studios turns complex engineering, physical products, and technical narratives into captivating visual films.

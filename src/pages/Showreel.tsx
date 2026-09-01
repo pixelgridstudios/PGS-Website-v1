@@ -66,7 +66,7 @@ export const Showreel: React.FC = () => {
               </FadeIn>
               <TextReveal
                 text="Studio Showreel"
-                className="font-display text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-brand-foreground"
+                className="font-serif text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-brand-foreground"
                 delay={0.1}
               />
               <FadeIn delay={0.3} direction="up" className="mt-3 max-w-2xl text-base sm:text-lg text-brand-subtle font-normal">

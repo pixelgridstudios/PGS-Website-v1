@@ -48,7 +48,7 @@ export const Careers: React.FC = () => {
         <div className="flex flex-col gap-4 max-w-4xl">
           <TextReveal
             text="Join the Studio"
-            className="font-display text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-brand-foreground leading-[1.05]"
+            className="font-serif text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-brand-foreground leading-[1.05]"
           />
           <FadeIn delay={0.2} direction="up" className="mt-2 text-lg sm:text-2xl text-brand-subtle font-normal leading-relaxed max-w-3xl">
             We build campaign-defining 3D launch films, procedural visual systems, and spatial CGI for products that matter. We are always looking for visionary artists, technical directors, and motion storytellers.
@@ -65,7 +65,7 @@ export const Careers: React.FC = () => {
                 <Briefcase className="size-4 text-emerald-500" />
                 <span>Open Opportunities ({filteredPositions.length})</span>
               </div>
-              <h2 className="font-display text-4xl font-bold tracking-tight text-brand-foreground">
+              <h2 className="font-serif text-4xl font-bold tracking-tight text-brand-foreground">
                 Available Positions
               </h2>
             </div>

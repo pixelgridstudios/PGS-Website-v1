@@ -166,7 +166,7 @@ export const CareersApply: React.FC = () => {
               <span className="font-mono text-sm uppercase tracking-widest text-emerald-500 font-semibold">
                 Application Received
               </span>
-              <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight text-brand-foreground">
+              <h1 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-brand-foreground">
                 Thank you, {name.split(" ")[0]}!
               </h1>
               <p className="text-base sm:text-lg text-brand-subtle leading-relaxed">
@@ -238,7 +238,7 @@ export const CareersApply: React.FC = () => {
                     <Sparkles className="size-4" />
                     <span>Job Description</span>
                   </div>
-                  <h1 className="font-display text-4xl sm:text-6xl lg:text-6xl font-bold tracking-tight text-brand-foreground leading-[1.06]">
+                  <h1 className="font-serif text-4xl sm:text-6xl lg:text-6xl font-bold tracking-tight text-brand-foreground leading-[1.06]">
                     {selectedPosition.title}
                   </h1>
                   <p className="text-lg sm:text-2xl text-brand-subtle leading-relaxed max-w-4xl pt-1">
@@ -350,7 +350,7 @@ export const CareersApply: React.FC = () => {
                       <Mail className="size-4 text-emerald-500" />
                       <span>Direct Submission</span>
                     </div>
-                    <h2 className="font-display text-4xl font-bold tracking-tight sm:text-4xl text-brand-foreground">
+                    <h2 className="font-serif text-4xl font-bold tracking-tight sm:text-4xl text-brand-foreground">
                       Apply for this Position
                     </h2>
                     <p className="mt-2 text-sm text-brand-subtle leading-relaxed">

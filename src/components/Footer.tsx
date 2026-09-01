@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
             
             {/* Left Side: Headline, Let's Talk CTA & Clean Email Line */}
             <div className="max-w-[620px] flex flex-col gap-6">
-              <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tight text-neutral-950 dark:text-brand-foreground leading-[1.08]">
+              <h2 className="font-serif text-4xl md:text-6xl font-bold tracking-tight text-neutral-950 dark:text-brand-foreground leading-[1.08]">
                 Got a complex product? Let's make it look like magic. ✨
               </h2>
 

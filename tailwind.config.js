@@ -19,7 +19,8 @@ export default {
       },
       fontFamily: {
         sans: ["'Outfit'", "system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-        display: ["'Lora'", "Georgia", "Cambria", "Times New Roman", "Times", "serif"],
+        display: ["'Outfit'", "system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        serif: ["'Lora'", "Georgia", "Cambria", "Times New Roman", "Times", "serif"],
         mono: ["'Outfit'", "system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
       },
       letterSpacing: {

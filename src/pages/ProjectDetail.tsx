@@ -97,7 +97,7 @@ export const ProjectDetail: React.FC = () => {
             <div>
               <TextReveal
                 text={project.title}
-                className="font-display text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-brand-foreground"
+                className="font-serif text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-brand-foreground"
               />
               <FadeIn delay={0.2} direction="up" className="mt-2 text-lg sm:text-2xl text-brand-subtle font-normal">
                 {project.subtitle}

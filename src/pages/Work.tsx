@@ -16,7 +16,7 @@ export const Work: React.FC = () => {
             <div className="flex flex-col gap-3">
               <TextReveal
                 text="Our Work"
-                className="font-display text-4xl font-bold tracking-tight sm:text-6xl lg:text-8xl text-brand-foreground"
+                className="font-serif text-4xl font-bold tracking-tight sm:text-6xl lg:text-8xl text-brand-foreground"
               />
               <FadeIn delay={0.2} direction="up" className="max-w-2xl text-base sm:text-lg text-brand-subtle font-normal">
                 Selected commercial films, 3D visualization, product animation, and motion design built for leading brands and technology pioneers.

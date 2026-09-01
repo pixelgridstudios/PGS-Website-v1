@@ -53,7 +53,7 @@ export const ApproachSlider: React.FC = () => {
           {/* Left Column: Text Canvas */}
           <div className="w-full p-6 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-between gap-8 sm:gap-12">
             <div>
-              <h2 className="font-display text-4xl lg:text-6xl font-bold tracking-tight text-brand-foreground">
+              <h2 className="font-serif text-4xl lg:text-6xl font-bold tracking-tight text-brand-foreground">
                 The Power of Our Approach
               </h2>
 

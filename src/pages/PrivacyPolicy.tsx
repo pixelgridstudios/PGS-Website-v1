@@ -244,7 +244,7 @@ export const PrivacyPolicy: React.FC = () => {
         <div className="flex flex-col gap-3 max-w-3xl">
           <TextReveal
             text="Privacy Policy"
-            className="font-display text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-brand-foreground"
+            className="font-serif text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-brand-foreground"
           />
           <FadeIn delay={0.2} direction="up" className="mt-2 text-base sm:text-lg text-brand-subtle font-normal">
             Safeguarding your project briefs, intellectual assets, and telemetry with transparency and integrity.

@@ -129,7 +129,7 @@ export const Home: React.FC = () => {
             {/* Left/Top Column: Context, Branding & Action */}
             <div className="p-5 sm:p-6 md:p-8 lg:p-10 xl:p-11 pb-2 sm:pb-3 md:pb-8 lg:pb-10 xl:pb-11 flex flex-row md:flex-col justify-between items-center md:items-start gap-3 sm:gap-4 md:gap-7 bg-transparent md:bg-black/[0.045] md:dark:bg-black/30 text-brand-foreground">
               <div>
-                <h2 className="font-display text-2xl md:text-4xl xl:text-6xl font-bold tracking-tight text-brand-foreground leading-tight md:leading-[1.08]">
+                <h2 className="font-serif text-2xl md:text-4xl xl:text-6xl font-bold tracking-tight text-brand-foreground leading-tight md:leading-[1.08]">
                   <span className="inline md:block whitespace-nowrap">Hi, we're </span>
                   <span className="inline md:block md:mt-1 whitespace-nowrap">Pixel Grid</span>
                 </h2>
@@ -167,7 +167,7 @@ export const Home: React.FC = () => {
         <section className="py-6 sm:py-8">
           <FadeIn delay={0.1} className="flex items-end justify-between mb-6 sm:mb-8">
             <div>
-              <h2 className="font-display text-4xl font-semibold tracking-tight sm:text-6xl text-brand-foreground">
+              <h2 className="font-serif text-4xl font-semibold tracking-tight sm:text-6xl text-brand-foreground">
                 Highlighted Work
               </h2>
             </div>
@@ -250,7 +250,7 @@ export const Home: React.FC = () => {
           <div className="mx-auto max-w-[1600px]">
             {/* Section Header */}
             <FadeIn delay={0.1} className="flex flex-col gap-3 md:items-center md:text-center mb-6 sm:mb-8">
-              <h2 className="font-display text-4xl lg:text-6xl font-semibold tracking-tight text-brand-foreground">
+              <h2 className="font-serif text-4xl lg:text-6xl font-semibold tracking-tight text-brand-foreground">
                 How Our Motion Can Work for You
               </h2>
               <p className="max-w-2xl text-base sm:text-lg text-brand-subtle font-normal">
