@@ -18,8 +18,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["'Zilla Slab'", "serif"],
-        display: ["'Outfit'", "system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        sans: ["'Outfit'", "system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        display: ["'Fraunces'", "system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
         mono: ["'Outfit'", "system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
       },
       letterSpacing: {
