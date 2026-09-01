@@ -12,9 +12,9 @@ interface TimelineStep {
   description: string;
 }
 
-const TOTAL_COLS = 30;
-const START_NEEDLE = 1.67; // Column 1 center
-const END_NEEDLE = 98.33;   // Column 30 center
+const TOTAL_COLS = 34;
+const START_NEEDLE = 1.47; // Column 1 center
+const END_NEEDLE = 98.53;   // Column 34 center
 
 const pipelineSteps: TimelineStep[] = [
   {
@@ -23,7 +23,7 @@ const pipelineSteps: TimelineStep[] = [
     shortTitle: "Discovery",
     icon: <FolderSearch className="size-4 shrink-0" />,
     colStart: 1,
-    colEnd: 7,
+    colEnd: 8,
     description:
       "We explore your objectives, research your brand, industry and target audience, and develop a clear creative roadmap for the project.",
   },
@@ -33,7 +33,7 @@ const pipelineSteps: TimelineStep[] = [
     shortTitle: "Concept",
     icon: <Sparkles className="size-4 shrink-0" />,
     colStart: 5,
-    colEnd: 11,
+    colEnd: 13,
     description:
       "Scriptwriting, storyboarding to visualize the flow, and developing style frames to establish the definitive visual direction.",
   },
@@ -42,8 +42,8 @@ const pipelineSteps: TimelineStep[] = [
     title: "Design & Art Direction",
     shortTitle: "Art Direction",
     icon: <Palette className="size-4 shrink-0" />,
-    colStart: 9,
-    colEnd: 15,
+    colStart: 10,
+    colEnd: 18,
     description:
       "Moodboards, color palette, typography styling, custom 3D asset modeling, procedural lighting, and overall aesthetic look-development.",
   },
@@ -52,8 +52,8 @@ const pipelineSteps: TimelineStep[] = [
     title: "Animation & Motion Design",
     shortTitle: "Animation",
     icon: <Film className="size-4 shrink-0" />,
-    colStart: 13,
-    colEnd: 19,
+    colStart: 15,
+    colEnd: 23,
     description:
       "Keyframe animation, fluid motion design, 3D rendering, multipass compositing, and impactful sound design & music mastering.",
   },
@@ -62,8 +62,8 @@ const pipelineSteps: TimelineStep[] = [
     title: "Feedback & Refinements",
     shortTitle: "Refinements",
     icon: <RefreshCw className="size-4 shrink-0" />,
-    colStart: 17,
-    colEnd: 23,
+    colStart: 20,
+    colEnd: 26,
     description:
       "Iterative review and revisions based on your input, edit adjustments to timing, pacing, and transitions, followed by final quality checks.",
   },
@@ -72,8 +72,8 @@ const pipelineSteps: TimelineStep[] = [
     title: "Delivery & Implementation",
     shortTitle: "Delivery",
     icon: <Send className="size-4 shrink-0" />,
-    colStart: 21,
-    colEnd: 27,
+    colStart: 22,
+    colEnd: 30,
     description:
       "Optimized master exports for all your marketing channels in multiple formats, resolutions, and a final delivery package with usage guidelines.",
   },
@@ -82,22 +82,22 @@ const pipelineSteps: TimelineStep[] = [
     title: "Wohoo!",
     shortTitle: "Wohoo!",
     icon: <PartyPopper className="size-4 shrink-0" />,
-    colStart: 25,
-    colEnd: 30,
+    colStart: 31,
+    colEnd: 34,
     description:
       "It's time to celebrate. Your project is live and ready to make an impact. We'll pop the champagne and monitor the launch.",
   }
 ];
 
-const stepProgressPoints = [5, 20, 35, 50, 65, 80, 95];
+const stepProgressPoints = [5, 23, 40, 55, 68, 76, 96];
 
 const getStepFromProgress = (p: number): number => {
-  if (p < 12.5) return 0;
-  if (p < 27.5) return 1;
-  if (p < 42.5) return 2;
-  if (p < 57.5) return 3;
-  if (p < 72.5) return 4;
-  if (p < 87.5) return 5;
+  if (p < 14) return 0;
+  if (p < 31.5) return 1;
+  if (p < 47.5) return 2;
+  if (p < 61.5) return 3;
+  if (p < 72) return 4;
+  if (p < 86) return 5;
   return 6;
 };
 
@@ -293,7 +293,7 @@ export const TimelineTrack: React.FC = () => {
         }
 
         // Fire celebratory confetti immediately upon reaching Wohoo! (only if visible)
-        if (progressRef.current >= 87.5 && !hasFiredConfettiRef.current) {
+        if (progressRef.current >= 86.5 && !hasFiredConfettiRef.current) {
           hasFiredConfettiRef.current = true;
           triggerDeliveryConfetti();
         }
@@ -421,7 +421,7 @@ export const TimelineTrack: React.FC = () => {
                     return (
                       <div
                         key={s.id}
-                        className="relative grid grid-cols-[repeat(30,1fr)] items-center h-9 sm:h-9.5"
+                        className="relative grid grid-cols-[repeat(34,1fr)] items-center h-9 sm:h-9.5"
                       >
                         <button
                           ref={idx === 6 ? desktopStep6ButtonRef : undefined}
