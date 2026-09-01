@@ -248,19 +248,16 @@ export const Home: React.FC = () => {
         {/* How Our Motion Can Work for You */}
         <section className="py-6 sm:py-8 overflow-hidden w-full">
           <div className="mx-auto max-w-[1600px]">
-            {/* Section Header */}
-            <FadeIn delay={0.1} className="flex flex-col gap-3 md:items-center md:text-center mb-6 sm:mb-8">
-              <h2 className="font-serif text-4xl lg:text-6xl font-semibold tracking-tight text-brand-foreground">
-                How Our Motion Can Work for You
-              </h2>
-            </FadeIn>
-
             {/* Seamless Borderless Sibling Card Architecture */}
             <FadeIn delay={0.2} className="w-full flex flex-col lg:grid lg:grid-cols-[440px_1fr] xl:grid-cols-[480px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
               
               {/* Left Column: Context & Direct CTA (Slightly Darker for Subtle Differentiation) */}
               <div className="p-6 sm:p-10 lg:p-12 flex flex-col justify-between gap-8 bg-black/[0.045] dark:bg-black/30 text-brand-foreground">
-
+                <div>
+                  <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-brand-foreground leading-snug">
+                    How Our Motion<br className="hidden lg:block" /> Can Work for You
+                  </h2>
+                </div>
 
                 <div>
                   <Link
