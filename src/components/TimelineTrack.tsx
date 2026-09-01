@@ -12,9 +12,9 @@ interface TimelineStep {
   description: string;
 }
 
-const TOTAL_COLS = 34;
-const START_NEEDLE = 1.47; // Column 1 center
-const END_NEEDLE = 98.53;   // Column 34 center
+const TOTAL_COLS = 32;
+const START_NEEDLE = 1.56; // Column 1 center
+const END_NEEDLE = 98.44;   // Column 32 center
 
 const pipelineSteps: TimelineStep[] = [
   {
@@ -82,22 +82,22 @@ const pipelineSteps: TimelineStep[] = [
     title: "Wohoo!",
     shortTitle: "Wohoo!",
     icon: <PartyPopper className="size-4 shrink-0" />,
-    colStart: 31,
-    colEnd: 34,
+    colStart: 27,
+    colEnd: 32,
     description:
       "It's time to celebrate. Your project is live and ready to make an impact. We'll pop the champagne and monitor the launch.",
   }
 ];
 
-const stepProgressPoints = [5, 23, 40, 55, 68, 76, 96];
+const stepProgressPoints = [5, 25, 43, 59, 71, 81, 94];
 
 const getStepFromProgress = (p: number): number => {
-  if (p < 14) return 0;
-  if (p < 31.5) return 1;
-  if (p < 47.5) return 2;
-  if (p < 61.5) return 3;
-  if (p < 72) return 4;
-  if (p < 86) return 5;
+  if (p < 15) return 0;
+  if (p < 34) return 1;
+  if (p < 51) return 2;
+  if (p < 65) return 3;
+  if (p < 76) return 4;
+  if (p < 87.5) return 5;
   return 6;
 };
 
@@ -293,7 +293,7 @@ export const TimelineTrack: React.FC = () => {
         }
 
         // Fire celebratory confetti immediately upon reaching Wohoo! (only if visible)
-        if (progressRef.current >= 86.5 && !hasFiredConfettiRef.current) {
+        if (progressRef.current >= 88 && !hasFiredConfettiRef.current) {
           hasFiredConfettiRef.current = true;
           triggerDeliveryConfetti();
         }
@@ -421,7 +421,7 @@ export const TimelineTrack: React.FC = () => {
                     return (
                       <div
                         key={s.id}
-                        className="relative grid grid-cols-[repeat(34,1fr)] items-center h-9 sm:h-9.5"
+                        className="relative grid grid-cols-[repeat(32,1fr)] items-center h-9 sm:h-9.5"
                       >
                         <button
                           ref={idx === 6 ? desktopStep6ButtonRef : undefined}
