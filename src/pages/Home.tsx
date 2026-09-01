@@ -256,7 +256,7 @@ export const Home: React.FC = () => {
             </FadeIn>
 
             {/* Seamless Borderless Sibling Card Architecture */}
-            <FadeIn delay={0.2} className="w-full flex flex-col lg:grid lg:grid-cols-[400px_1fr] xl:grid-cols-[440px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
+            <FadeIn delay={0.2} className="w-full flex flex-col lg:grid lg:grid-cols-[400px_1fr] xl:grid-cols-[520px_1fr] 2xl:grid-cols-[580px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
               
               {/* Left Column: Context & Direct CTA (Slightly Darker for Subtle Differentiation) */}
               <div className="p-6 sm:p-10 lg:p-12 flex flex-col justify-between gap-8 bg-black/[0.045] dark:bg-black/30 text-brand-foreground">
