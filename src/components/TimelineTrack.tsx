@@ -515,20 +515,10 @@ export const TimelineTrack: React.FC = () => {
           </div>
 
           {/* Right: Vertical Scrolling Content Reel with Crisp Zero-Ghosting Transitions */}
-          <div className="border-t lg:border-t-0 lg:border-l border-brand-foreground/10 bg-brand-bg/60 dark:bg-neutral-900/90 p-6 sm:p-8 flex flex-col justify-between">
+          <div className="border-t lg:border-t-0 lg:border-l border-brand-foreground/10 bg-brand-bg/60 dark:bg-neutral-900/90 p-6 sm:p-8 flex flex-col justify-center">
             <div>
-              {/* Top Phase Header */}
-              <div className="flex items-center justify-between pb-4 border-b border-brand-foreground/10">
-                <span className="font-mono text-[11px] uppercase tracking-[0.2em] font-medium text-brand-subtle">
-                  Phase 0{activeStep + 1} of 06
-                </span>
-                <span className="rounded-full bg-black px-3 py-1 font-mono text-[10px] uppercase tracking-wider font-medium text-white shadow-xs dark:bg-neutral-800 dark:text-neutral-200">
-                  Step 0{activeStep + 1}
-                </span>
-              </div>
-
               {/* Vertical Scrolling Content Reel */}
-              <div className="relative h-[300px] sm:h-[280px] overflow-hidden mt-5">
+              <div className="relative h-[180px] sm:h-[160px] overflow-hidden">
                 <div
                   className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] h-full"
                   style={{ transform: `translateY(-${activeStep * 100}%) translateZ(0)` }}
@@ -538,7 +528,7 @@ export const TimelineTrack: React.FC = () => {
                     return (
                       <div
                         key={s.id}
-                        className={`h-[300px] sm:h-[280px] shrink-0 flex flex-col justify-start transition-opacity duration-300 ease-out ${
+                        className={`h-[180px] sm:h-[160px] shrink-0 flex flex-col justify-center transition-opacity duration-300 ease-out ${
                           isActive ? "opacity-100" : "opacity-0 pointer-events-none"
                         }`}
                         style={{ backfaceVisibility: "hidden" }}
@@ -549,36 +539,11 @@ export const TimelineTrack: React.FC = () => {
                         <p className="mt-2 text-[14px] leading-relaxed text-neutral-700 dark:text-neutral-300 font-normal">
                           {s.description}
                         </p>
-
-
                       </div>
                     );
                   })}
                 </div>
               </div>
-            </div>
-
-            {/* Bottom Quick Step Switcher */}
-            <div className="mt-4 pt-4 border-t border-brand-foreground/10 flex items-center justify-between">
-              <button
-                type="button"
-                disabled={activeStep === 0}
-                onClick={() => handleSelectStep(Math.max(0, activeStep - 1))}
-                className="rounded-full bg-white dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700 px-4 py-1.5 font-mono text-xs font-medium text-black transition-colors duration-150 hover:bg-neutral-200 disabled:opacity-30 disabled:pointer-events-none cursor-pointer shadow-xs border-0"
-              >
-                ← Prev
-              </button>
-              <span className="font-mono text-[11px] font-medium text-neutral-600 dark:text-neutral-400">
-                0{activeStep + 1} / 06
-              </span>
-              <button
-                type="button"
-                disabled={activeStep === pipelineSteps.length - 1}
-                onClick={(e) => handleSelectStep(Math.min(pipelineSteps.length - 1, activeStep + 1), e)}
-                className="rounded-full bg-white dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700 px-4 py-1.5 font-mono text-xs font-medium text-black transition-colors duration-150 hover:bg-neutral-200 disabled:opacity-30 disabled:pointer-events-none cursor-pointer shadow-xs border-0"
-              >
-                Next →
-              </button>
             </div>
           </div>
         </div>
