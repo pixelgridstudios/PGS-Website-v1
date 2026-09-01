@@ -72,7 +72,7 @@ const pipelineSteps: TimelineStep[] = [
     title: "Delivery & Implementation",
     shortTitle: "Delivery",
     icon: <Send className="size-4 shrink-0" />,
-    colStart: 22,
+    colStart: 24,
     colEnd: 30,
     description:
       "Optimized master exports for all your marketing channels in multiple formats, resolutions, and a final delivery package with usage guidelines.",
@@ -89,15 +89,15 @@ const pipelineSteps: TimelineStep[] = [
   }
 ];
 
-const stepProgressPoints = [5, 27, 45, 61, 74, 84, 97];
+const stepProgressPoints = [5, 27, 45, 61, 74, 87, 97];
 
 const getStepFromProgress = (p: number): number => {
   if (p < 16) return 0;
   if (p < 36) return 1;
   if (p < 53) return 2;
   if (p < 67.5) return 3;
-  if (p < 79) return 4;
-  if (p < 90.5) return 5;
+  if (p < 80.5) return 4;
+  if (p < 92) return 5;
   return 6;
 };
 
@@ -293,7 +293,7 @@ export const TimelineTrack: React.FC = () => {
         }
 
         // Fire celebratory confetti immediately upon reaching Wohoo! (only if visible)
-        if (progressRef.current >= 91 && !hasFiredConfettiRef.current) {
+        if (progressRef.current >= 92.5 && !hasFiredConfettiRef.current) {
           hasFiredConfettiRef.current = true;
           triggerDeliveryConfetti();
         }
