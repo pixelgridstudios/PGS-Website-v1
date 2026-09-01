@@ -3,7 +3,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ApproachItem {
   title: string;
-  tagline: string;
   copy: string;
   image: string;
   imageAlt: string;
@@ -12,21 +11,18 @@ interface ApproachItem {
 const approachItems: ApproachItem[] = [
   {
     title: "Design a Strong Visual Identity",
-    tagline: "Clarity & Character",
     copy: "From established brands to fresh beginnings, we ensure every visual element communicates clearly, feels intentional, and amplifies your identity across every touchpoint.",
     image: "/assets/chrono-morph.jpg",
     imageAlt: "Design a Strong Visual Identity — styleframe render",
   },
   {
     title: "Build to Scale",
-    tagline: "Modular Systems",
     copy: "We engineer modular 3D design systems built for flexibility and consistency across marketing campaigns, platforms, and international broadcast formats.",
     image: "/assets/void-textiles.jpg",
     imageAlt: "Build to Scale — modular 3D simulation system",
   },
   {
     title: "Launch with Impact",
-    tagline: "Engagement & Reach",
     copy: "We craft scroll-stopping motion and high-fidelity visuals that command attention, clarify technical value, and drive meaningful audience engagement.",
     image: "/assets/precision-archive.jpg",
     imageAlt: "Launch with Impact — high-end product visualization",
@@ -102,9 +98,6 @@ export const ApproachSlider: React.FC = () => {
                           }`}
                           style={{ backfaceVisibility: "hidden" }}
                         >
-                          <span className="font-mono text-sm uppercase tracking-[0.2em] text-brand-subtle mb-2 font-medium">
-                            {item.tagline}
-                          </span>
                           <p className="text-base sm:text-lg lg:text-lg leading-relaxed text-brand-foreground/85 font-normal">
                             {item.copy}
                           </p>
@@ -114,13 +107,6 @@ export const ApproachSlider: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Step Counter Footer */}
-            <div className="hidden sm:flex items-center gap-3 font-mono text-sm uppercase tracking-widest text-brand-subtle pt-6 border-t border-brand-foreground/10">
-              <span className="font-bold text-brand-foreground">Approach 0{activeIndex + 1}</span>
-              <span className="h-px w-8 bg-brand-foreground/20" />
-              <span>0{approachItems.length}</span>
             </div>
           </div>
 
