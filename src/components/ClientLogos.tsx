@@ -2,19 +2,26 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FadeIn from "./animations/FadeIn";
 
-const clients = [
-  "Nike",
-  "Razer",
-  "Polestar",
-  "Logitech",
-  "Sony",
-  "Bose",
-  "Teenage Engineering",
-  "Rivian",
-  "Apple",
-  "Netflix",
-  "Dropbox",
-  "Framer",
+interface ClientLogo {
+  name: string;
+  src: string;
+}
+
+// Using placehold.co for temporary PNG placeholders. 
+// Replace these src paths with your actual local paths (e.g., "/assets/clients/nike.png")
+const clients: ClientLogo[] = [
+  { name: "Nike", src: "https://placehold.co/240x100/1a1a1a/4a4a4a?text=NIKE" },
+  { name: "Razer", src: "https://placehold.co/240x100/1a1a1a/4a4a4a?text=RAZER" },
+  { name: "Polestar", src: "https://placehold.co/240x100/1a1a1a/4a4a4a?text=POLESTAR" },
+  { name: "Logitech", src: "https://placehold.co/240x100/1a1a1a/4a4a4a?text=LOGITECH" },
+  { name: "Sony", src: "https://placehold.co/240x100/1a1a1a/4a4a4a?text=SONY" },
+  { name: "Bose", src: "https://placehold.co/240x100/1a1a1a/4a4a4a?text=BOSE" },
+  { name: "Teenage Engineering", src: "https://placehold.co/240x100/1a1a1a/4a4a4a?text=TEENAGE+ENG" },
+  { name: "Rivian", src: "https://placehold.co/240x100/1a1a1a/4a4a4a?text=RIVIAN" },
+  { name: "Apple", src: "https://placehold.co/240x100/1a1a1a/4a4a4a?text=APPLE" },
+  { name: "Netflix", src: "https://placehold.co/240x100/1a1a1a/4a4a4a?text=NETFLIX" },
+  { name: "Dropbox", src: "https://placehold.co/240x100/1a1a1a/4a4a4a?text=DROPBOX" },
+  { name: "Framer", src: "https://placehold.co/240x100/1a1a1a/4a4a4a?text=FRAMER" },
 ];
 
 // Divide into 4 arrays for 4 cells
@@ -23,7 +30,7 @@ const col2 = [clients[1], clients[5], clients[9]];
 const col3 = [clients[2], clients[6], clients[10]];
 const col4 = [clients[3], clients[7], clients[11]];
 
-const LogoCell = ({ items }: { items: string[] }) => {
+const LogoCell = ({ items }: { items: ClientLogo[] }) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -36,19 +43,21 @@ const LogoCell = ({ items }: { items: string[] }) => {
   }, [items.length]);
 
   return (
-    <div className="relative h-20 sm:h-24 md:h-32 w-full rounded-xl sm:rounded-2xl bg-brand-muted/40 overflow-hidden flex items-center justify-center border border-brand-foreground/5 shadow-inner">
+    <div className="relative h-20 sm:h-24 md:h-32 w-full rounded-xl sm:rounded-2xl bg-brand-muted/40 overflow-hidden flex items-center justify-center border border-brand-foreground/5 shadow-inner p-4 sm:p-6">
       <AnimatePresence mode="popLayout">
         <motion.div
-          key={items[index]}
+          key={items[index].name}
           initial={{ y: "100%", opacity: 0, scale: 0.95 }}
           animate={{ y: 0, opacity: 1, scale: 1 }}
           exit={{ y: "-100%", opacity: 0, scale: 1.05 }}
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
           className="absolute inset-0 flex items-center justify-center w-full h-full"
         >
-          <span className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-brand-foreground/30 tracking-wider uppercase text-center px-4 leading-none select-none">
-            {items[index]}
-          </span>
+          <img 
+            src={items[index].src} 
+            alt={`${items[index].name} logo`} 
+            className="max-h-full max-w-full object-contain opacity-70 contrast-125 select-none pointer-events-none mix-blend-luminosity"
+          />
         </motion.div>
       </AnimatePresence>
     </div>
