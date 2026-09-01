@@ -10,7 +10,6 @@ interface TimelineStep {
   colStart: number;
   colEnd: number;
   description: string;
-  deliverables: string[];
 }
 
 const TOTAL_COLS = 30;
@@ -27,11 +26,6 @@ const pipelineSteps: TimelineStep[] = [
     colEnd: 8,
     description:
       "We explore your objectives, research your brand, industry and target audience, and develop a clear creative roadmap for the project.",
-    deliverables: [
-      "Strategy session to explore your objectives",
-      "Research your brand, industry, and target audience",
-      "Develop a clear roadmap for the project",
-    ],
   },
   {
     id: 1,
@@ -42,10 +36,6 @@ const pipelineSteps: TimelineStep[] = [
     colEnd: 13,
     description:
       "Scriptwriting, storyboarding to visualize the flow, and developing style frames to establish the definitive visual direction.",
-    deliverables: [
-      "Storyboarding to visualize the flow",
-      "Style frames to define the visual direction",
-    ],
   },
   {
     id: 2,
@@ -56,11 +46,6 @@ const pipelineSteps: TimelineStep[] = [
     colEnd: 18,
     description:
       "Moodboards, color palette, typography styling, custom 3D asset modeling, procedural lighting, and overall aesthetic look-development.",
-    deliverables: [
-      "Moodboards and style development",
-      "Color palette, typography, and overall aesthetic",
-      "Custom illustrations, 3D models, or motion graphics",
-    ],
   },
   {
     id: 3,
@@ -71,11 +56,6 @@ const pipelineSteps: TimelineStep[] = [
     colEnd: 23,
     description:
       "Keyframe animation, fluid motion design, 3D rendering, multipass compositing, and impactful sound design & music mastering.",
-    deliverables: [
-      "Keyframe animation & fluid motion design",
-      "3D rendering and compositing (if applicable)",
-      "Sound design & music selection for maximum impact",
-    ],
   },
   {
     id: 4,
@@ -86,11 +66,6 @@ const pipelineSteps: TimelineStep[] = [
     colEnd: 26,
     description:
       "Iterative review and revisions based on your input, edit adjustments to timing, pacing, and transitions, followed by final quality checks.",
-    deliverables: [
-      "Review and revisions based on your input",
-      "Edit adjustments to timing, pacing, or transitions",
-      "Final quality checks before delivery",
-    ],
   },
   {
     id: 5,
@@ -101,10 +76,6 @@ const pipelineSteps: TimelineStep[] = [
     colEnd: 30,
     description:
       "Optimized master exports for all your marketing channels in multiple formats, resolutions, and a final delivery package with usage guidelines.",
-    deliverables: [
-      "Optimized exports for all channels & resolutions",
-      "Final delivery package with usage guidelines",
-    ],
   },
 ];
 
@@ -579,22 +550,7 @@ export const TimelineTrack: React.FC = () => {
                           {s.description}
                         </p>
 
-                        <div className="mt-4">
-                          <span className="font-mono text-[10px] uppercase tracking-[0.2em] font-medium text-neutral-500 dark:text-neutral-400">
-                            Key Deliverables
-                          </span>
-                          <ul className="mt-2 space-y-1.5">
-                            {s.deliverables.map((item, i) => (
-                              <li
-                                key={i}
-                                className="flex items-start gap-2 text-neutral-900 dark:text-neutral-200 font-normal leading-snug"
-                              >
-                                <div className="size-1.5 rounded-full bg-black dark:bg-neutral-400 mt-1.5 shrink-0" />
-                                <span>{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+
                       </div>
                     );
                   })}
@@ -680,17 +636,7 @@ export const TimelineTrack: React.FC = () => {
                       <p className="leading-relaxed text-white/90 font-normal">
                         {s.description}
                       </p>
-                      <ul className="mt-3 space-y-2">
-                        {s.deliverables.map((item, i) => (
-                          <li
-                            key={i}
-                            className="flex items-start gap-2 text-white/90 text-[13px] font-normal"
-                          >
-                            <span className="text-white/60 mt-0.5">•</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
+
                     </div>
                   </div>
                 </div>
