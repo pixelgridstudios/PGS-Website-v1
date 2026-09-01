@@ -19,7 +19,7 @@ export default {
       },
       fontFamily: {
         sans: ["'Outfit'", "system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-        display: ["'Fraunces'", "system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        display: ["'DM Serif Display'", "system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
         mono: ["'Outfit'", "system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
       },
       letterSpacing: {
