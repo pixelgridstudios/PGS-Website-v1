@@ -326,9 +326,7 @@ export const ProjectDetail: React.FC = () => {
 
                 <div className="flex items-end justify-between gap-4 px-1 pb-1">
                   <div>
-                    <span className="font-mono text-sm uppercase tracking-widest text-brand-subtle font-medium">
-                      {project.nextProject.meta}
-                    </span>
+
                     <h4 className="mt-1 font-display text-2xl sm:text-4xl font-bold tracking-tight text-brand-foreground">
                       {project.nextProject.title}
                     </h4>

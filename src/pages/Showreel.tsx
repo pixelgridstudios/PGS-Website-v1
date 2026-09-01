@@ -164,9 +164,7 @@ export const Showreel: React.FC = () => {
 
                   <div className="flex items-end justify-between px-1 pb-1">
                     <div>
-                      <span className="font-mono text-sm uppercase tracking-wider text-brand-subtle font-medium">
-                        {ch.discipline}
-                      </span>
+
                       <h3 className="mt-1 font-display text-lg font-bold tracking-tight text-brand-foreground">
                         {ch.title}
                       </h3>

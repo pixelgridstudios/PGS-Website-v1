@@ -195,9 +195,7 @@ export const Home: React.FC = () => {
                 </div>
                 <div className="flex items-end justify-between px-1 pb-1">
                   <div>
-                    <span className="font-mono text-sm uppercase tracking-widest text-brand-subtle font-medium">
-                      {project.meta}
-                    </span>
+
                     <h3 className="mt-1 font-display text-2xl font-bold tracking-tight sm:text-4xl text-brand-foreground">
                       {project.title}
                     </h3>
