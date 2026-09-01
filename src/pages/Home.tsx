@@ -260,14 +260,7 @@ export const Home: React.FC = () => {
               
               {/* Left Column: Context & Direct CTA (Slightly Darker for Subtle Differentiation) */}
               <div className="p-6 sm:p-10 lg:p-12 flex flex-col justify-between gap-8 bg-black/[0.045] dark:bg-black/30 text-brand-foreground">
-                <div>
-                  <h3 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-brand-foreground leading-snug">
-                    Precision 3D and motion systems built for impact.
-                  </h3>
-                  <p className="mt-4 text-base leading-relaxed text-brand-subtle font-normal">
-                    Every asset is engineered with precision lighting, procedural shaders, and cinematic pacing — turning intricate engineering into clear, captivating visuals.
-                  </p>
-                </div>
+
 
                 <div>
                   <Link
