@@ -134,7 +134,7 @@ export const Contact: React.FC = () => {
         <div className="flex flex-col gap-2 max-w-3xl">
           <TextReveal
             text="Contact us"
-            className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-foreground"
+            className="font-display text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-brand-foreground"
           />
           <FadeIn delay={0.2} direction="up" className="mt-2 text-base sm:text-lg text-brand-subtle font-normal">
             Tell us about your upcoming launch, timeline, or design brief.
@@ -147,7 +147,7 @@ export const Contact: React.FC = () => {
             {/* Left (50%): Project Intake Form */}
             <div className="p-8 sm:p-10 lg:p-12 xl:p-14 bg-brand-bg/95 flex flex-col justify-between">
               <div>
-                <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl text-brand-foreground">
+                <h2 className="font-display text-4xl font-bold tracking-tight sm:text-4xl text-brand-foreground">
                   Let's Connect!
                 </h2>
               </div>
@@ -159,7 +159,7 @@ export const Contact: React.FC = () => {
                       <CheckCircle2 className="size-7" />
                     </span>
                     <div>
-                      <h3 className="font-display text-2xl sm:text-3xl font-bold">Brief Received!</h3>
+                      <h3 className="font-display text-2xl sm:text-4xl font-bold">Brief Received!</h3>
                     </div>
                   </div>
 
@@ -172,7 +172,7 @@ export const Contact: React.FC = () => {
                     </p>
                   </div>
 
-                  <div className="p-5 rounded-xl bg-brand-panel-foreground/5 border border-brand-panel-foreground/10 space-y-3 font-mono text-[13px] text-brand-panel-foreground/85">
+                  <div className="p-5 rounded-xl bg-brand-panel-foreground/5 border border-brand-panel-foreground/10 space-y-3 font-mono text-sm text-brand-panel-foreground/85">
                     <span className="font-semibold text-brand-panel-foreground block">
                       For any further inquiries reach out directly:
                     </span>
@@ -209,7 +209,7 @@ export const Contact: React.FC = () => {
                         setEmail("");
                         setBrief("");
                       }}
-                      className="inline-flex items-center gap-2 rounded-full border border-brand-panel-foreground/30 px-6 py-2.5 text-[13px] font-medium text-brand-panel-foreground hover:bg-brand-panel-foreground hover:text-brand-panel transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-2 rounded-full border border-brand-panel-foreground/30 px-6 py-2.5 text-sm font-medium text-brand-panel-foreground hover:bg-brand-panel-foreground hover:text-brand-panel transition-colors cursor-pointer"
                     >
                       <span>← Send another inquiry</span>
                     </button>
@@ -219,7 +219,7 @@ export const Contact: React.FC = () => {
                 <form ref={formRef} onSubmit={(e) => e.preventDefault()} className="mt-8 space-y-6">
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
-                      <label className="font-mono text-sm sm:text-[15px] uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                      <label className="font-mono text-sm sm:text-base uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                         First Name *
                       </label>
                       <input
@@ -232,7 +232,7 @@ export const Contact: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label className="font-mono text-sm sm:text-[15px] uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                      <label className="font-mono text-sm sm:text-base uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                         Last Name
                       </label>
                       <input
@@ -246,7 +246,7 @@ export const Contact: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="font-mono text-sm sm:text-[15px] uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                    <label className="font-mono text-sm sm:text-base uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                       Email Address *
                     </label>
                     <input
@@ -261,7 +261,7 @@ export const Contact: React.FC = () => {
 
                   {/* Target Timeline */}
                   <div>
-                    <label className="font-mono text-sm sm:text-[15px] uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                    <label className="font-mono text-sm sm:text-base uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                       Target Timeline
                     </label>
                     <div className="flex flex-wrap gap-2">
@@ -287,7 +287,7 @@ export const Contact: React.FC = () => {
 
                   {/* Project Type (Strictly Single Line for Laptops & Desktops) */}
                   <div>
-                    <label className="font-mono text-sm sm:text-[15px] uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                    <label className="font-mono text-sm sm:text-base uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                       Project Type (Select all that apply)
                     </label>
                     <div className="flex flex-wrap gap-2">
@@ -313,7 +313,7 @@ export const Contact: React.FC = () => {
 
                   {/* Target Budget Range */}
                   <div>
-                    <label className="font-mono text-sm sm:text-[15px] uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                    <label className="font-mono text-sm sm:text-base uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                       Target Budget Range
                     </label>
                     <div className="flex flex-wrap gap-2">
@@ -338,7 +338,7 @@ export const Contact: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="font-mono text-sm sm:text-[15px] uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                    <label className="font-mono text-sm sm:text-base uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                       Project Brief &amp; Scope *
                     </label>
                     <textarea
@@ -366,19 +366,19 @@ export const Contact: React.FC = () => {
             <div className="relative flex min-h-[320px] lg:min-h-full flex-col items-center justify-center bg-brand-panel p-8 sm:p-10 lg:p-12 xl:p-14 text-brand-panel-foreground border-0 select-none">
               <div className="text-center space-y-3">
                 <div className="flex items-baseline justify-center gap-1.5 sm:gap-2.5">
-                  <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-display font-bold tracking-tight tabular-nums text-brand-panel-foreground leading-none">
+                  <div className="text-6xl lg:text-8xl xl:text-8xl font-display font-bold tracking-tight tabular-nums text-brand-panel-foreground leading-none">
                     <span>{hours}</span>
                     <span className={`mx-0.5 transition-opacity duration-150 ${colonVisible ? "opacity-100" : "opacity-25"}`}>
                       :
                     </span>
                     <span>{minutes}</span>
                   </div>
-                  <span className="font-mono text-lg sm:text-xl lg:text-2xl font-semibold text-emerald-400 tabular-nums">
+                  <span className="font-mono text-lg sm:text-2xl lg:text-2xl font-semibold text-emerald-400 tabular-nums">
                     :{seconds}
                   </span>
                 </div>
 
-                <div className="font-mono text-sm sm:text-[15px] text-brand-panel-foreground/60 tracking-wider">
+                <div className="font-mono text-sm sm:text-base text-brand-panel-foreground/60 tracking-wider">
                   {dateString}
                 </div>
               </div>
@@ -394,7 +394,7 @@ export const Contact: React.FC = () => {
               <Mail className="size-4" />
             </div>
             <div>
-              <span className="font-mono text-[13px] uppercase tracking-wider text-brand-subtle font-medium">
+              <span className="font-mono text-sm uppercase tracking-wider text-brand-subtle font-medium">
                 General Inquiries
               </span>
               <a
@@ -412,7 +412,7 @@ export const Contact: React.FC = () => {
               <Globe className="size-4" />
             </div>
             <div className="flex-1">
-              <span className="font-mono text-[13px] uppercase tracking-wider text-brand-subtle font-medium">
+              <span className="font-mono text-sm uppercase tracking-wider text-brand-subtle font-medium">
                 Social Networks
               </span>
               <div className="mt-1.5 flex flex-wrap gap-2">
@@ -422,7 +422,7 @@ export const Contact: React.FC = () => {
                     href={s.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="rounded-full bg-neutral-200 dark:bg-neutral-800 px-3.5 py-1 font-mono text-[13px] font-medium text-neutral-800 dark:text-neutral-200 hover:bg-neutral-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors border-0 select-none shadow-2xs"
+                    className="rounded-full bg-neutral-200 dark:bg-neutral-800 px-3.5 py-1 font-mono text-sm font-medium text-neutral-800 dark:text-neutral-200 hover:bg-neutral-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors border-0 select-none shadow-2xs"
                   >
                     {s.name}
                   </a>
@@ -441,7 +441,7 @@ export const Contact: React.FC = () => {
             onClick={() => setLegalOpen(!legalOpen)}
             className="flex w-full items-center justify-between rounded-xl bg-brand-muted/70 p-5 text-left transition-colors hover:bg-brand-muted cursor-pointer border-0"
           >
-            <span className="font-mono text-[13px] uppercase tracking-[0.2em] font-semibold text-brand-foreground">
+            <span className="font-mono text-sm uppercase tracking-[0.2em] font-semibold text-brand-foreground">
               Studio &amp; Legal Notice
             </span>
             <ChevronDown
@@ -458,7 +458,7 @@ export const Contact: React.FC = () => {
           >
             <div className="overflow-hidden">
               <div className="rounded-xl bg-brand-bg p-6 text-sm text-brand-subtle border-0">
-                <ul className="space-y-2 font-mono text-[13px]">
+                <ul className="space-y-2 font-mono text-sm">
                   <li><strong className="text-brand-foreground font-semibold">Studio:</strong> Pixel Grid Studios</li>
                   <li><strong className="text-brand-foreground font-semibold">Founder / CD:</strong> Subhanshu Gajbhiye</li>
                   <li><strong className="text-brand-foreground font-semibold">Direct Contact:</strong> <a href="mailto:hello@pixelgridstudios.com" className="hover:underline hover:text-brand-foreground transition-colors">hello@pixelgridstudios.com</a></li>
@@ -469,7 +469,7 @@ export const Contact: React.FC = () => {
                 <div className="mt-5 pt-4 border-t border-brand-foreground/10 flex flex-wrap items-center gap-3">
                   <Link
                     to="/privacy-policy"
-                    className="inline-flex items-center gap-2 rounded-full bg-brand-muted px-4 py-2 text-[13px] font-mono font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors border-0"
+                    className="inline-flex items-center gap-2 rounded-full bg-brand-muted px-4 py-2 text-sm font-mono font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors border-0"
                   >
                     <span>View Privacy Policy</span>
                     <ArrowRight className="size-3" />
@@ -477,7 +477,7 @@ export const Contact: React.FC = () => {
 
                   <Link
                     to="/terms-conditions"
-                    className="inline-flex items-center gap-2 rounded-full bg-brand-muted px-4 py-2 text-[13px] font-mono font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors border-0"
+                    className="inline-flex items-center gap-2 rounded-full bg-brand-muted px-4 py-2 text-sm font-mono font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors border-0"
                   >
                     <span>View Terms &amp; Conditions</span>
                     <ArrowRight className="size-3" />

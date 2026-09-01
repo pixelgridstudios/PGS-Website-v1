@@ -106,10 +106,10 @@ export const Home: React.FC = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-mono text-[13px] uppercase tracking-wider text-neutral-500 font-medium">
+                <span className="font-mono text-sm uppercase tracking-wider text-neutral-500 font-medium">
                   Studio Reel
                 </span>
-                <span className="font-display text-[14px] font-bold leading-tight text-black">
+                <span className="font-display text-sm font-bold leading-tight text-black">
                   Watch Full Showreel
                 </span>
               </div>
@@ -129,7 +129,7 @@ export const Home: React.FC = () => {
             {/* Left/Top Column: Context, Branding & Action */}
             <div className="p-5 sm:p-6 md:p-8 lg:p-10 xl:p-11 pb-2 sm:pb-3 md:pb-8 lg:pb-10 xl:pb-11 flex flex-row md:flex-col justify-between items-center md:items-start gap-3 sm:gap-4 md:gap-7 bg-transparent md:bg-black/[0.045] md:dark:bg-black/30 text-brand-foreground">
               <div>
-                <h2 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[44px] font-bold tracking-tight text-brand-foreground leading-tight md:leading-[1.08]">
+                <h2 className="font-display text-2xl md:text-4xl xl:text-6xl font-bold tracking-tight text-brand-foreground leading-tight md:leading-[1.08]">
                   <span className="inline md:block whitespace-nowrap">Hi, we're </span>
                   <span className="inline md:block md:mt-1 whitespace-nowrap">Pixel Grid</span>
                 </h2>
@@ -138,7 +138,7 @@ export const Home: React.FC = () => {
               <div className="shrink-0">
                 <Link
                   to="/about"
-                  className="group inline-flex items-center gap-2 sm:gap-2.5 md:gap-3 rounded-full bg-brand-panel text-brand-panel-foreground px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3 lg:py-3.5 text-sm sm:text-[15px] font-medium tracking-wide shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
+                  className="group inline-flex items-center gap-2 sm:gap-2.5 md:gap-3 rounded-full bg-brand-panel text-brand-panel-foreground px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3 lg:py-3.5 text-sm sm:text-base font-medium tracking-wide shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
                 >
                   <span>More about us</span>
                   <ArrowRight className="size-3.5 sm:size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
@@ -148,7 +148,7 @@ export const Home: React.FC = () => {
 
             {/* Right/Bottom Column: Narrative */}
             <div className="p-5 sm:p-6 md:p-8 lg:p-10 xl:p-11 pt-2 sm:pt-3 md:pt-8 lg:pt-10 xl:pt-11 flex flex-col justify-center bg-brand-muted text-brand-foreground">
-              <div className="space-y-2.5 sm:space-y-3 md:space-y-4 lg:space-y-4.5 text-[14.5px] sm:text-base md:text-[16px] lg:text-[17.5px] xl:text-[18.5px] leading-relaxed text-brand-subtle font-normal">
+              <div className="space-y-2.5 sm:space-y-3 md:space-y-4 lg:space-y-4.5 text-sm sm:text-base lg:text-lg xl:text-lg leading-relaxed text-brand-subtle font-normal">
                 <p>
                   Pixel Grid Studios was founded in 2020 by Subhanshu Gajbhiye, Creative Director. We turn complex engineering, products, and technical concepts into motion that audiences immediately understand.
                 </p>
@@ -167,7 +167,7 @@ export const Home: React.FC = () => {
         <section className="py-6 sm:py-8">
           <FadeIn delay={0.1} className="flex items-end justify-between mb-6 sm:mb-8">
             <div>
-              <h2 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl text-brand-foreground">
+              <h2 className="font-display text-4xl font-semibold tracking-tight sm:text-6xl text-brand-foreground">
                 Highlighted Work
               </h2>
             </div>
@@ -195,17 +195,17 @@ export const Home: React.FC = () => {
                 </div>
                 <div className="flex items-end justify-between px-1 pb-1">
                   <div>
-                    <span className="font-mono text-[13px] uppercase tracking-widest text-brand-subtle font-medium">
+                    <span className="font-mono text-sm uppercase tracking-widest text-brand-subtle font-medium">
                       {project.meta}
                     </span>
-                    <h3 className="mt-1 font-display text-2xl font-bold tracking-tight sm:text-3xl text-brand-foreground">
+                    <h3 className="mt-1 font-display text-2xl font-bold tracking-tight sm:text-4xl text-brand-foreground">
                       {project.title}
                     </h3>
                     <div className="mt-3 flex flex-wrap gap-2">
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-brand-bg px-3 py-1 font-mono text-[13px] uppercase tracking-wider text-brand-foreground font-medium border-0"
+                          className="rounded-full bg-brand-bg px-3 py-1 font-mono text-sm uppercase tracking-wider text-brand-foreground font-medium border-0"
                         >
                           {tag}
                         </span>
@@ -252,7 +252,7 @@ export const Home: React.FC = () => {
           <div className="mx-auto max-w-[1600px]">
             {/* Section Header */}
             <FadeIn delay={0.1} className="flex flex-col gap-3 md:items-center md:text-center mb-6 sm:mb-8">
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-brand-foreground">
+              <h2 className="font-display text-4xl lg:text-6xl font-semibold tracking-tight text-brand-foreground">
                 How Our Motion Can Work for You
               </h2>
               <p className="max-w-2xl text-base sm:text-lg text-brand-subtle font-normal">
@@ -266,7 +266,7 @@ export const Home: React.FC = () => {
               {/* Left Column: Context & Direct CTA (Slightly Darker for Subtle Differentiation) */}
               <div className="p-6 sm:p-10 lg:p-12 flex flex-col justify-between gap-8 bg-black/[0.045] dark:bg-black/30 text-brand-foreground">
                 <div>
-                  <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-brand-foreground leading-snug">
+                  <h3 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-brand-foreground leading-snug">
                     Precision 3D and motion systems built for impact.
                   </h3>
                   <p className="mt-4 text-base leading-relaxed text-brand-subtle font-normal">
@@ -310,7 +310,7 @@ export const Home: React.FC = () => {
                       >
                         <div className="flex items-center gap-3 sm:gap-4 min-w-0">
                           <span
-                            className={`font-mono text-[13px] font-medium transition-colors ${
+                            className={`font-mono text-sm font-medium transition-colors ${
                               isOpen ? "text-brand-foreground font-semibold" : "text-brand-subtle"
                             }`}
                           >
@@ -321,7 +321,7 @@ export const Home: React.FC = () => {
                               {service.title}
                             </span>
                             <span
-                              className={`font-mono text-[13px] uppercase tracking-wider transition-colors ${
+                              className={`font-mono text-sm uppercase tracking-wider transition-colors ${
                                 isOpen ? "text-emerald-500 font-semibold" : "text-brand-subtle"
                               }`}
                             >

@@ -40,9 +40,9 @@ export const About: React.FC = () => {
         <div className="flex flex-col gap-4 max-w-4xl">
           <TextReveal
             text="Crafting campaign-defining 3D motion for products that matter."
-            className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-foreground leading-[1.05]"
+            className="font-display text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-brand-foreground leading-[1.05]"
           />
-          <FadeIn delay={0.2} direction="up" className="mt-2 text-lg sm:text-xl text-brand-subtle font-normal leading-relaxed">
+          <FadeIn delay={0.2} direction="up" className="mt-2 text-lg sm:text-2xl text-brand-subtle font-normal leading-relaxed">
             Founded in 2020 by Subhanshu Gajbhiye, Pixel Grid Studios turns complex engineering, physical products, and technical narratives into captivating visual films.
           </FadeIn>
         </div>
@@ -61,7 +61,7 @@ export const About: React.FC = () => {
                 <h3 className="font-display text-2xl font-bold text-brand-foreground">
                   Subhanshu Gajbhiye
                 </h3>
-                <span className="font-mono text-[13px] uppercase tracking-wider text-brand-subtle font-medium">
+                <span className="font-mono text-sm uppercase tracking-wider text-brand-subtle font-medium">
                   Founder & Creative Director
                 </span>
               </div>
@@ -72,7 +72,7 @@ export const About: React.FC = () => {
             </p>
 
             <div className="pt-4 border-t border-brand-foreground/10 flex flex-col gap-3">
-              <span className="font-mono text-[13px] uppercase tracking-wider text-brand-subtle font-medium">
+              <span className="font-mono text-sm uppercase tracking-wider text-brand-subtle font-medium">
                 Core Disciplines
               </span>
               <ul className="space-y-2">
@@ -105,7 +105,7 @@ export const About: React.FC = () => {
                     <span className="font-mono text-sm font-medium text-brand-subtle">
                       {p.num}
                     </span>
-                    <h4 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-brand-foreground">
+                    <h4 className="font-display text-2xl font-bold tracking-tight text-brand-foreground">
                       {p.title}
                     </h4>
                   </div>
@@ -123,7 +123,7 @@ export const About: React.FC = () => {
         {/* Bottom CTA Box (Seamless Borderless) */}
         <FadeIn delay={0.1} fullWidth className="rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-8 sm:p-12 shadow-sm dark:shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 border-0">
           <div>
-            <div className="flex items-center gap-2 font-mono text-[13px] uppercase tracking-wider text-brand-subtle font-medium mb-2">
+            <div className="flex items-center gap-2 font-mono text-sm uppercase tracking-wider text-brand-subtle font-medium mb-2">
               <Sparkles className="size-4 text-brand-foreground" />
               <span>Let's Create Together</span>
             </div>

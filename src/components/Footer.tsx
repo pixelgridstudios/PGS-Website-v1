@@ -18,14 +18,14 @@ export const Footer: React.FC = () => {
             
             {/* Left Side: Headline, Let's Talk CTA & Clean Email Line */}
             <div className="max-w-[620px] flex flex-col gap-6">
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-neutral-950 dark:text-brand-foreground leading-[1.08]">
+              <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tight text-neutral-950 dark:text-brand-foreground leading-[1.08]">
                 Got a complex product? Let's make it look like magic. ✨
               </h2>
 
               <div className="flex flex-wrap items-center gap-4 sm:gap-5 pt-2">
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground px-7 sm:px-8 py-3 sm:py-3.5 font-display text-sm sm:text-[15px] font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 select-none cursor-pointer border-0"
+                  className="group inline-flex items-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground px-7 sm:px-8 py-3 sm:py-3.5 font-display text-sm sm:text-base font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 select-none cursor-pointer border-0"
                 >
                   <span>Say Hi</span>
                   <ArrowRight className="size-4 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
                   <span className="text-neutral-600 dark:text-brand-subtle font-normal text-sm">or</span>
                   <a
                     href="mailto:hello@pixelgridstudios.com"
-                    className="font-display text-sm sm:text-[15px] font-semibold text-neutral-950 dark:text-brand-foreground hover:underline underline-offset-4 transition-colors"
+                    className="font-display text-sm sm:text-base font-semibold text-neutral-950 dark:text-brand-foreground hover:underline underline-offset-4 transition-colors"
                   >
                     hello@pixelgridstudios.com
                   </a>
@@ -45,7 +45,7 @@ export const Footer: React.FC = () => {
 
             {/* Right Side: Clean Tightly Spaced Navigation Menu on Tablet & Desktop */}
             <div className="pt-6 md:pt-0 border-t border-neutral-900/15 dark:border-neutral-800 md:border-t-0 w-full md:w-auto">
-              <ul className="flex flex-row flex-wrap md:flex-col items-center justify-between sm:justify-start gap-4 sm:gap-6 md:gap-1.5 lg:gap-2 md:items-end font-display text-sm sm:text-base md:text-lg lg:text-xl font-semibold tracking-wider uppercase text-neutral-800 dark:text-brand-subtle">
+              <ul className="flex flex-row flex-wrap md:flex-col items-center justify-between sm:justify-start gap-4 sm:gap-6 md:gap-1.5 lg:gap-2 md:items-end font-display text-sm sm:text-base md:text-lg lg:text-2xl font-semibold tracking-wider uppercase text-neutral-800 dark:text-brand-subtle">
                 {[
                   { label: "HOME", path: "/" },
                   { label: "WORK", path: "/work" },
@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
                   href={s.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="font-mono text-[13px] font-medium text-neutral-700 hover:text-black dark:text-brand-subtle dark:hover:text-brand-foreground transition-colors border-0"
+                  className="font-mono text-sm font-medium text-neutral-700 hover:text-black dark:text-brand-subtle dark:hover:text-brand-foreground transition-colors border-0"
                 >
                   {s.name}
                 </a>
@@ -100,7 +100,7 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* 3. Right: Legal Links & Copyright */}
-            <div className="flex flex-col md:items-end gap-1.5 font-mono text-[13px] text-neutral-700 dark:text-brand-subtle text-center md:text-right">
+            <div className="flex flex-col md:items-end gap-1.5 font-mono text-sm text-neutral-700 dark:text-brand-subtle text-center md:text-right">
               <div className="flex items-center justify-center md:justify-end gap-3 text-sm">
                 <Link
                   to="/privacy-policy"

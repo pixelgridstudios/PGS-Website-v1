@@ -84,7 +84,7 @@ export const ProjectDetail: React.FC = () => {
         <FadeIn delay={0.1} direction="none" className="mb-6 sm:mb-8">
           <Link
             to="/work"
-            className="inline-flex items-center gap-2 text-sm sm:text-[15px] font-medium text-brand-subtle hover:text-brand-foreground transition-colors group"
+            className="inline-flex items-center gap-2 text-sm sm:text-base font-medium text-brand-subtle hover:text-brand-foreground transition-colors group"
           >
             <ArrowLeft className="size-4" />
             <span>Back to All Work</span>
@@ -97,9 +97,9 @@ export const ProjectDetail: React.FC = () => {
             <div>
               <TextReveal
                 text={project.title}
-                className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-foreground"
+                className="font-display text-4xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-brand-foreground"
               />
-              <FadeIn delay={0.2} direction="up" className="mt-2 text-lg sm:text-xl text-brand-subtle font-normal">
+              <FadeIn delay={0.2} direction="up" className="mt-2 text-lg sm:text-2xl text-brand-subtle font-normal">
                 {project.subtitle}
               </FadeIn>
             </div>
@@ -110,7 +110,7 @@ export const ProjectDetail: React.FC = () => {
                 href={project.behanceUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-muted px-4 py-2 text-sm sm:text-sm font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 shadow-xs border-0"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-muted px-4 py-2 text-sm font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 shadow-xs border-0"
               >
                 <span>Behance Project</span>
                 <ExternalLink className="size-3.5" />
@@ -120,7 +120,7 @@ export const ProjectDetail: React.FC = () => {
                 href={project.vimeoUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-muted px-4 py-2 text-sm sm:text-sm font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 shadow-xs border-0"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-muted px-4 py-2 text-sm font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 shadow-xs border-0"
               >
                 <span>Watch on Vimeo</span>
                 <ExternalLink className="size-3.5" />
@@ -147,7 +147,7 @@ export const ProjectDetail: React.FC = () => {
           {/* Metadata & Award Bar */}
           <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-brand-foreground/10">
             {/* Tag List */}
-            <ul className="flex flex-wrap items-center gap-2 font-mono text-sm sm:text-sm text-brand-subtle">
+            <ul className="flex flex-wrap items-center gap-2 font-mono text-sm text-brand-subtle">
               {project.tags.map((tag, idx) => (
                 <li key={tag} className="flex items-center gap-2">
                   {idx > 0 && <span className="size-1 rounded-full bg-brand-subtle/50" />}
@@ -158,7 +158,7 @@ export const ProjectDetail: React.FC = () => {
 
             {/* Award Badge */}
             {project.award && (
-              <div className="inline-flex items-center gap-2 rounded-full bg-brand-muted text-brand-foreground px-3.5 py-1 text-[13px] font-semibold shadow-xs border-0">
+              <div className="inline-flex items-center gap-2 rounded-full bg-brand-muted text-brand-foreground px-3.5 py-1 text-sm font-semibold shadow-xs border-0">
                 <Trophy className="size-3.5 text-amber-500" />
                 <span>{project.award}</span>
               </div>
@@ -191,7 +191,7 @@ export const ProjectDetail: React.FC = () => {
         {/* 3. The Brief & Narrative Overview */}
         <FadeIn delay={0.1} fullWidth className="py-6 sm:py-8">
           <div className="max-w-4xl flex flex-col gap-4">
-            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-brand-foreground">
+            <h2 className="font-display text-2xl sm:text-4xl lg:text-4xl font-bold tracking-tight text-brand-foreground">
               {project.brief.title}
             </h2>
             {project.brief.description.map((para, i) => (
@@ -207,7 +207,7 @@ export const ProjectDetail: React.FC = () => {
           <React.Fragment key={idx}>
             {sec.heading && (
               <FadeIn delay={0.1} className="pt-8 pb-4 max-w-3xl">
-                <h3 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-brand-foreground">
+                <h3 className="font-display text-2xl font-bold tracking-tight text-brand-foreground">
                   {sec.heading}
                 </h3>
                 {sec.copy && (
@@ -264,14 +264,14 @@ export const ProjectDetail: React.FC = () => {
             {/* Left: Credits Table & External Links */}
             <div className="lg:col-span-6 flex flex-col justify-between">
               <div>
-                <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-brand-foreground mb-6">
+                <h3 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-brand-foreground mb-6">
                   Credits
                 </h3>
 
                 <ul className="divide-y divide-brand-foreground/10">
                   {project.credits.map((c) => (
                     <li key={c.role} className="py-3.5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                      <span className="font-mono text-[13px] uppercase tracking-wider text-brand-subtle font-medium sm:w-1/3">
+                      <span className="font-mono text-sm uppercase tracking-wider text-brand-subtle font-medium sm:w-1/3">
                         {c.role}
                       </span>
                       <span className="font-display text-sm sm:text-base font-medium text-brand-foreground sm:w-2/3 sm:text-right">
@@ -288,7 +288,7 @@ export const ProjectDetail: React.FC = () => {
                   href={project.behanceUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground px-6 py-3 text-sm sm:text-[15px] font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
+                  className="group inline-flex items-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground px-6 py-3 text-sm sm:text-base font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
                 >
                   <span>View on Behance</span>
                   <ExternalLink className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -298,7 +298,7 @@ export const ProjectDetail: React.FC = () => {
                   href={project.vimeoUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center gap-2.5 rounded-full bg-brand-muted text-brand-foreground px-6 py-3 text-sm sm:text-[15px] font-medium shadow-xs transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:bg-brand-panel hover:text-brand-panel-foreground hover:shadow-md active:scale-95 border-0"
+                  className="group inline-flex items-center gap-2.5 rounded-full bg-brand-muted text-brand-foreground px-6 py-3 text-sm sm:text-base font-medium shadow-xs transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:bg-brand-panel hover:text-brand-panel-foreground hover:shadow-md active:scale-95 border-0"
                 >
                   <span>Watch on Vimeo</span>
                   <ExternalLink className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -308,7 +308,7 @@ export const ProjectDetail: React.FC = () => {
 
             {/* Right: Next Project Preview Card (Clean Borderless & Normalized Physics) */}
             <div className="lg:col-span-6">
-              <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-brand-foreground mb-6">
+              <h3 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-brand-foreground mb-6">
                 Next Project
               </h3>
 
@@ -326,10 +326,10 @@ export const ProjectDetail: React.FC = () => {
 
                 <div className="flex items-end justify-between gap-4 px-1 pb-1">
                   <div>
-                    <span className="font-mono text-[13px] uppercase tracking-widest text-brand-subtle font-medium">
+                    <span className="font-mono text-sm uppercase tracking-widest text-brand-subtle font-medium">
                       {project.nextProject.meta}
                     </span>
-                    <h4 className="mt-1 font-display text-2xl sm:text-3xl font-bold tracking-tight text-brand-foreground">
+                    <h4 className="mt-1 font-display text-2xl sm:text-4xl font-bold tracking-tight text-brand-foreground">
                       {project.nextProject.title}
                     </h4>
                   </div>

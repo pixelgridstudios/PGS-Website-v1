@@ -53,14 +53,14 @@ export const ApproachSlider: React.FC = () => {
           {/* Left Column: Text Canvas */}
           <div className="w-full p-6 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-between gap-8 sm:gap-12">
             <div>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-foreground">
+              <h2 className="font-display text-4xl lg:text-6xl font-bold tracking-tight text-brand-foreground">
                 The Power of Our Approach
               </h2>
 
               {/* 2-Column Tabs & Continuous Morphing Content */}
               <div className="mt-8 sm:mt-12 grid gap-6 sm:gap-8 md:grid-cols-[260px_1fr] lg:grid-cols-[280px_1fr] xl:grid-cols-[300px_1fr] items-start">
                 {/* Tab Options with Continuous Variable Font Morphing */}
-                <ul className="flex flex-col gap-3.5 font-display text-lg sm:text-xl lg:text-2xl">
+                <ul className="flex flex-col gap-3.5 font-display text-lg sm:text-2xl lg:text-2xl">
                   {approachItems.map((item, idx) => {
                     const isActive = activeIndex === idx;
                     return (
@@ -102,10 +102,10 @@ export const ApproachSlider: React.FC = () => {
                           }`}
                           style={{ backfaceVisibility: "hidden" }}
                         >
-                          <span className="font-mono text-[13px] uppercase tracking-[0.2em] text-brand-subtle mb-2 font-medium">
+                          <span className="font-mono text-sm uppercase tracking-[0.2em] text-brand-subtle mb-2 font-medium">
                             {item.tagline}
                           </span>
-                          <p className="text-base sm:text-lg lg:text-[18px] leading-relaxed text-brand-foreground/85 font-normal">
+                          <p className="text-base sm:text-lg lg:text-lg leading-relaxed text-brand-foreground/85 font-normal">
                             {item.copy}
                           </p>
                         </div>

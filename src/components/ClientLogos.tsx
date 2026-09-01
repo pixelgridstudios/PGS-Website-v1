@@ -76,7 +76,7 @@ const ClientLogos: React.FC = () => {
       <FadeIn delay={0.1}>
         <div className="flex flex-col gap-6 sm:gap-8">
           <div className="px-1">
-            <h3 className="font-mono text-sm sm:text-[15px] uppercase tracking-widest text-brand-subtle font-semibold">
+            <h3 className="font-mono text-sm sm:text-base uppercase tracking-widest text-brand-subtle font-semibold">
               Trusted by visionary brands
             </h3>
           </div>

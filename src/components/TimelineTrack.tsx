@@ -334,7 +334,7 @@ export const TimelineTrack: React.FC = () => {
       <div className="mx-auto max-w-[1600px]">
         {/* Section Header */}
         <div className="flex flex-col gap-3 md:items-center md:text-center mb-6 sm:mb-8">
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-foreground">
+          <h2 className="font-display text-4xl lg:text-6xl font-bold tracking-tight text-brand-foreground">
             From Concept to Delivery
           </h2>
           <p className="max-w-2xl text-base sm:text-lg text-brand-subtle font-normal">
@@ -493,7 +493,7 @@ export const TimelineTrack: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-                className="inline-flex items-center gap-1.5 rounded-full bg-brand-bg px-2.5 py-1 text-[13px] font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 cursor-pointer border-0"
+                className="inline-flex items-center gap-1.5 rounded-full bg-brand-bg px-2.5 py-1 text-sm font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 cursor-pointer border-0"
                 title={isAutoPlaying ? "Pause Timeline Autoplay" : "Resume Timeline Autoplay"}
               >
                 {isAutoPlaying ? (
@@ -508,7 +508,7 @@ export const TimelineTrack: React.FC = () => {
                   </>
                 )}
               </button>
-              <span className="text-[13px] text-brand-subtle dark:text-neutral-500">
+              <span className="text-sm text-brand-subtle dark:text-neutral-500">
                 Click tracks to jump
               </span>
             </div>
@@ -536,7 +536,7 @@ export const TimelineTrack: React.FC = () => {
                         <h3 className="font-display text-2xl font-bold tracking-tight text-black dark:text-white">
                           {s.title}
                         </h3>
-                        <p className="mt-2 text-[14px] leading-relaxed text-neutral-700 dark:text-neutral-300 font-normal">
+                        <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 font-normal">
                           {s.description}
                         </p>
                       </div>
@@ -577,12 +577,12 @@ export const TimelineTrack: React.FC = () => {
                     >
                       {s.icon}
                     </span>
-                    <span className="font-display text-[15px] sm:text-base font-medium tracking-tight">
+                    <span className="font-display text-base font-medium tracking-tight">
                       {s.title}
                     </span>
                   </div>
                   <span
-                    className={`font-mono text-[13px] font-medium ${
+                    className={`font-mono text-sm font-medium ${
                       isOpen ? "text-white/70" : "text-neutral-500"
                     }`}
                   >

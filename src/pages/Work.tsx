@@ -16,7 +16,7 @@ export const Work: React.FC = () => {
             <div className="flex flex-col gap-3">
               <TextReveal
                 text="Our Work"
-                className="font-display text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-brand-foreground"
+                className="font-display text-4xl font-bold tracking-tight sm:text-6xl lg:text-8xl text-brand-foreground"
               />
               <FadeIn delay={0.2} direction="up" className="max-w-2xl text-base sm:text-lg text-brand-subtle font-normal">
                 Selected commercial films, 3D visualization, product animation, and motion design built for leading brands and technology pioneers.
@@ -27,7 +27,7 @@ export const Work: React.FC = () => {
             <FadeIn delay={0.3} direction="left">
               <Link
                 to="/showreel"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-brand-panel px-6 py-3 text-sm sm:text-[15px] font-medium text-brand-panel-foreground shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 select-none"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-brand-panel px-6 py-3 text-sm sm:text-base font-medium text-brand-panel-foreground shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 select-none"
               >
                 <Play className="size-3.5 fill-current" />
                 <span>Watch Studio Showreel</span>
@@ -59,7 +59,7 @@ export const Work: React.FC = () => {
                 {/* Bottom Card Meta & Tags */}
                 <div className="flex items-end justify-between gap-4 px-1 pb-1">
                   <div>
-                    <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl text-brand-foreground">
+                    <h2 className="font-display text-2xl font-bold tracking-tight sm:text-4xl text-brand-foreground">
                       {project.title}
                     </h2>
                     <ul className="mt-2 flex flex-wrap items-center gap-2 font-mono text-sm uppercase tracking-wider text-brand-subtle font-medium">
