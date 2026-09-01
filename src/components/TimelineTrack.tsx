@@ -337,10 +337,6 @@ export const TimelineTrack: React.FC = () => {
           <h2 className="font-serif text-4xl lg:text-6xl font-bold tracking-tight text-brand-foreground">
             From Concept to Delivery
           </h2>
-          <p className="max-w-2xl text-base sm:text-lg text-brand-subtle font-normal">
-            Our pipeline is structured like a production timeline — streamlined, transparent, and
-            guided directly by the creative director from start to finish.
-          </p>
         </div>
 
         {/* Unified Timeline & Inspector Container: Clean Borderless Outer Card */}

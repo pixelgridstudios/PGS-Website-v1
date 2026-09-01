@@ -253,9 +253,6 @@ export const Home: React.FC = () => {
               <h2 className="font-serif text-4xl lg:text-6xl font-semibold tracking-tight text-brand-foreground">
                 How Our Motion Can Work for You
               </h2>
-              <p className="max-w-2xl text-base sm:text-lg text-brand-subtle font-normal">
-                Tailored 3D motion design, visualization, and brand film systems engineered for high-growth tech, enterprise products, and campaigns.
-              </p>
             </FadeIn>
 
             {/* Seamless Borderless Sibling Card Architecture */}
