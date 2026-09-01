@@ -5,7 +5,6 @@ import DotDivider from "../components/DotDivider";
 import ApproachSlider from "../components/ApproachSlider";
 import TimelineTrack from "../components/TimelineTrack";
 import TextReveal from "../components/animations/TextReveal";
-import Marquee from "../components/animations/Marquee";
 import FadeIn from "../components/animations/FadeIn";
 
 const highlightedProjects = [
@@ -120,11 +119,7 @@ export const Home: React.FC = () => {
           </FadeIn>
         </section>
 
-        <div className="py-8 w-full border-y border-brand-foreground/10 bg-brand-bg">
-          <Marquee baseVelocity={-2.5} className="text-[12vw] text-brand-foreground opacity-90 leading-none py-1">
-            CREATIVE DIRECTION · 3D MOTION · BRAND FILM · LOOKDEV
-          </Marquee>
-        </div>
+
 
         {/* We are Pixel Grid: Signature Dot4 Asymmetric Split Card */}
         <FadeIn delay={0.1} className="my-6 sm:my-8">
