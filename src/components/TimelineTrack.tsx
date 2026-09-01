@@ -113,8 +113,8 @@ export const TimelineTrack: React.FC = () => {
   const activeStepRef = useRef<number>(0);
   const isAutoPlayingRef = useRef<boolean>(true);
   const hasFiredConfettiRef = useRef<boolean>(false);
-  const desktopStep6ButtonRef = useRef<HTMLButtonElement | null>(null);
-  const mobileStep6ButtonRef = useRef<HTMLButtonElement | null>(null);
+  const desktopWohooButtonRef = useRef<HTMLButtonElement | null>(null);
+  const mobileWohooButtonRef = useRef<HTMLButtonElement | null>(null);
   const glideTweenRef = useRef<{
     active: boolean;
     startProgress: number;
@@ -159,7 +159,7 @@ export const TimelineTrack: React.FC = () => {
   }, []);
 
   // Celebratory Confetti Burst directly centered at the Delivery Button (ONLY when section is actively visible)
-  const triggerDeliveryConfetti = (explicitButton?: HTMLElement | null) => {
+  const triggerWohooConfetti = (explicitButton?: HTMLElement | null) => {
     // STRICT GUARD: Never fire if the timeline section is not actively on screen
     if (!isVisibleRef.current) return;
 
@@ -169,9 +169,9 @@ export const TimelineTrack: React.FC = () => {
     // Target the actual interactive button element
     const targetEl =
       explicitButton ||
-      (desktopStep6ButtonRef.current && desktopStep6ButtonRef.current.offsetParent !== null
-        ? desktopStep6ButtonRef.current
-        : mobileStep6ButtonRef.current);
+      (desktopWohooButtonRef.current && desktopWohooButtonRef.current.offsetParent !== null
+        ? desktopWohooButtonRef.current
+        : mobileWohooButtonRef.current);
 
     if (targetEl) {
       const rect = targetEl.getBoundingClientRect();
@@ -295,7 +295,7 @@ export const TimelineTrack: React.FC = () => {
         // Fire celebratory confetti immediately upon reaching Wohoo! (only if visible)
         if (progressRef.current >= 92.5 && !hasFiredConfettiRef.current) {
           hasFiredConfettiRef.current = true;
-          triggerDeliveryConfetti();
+          triggerWohooConfetti();
         }
 
         // Continuous linear mapping across active track bounds
@@ -334,9 +334,9 @@ export const TimelineTrack: React.FC = () => {
       duration: 380, // ~0.38s smooth split-second travel
     };
 
-    if (idx === 5) {
+    if (idx === 6) {
       hasFiredConfettiRef.current = true;
-      triggerDeliveryConfetti(e?.currentTarget);
+      triggerWohooConfetti(e?.currentTarget);
     }
   };
 
@@ -424,7 +424,7 @@ export const TimelineTrack: React.FC = () => {
                         className="relative grid grid-cols-[repeat(31,1fr)] items-center h-9 sm:h-9.5"
                       >
                         <button
-                          ref={idx === 6 ? desktopStep6ButtonRef : undefined}
+                          ref={idx === 6 ? desktopWohooButtonRef : undefined}
                           type="button"
                           onClick={(e) => handleSelectStep(idx, e)}
                           style={{
@@ -569,7 +569,7 @@ export const TimelineTrack: React.FC = () => {
                 }`}
               >
                 <button
-                  ref={idx === 6 ? mobileStep6ButtonRef : undefined}
+                  ref={idx === 6 ? mobileWohooButtonRef : undefined}
                   type="button"
                   onClick={(e) => handleSelectStep(idx, e)}
                   className="flex w-full items-center justify-between p-4 text-left cursor-pointer"
