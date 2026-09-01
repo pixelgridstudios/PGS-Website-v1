@@ -101,7 +101,7 @@ export const Footer: React.FC = () => {
 
             {/* 3. Right: Legal Links & Copyright */}
             <div className="flex flex-col md:items-end gap-1.5 font-mono text-xs text-neutral-700 dark:text-brand-subtle text-center md:text-right">
-              <div className="flex items-center justify-center md:justify-end gap-3 text-[11px]">
+              <div className="flex items-center justify-center md:justify-end gap-3 text-[13px]">
                 <Link
                   to="/privacy-policy"
                   className="text-neutral-800 hover:text-black dark:text-brand-subtle dark:hover:text-brand-foreground hover:underline transition-colors border-0"

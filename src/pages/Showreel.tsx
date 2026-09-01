@@ -156,7 +156,7 @@ export const Showreel: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-transparent" />
                     <div className="absolute bottom-2 left-2 rounded-md bg-black/60 px-2 py-1 backdrop-blur-md">
-                      <span className="font-mono text-[10px] text-white">
+                      <span className="font-mono text-xs text-white">
                         {ch.time}
                       </span>
                     </div>
@@ -164,7 +164,7 @@ export const Showreel: React.FC = () => {
 
                   <div className="flex items-end justify-between px-1 pb-1">
                     <div>
-                      <span className="font-mono text-[10px] uppercase tracking-wider text-brand-subtle font-medium">
+                      <span className="font-mono text-xs uppercase tracking-wider text-brand-subtle font-medium">
                         {ch.discipline}
                       </span>
                       <h3 className="mt-1 font-display text-lg font-bold tracking-tight text-brand-foreground">

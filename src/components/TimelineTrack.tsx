@@ -489,11 +489,11 @@ export const TimelineTrack: React.FC = () => {
             </div>
 
             {/* Bottom Timeline Controls */}
-            <div className="mt-4 pt-3 border-t border-brand-foreground/10 flex items-center justify-between font-mono text-[11px] uppercase tracking-wider text-brand-subtle">
+            <div className="mt-4 pt-3 border-t border-brand-foreground/10 flex items-center justify-between font-mono text-[13px] uppercase tracking-wider text-brand-subtle">
               <button
                 type="button"
                 onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-                className="inline-flex items-center gap-1.5 rounded-full bg-brand-bg px-2.5 py-1 text-[10px] font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 cursor-pointer border-0"
+                className="inline-flex items-center gap-1.5 rounded-full bg-brand-bg px-2.5 py-1 text-xs font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 cursor-pointer border-0"
                 title={isAutoPlaying ? "Pause Timeline Autoplay" : "Resume Timeline Autoplay"}
               >
                 {isAutoPlaying ? (
@@ -508,7 +508,7 @@ export const TimelineTrack: React.FC = () => {
                   </>
                 )}
               </button>
-              <span className="text-[10px] text-brand-subtle dark:text-neutral-500">
+              <span className="text-xs text-brand-subtle dark:text-neutral-500">
                 Click tracks to jump
               </span>
             </div>

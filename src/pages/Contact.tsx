@@ -193,7 +193,7 @@ export const Contact: React.FC = () => {
                       </a>
                     </div>
                     {selectedTypes.length > 0 && (
-                      <div className="pt-3 border-t border-brand-panel-foreground/10 text-[11px] text-brand-panel-foreground/70">
+                      <div className="pt-3 border-t border-brand-panel-foreground/10 text-[13px] text-brand-panel-foreground/70">
                         <strong className="text-brand-panel-foreground/90">Selected Services:</strong> {selectedTypes.join(", ")}
                       </div>
                     )}
@@ -219,7 +219,7 @@ export const Contact: React.FC = () => {
                 <form ref={formRef} onSubmit={(e) => e.preventDefault()} className="mt-8 space-y-6">
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
-                      <label className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                      <label className="font-mono text-[13px] sm:text-sm uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                         First Name *
                       </label>
                       <input
@@ -232,7 +232,7 @@ export const Contact: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                      <label className="font-mono text-[13px] sm:text-sm uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                         Last Name
                       </label>
                       <input
@@ -246,7 +246,7 @@ export const Contact: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                    <label className="font-mono text-[13px] sm:text-sm uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                       Email Address *
                     </label>
                     <input
@@ -261,7 +261,7 @@ export const Contact: React.FC = () => {
 
                   {/* Target Timeline */}
                   <div>
-                    <label className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                    <label className="font-mono text-[13px] sm:text-sm uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                       Target Timeline
                     </label>
                     <div className="flex flex-wrap gap-2">
@@ -272,7 +272,7 @@ export const Contact: React.FC = () => {
                             key={t}
                             type="button"
                             onClick={() => setSelectedTimeline(t)}
-                            className={`rounded-full px-4 py-2 font-mono text-[11px] font-medium transition-colors duration-150 cursor-pointer select-none border-0 ${
+                            className={`rounded-full px-4 py-2 font-mono text-[13px] font-medium transition-colors duration-150 cursor-pointer select-none border-0 ${
                               isSelected
                                 ? "bg-brand-foreground text-brand-bg font-semibold"
                                 : "bg-brand-bg text-brand-subtle hover:text-brand-foreground"
@@ -287,7 +287,7 @@ export const Contact: React.FC = () => {
 
                   {/* Project Type (Strictly Single Line for Laptops & Desktops) */}
                   <div>
-                    <label className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                    <label className="font-mono text-[13px] sm:text-sm uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                       Project Type (Select all that apply)
                     </label>
                     <div className="flex flex-wrap gap-2">
@@ -298,7 +298,7 @@ export const Contact: React.FC = () => {
                             key={type}
                             type="button"
                             onClick={() => toggleType(type)}
-                            className={`rounded-full px-4 py-2 font-mono text-[11px] font-medium transition-colors duration-150 cursor-pointer select-none border-0 ${
+                            className={`rounded-full px-4 py-2 font-mono text-[13px] font-medium transition-colors duration-150 cursor-pointer select-none border-0 ${
                               isSelected
                                 ? "bg-brand-foreground text-brand-bg font-semibold"
                                 : "bg-brand-bg text-brand-subtle hover:text-brand-foreground"
@@ -313,7 +313,7 @@ export const Contact: React.FC = () => {
 
                   {/* Target Budget Range */}
                   <div>
-                    <label className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                    <label className="font-mono text-[13px] sm:text-sm uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                       Target Budget Range
                     </label>
                     <div className="flex flex-wrap gap-2">
@@ -324,7 +324,7 @@ export const Contact: React.FC = () => {
                             key={b}
                             type="button"
                             onClick={() => setSelectedBudget(b)}
-                            className={`rounded-full px-4 py-2 font-mono text-[11px] font-medium transition-colors duration-150 cursor-pointer select-none border-0 ${
+                            className={`rounded-full px-4 py-2 font-mono text-[13px] font-medium transition-colors duration-150 cursor-pointer select-none border-0 ${
                               isSelected
                                 ? "bg-brand-foreground text-brand-bg font-semibold"
                                 : "bg-brand-bg text-brand-subtle hover:text-brand-foreground"
@@ -338,7 +338,7 @@ export const Contact: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                    <label className="font-mono text-[13px] sm:text-sm uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                       Project Brief &amp; Scope *
                     </label>
                     <textarea
@@ -394,7 +394,7 @@ export const Contact: React.FC = () => {
               <Mail className="size-4" />
             </div>
             <div>
-              <span className="font-mono text-[10px] uppercase tracking-wider text-brand-subtle font-medium">
+              <span className="font-mono text-xs uppercase tracking-wider text-brand-subtle font-medium">
                 General Inquiries
               </span>
               <a
@@ -412,7 +412,7 @@ export const Contact: React.FC = () => {
               <Globe className="size-4" />
             </div>
             <div className="flex-1">
-              <span className="font-mono text-[10px] uppercase tracking-wider text-brand-subtle font-medium">
+              <span className="font-mono text-xs uppercase tracking-wider text-brand-subtle font-medium">
                 Social Networks
               </span>
               <div className="mt-1.5 flex flex-wrap gap-2">

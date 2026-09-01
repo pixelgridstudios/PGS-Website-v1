@@ -106,7 +106,7 @@ export const Home: React.FC = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-500 font-medium">
+                <span className="font-mono text-xs uppercase tracking-wider text-neutral-500 font-medium">
                   Studio Reel
                 </span>
                 <span className="font-display text-[14px] font-bold leading-tight text-black">
@@ -205,7 +205,7 @@ export const Home: React.FC = () => {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-brand-bg px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-brand-foreground font-medium border-0"
+                          className="rounded-full bg-brand-bg px-3 py-1 font-mono text-xs uppercase tracking-wider text-brand-foreground font-medium border-0"
                         >
                           {tag}
                         </span>
@@ -321,7 +321,7 @@ export const Home: React.FC = () => {
                               {service.title}
                             </span>
                             <span
-                              className={`font-mono text-[10px] uppercase tracking-wider transition-colors ${
+                              className={`font-mono text-xs uppercase tracking-wider transition-colors ${
                                 isOpen ? "text-emerald-500 font-semibold" : "text-brand-subtle"
                               }`}
                             >

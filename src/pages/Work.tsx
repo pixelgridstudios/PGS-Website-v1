@@ -62,7 +62,7 @@ export const Work: React.FC = () => {
                     <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl text-brand-foreground">
                       {project.title}
                     </h2>
-                    <ul className="mt-2 flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-brand-subtle font-medium">
+                    <ul className="mt-2 flex flex-wrap items-center gap-2 font-mono text-[13px] uppercase tracking-wider text-brand-subtle font-medium">
                       <li>{project.category}</li>
                       <li className="size-1 rounded-full bg-brand-subtle/50" />
                       <li>{project.year}</li>
