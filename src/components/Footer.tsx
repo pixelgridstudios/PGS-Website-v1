@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
                   href={s.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="font-mono text-xs font-medium text-neutral-700 hover:text-black dark:text-brand-subtle dark:hover:text-brand-foreground transition-colors border-0"
+                  className="font-mono text-[13px] font-medium text-neutral-700 hover:text-black dark:text-brand-subtle dark:hover:text-brand-foreground transition-colors border-0"
                 >
                   {s.name}
                 </a>
@@ -100,8 +100,8 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* 3. Right: Legal Links & Copyright */}
-            <div className="flex flex-col md:items-end gap-1.5 font-mono text-xs text-neutral-700 dark:text-brand-subtle text-center md:text-right">
-              <div className="flex items-center justify-center md:justify-end gap-3 text-[13px]">
+            <div className="flex flex-col md:items-end gap-1.5 font-mono text-[13px] text-neutral-700 dark:text-brand-subtle text-center md:text-right">
+              <div className="flex items-center justify-center md:justify-end gap-3 text-sm">
                 <Link
                   to="/privacy-policy"
                   className="text-neutral-800 hover:text-black dark:text-brand-subtle dark:hover:text-brand-foreground hover:underline transition-colors border-0"

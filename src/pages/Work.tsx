@@ -27,7 +27,7 @@ export const Work: React.FC = () => {
             <FadeIn delay={0.3} direction="left">
               <Link
                 to="/showreel"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-brand-panel px-6 py-3 text-xs sm:text-sm font-medium text-brand-panel-foreground shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 select-none"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-brand-panel px-6 py-3 text-sm sm:text-[15px] font-medium text-brand-panel-foreground shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 select-none"
               >
                 <Play className="size-3.5 fill-current" />
                 <span>Watch Studio Showreel</span>
@@ -62,7 +62,7 @@ export const Work: React.FC = () => {
                     <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl text-brand-foreground">
                       {project.title}
                     </h2>
-                    <ul className="mt-2 flex flex-wrap items-center gap-2 font-mono text-[13px] uppercase tracking-wider text-brand-subtle font-medium">
+                    <ul className="mt-2 flex flex-wrap items-center gap-2 font-mono text-sm uppercase tracking-wider text-brand-subtle font-medium">
                       <li>{project.category}</li>
                       <li className="size-1 rounded-full bg-brand-subtle/50" />
                       <li>{project.year}</li>

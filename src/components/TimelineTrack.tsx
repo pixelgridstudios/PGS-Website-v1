@@ -437,7 +437,7 @@ export const TimelineTrack: React.FC = () => {
                           >
                             {s.icon}
                           </span>
-                          <span className="font-display text-[12.5px] sm:text-[13px] font-medium tracking-tight whitespace-nowrap">
+                          <span className="font-display text-[12.5px] sm:text-sm font-medium tracking-tight whitespace-nowrap">
                             {s.title}
                           </span>
                         </button>
@@ -489,11 +489,11 @@ export const TimelineTrack: React.FC = () => {
             </div>
 
             {/* Bottom Timeline Controls */}
-            <div className="mt-4 pt-3 border-t border-brand-foreground/10 flex items-center justify-between font-mono text-[13px] uppercase tracking-wider text-brand-subtle">
+            <div className="mt-4 pt-3 border-t border-brand-foreground/10 flex items-center justify-between font-mono text-sm uppercase tracking-wider text-brand-subtle">
               <button
                 type="button"
                 onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-                className="inline-flex items-center gap-1.5 rounded-full bg-brand-bg px-2.5 py-1 text-xs font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 cursor-pointer border-0"
+                className="inline-flex items-center gap-1.5 rounded-full bg-brand-bg px-2.5 py-1 text-[13px] font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 cursor-pointer border-0"
                 title={isAutoPlaying ? "Pause Timeline Autoplay" : "Resume Timeline Autoplay"}
               >
                 {isAutoPlaying ? (
@@ -508,7 +508,7 @@ export const TimelineTrack: React.FC = () => {
                   </>
                 )}
               </button>
-              <span className="text-xs text-brand-subtle dark:text-neutral-500">
+              <span className="text-[13px] text-brand-subtle dark:text-neutral-500">
                 Click tracks to jump
               </span>
             </div>
@@ -582,7 +582,7 @@ export const TimelineTrack: React.FC = () => {
                     </span>
                   </div>
                   <span
-                    className={`font-mono text-xs font-medium ${
+                    className={`font-mono text-[13px] font-medium ${
                       isOpen ? "text-white/70" : "text-neutral-500"
                     }`}
                   >

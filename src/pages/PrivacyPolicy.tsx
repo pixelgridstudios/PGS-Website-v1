@@ -134,7 +134,7 @@ const privacySections = [
             <span>Request permanent deletion of your intake records and contact archives.</span>
           </li>
         </ul>
-        <p className="pt-2 text-xs font-mono text-brand-subtle">
+        <p className="pt-2 text-[13px] font-mono text-brand-subtle">
           To exercise any of these rights, email Subhanshu Gajbhiye at <a href="mailto:hello@pixelgridstudios.com" className="underline font-semibold text-brand-foreground">hello@pixelgridstudios.com</a>.
         </p>
       </div>
@@ -163,7 +163,7 @@ const privacySections = [
         <p>
           Pixel Grid Studios reserves the right to revise this Privacy Policy to reflect advancements in technology, cloud infrastructure updates, or statutory requirements. All modifications take effect immediately upon publication.
         </p>
-        <div className="mt-4 p-4 rounded-xl bg-brand-bg text-brand-subtle font-mono text-xs space-y-1 border-0">
+        <div className="mt-4 p-4 rounded-xl bg-brand-bg text-brand-subtle font-mono text-[13px] space-y-1 border-0">
           <div><strong className="text-brand-foreground">Studio:</strong> Pixel Grid Studios</div>
           <div><strong className="text-brand-foreground">Creative Director:</strong> Subhanshu Gajbhiye</div>
           <div><strong className="text-brand-foreground">Studio Desk:</strong> hello@pixelgridstudios.com</div>
@@ -233,7 +233,7 @@ export const PrivacyPolicy: React.FC = () => {
         <FadeIn delay={0.1} direction="none" className="mb-6 sm:mb-8">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-brand-subtle hover:text-brand-foreground transition-colors group"
+            className="inline-flex items-center gap-2 text-sm sm:text-[15px] font-medium text-brand-subtle hover:text-brand-foreground transition-colors group"
           >
             <ArrowLeft className="size-4" />
             <span>Back to Home</span>
@@ -255,7 +255,7 @@ export const PrivacyPolicy: React.FC = () => {
         <div className="mt-10 grid gap-8 lg:grid-cols-[340px_1fr] items-start">
           {/* Left Sticky Table of Contents Navigation (Refined Larger Font & Tactile Spacing) */}
           <aside className="hidden lg:block sticky top-24 rounded-2xl bg-brand-muted/70 p-6 shadow-xs border-0">
-            <span className="font-mono text-xs uppercase tracking-widest text-brand-subtle font-semibold block mb-4">
+            <span className="font-mono text-[13px] uppercase tracking-widest text-brand-subtle font-semibold block mb-4">
               Document Clauses
             </span>
             <ul className="space-y-1.5">
@@ -273,7 +273,7 @@ export const PrivacyPolicy: React.FC = () => {
                       }`}
                     >
                       <div className="flex items-center gap-3">
-                        <span className="font-mono text-xs font-medium opacity-60 shrink-0">{sec.number}</span>
+                        <span className="font-mono text-[13px] font-medium opacity-60 shrink-0">{sec.number}</span>
                         <span className="leading-snug">{sec.title}</span>
                       </div>
                       <ChevronRight className={`size-4 shrink-0 transition-transform ${isActive ? "opacity-100 translate-x-0.5" : "opacity-0"}`} />
@@ -284,12 +284,12 @@ export const PrivacyPolicy: React.FC = () => {
             </ul>
 
             <div className="mt-6 pt-4 border-t border-brand-foreground/10 text-left">
-              <span className="font-mono text-xs uppercase tracking-wider text-brand-subtle block mb-1.5">
+              <span className="font-mono text-[13px] uppercase tracking-wider text-brand-subtle block mb-1.5">
                 Direct Inquiries
               </span>
               <a
                 href="mailto:hello@pixelgridstudios.com"
-                className="font-mono text-[13px] font-medium text-brand-foreground hover:underline"
+                className="font-mono text-sm font-medium text-brand-foreground hover:underline"
               >
                 hello@pixelgridstudios.com
               </a>
@@ -300,7 +300,7 @@ export const PrivacyPolicy: React.FC = () => {
           <div className="space-y-6">
             {/* Overview Intro Banner */}
             <FadeIn delay={0.1} fullWidth className="rounded-2xl sm:rounded-3xl bg-brand-panel text-brand-panel-foreground p-6 sm:p-10 shadow-lg border-0">
-              <span className="font-mono text-xs uppercase tracking-widest text-emerald-400 font-semibold block mb-2">
+              <span className="font-mono text-[13px] uppercase tracking-widest text-emerald-400 font-semibold block mb-2">
                 Commitment to Confidentiality
               </span>
               <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
@@ -320,7 +320,7 @@ export const PrivacyPolicy: React.FC = () => {
                 >
                   {/* Header Block: Clause badge above, Icon and Heading strictly in-line */}
                   <div className="mb-5 pb-4 border-b border-brand-foreground/10">
-                    <span className="font-mono text-xs uppercase tracking-widest text-emerald-500 font-semibold block mb-2">
+                    <span className="font-mono text-[13px] uppercase tracking-widest text-emerald-500 font-semibold block mb-2">
                       Clause {sec.number}
                     </span>
                     <div className="flex items-center gap-3.5">
@@ -346,12 +346,12 @@ export const PrivacyPolicy: React.FC = () => {
 
         {/* Footer Contact Quick Link */}
         <FadeIn delay={0.1} fullWidth className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="font-mono text-xs text-brand-subtle">
+          <span className="font-mono text-[13px] text-brand-subtle">
             Pixel Grid Studios · Legal &amp; Privacy Standards · Updated August 2026
           </span>
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground px-6 py-2.5 font-display text-xs font-semibold shadow-xs transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] border-0"
+            className="group inline-flex items-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground px-6 py-2.5 font-display text-[13px] font-semibold shadow-xs transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] border-0"
           >
             <span>Have a Question? Contact Us</span>
             <ChevronRight className="size-3.5 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />

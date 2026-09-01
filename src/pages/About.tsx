@@ -61,7 +61,7 @@ export const About: React.FC = () => {
                 <h3 className="font-display text-2xl font-bold text-brand-foreground">
                   Subhanshu Gajbhiye
                 </h3>
-                <span className="font-mono text-xs uppercase tracking-wider text-brand-subtle font-medium">
+                <span className="font-mono text-[13px] uppercase tracking-wider text-brand-subtle font-medium">
                   Founder & Creative Director
                 </span>
               </div>
@@ -72,7 +72,7 @@ export const About: React.FC = () => {
             </p>
 
             <div className="pt-4 border-t border-brand-foreground/10 flex flex-col gap-3">
-              <span className="font-mono text-xs uppercase tracking-wider text-brand-subtle font-medium">
+              <span className="font-mono text-[13px] uppercase tracking-wider text-brand-subtle font-medium">
                 Core Disciplines
               </span>
               <ul className="space-y-2">
@@ -123,7 +123,7 @@ export const About: React.FC = () => {
         {/* Bottom CTA Box (Seamless Borderless) */}
         <FadeIn delay={0.1} fullWidth className="rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-8 sm:p-12 shadow-sm dark:shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 border-0">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-brand-subtle font-medium mb-2">
+            <div className="flex items-center gap-2 font-mono text-[13px] uppercase tracking-wider text-brand-subtle font-medium mb-2">
               <Sparkles className="size-4 text-brand-foreground" />
               <span>Let's Create Together</span>
             </div>

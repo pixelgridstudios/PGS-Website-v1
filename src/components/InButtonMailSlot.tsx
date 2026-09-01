@@ -104,7 +104,7 @@ export const InButtonMailSlot: React.FC<InButtonMailSlotProps> = ({
         </div>
 
         {/* Center Label (Tight, Evenly Spaced) */}
-        <span className="font-display text-xs sm:text-[13px] font-semibold tracking-tight whitespace-nowrap">
+        <span className="font-display text-sm sm:text-sm font-semibold tracking-tight whitespace-nowrap">
           {phase === "delivered"
             ? "Sent!"
             : phase === "inserting"

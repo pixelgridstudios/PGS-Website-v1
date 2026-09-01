@@ -102,7 +102,7 @@ export const ApproachSlider: React.FC = () => {
                           }`}
                           style={{ backfaceVisibility: "hidden" }}
                         >
-                          <span className="font-mono text-xs uppercase tracking-[0.2em] text-brand-subtle mb-2 font-medium">
+                          <span className="font-mono text-[13px] uppercase tracking-[0.2em] text-brand-subtle mb-2 font-medium">
                             {item.tagline}
                           </span>
                           <p className="text-base sm:text-lg lg:text-[18px] leading-relaxed text-brand-foreground/85 font-normal">
@@ -117,7 +117,7 @@ export const ApproachSlider: React.FC = () => {
             </div>
 
             {/* Step Counter Footer */}
-            <div className="hidden sm:flex items-center gap-3 font-mono text-[13px] uppercase tracking-widest text-brand-subtle pt-6 border-t border-brand-foreground/10">
+            <div className="hidden sm:flex items-center gap-3 font-mono text-sm uppercase tracking-widest text-brand-subtle pt-6 border-t border-brand-foreground/10">
               <span className="font-bold text-brand-foreground">Approach 0{activeIndex + 1}</span>
               <span className="h-px w-8 bg-brand-foreground/20" />
               <span>0{approachItems.length}</span>

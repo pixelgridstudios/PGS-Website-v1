@@ -106,7 +106,7 @@ export const Home: React.FC = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-mono text-xs uppercase tracking-wider text-neutral-500 font-medium">
+                <span className="font-mono text-[13px] uppercase tracking-wider text-neutral-500 font-medium">
                   Studio Reel
                 </span>
                 <span className="font-display text-[14px] font-bold leading-tight text-black">
@@ -138,7 +138,7 @@ export const Home: React.FC = () => {
               <div className="shrink-0">
                 <Link
                   to="/about"
-                  className="group inline-flex items-center gap-2 sm:gap-2.5 md:gap-3 rounded-full bg-brand-panel text-brand-panel-foreground px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3 lg:py-3.5 text-xs sm:text-sm font-medium tracking-wide shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
+                  className="group inline-flex items-center gap-2 sm:gap-2.5 md:gap-3 rounded-full bg-brand-panel text-brand-panel-foreground px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3 lg:py-3.5 text-sm sm:text-[15px] font-medium tracking-wide shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
                 >
                   <span>More about us</span>
                   <ArrowRight className="size-3.5 sm:size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
@@ -173,7 +173,7 @@ export const Home: React.FC = () => {
             </div>
             <Link
               to="/work"
-              className="group hidden sm:inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-[13px] font-medium text-brand-foreground shadow-xs transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-brand-panel hover:text-brand-panel-foreground hover:shadow-md active:scale-95 border-0"
+              className="group hidden sm:inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-sm font-medium text-brand-foreground shadow-xs transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-brand-panel hover:text-brand-panel-foreground hover:shadow-md active:scale-95 border-0"
             >
               Discover More <ArrowRight className="size-4 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
             </Link>
@@ -195,7 +195,7 @@ export const Home: React.FC = () => {
                 </div>
                 <div className="flex items-end justify-between px-1 pb-1">
                   <div>
-                    <span className="font-mono text-xs uppercase tracking-widest text-brand-subtle font-medium">
+                    <span className="font-mono text-[13px] uppercase tracking-widest text-brand-subtle font-medium">
                       {project.meta}
                     </span>
                     <h3 className="mt-1 font-display text-2xl font-bold tracking-tight sm:text-3xl text-brand-foreground">
@@ -205,7 +205,7 @@ export const Home: React.FC = () => {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-brand-bg px-3 py-1 font-mono text-xs uppercase tracking-wider text-brand-foreground font-medium border-0"
+                          className="rounded-full bg-brand-bg px-3 py-1 font-mono text-[13px] uppercase tracking-wider text-brand-foreground font-medium border-0"
                         >
                           {tag}
                         </span>
@@ -224,7 +224,7 @@ export const Home: React.FC = () => {
           <div className="mt-8 text-center sm:hidden">
             <Link
               to="/work"
-              className="group inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-[13px] font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] shadow-xs border-0"
+              className="group inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-sm font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] shadow-xs border-0"
             >
               Discover More <ArrowRight className="size-4 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
             </Link>
@@ -310,7 +310,7 @@ export const Home: React.FC = () => {
                       >
                         <div className="flex items-center gap-3 sm:gap-4 min-w-0">
                           <span
-                            className={`font-mono text-xs font-medium transition-colors ${
+                            className={`font-mono text-[13px] font-medium transition-colors ${
                               isOpen ? "text-brand-foreground font-semibold" : "text-brand-subtle"
                             }`}
                           >
@@ -321,7 +321,7 @@ export const Home: React.FC = () => {
                               {service.title}
                             </span>
                             <span
-                              className={`font-mono text-xs uppercase tracking-wider transition-colors ${
+                              className={`font-mono text-[13px] uppercase tracking-wider transition-colors ${
                                 isOpen ? "text-emerald-500 font-semibold" : "text-brand-subtle"
                               }`}
                             >

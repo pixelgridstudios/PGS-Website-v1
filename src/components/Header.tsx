@@ -63,7 +63,7 @@ export const Header: React.FC = () => {
           <Link
             to="/contact"
             onClick={() => setIsOpen(false)}
-            className="group inline-flex h-9 sm:h-10 items-center justify-center gap-2 rounded-full bg-black px-4 sm:px-5 text-[12px] sm:text-[13px] font-medium uppercase tracking-wider text-white shadow-sm transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] dark:bg-white dark:text-black hover:shadow-lg dark:hover:shadow-white/20 select-none border-0 shrink-0"
+            className="group inline-flex h-9 sm:h-10 items-center justify-center gap-2 rounded-full bg-black px-4 sm:px-5 text-[12px] sm:text-sm font-medium uppercase tracking-wider text-white shadow-sm transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] dark:bg-white dark:text-black hover:shadow-lg dark:hover:shadow-white/20 select-none border-0 shrink-0"
           >
             <span>CONTACT</span>
             <span className="w-3.5 flex items-center justify-center shrink-0">
@@ -81,7 +81,7 @@ export const Header: React.FC = () => {
             <button
               type="button"
               onClick={toggleClick}
-              className="group flex h-9 sm:h-10 items-center justify-center gap-2 rounded-full bg-white/50 backdrop-blur-xl hover:bg-white/75 dark:bg-white/10 dark:hover:bg-white/20 px-3.5 sm:px-4 text-[12px] sm:text-[13px] font-medium uppercase tracking-wider text-black dark:text-white shadow-sm transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] hover:shadow-md cursor-pointer select-none border-0 shrink-0"
+              className="group flex h-9 sm:h-10 items-center justify-center gap-2 rounded-full bg-white/50 backdrop-blur-xl hover:bg-white/75 dark:bg-white/10 dark:hover:bg-white/20 px-3.5 sm:px-4 text-[12px] sm:text-sm font-medium uppercase tracking-wider text-black dark:text-white shadow-sm transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] hover:shadow-md cursor-pointer select-none border-0 shrink-0"
               aria-expanded={isOpen}
             >
               <span>MENU</span>
@@ -112,7 +112,7 @@ export const Header: React.FC = () => {
                     <Link
                       to={item.path}
                       onClick={() => setIsOpen(false)}
-                      className="flex w-full items-center justify-start rounded-xl px-4 py-2.5 font-display text-[13px] font-medium tracking-wider uppercase text-neutral-800 hover:bg-black/5 hover:text-black dark:text-neutral-200 dark:hover:bg-white/10 dark:hover:text-white transition-colors duration-150 border-0 select-none cursor-pointer"
+                      className="flex w-full items-center justify-start rounded-xl px-4 py-2.5 font-display text-sm font-medium tracking-wider uppercase text-neutral-800 hover:bg-black/5 hover:text-black dark:text-neutral-200 dark:hover:bg-white/10 dark:hover:text-white transition-colors duration-150 border-0 select-none cursor-pointer"
                     >
                       <span>{item.label}</span>
                     </Link>

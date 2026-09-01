@@ -148,7 +148,7 @@ export const CareersApply: React.FC = () => {
         <FadeIn delay={0.1} direction="none" className="mb-6 sm:mb-8">
           <Link
             to="/careers"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-brand-subtle hover:text-brand-foreground transition-colors group"
+            className="inline-flex items-center gap-2 text-sm sm:text-[15px] font-medium text-brand-subtle hover:text-brand-foreground transition-colors group"
           >
             <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" />
             <span>Back to Careers &amp; All Roles</span>
@@ -163,7 +163,7 @@ export const CareersApply: React.FC = () => {
             </div>
 
             <div className="space-y-3 max-w-xl mx-auto">
-              <span className="font-mono text-xs uppercase tracking-widest text-emerald-500 font-semibold">
+              <span className="font-mono text-[13px] uppercase tracking-widest text-emerald-500 font-semibold">
                 Application Received
               </span>
               <h1 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-brand-foreground">
@@ -175,7 +175,7 @@ export const CareersApply: React.FC = () => {
             </div>
 
             {/* Submission Receipt Box */}
-            <div className="my-8 rounded-2xl bg-brand-bg p-6 text-left text-xs sm:text-sm font-mono space-y-2 max-w-2xl mx-auto shadow-xs border-0">
+            <div className="my-8 rounded-2xl bg-brand-bg p-6 text-left text-sm sm:text-[15px] font-mono space-y-2 max-w-2xl mx-auto shadow-xs border-0">
               <div className="pb-2 border-b border-brand-foreground/10 flex items-center justify-between">
                 <span className="font-semibold text-brand-foreground">Application Receipt</span>
                 <span className="text-emerald-500 flex items-center gap-1 font-semibold">
@@ -191,7 +191,7 @@ export const CareersApply: React.FC = () => {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
                 to="/careers"
-                className="group h-11 sm:h-12 px-8 inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] border-0"
+                className="group h-11 sm:h-12 px-8 inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground text-sm sm:text-[15px] font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] border-0"
               >
                 <span>Return to Careers</span>
                 <ArrowRight className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
@@ -199,7 +199,7 @@ export const CareersApply: React.FC = () => {
               <button
                 type="button"
                 onClick={handleReset}
-                className="h-11 sm:h-12 px-7 inline-flex items-center justify-center gap-2 rounded-full bg-brand-bg text-brand-foreground text-xs sm:text-sm font-medium transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] hover:bg-brand-muted hover:shadow-md border-0 cursor-pointer"
+                className="h-11 sm:h-12 px-7 inline-flex items-center justify-center gap-2 rounded-full bg-brand-bg text-brand-foreground text-sm sm:text-[15px] font-medium transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] hover:bg-brand-muted hover:shadow-md border-0 cursor-pointer"
               >
                 <span>Submit Another Role</span>
               </button>
@@ -215,7 +215,7 @@ export const CareersApply: React.FC = () => {
               {/* Top Header: Badges & Overview */}
               <div className="space-y-6">
                 {/* Role Badges */}
-                <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-brand-subtle">
+                <div className="flex flex-wrap items-center gap-2 font-mono text-[13px] text-brand-subtle">
                   <span className="rounded-full bg-brand-bg px-3.5 py-1 font-semibold text-brand-foreground shadow-2xs">
                     {selectedPosition.department}
                   </span>
@@ -234,7 +234,7 @@ export const CareersApply: React.FC = () => {
 
                 {/* Role Title & Overview */}
                 <div className="space-y-3">
-                  <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-emerald-500 font-semibold">
+                  <div className="flex items-center gap-2 font-mono text-[13px] uppercase tracking-wider text-emerald-500 font-semibold">
                     <Sparkles className="size-4" />
                     <span>Job Description</span>
                   </div>
@@ -249,13 +249,13 @@ export const CareersApply: React.FC = () => {
                 {/* Tool Stack Tags & Quick Jump Anchor */}
                 <div className="pt-6 border-t border-brand-foreground/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="font-mono text-xs uppercase text-brand-subtle font-semibold mr-2">
+                    <span className="font-mono text-[13px] uppercase text-brand-subtle font-semibold mr-2">
                       Primary Stack:
                     </span>
                     {selectedPosition.tools.map((t) => (
                       <span
                         key={t}
-                        className="rounded-full bg-brand-bg px-3.5 py-1.5 font-mono text-xs font-medium text-brand-foreground shadow-2xs"
+                        className="rounded-full bg-brand-bg px-3.5 py-1.5 font-mono text-[13px] font-medium text-brand-foreground shadow-2xs"
                       >
                         {t}
                       </span>
@@ -264,7 +264,7 @@ export const CareersApply: React.FC = () => {
 
                   <a
                     href="#application-card"
-                    className="h-10 px-6 inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] border-0 shrink-0"
+                    className="h-10 px-6 inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground text-sm sm:text-[15px] font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] border-0 shrink-0"
                   >
                     <span>Apply for Role ↓</span>
                   </a>
@@ -276,7 +276,7 @@ export const CareersApply: React.FC = () => {
                 
                 {/* 1. Core Responsibilities */}
                 <div className="space-y-4 p-6 sm:p-7 rounded-2xl bg-brand-bg/60 border-0 shadow-2xs">
-                  <h3 className="font-mono text-xs uppercase tracking-wider text-brand-foreground font-semibold flex items-center gap-2">
+                  <h3 className="font-mono text-[13px] uppercase tracking-wider text-brand-foreground font-semibold flex items-center gap-2">
                     <Briefcase className="size-4 text-emerald-500" />
                     <span>Core Responsibilities</span>
                   </h3>
@@ -292,7 +292,7 @@ export const CareersApply: React.FC = () => {
 
                 {/* 2. What We're Looking For */}
                 <div className="space-y-4 p-6 sm:p-7 rounded-2xl bg-brand-bg/60 border-0 shadow-2xs">
-                  <h3 className="font-mono text-xs uppercase tracking-wider text-brand-foreground font-semibold flex items-center gap-2">
+                  <h3 className="font-mono text-[13px] uppercase tracking-wider text-brand-foreground font-semibold flex items-center gap-2">
                     <Sparkles className="size-4 text-emerald-500" />
                     <span>What We Look For</span>
                   </h3>
@@ -308,7 +308,7 @@ export const CareersApply: React.FC = () => {
 
                 {/* 3. What Pixel Grid Offers */}
                 <div className="space-y-4 p-6 sm:p-7 rounded-2xl bg-brand-bg/60 md:col-span-2 lg:col-span-1 border-0 shadow-2xs">
-                  <h3 className="font-mono text-xs uppercase tracking-wider text-brand-foreground font-semibold flex items-center gap-2">
+                  <h3 className="font-mono text-[13px] uppercase tracking-wider text-brand-foreground font-semibold flex items-center gap-2">
                     <Gift className="size-4 text-amber-500" />
                     <span>Studio Ecosystem</span>
                   </h3>
@@ -346,7 +346,7 @@ export const CareersApply: React.FC = () => {
                 {/* LEFT (50%): Candidate Application Form */}
                 <div className="p-8 sm:p-10 lg:p-12 xl:p-14 bg-brand-bg/95 flex flex-col justify-between">
                   <div>
-                    <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-brand-subtle font-medium mb-1">
+                    <div className="flex items-center gap-2 font-mono text-[13px] uppercase tracking-wider text-brand-subtle font-medium mb-1">
                       <Mail className="size-4 text-emerald-500" />
                       <span>Direct Submission</span>
                     </div>
@@ -362,7 +362,7 @@ export const CareersApply: React.FC = () => {
                     
                     {/* Target Role Selector (Dynamic Role Switcher) */}
                     <div>
-                      <label className="font-mono text-[13px] sm:text-sm uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                      <label className="font-mono text-sm sm:text-[15px] uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                         Target Position <span className="text-emerald-500">*</span>
                       </label>
                       <select
@@ -376,7 +376,7 @@ export const CareersApply: React.FC = () => {
                           </option>
                         ))}
                       </select>
-                      <span className="mt-1 block font-mono text-[13px] text-brand-subtle">
+                      <span className="mt-1 block font-mono text-sm text-brand-subtle">
                         Changing role updates the Job Description block above in real-time.
                       </span>
                     </div>
@@ -384,7 +384,7 @@ export const CareersApply: React.FC = () => {
                     {/* Candidate Identity: Name & Email */}
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>
-                        <label className="font-mono text-[13px] sm:text-sm uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
+                        <label className="font-mono text-sm sm:text-[15px] uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
                           Full Name <span className="text-emerald-500">*</span>
                         </label>
                         <input
@@ -398,7 +398,7 @@ export const CareersApply: React.FC = () => {
                       </div>
 
                       <div>
-                        <label className="font-mono text-[13px] sm:text-sm uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
+                        <label className="font-mono text-sm sm:text-[15px] uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
                           Email Address <span className="text-emerald-500">*</span>
                         </label>
                         <input
@@ -414,7 +414,7 @@ export const CareersApply: React.FC = () => {
 
                     {/* Showreel Link */}
                     <div>
-                      <label className="font-mono text-[13px] sm:text-sm uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
+                      <label className="font-mono text-sm sm:text-[15px] uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
                         Showreel / Portfolio URL <span className="text-emerald-500">*</span>
                       </label>
                       <div className="relative flex items-center">
@@ -433,7 +433,7 @@ export const CareersApply: React.FC = () => {
                     {/* Location & Phone */}
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>
-                        <label className="font-mono text-[13px] sm:text-sm uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
+                        <label className="font-mono text-sm sm:text-[15px] uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
                           Location &amp; Timezone
                         </label>
                         <input
@@ -446,7 +446,7 @@ export const CareersApply: React.FC = () => {
                       </div>
 
                       <div>
-                        <label className="font-mono text-[13px] sm:text-sm uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
+                        <label className="font-mono text-sm sm:text-[15px] uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
                           Phone / WhatsApp (Optional)
                         </label>
                         <input
@@ -461,7 +461,7 @@ export const CareersApply: React.FC = () => {
 
                     {/* Experience Level */}
                     <div>
-                      <label className="font-mono text-[13px] sm:text-sm uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                      <label className="font-mono text-sm sm:text-[15px] uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                         Experience Level
                       </label>
                       <div className="flex flex-wrap gap-2">
@@ -472,7 +472,7 @@ export const CareersApply: React.FC = () => {
                               key={opt}
                               type="button"
                               onClick={() => setExperience(opt)}
-                              className={`rounded-full px-4 py-2 font-mono text-[13px] font-medium transition-colors duration-150 cursor-pointer select-none border-0 ${
+                              className={`rounded-full px-4 py-2 font-mono text-sm font-medium transition-colors duration-150 cursor-pointer select-none border-0 ${
                                 isSelected
                                   ? "bg-brand-foreground text-brand-bg font-semibold shadow-xs"
                                   : "bg-brand-bg text-brand-subtle hover:text-brand-foreground"
@@ -487,7 +487,7 @@ export const CareersApply: React.FC = () => {
 
                     {/* Availability */}
                     <div>
-                      <label className="font-mono text-[13px] sm:text-sm uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                      <label className="font-mono text-sm sm:text-[15px] uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                         Availability
                       </label>
                       <div className="flex flex-wrap gap-2">
@@ -498,7 +498,7 @@ export const CareersApply: React.FC = () => {
                               key={opt}
                               type="button"
                               onClick={() => setAvailability(opt)}
-                              className={`rounded-full px-4 py-2 font-mono text-[13px] font-medium transition-colors duration-150 cursor-pointer select-none border-0 ${
+                              className={`rounded-full px-4 py-2 font-mono text-sm font-medium transition-colors duration-150 cursor-pointer select-none border-0 ${
                                 isSelected
                                   ? "bg-brand-foreground text-brand-bg font-semibold shadow-xs"
                                   : "bg-brand-bg text-brand-subtle hover:text-brand-foreground"
@@ -513,7 +513,7 @@ export const CareersApply: React.FC = () => {
 
                     {/* Primary Software Stack */}
                     <div>
-                      <label className="font-mono text-[13px] sm:text-sm uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
+                      <label className="font-mono text-sm sm:text-[15px] uppercase tracking-wider text-brand-subtle font-semibold block mb-2 whitespace-nowrap">
                         Primary Tools &amp; Renderers (Select all that apply)
                       </label>
                       <div className="flex flex-wrap gap-2">
@@ -524,7 +524,7 @@ export const CareersApply: React.FC = () => {
                               key={tool}
                               type="button"
                               onClick={() => toggleTool(tool)}
-                              className={`rounded-full px-3.5 py-1.5 font-mono text-[13px] font-medium transition-colors duration-150 cursor-pointer select-none border-0 ${
+                              className={`rounded-full px-3.5 py-1.5 font-mono text-sm font-medium transition-colors duration-150 cursor-pointer select-none border-0 ${
                                 isSelected
                                   ? "bg-brand-foreground text-brand-bg font-semibold shadow-xs"
                                   : "bg-brand-bg text-brand-subtle hover:text-brand-foreground"
@@ -540,7 +540,7 @@ export const CareersApply: React.FC = () => {
 
                     {/* Creative Focus / Notes */}
                     <div>
-                      <label className="font-mono text-[13px] sm:text-sm uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
+                      <label className="font-mono text-sm sm:text-[15px] uppercase tracking-wider text-brand-subtle font-semibold block mb-1.5 whitespace-nowrap">
                         Creative Focus &amp; Breakdown Notes
                       </label>
                       <textarea
@@ -554,7 +554,7 @@ export const CareersApply: React.FC = () => {
 
                     {/* Error Notice */}
                     {errorMessage && (
-                      <div className="flex items-center gap-2 rounded-xl bg-red-500/10 p-3.5 text-xs font-mono text-red-500 border-0">
+                      <div className="flex items-center gap-2 rounded-xl bg-red-500/10 p-3.5 text-[13px] font-mono text-red-500 border-0">
                         <AlertCircle className="size-4 shrink-0" />
                         <span>{errorMessage}</span>
                       </div>
@@ -565,7 +565,7 @@ export const CareersApply: React.FC = () => {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="group w-full sm:w-auto h-12 px-8 inline-flex items-center justify-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none border-0 cursor-pointer select-none"
+                        className="group w-full sm:w-auto h-12 px-8 inline-flex items-center justify-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground text-sm sm:text-[15px] font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none border-0 cursor-pointer select-none"
                       >
                         {isSubmitting ? (
                           <>
@@ -590,10 +590,10 @@ export const CareersApply: React.FC = () => {
                   {/* Top Bar: Review Desk & Status */}
                   <div className="space-y-4">
                     <div className="flex items-center justify-between border-b border-brand-panel-foreground/15 pb-4">
-                      <span className="font-mono text-[13px] uppercase tracking-[0.25em] text-brand-panel-foreground/60">
+                      <span className="font-mono text-sm uppercase tracking-[0.25em] text-brand-panel-foreground/60">
                         Direct Studio Review
                       </span>
-                      <span className="flex items-center gap-2 font-mono text-[13px] uppercase tracking-wider text-emerald-400">
+                      <span className="flex items-center gap-2 font-mono text-sm uppercase tracking-wider text-emerald-400">
                         <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
                         Active Queue
                       </span>
@@ -608,7 +608,7 @@ export const CareersApply: React.FC = () => {
                   </div>
 
                   {/* Protocol Commitments */}
-                  <div className="space-y-3 font-mono text-xs text-brand-panel-foreground/85">
+                  <div className="space-y-3 font-mono text-[13px] text-brand-panel-foreground/85">
                     <div className="flex items-start gap-2.5">
                       <ShieldCheck className="size-4 text-emerald-400 shrink-0 mt-0.5" />
                       <span><strong>Direct Founder Review:</strong> Every reel receives direct review from Subhanshu Gajbhiye.</span>
@@ -625,27 +625,27 @@ export const CareersApply: React.FC = () => {
 
                   {/* 3-Step Hiring Flow / Recruitment Milestones */}
                   <div className="pt-4 border-t border-brand-panel-foreground/15 space-y-3">
-                    <span className="font-mono text-[13px] uppercase tracking-wider text-brand-panel-foreground/60 font-semibold block">
+                    <span className="font-mono text-sm uppercase tracking-wider text-brand-panel-foreground/60 font-semibold block">
                       Recruitment Milestones
                     </span>
-                    <div className="space-y-2 font-mono text-xs">
+                    <div className="space-y-2 font-mono text-[13px]">
                       <div className="flex items-center gap-3 p-3 rounded-xl bg-brand-panel-foreground/5 border border-brand-panel-foreground/10">
-                        <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-400 text-neutral-950 text-[13px] font-bold">1</span>
+                        <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-400 text-neutral-950 text-sm font-bold">1</span>
                         <span className="text-brand-panel-foreground font-medium">Reel &amp; Craft Assessment (48h)</span>
                       </div>
                       <div className="flex items-center gap-3 p-3 rounded-xl bg-brand-panel-foreground/5 border border-brand-panel-foreground/10">
-                        <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-400 text-neutral-950 text-[13px] font-bold">2</span>
+                        <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-400 text-neutral-950 text-sm font-bold">2</span>
                         <span className="text-brand-panel-foreground font-medium">30-Min Creative Call with CD</span>
                       </div>
                       <div className="flex items-center gap-3 p-3 rounded-xl bg-brand-panel-foreground/5 border border-brand-panel-foreground/10">
-                        <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-400 text-neutral-950 text-[13px] font-bold">3</span>
+                        <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-400 text-neutral-950 text-sm font-bold">3</span>
                         <span className="text-brand-panel-foreground font-medium">Offer &amp; Farm Onboarding</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Studio Base & Compute */}
-                  <div className="pt-4 border-t border-brand-panel-foreground/15 space-y-2 font-mono text-xs text-brand-panel-foreground/80">
+                  <div className="pt-4 border-t border-brand-panel-foreground/15 space-y-2 font-mono text-[13px] text-brand-panel-foreground/80">
                     <div className="flex items-center gap-2">
                       <Cpu className="size-3.5 text-brand-panel-foreground" />
                       <span><strong>Compute:</strong> Dedicated Multi-RTX GPU + Cloud Farm</span>
@@ -653,7 +653,7 @@ export const CareersApply: React.FC = () => {
                   </div>
 
                   {/* Bottom Line: Direct Contact */}
-                  <div className="border-t border-brand-panel-foreground/15 pt-4 text-xs font-mono text-brand-panel-foreground/75">
+                  <div className="border-t border-brand-panel-foreground/15 pt-4 text-[13px] font-mono text-brand-panel-foreground/75">
                     Confidential reels or direct CD inquiries? Email us at{" "}
                     <a href="mailto:careers@pixelgridstudios.com" className="underline font-semibold text-brand-panel-foreground">
                       careers@pixelgridstudios.com

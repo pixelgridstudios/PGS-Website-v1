@@ -60,7 +60,7 @@ export const Showreel: React.FC = () => {
         <div className="flex flex-col gap-6">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
-              <FadeIn delay={0.1} className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-brand-subtle font-medium mb-2">
+              <FadeIn delay={0.1} className="flex items-center gap-2 font-mono text-[13px] uppercase tracking-[0.2em] text-brand-subtle font-medium mb-2">
                 <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span>Pixel Grid Studios · 2026 Edition</span>
               </FadeIn>
@@ -80,7 +80,7 @@ export const Showreel: React.FC = () => {
                 href="https://vimeo.com/1182784182"
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground px-6 py-3 text-xs sm:text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground px-6 py-3 text-sm sm:text-[15px] font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
               >
                 <span>Watch 4K on Vimeo</span>
                 <ExternalLink className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -90,7 +90,7 @@ export const Showreel: React.FC = () => {
                 href="https://www.behance.net/search/projects?search=pixel+grid+studios"
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-brand-muted px-5 py-3 text-xs sm:text-sm font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-md active:scale-95 shadow-xs border-0"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-brand-muted px-5 py-3 text-sm sm:text-[15px] font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-md active:scale-95 shadow-xs border-0"
               >
                 <span>Behance Gallery</span>
                 <ExternalLink className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -156,7 +156,7 @@ export const Showreel: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-transparent" />
                     <div className="absolute bottom-2 left-2 rounded-md bg-black/60 px-2 py-1 backdrop-blur-md">
-                      <span className="font-mono text-xs text-white">
+                      <span className="font-mono text-[13px] text-white">
                         {ch.time}
                       </span>
                     </div>
@@ -164,7 +164,7 @@ export const Showreel: React.FC = () => {
 
                   <div className="flex items-end justify-between px-1 pb-1">
                     <div>
-                      <span className="font-mono text-xs uppercase tracking-wider text-brand-subtle font-medium">
+                      <span className="font-mono text-[13px] uppercase tracking-wider text-brand-subtle font-medium">
                         {ch.discipline}
                       </span>
                       <h3 className="mt-1 font-display text-lg font-bold tracking-tight text-brand-foreground">
@@ -187,7 +187,7 @@ export const Showreel: React.FC = () => {
         <section className="py-6 sm:py-8">
           <FadeIn delay={0.2} fullWidth className="rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-6 sm:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 shadow-sm dark:shadow-xl border-0">
             <div className="max-w-2xl flex flex-col gap-3">
-              <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-brand-subtle font-medium">
+              <div className="flex items-center gap-2 font-mono text-[13px] uppercase tracking-wider text-brand-subtle font-medium">
                 <Sparkles className="size-4 text-brand-foreground" />
                 <span>Reel Production Details</span>
               </div>
