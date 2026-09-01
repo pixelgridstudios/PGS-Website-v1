@@ -250,7 +250,7 @@ export const Home: React.FC = () => {
           <div className="mx-auto max-w-[1600px]">
             {/* Section Header */}
             <FadeIn delay={0.1} className="flex flex-col gap-3 md:items-center md:text-center mb-6 sm:mb-8">
-              <h2 className="font-display text-4xl lg:text-6xl font-semibold tracking-tight text-brand-foreground">
+              <h2 className="font-serif text-4xl lg:text-6xl font-semibold tracking-tight text-brand-foreground">
                 How Our Motion Can Work for You
               </h2>
               <p className="max-w-2xl text-base sm:text-lg text-brand-subtle font-normal">
