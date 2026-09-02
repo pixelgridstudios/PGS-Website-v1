@@ -10,9 +10,9 @@ export const Footer: React.FC = () => {
       {/* Seamless Borderless Footer Card (Matching Studio Deliverables Background) */}
       <div
         data-reveal
-        className="mx-auto max-w-[1600px] rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground border-0 overflow-hidden shadow-sm dark:shadow-2xl transition-colors duration-300"
+        className="mx-auto max-w-[1600px] min-h-[calc(100vh-2.5rem)] rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground border-0 overflow-hidden shadow-sm dark:shadow-2xl transition-colors duration-300"
       >
-        <div className="w-full h-full bg-black/[0.045] dark:bg-black/30">
+        <div className="w-full h-full min-h-[calc(100vh-2.5rem)] bg-black/[0.045] dark:bg-black/30 flex flex-col justify-between">
           {/* Main Section: Headline + CTA + Navigation */}
           <div className="p-8 sm:p-12 md:p-14 lg:p-16 flex flex-col md:flex-row md:items-start lg:items-center md:justify-between gap-8 md:gap-10 lg:gap-16">
             
