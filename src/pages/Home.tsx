@@ -120,8 +120,6 @@ export const Home: React.FC = () => {
           </FadeIn>
         </section>
 
-        <ClientLogos />
-
         {/* We are Pixel Grid: Signature Dot4 Asymmetric Split Card */}
         <FadeIn delay={0.1} className="my-6 sm:my-8">
           <div className="w-full flex flex-col md:grid md:grid-cols-[280px_1fr] lg:grid-cols-[340px_1fr] xl:grid-cols-[400px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
@@ -339,6 +337,8 @@ export const Home: React.FC = () => {
             </FadeIn>
           </div>
         </section>
+
+        <ClientLogos />
       </div>
     </div>
   );
