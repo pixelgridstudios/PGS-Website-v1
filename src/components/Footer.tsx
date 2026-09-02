@@ -2,23 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { socialLinks } from "@/data/content";
-import DotDivider from "@/components/DotDivider";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="px-3 pb-3 pt-4 sm:pt-5 sm:px-5 sm:pb-5">
+    <footer className="w-full pt-16 sm:pt-24 mt-12">
       {/* Seamless Borderless Footer Card (Matching Studio Deliverables Background) */}
       <div
         data-reveal
-        className="mx-auto max-w-[1600px] min-h-[calc(100vh-2.5rem)] rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground border-0 overflow-hidden shadow-sm dark:shadow-2xl transition-colors duration-300"
+        className="w-full min-h-screen rounded-t-[2rem] sm:rounded-t-[3rem] bg-neutral-950 text-white border-0 overflow-hidden shadow-2xl transition-colors duration-300"
       >
-        <div className="w-full h-full min-h-[calc(100vh-2.5rem)] bg-black/[0.045] dark:bg-black/30 flex flex-col justify-between">
+        <div className="w-full h-full min-h-screen bg-transparent flex flex-col justify-between mx-auto max-w-[1600px]">
           {/* Main Section: Headline + CTA + Navigation */}
           <div className="p-8 sm:p-12 md:p-14 lg:p-16 flex flex-col md:flex-row md:items-start lg:items-center md:justify-between gap-8 md:gap-10 lg:gap-16">
             
             {/* Left Side: Headline, Let's Talk CTA & Clean Email Line */}
             <div className="max-w-[620px] flex flex-col gap-6">
-              <h2 className="font-serif text-4xl md:text-6xl font-bold tracking-tight text-neutral-950 dark:text-brand-foreground leading-[1.08]">
+              <h2 className="font-serif text-4xl md:text-6xl font-bold tracking-tight text-white leading-[1.08]">
                 Got a complex product? Let's make it look like magic. ✨
               </h2>
 
@@ -32,10 +31,10 @@ export const Footer: React.FC = () => {
                 </Link>
 
                 <div className="flex items-center gap-2.5">
-                  <span className="text-neutral-600 dark:text-brand-subtle font-normal text-sm">or</span>
+                  <span className="text-neutral-400 font-normal text-sm">or</span>
                   <a
                     href="mailto:hello@pixelgridstudios.com"
-                    className="font-display text-sm sm:text-base font-semibold text-neutral-950 dark:text-brand-foreground hover:underline underline-offset-4 transition-colors"
+                    className="font-display text-sm sm:text-base font-semibold text-white hover:underline underline-offset-4 transition-colors"
                   >
                     hello@pixelgridstudios.com
                   </a>
@@ -45,7 +44,7 @@ export const Footer: React.FC = () => {
 
             {/* Right Side: Clean Tightly Spaced Navigation Menu on Tablet & Desktop */}
             <div className="pt-6 md:pt-0 border-t border-neutral-900/15 dark:border-neutral-800 md:border-t-0 w-full md:w-auto">
-              <ul className="flex flex-row flex-wrap md:flex-col items-center justify-between sm:justify-start gap-4 sm:gap-6 md:gap-1.5 lg:gap-2 md:items-end font-display text-sm sm:text-base md:text-lg lg:text-2xl font-semibold tracking-wider uppercase text-neutral-800 dark:text-brand-subtle">
+              <ul className="flex flex-row flex-wrap md:flex-col items-center justify-between sm:justify-start gap-4 sm:gap-6 md:gap-1.5 lg:gap-2 md:items-end font-display text-sm sm:text-base md:text-lg lg:text-2xl font-semibold tracking-wider uppercase text-neutral-300">
                 {[
                   { label: "HOME", path: "/" },
                   { label: "WORK", path: "/work" },
@@ -56,7 +55,7 @@ export const Footer: React.FC = () => {
                   <li key={item.path}>
                     <Link
                       to={item.path}
-                      className="hover:text-black dark:hover:text-brand-foreground transition-colors duration-150 py-0.5 inline-block border-0 leading-tight"
+                      className="hover:text-white transition-colors duration-150 py-0.5 inline-block border-0 leading-tight"
                     >
                       {item.label}
                     </Link>
@@ -66,9 +65,9 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Signature Dot Divider Line */}
-          <div className="px-8 sm:px-14 lg:px-16">
-            <DotDivider className="my-0" />
+          {/* Clean Border Line */}
+          <div className="px-8 sm:px-14 lg:px-16 w-full">
+            <div className="w-full border-t border-white/20"></div>
           </div>
 
           {/* Bottom Bar: 3-Column Layout (Logo, Socials, Legal & Copyright) */}
@@ -79,7 +78,7 @@ export const Footer: React.FC = () => {
                 <img
                   src="/assets/pixel-grid-logo.png"
                   alt="Pixel Grid Studios"
-                  className="h-7 sm:h-8 md:h-9 w-auto object-contain dark:invert select-none"
+                  className="h-7 sm:h-8 md:h-9 w-auto object-contain invert select-none"
                 />
               </Link>
             </div>
@@ -92,7 +91,7 @@ export const Footer: React.FC = () => {
                   href={s.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="font-mono text-sm font-medium text-neutral-700 hover:text-black dark:text-brand-subtle dark:hover:text-brand-foreground transition-colors border-0"
+                  className="font-mono text-sm font-medium text-neutral-400 hover:text-white transition-colors border-0"
                 >
                   {s.name}
                 </a>
@@ -104,14 +103,14 @@ export const Footer: React.FC = () => {
               <div className="flex items-center justify-center md:justify-end gap-3 text-sm">
                 <Link
                   to="/privacy-policy"
-                  className="text-neutral-800 hover:text-black dark:text-brand-subtle dark:hover:text-brand-foreground hover:underline transition-colors border-0"
+                  className="text-neutral-400 hover:text-white hover:underline transition-colors border-0"
                 >
                   Privacy Policy
                 </Link>
                 <span className="opacity-40">·</span>
                 <Link
                   to="/terms-conditions"
-                  className="text-neutral-800 hover:text-black dark:text-brand-subtle dark:hover:text-brand-foreground hover:underline transition-colors border-0"
+                  className="text-neutral-400 hover:text-white hover:underline transition-colors border-0"
                 >
                   Terms and Conditions
                 </Link>
