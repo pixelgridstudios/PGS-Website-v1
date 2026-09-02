@@ -243,101 +243,88 @@ export const Home: React.FC = () => {
 
         <DotDivider />
 
-        {/* How Our Motion Can Work for You */}
-        <section className="py-6 sm:py-8 overflow-hidden w-full">
-          <div className="mx-auto max-w-[1600px]">
-            {/* Seamless Borderless Sibling Card Architecture */}
-            <FadeIn delay={0.2} className="w-full flex flex-col lg:grid lg:grid-cols-[440px_1fr] xl:grid-cols-[480px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
-              
-              {/* Left Column: Context & Direct CTA (Slightly Darker for Subtle Differentiation) */}
-              <div className="p-6 sm:p-10 lg:p-12 flex flex-col justify-between gap-8 bg-black/[0.045] dark:bg-black/30 text-brand-foreground">
-                <div>
-                  <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-brand-foreground leading-snug">
-                    How Our Motion<br className="hidden lg:block" /> Can Work for You
-                  </h2>
-                </div>
+        {/* How Our Motion Can Work for You - Unified Minimal Layout */}
+        <section className="py-12 sm:py-16 overflow-hidden w-full">
+          <div className="mx-auto max-w-[900px]">
+            <FadeIn delay={0.1} className="flex flex-col md:items-center md:text-center mb-10 sm:mb-12">
+              <h2 className="font-serif text-4xl lg:text-6xl font-semibold tracking-tight text-brand-foreground">
+                How Our Motion Can Work for You
+              </h2>
+            </FadeIn>
 
-                <div>
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground px-7 py-3.5 font-display text-sm font-medium shadow-md transition-opacity duration-150 hover:opacity-90 border-0 self-start select-none cursor-pointer"
+            <FadeIn delay={0.2} className="w-full flex flex-col gap-3">
+              {motionServices.map((service, i) => {
+                const isOpen = openService === i;
+                return (
+                  <div
+                    key={service.id}
+                    onMouseEnter={() => setOpenService(i)}
+                    onClick={() => setOpenService((prev) => (prev === i ? null : i))}
+                    tabIndex={-1}
+                    className={`overflow-hidden rounded-2xl transition-all duration-200 cursor-pointer border-0 outline-none ring-0 select-none ${
+                      isOpen
+                        ? "bg-brand-muted text-brand-foreground shadow-sm"
+                        : "bg-brand-bg text-brand-foreground hover:bg-brand-muted/50"
+                    }`}
                   >
-                    <span>Start a Project</span>
-                    <ArrowRight className="size-4" />
-                  </Link>
-                </div>
-              </div>
-
-              {/* Right Column: Cohesive Service Accordion (Auto-Collapsing when not viewing) */}
-              <div
-                onMouseLeave={() => setOpenService(null)}
-                className="border-t lg:border-t-0 lg:border-l border-brand-foreground/10 bg-brand-bg/50 p-6 sm:p-8 lg:p-10 flex flex-col gap-3"
-              >
-                {motionServices.map((service, i) => {
-                  const isOpen = openService === i;
-                  return (
                     <div
-                      key={service.id}
-                      onMouseEnter={() => setOpenService(i)}
-                      onClick={() => setOpenService((prev) => (prev === i ? null : i))}
-                      tabIndex={-1}
-                      className={`overflow-hidden rounded-xl sm:rounded-2xl transition-all duration-200 cursor-pointer border-0 outline-none ring-0 select-none ${
-                        isOpen
-                          ? "bg-brand-bg text-brand-foreground shadow-sm"
-                          : "bg-brand-muted/70 text-brand-foreground hover:bg-brand-muted"
-                      }`}
+                      aria-expanded={isOpen}
+                      className="flex w-full items-center justify-between gap-4 p-5 sm:p-7 text-left select-none outline-none focus:outline-none ring-0"
                     >
-                      <div
-                        aria-expanded={isOpen}
-                        className="flex w-full items-center justify-between gap-4 p-4 sm:p-5 text-left select-none outline-none focus:outline-none ring-0"
-                      >
-                        <div className="flex items-center gap-3 sm:gap-4 min-w-0">
-                          <span
-                            className={`font-mono text-sm font-medium transition-colors ${
-                              isOpen ? "text-brand-foreground font-semibold" : "text-brand-subtle"
-                            }`}
-                          >
-                            {service.id}
-                          </span>
-                          <div className="flex flex-col min-w-0">
-                            <span className="truncate font-display text-base sm:text-lg font-semibold tracking-tight text-brand-foreground">
-                              {service.title}
-                            </span>
-
-                          </div>
-                        </div>
-
+                      <div className="flex items-center gap-4 sm:gap-6 min-w-0">
                         <span
-                          className={`flex size-7 sm:size-8 shrink-0 items-center justify-center rounded-full transition-all duration-200 ${
-                            isOpen
-                              ? "bg-brand-panel text-brand-panel-foreground rotate-45 shadow-xs"
-                              : "bg-brand-bg text-brand-foreground"
+                          className={`font-mono text-sm sm:text-base font-medium transition-colors ${
+                            isOpen ? "text-brand-foreground font-semibold" : "text-brand-subtle"
                           }`}
                         >
-                          <Plus className="size-4" />
+                          {service.id}
                         </span>
+                        <div className="flex flex-col min-w-0">
+                          <span className="truncate font-display text-lg sm:text-xl font-semibold tracking-tight text-brand-foreground">
+                            {service.title}
+                          </span>
+                        </div>
                       </div>
 
-                      {/* Pure CSS Morphing Grid Height Expansion */}
-                      <div
-                        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
-                          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                      <span
+                        className={`flex size-8 sm:size-10 shrink-0 items-center justify-center rounded-full transition-all duration-200 ${
+                          isOpen
+                            ? "bg-brand-panel text-brand-panel-foreground rotate-45 shadow-xs"
+                            : "bg-brand-muted text-brand-foreground"
                         }`}
                       >
-                        <div className="overflow-hidden">
-                          <div className="border-t border-brand-foreground/10 px-5 pb-5 pt-3 text-sm sm:text-base leading-relaxed text-brand-subtle font-normal">
-                            <p>{service.copy}</p>
-                          </div>
+                        <Plus className="size-4 sm:size-5" />
+                      </span>
+                    </div>
+
+                    {/* Pure CSS Morphing Grid Height Expansion */}
+                    <div
+                      className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                        isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="border-t border-brand-foreground/10 px-5 sm:px-7 pb-5 sm:pb-7 pt-4 text-base sm:text-lg leading-relaxed text-brand-subtle font-normal">
+                          <p>{service.copy}</p>
                         </div>
                       </div>
                     </div>
-                  );
-                })}
-              </div>
+                  </div>
+                );
+              })}
+            </FadeIn>
+
+            <FadeIn delay={0.3} className="mt-10 sm:mt-14 flex justify-center w-full">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground px-8 py-4 font-display text-base font-semibold shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] border-0 select-none cursor-pointer"
+              >
+                <span>Start a Project</span>
+                <ArrowRight className="size-5" />
+              </Link>
             </FadeIn>
           </div>
         </section>
-
         <ClientLogos />
       </div>
     </div>
