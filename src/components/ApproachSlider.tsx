@@ -1,4 +1,5 @@
-﻿import React from "react";
+import React, { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ApproachItem {
   title: string;
@@ -29,34 +30,150 @@ const approachItems: ApproachItem[] = [
 ];
 
 export const ApproachSlider: React.FC = () => {
-  return (
-    <section className="py-16 sm:py-24 border-t border-brand-foreground/10">
-      <div className="mb-12 sm:mb-20">
-        <h2 className="font-serif text-5xl font-semibold tracking-tight sm:text-7xl text-brand-foreground">
-          Our Approach
-        </h2>
-      </div>
+  const [activeIndex, setActiveIndex] = useState<number>(0);
 
-      <div className="grid gap-12 lg:gap-8 lg:grid-cols-3">
-        {approachItems.map((item, idx) => (
-          <div key={idx} className="flex flex-col gap-6 sm:gap-8 group">
-            <div className="relative aspect-[4/5] sm:aspect-square w-full overflow-hidden bg-neutral-950">
-              <img
-                src={item.image}
-                alt={item.imageAlt}
-                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 grayscale hover:grayscale-0"
-              />
-            </div>
-            <div className="flex flex-col gap-4">
-              <h3 className="font-serif text-3xl font-semibold tracking-tight sm:text-4xl text-brand-foreground">
-                {item.title}
-              </h3>
-              <p className="text-base sm:text-lg text-brand-subtle font-normal leading-relaxed">
-                {item.copy}
-              </p>
+  const prevSlide = () => {
+    setActiveIndex((prev) => (prev === 0 ? approachItems.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setActiveIndex((prev) => (prev === approachItems.length - 1 ? 0 : prev + 1));
+  };
+
+  return (
+    <section className="py-12 sm:py-16 overflow-hidden w-full">
+      <div className="mx-auto max-w-[1600px]">
+        {/* Single Cohesive Borderless Card Container */}
+        <div className="w-full flex flex-col lg:grid lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_480px] rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground overflow-hidden shadow-sm dark:shadow-2xl border-0">
+          
+          {/* Left Column: Text Canvas */}
+          <div className="w-full p-6 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-between gap-8 sm:gap-12">
+            <div>
+              <h2 className="font-serif text-4xl lg:text-6xl font-bold tracking-tight text-brand-foreground">
+                The Power of Our Approach
+              </h2>
+
+              {/* 2-Column Tabs & Continuous Morphing Content */}
+              <div className="mt-8 sm:mt-12 grid gap-6 sm:gap-8 md:grid-cols-[260px_1fr] lg:grid-cols-[280px_1fr] xl:grid-cols-[300px_1fr] items-start">
+                {/* Tab Options with Continuous Variable Font Morphing */}
+                <ul className="flex flex-col gap-3.5 font-display text-lg sm:text-2xl lg:text-2xl">
+                  {approachItems.map((item, idx) => {
+                    const isActive = activeIndex === idx;
+                    return (
+                      <li key={item.title}>
+                        <button
+                          type="button"
+                          onMouseEnter={() => setActiveIndex(idx)}
+                          onClick={() => setActiveIndex(idx)}
+                          style={{
+                            fontVariationSettings: isActive ? "'wght' 700" : "'wght' 400",
+                            transition: "font-variation-settings 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease, opacity 0.25s ease",
+                          }}
+                          className={`text-left select-none cursor-pointer block w-full tracking-tight ${
+                            isActive
+                              ? "text-brand-foreground opacity-100"
+                              : "text-brand-subtle hover:text-brand-foreground hover:opacity-90"
+                          }`}
+                        >
+                          {item.title}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+
+                {/* Vertical Sliding Text Reel */}
+                <div className="relative h-[180px] sm:h-[170px] overflow-hidden border-t md:border-t-0 md:border-l border-brand-foreground/10 pt-5 md:pt-0 md:pl-8">
+                  <div
+                    className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] h-full"
+                    style={{ transform: `translateY(-${activeIndex * 100}%) translateZ(0)` }}
+                  >
+                    {approachItems.map((item, idx) => {
+                      const isActive = activeIndex === idx;
+                      return (
+                        <div
+                          key={item.title}
+                          className={`h-[180px] sm:h-[170px] shrink-0 flex flex-col justify-start transition-opacity duration-300 ease-out ${
+                            isActive ? "opacity-100" : "opacity-0 pointer-events-none"
+                          }`}
+                          style={{ backfaceVisibility: "hidden" }}
+                        >
+                          <p className="text-base sm:text-lg lg:text-lg leading-relaxed text-brand-foreground/85 font-normal">
+                            {item.copy}
+                          </p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        ))}
+
+          {/* Right Column: Physical Sliding Image Strip */}
+          <div className="p-4 sm:p-6 lg:p-6 xl:p-8 flex items-center justify-center bg-brand-bg/40 border-t lg:border-t-0 lg:border-l border-brand-foreground/10">
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] xl:aspect-[1/1] max-h-[460px] rounded-xl sm:rounded-2xl overflow-hidden bg-brand-muted shadow-md group border-0">
+              {/* Continuous Horizontal Strip */}
+              <div
+                className="flex h-full w-full transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+                style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+              >
+                {approachItems.map((item) => (
+                  <div key={item.title} className="relative h-full w-full shrink-0">
+                    <img
+                      src={item.image}
+                      alt={item.imageAlt}
+                      className="h-full w-full object-cover transition-transform duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {/* Inset Circular Controls */}
+              <div className="absolute bottom-4 right-4 flex items-center gap-2 z-10">
+                <button
+                  type="button"
+                  onClick={prevSlide}
+                  aria-label="Previous approach"
+                  className="flex size-9 sm:size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md transition-opacity duration-150 hover:opacity-90 cursor-pointer border-0"
+                >
+                  <ChevronLeft className="size-4 sm:size-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={nextSlide}
+                  aria-label="Next approach"
+                  className="flex size-9 sm:size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md transition-opacity duration-150 hover:opacity-90 cursor-pointer border-0"
+                >
+                  <ChevronRight className="size-4 sm:size-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Indicator Bar */}
+        <div className="block md:hidden mt-4">
+          <ul className="flex justify-center gap-2 items-center">
+            {approachItems.map((_, i) => (
+              <li key={i} className="h-8 flex-1 flex items-center">
+                <button
+                  type="button"
+                  onClick={() => setActiveIndex(i)}
+                  className="w-full h-1 rounded-full transition-colors duration-200"
+                >
+                  <div
+                    className={`w-full h-1 rounded-full transition-colors duration-300 ${
+                      activeIndex === i
+                        ? "bg-brand-foreground"
+                        : "bg-brand-foreground/20"
+                    }`}
+                  />
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
