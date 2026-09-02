@@ -202,12 +202,12 @@ export const Home: React.FC = () => {
 
         <div className="max-w-[1600px] mx-auto px-6 sm:px-12"><DotDivider /></div>
 
-        {/* How Our Motion Can Work for You - Unified Minimal Layout */}
+        {/* How Motion Can Work for You - Unified Minimal Layout */}
         <section className="py-12 sm:py-16 overflow-hidden w-full max-w-[1600px] mx-auto px-6 sm:px-12">
           <div className="mx-auto max-w-[900px]">
             <FadeIn delay={0.1} className="flex flex-col md:items-center md:text-center mb-10 sm:mb-12">
               <h2 className="font-serif text-4xl lg:text-6xl font-semibold tracking-tight text-brand-foreground">
-                How Our Motion Can Work for You
+                How Motion Can Work for You
               </h2>
             </FadeIn>
 
