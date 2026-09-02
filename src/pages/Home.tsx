@@ -120,128 +120,105 @@ export const Home: React.FC = () => {
           </FadeIn>
         </section>
 
-        {/* We are Pixel Grid: Signature Dot4 Asymmetric Split Card */}
-        <FadeIn delay={0.1} className="my-6 sm:my-8">
-          <div className="w-full flex flex-col md:grid md:grid-cols-[280px_1fr] lg:grid-cols-[340px_1fr] xl:grid-cols-[400px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
-            
-            {/* Left/Top Column: Context, Branding & Action */}
-            <div className="p-5 sm:p-6 md:p-8 lg:p-10 xl:p-11 pb-2 sm:pb-3 md:pb-8 lg:pb-10 xl:pb-11 flex flex-row md:flex-col justify-between items-center md:items-start gap-3 sm:gap-4 md:gap-7 bg-transparent md:bg-black/[0.045] md:dark:bg-black/30 text-brand-foreground">
-              <div>
-                <h2 className="font-serif text-2xl md:text-4xl xl:text-6xl font-bold tracking-tight text-brand-foreground leading-tight md:leading-[1.08]">
-                  <span className="inline md:block whitespace-nowrap">Hi, we're </span>
-                  <span className="inline md:block md:mt-1 whitespace-nowrap">Pixel Grid</span>
-                </h2>
-              </div>
-
-              <div className="shrink-0">
-                <Link
-                  to="/about"
-                  className="group inline-flex items-center gap-2 sm:gap-2.5 md:gap-3 rounded-full bg-brand-panel text-brand-panel-foreground px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3 lg:py-3.5 text-sm sm:text-base font-medium tracking-wide shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
-                >
-                  <span>More about us</span>
-                  <ArrowRight className="size-3.5 sm:size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
-                </Link>
-              </div>
+        {/* Editorial Intro */}
+        <FadeIn delay={0.1} className="my-16 sm:my-24">
+          <div className="w-full flex flex-col md:grid md:grid-cols-[1fr_2fr] gap-8 md:gap-16 border-t border-brand-foreground/10 pt-16">
+            <div>
+              <h2 className="font-serif text-2xl font-bold tracking-tight text-brand-foreground uppercase">
+                Pixel Grid
+              </h2>
             </div>
-
-            {/* Right/Bottom Column: Narrative */}
-            <div className="p-5 sm:p-6 md:p-8 lg:p-10 xl:p-11 pt-2 sm:pt-3 md:pt-8 lg:pt-10 xl:pt-11 flex flex-col justify-center bg-brand-muted text-brand-foreground">
-              <div className="space-y-2.5 sm:space-y-3 md:space-y-4 lg:space-y-4.5 text-sm sm:text-base lg:text-lg xl:text-lg leading-relaxed text-brand-subtle font-normal">
-                <p>
-                  Pixel Grid Studios was founded in 2020 by Subhanshu Gajbhiye, Creative Director. We turn complex engineering, products, and technical concepts into motion that audiences immediately understand.
-                </p>
-                <p>
-                  There is no permanent bench here. For every brief, we curate seasoned specialists chosen specifically for that project, coordinated directly by the founder — delivering campaign-defining work for leading technology and consumer brands globally.
-                </p>
-              </div>
+            <div className="flex flex-col gap-8 md:gap-12">
+              <h3 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tight text-brand-foreground leading-[1.05]">
+                A creative studio obsessed with precision. We engineer 3D systems and brand films that clarify complex products and captivate audiences.
+              </h3>
+              <Link
+                to="/about"
+                className="inline-flex items-center gap-4 text-sm font-mono tracking-widest uppercase hover:opacity-50 transition-opacity self-start group"
+              >
+                <span>Discover More</span>
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-2" />
+              </Link>
             </div>
-
           </div>
         </FadeIn>
 
-        <DotDivider />
-
-        {/* Highlighted Work: Clean Borderless Project Cards */}
-        <section className="py-6 sm:py-8">
-          <FadeIn delay={0.1} className="flex items-end justify-between mb-6 sm:mb-8">
+        {/* Highlighted Work: Editorial Stark Grid */}
+        <section className="py-12 sm:py-24 border-t border-brand-foreground/10">
+          <FadeIn delay={0.1} className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
             <div>
-              <h2 className="font-serif text-4xl font-semibold tracking-tight sm:text-6xl text-brand-foreground">
+              <h2 className="font-serif text-5xl font-semibold tracking-tight sm:text-7xl text-brand-foreground">
                 Highlighted Work
               </h2>
             </div>
             <Link
               to="/work"
-              className="group hidden sm:inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-sm font-medium text-brand-foreground shadow-xs transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-brand-panel hover:text-brand-panel-foreground hover:shadow-md active:scale-95 border-0"
+              className="group hidden sm:inline-flex items-center gap-4 text-sm font-mono tracking-widest uppercase hover:opacity-50 transition-opacity"
             >
-              Discover More <ArrowRight className="size-4 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
+              <span>View Full Archive</span>
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-2" />
             </Link>
           </FadeIn>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-12 md:gap-8 md:grid-cols-2">
             {highlightedProjects.map((project, i) => (
               <FadeIn key={project.title} delay={0.2 + (i * 0.1)} className="h-full">
                 <Link
                   to={`/work/${project.slug}`}
-                  className="block h-full group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 transition-transform duration-300 ease-out hover:-translate-y-2 border-0 transform-gpu select-none cursor-pointer"
+                  className="block h-full group flex flex-col gap-5 sm:gap-6 cursor-pointer"
                 >
-                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-neutral-950 shadow-inner">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="flex items-end justify-between px-1 pb-1">
-                  <div>
-
-                    <h3 className="mt-1 font-display text-2xl font-bold tracking-tight sm:text-4xl text-brand-foreground">
-                      {project.title}
-                    </h3>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full bg-brand-bg px-3 py-1 font-mono text-sm uppercase tracking-wider text-brand-foreground font-medium border-0"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                  <div className="relative aspect-[4/5] sm:aspect-[16/11] w-full overflow-hidden bg-neutral-950">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex items-start justify-between">
+                    <div className="flex flex-col gap-2">
+                      <h3 className="font-serif text-3xl font-semibold tracking-tight sm:text-4xl text-brand-foreground">
+                        {project.title}
+                      </h3>
+                      <div className="flex flex-wrap gap-x-4 gap-y-2">
+                        {project.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="font-mono text-xs sm:text-sm uppercase tracking-widest text-brand-subtle"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md shrink-0 transition-transform duration-300 ease-out group-hover:-rotate-45">
-                    <ArrowRight className="size-4" />
-                  </span>
-                </div>
-              </Link>
+                </Link>
               </FadeIn>
             ))}
           </div>
 
-          <div className="mt-8 text-center sm:hidden">
+          <div className="mt-12 sm:hidden">
             <Link
               to="/work"
-              className="group inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-sm font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] shadow-xs border-0"
+              className="group inline-flex items-center gap-4 text-sm font-mono tracking-widest uppercase hover:opacity-50 transition-opacity"
             >
-              Discover More <ArrowRight className="size-4 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
+              <span>View Full Archive</span>
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-2" />
             </Link>
           </div>
         </section>
 
-        <DotDivider />
 
         {/* The Power of Our Approach Slider */}
         <FadeIn delay={0.1} fullWidth>
           <ApproachSlider />
         </FadeIn>
 
-        <DotDivider />
 
         {/* From Concept to Delivery Timeline */}
         <FadeIn delay={0.1} direction="up" fullWidth>
           <TimelineTrack />
         </FadeIn>
 
-        <DotDivider />
 
         {/* How Our Motion Can Work for You - Unified Minimal Layout */}
         <section className="py-12 sm:py-16 overflow-hidden w-full">
@@ -261,10 +238,10 @@ export const Home: React.FC = () => {
                     onMouseEnter={() => setOpenService(i)}
                     onClick={() => setOpenService((prev) => (prev === i ? null : i))}
                     tabIndex={-1}
-                    className={`overflow-hidden rounded-2xl transition-all duration-200 cursor-pointer border-0 outline-none ring-0 select-none ${
+                    className={`overflow-hidden transition-all duration-200 cursor-crosshair border-b border-brand-foreground/10 outline-none ring-0 select-none ${
                       isOpen
-                        ? "bg-brand-muted text-brand-foreground shadow-sm"
-                        : "bg-brand-bg text-brand-foreground hover:bg-brand-muted/50"
+                        ? "bg-brand-foreground text-brand-bg"
+                        : "bg-transparent text-brand-foreground hover:bg-brand-muted/30"
                     }`}
                   >
                     <div
@@ -317,7 +294,7 @@ export const Home: React.FC = () => {
             <FadeIn delay={0.3} className="mt-10 sm:mt-14 flex justify-center w-full">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground px-8 py-4 font-display text-base font-semibold shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] border-0 select-none cursor-pointer"
+                className="inline-flex items-center justify-center gap-4 border border-brand-foreground px-8 py-4 font-mono text-sm uppercase tracking-widest hover:bg-brand-foreground hover:text-brand-bg transition-colors"
               >
                 <span>Start a Project</span>
                 <ArrowRight className="size-5" />

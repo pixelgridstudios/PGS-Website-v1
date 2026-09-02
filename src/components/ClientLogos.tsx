@@ -34,7 +34,7 @@ const LogoCell = ({ items, currentIndex, colIdx }: { items: ClientLogo[], curren
   const item = items[currentIndex % items.length];
   
   return (
-    <div className="relative h-20 sm:h-24 md:h-32 w-full rounded-xl sm:rounded-2xl bg-brand-muted/40 overflow-hidden flex items-center justify-center border border-brand-foreground/5 shadow-inner p-4 sm:p-6">
+    <div className="relative h-24 sm:h-32 w-full flex items-center justify-center border-t border-b sm:border border-brand-foreground/10 p-4 sm:p-6">
       <AnimatePresence mode="popLayout">
         <motion.div
           key={item.name}
@@ -76,11 +76,11 @@ const ClientLogos: React.FC = () => {
       <FadeIn delay={0.1}>
         <div className="flex flex-col gap-6 sm:gap-8">
           <div className="px-1">
-            <h3 className="font-mono text-sm sm:text-base uppercase tracking-widest text-brand-subtle font-semibold">
+            <h3 className="font-serif text-2xl font-semibold tracking-tight text-brand-foreground">
               Trusted by visionary brands
             </h3>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 sm:gap-0">
             <LogoCell items={col1} currentIndex={index} colIdx={0} />
             <LogoCell items={col2} currentIndex={index} colIdx={1} />
             <LogoCell items={col3} currentIndex={index} colIdx={2} />
