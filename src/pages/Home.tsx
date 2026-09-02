@@ -82,15 +82,6 @@ export const Home: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/60" />
           </div>
 
-          {/* Main Hero Headline */}
-          <div className="relative z-10 my-auto py-8">
-            <TextReveal
-              text="We make complex products and systems visually understandable through motion design, 3D visualization, and brand film."
-              className="max-w-[22ch] font-display text-[8.5vw] font-bold leading-[1.05] tracking-tight sm:text-[5.5vw] lg:text-[3.2vw] text-white drop-shadow-md"
-              delay={0.1}
-            />
-          </div>
-
           {/* Bottom Row: Showreel Overlay */}
           <FadeIn delay={0.6} direction="up" className="relative z-10 flex items-center justify-end">
             {/* Interactive Showreel Hover Card */}
@@ -120,42 +111,23 @@ export const Home: React.FC = () => {
           </FadeIn>
         </section>
 
-        {/* We are Pixel Grid: Signature Dot4 Asymmetric Split Card */}
+        {/* We are Pixel Grid: Signature Dot4 Asymmetric Split Card (Simplified) */}
         <FadeIn delay={0.1} className="my-6 sm:my-8">
-          <div className="w-full flex flex-col md:grid md:grid-cols-[280px_1fr] lg:grid-cols-[340px_1fr] xl:grid-cols-[400px_1fr] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-2xl border-0">
-            
-            {/* Left/Top Column: Context, Branding & Action */}
-            <div className="p-5 sm:p-6 md:p-8 lg:p-10 xl:p-11 pb-2 sm:pb-3 md:pb-8 lg:pb-10 xl:pb-11 flex flex-row md:flex-col justify-between items-center md:items-start gap-3 sm:gap-4 md:gap-7 bg-transparent md:bg-black/[0.045] md:dark:bg-black/30 text-brand-foreground">
-              <div>
-                <h2 className="font-serif text-2xl md:text-4xl xl:text-6xl font-bold tracking-tight text-brand-foreground leading-tight md:leading-[1.08]">
-                  <span className="inline md:block whitespace-nowrap">Hi, we're </span>
-                  <span className="inline md:block md:mt-1 whitespace-nowrap">Pixel Grid</span>
-                </h2>
-              </div>
-
-              <div className="shrink-0">
-                <Link
-                  to="/about"
-                  className="group inline-flex items-center gap-2 sm:gap-2.5 md:gap-3 rounded-full bg-brand-panel text-brand-panel-foreground px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3 lg:py-3.5 text-sm sm:text-base font-medium tracking-wide shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
-                >
-                  <span>More about us</span>
-                  <ArrowRight className="size-3.5 sm:size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
-                </Link>
-              </div>
+          <div className="w-full flex flex-col md:flex-row items-center gap-6 sm:gap-8 rounded-2xl sm:rounded-3xl bg-brand-muted p-6 sm:p-10 md:p-12 lg:p-16 shadow-sm dark:shadow-2xl border-0">
+            <div className="flex-1">
+              <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium tracking-tight text-brand-foreground leading-tight md:leading-[1.15]">
+                Pixel Grid is a global creative company that brings brands, stories, and experiences to life through art, design, and technology.
+              </h2>
             </div>
-
-            {/* Right/Bottom Column: Narrative */}
-            <div className="p-5 sm:p-6 md:p-8 lg:p-10 xl:p-11 pt-2 sm:pt-3 md:pt-8 lg:pt-10 xl:pt-11 flex flex-col justify-center bg-brand-muted text-brand-foreground">
-              <div className="space-y-2.5 sm:space-y-3 md:space-y-4 lg:space-y-4.5 text-sm sm:text-base lg:text-lg xl:text-lg leading-relaxed text-brand-subtle font-normal">
-                <p>
-                  Pixel Grid Studios was founded in 2020 by Subhanshu Gajbhiye, Creative Director. We turn complex engineering, products, and technical concepts into motion that audiences immediately understand.
-                </p>
-                <p>
-                  There is no permanent bench here. For every brief, we curate seasoned specialists chosen specifically for that project, coordinated directly by the founder — delivering campaign-defining work for leading technology and consumer brands globally.
-                </p>
-              </div>
+            <div className="shrink-0 flex items-center justify-center pt-2 md:pt-0">
+              <Link
+                to="/about"
+                className="group inline-flex items-center gap-2 sm:gap-3 rounded-full bg-brand-panel text-brand-panel-foreground px-5 md:px-7 py-3 md:py-4 text-sm sm:text-base font-medium tracking-wide shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
+              >
+                <span>More about us</span>
+                <ArrowRight className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
+              </Link>
             </div>
-
           </div>
         </FadeIn>
 
