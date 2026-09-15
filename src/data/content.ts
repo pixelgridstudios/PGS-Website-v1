@@ -31,47 +31,47 @@ export interface StatItem {
 
 export const highlightedProjects: Project[] = [
   {
-    id: "thinking-architecture",
-    title: "Thinking Architecture",
-    image: "/assets/chrono-morph.jpg",
+    id: "xiaomi-redmi-note-12",
+    title: "Xiaomi Redmi Note 12",
+    image: "/assets/chrono-morph-Db8Qrzc2.jpg",
     width: 1200,
     height: 800,
-    tags: ["Brand Film", "Architectural CGI"],
+    tags: ["Product Launch", "3D Animation"],
   },
   {
     id: "tata-power-ez-homes",
     title: "TATA Power EZ Homes",
-    image: "/assets/void-textiles.jpg",
+    image: "/assets/void-textiles-DxX08qfd.jpg",
     width: 1200,
     height: 800,
-    tags: ["Brand Film", "Smart System"],
+    tags: ["Brand Film", "Product System"],
   },
 ];
 
 export const allProjects: Project[] = [
   {
-    id: "thinking-architecture",
-    title: "Thinking Architecture",
-    meta: "Brand Film · Architectural CGI",
-    image: "/assets/chrono-morph.jpg",
+    id: "xiaomi-redmi-note-12",
+    title: "Xiaomi Redmi Note 12",
+    meta: "Product Launch · 3D Animation",
+    image: "/assets/chrono-morph-Db8Qrzc2.jpg",
   },
   {
     id: "tata-power-ez-homes",
     title: "TATA Power EZ Homes",
-    meta: "Brand Film · Smart System",
-    image: "/assets/void-textiles.jpg",
+    meta: "Brand Film · Product System",
+    image: "/assets/void-textiles-DxX08qfd.jpg",
   },
   {
-    id: "raymond-invictus",
-    title: "Invictus by Raymond Realty",
-    meta: "Brand Film · Architectural CGI",
-    image: "/assets/precision-archive.jpg",
+    id: "yas-mall",
+    title: "Yas Mall",
+    meta: "Spatial Canvas · Immersive 3D",
+    image: "/assets/precision-archive-D1t0VcXE.jpg",
   },
   {
-    id: "realme-x-kyra",
-    title: "Realme X Kyra",
-    meta: "Product Launch · 3D CGI",
-    image: "/assets/chrono-morph.jpg",
+    id: "boat",
+    title: "Boat",
+    meta: "Product Motion · Short-form",
+    image: "/assets/chrono-morph-Db8Qrzc2.jpg",
   },
 ];
 
@@ -92,7 +92,7 @@ export const approachItems: ApproachItem[] = [
 
 export const workflowStages: WorkflowStage[] = [
   {
-    title: "Discovery and Strategy",
+    title: "Discovery & Strategy",
     items: [
       "Strategy session to explore your objectives",
       "Research your brand, industry, and target audience",
@@ -100,7 +100,7 @@ export const workflowStages: WorkflowStage[] = [
     ],
   },
   {
-    title: "Concept and Storytelling",
+    title: "Concept & Storytelling",
     items: [
       "Scriptwriting (if necessary)",
       "Storyboarding to visualize the flow",
@@ -108,7 +108,7 @@ export const workflowStages: WorkflowStage[] = [
     ],
   },
   {
-    title: "Design and Art Direction",
+    title: "Design & Art Direction",
     items: [
       "Moodboards and style development",
       "Color palette, typography, and overall aesthetic",
@@ -116,15 +116,15 @@ export const workflowStages: WorkflowStage[] = [
     ],
   },
   {
-    title: "Animation and Motion Design",
+    title: "Animation & Motion Design",
     items: [
-      "Keyframe animation and fluid motion design",
+      "Keyframe animation & fluid motion design",
       "3D rendering and compositing (if applicable)",
-      "Sound design and music selection for maximum impact",
+      "Sound design & music selection for maximum impact",
     ],
   },
   {
-    title: "Feedback and Refinements",
+    title: "Feedback & Refinements",
     items: [
       "Review and revisions based on your input",
       "Edit adjustments to timing, pacing, or transitions",
@@ -132,9 +132,9 @@ export const workflowStages: WorkflowStage[] = [
     ],
   },
   {
-    title: "Delivery and Implementation",
+    title: "Delivery & Implementation",
     items: [
-      "Optimized exports for all channels and resolutions",
+      "Optimized exports for all channels & resolutions",
       "Final delivery package with usage guidelines",
     ],
   },
@@ -146,7 +146,7 @@ export const motionServices: ServiceItem[] = [
     copy: "Launch films that explain what a new product does and why it matters with cinematic precision.",
   },
   {
-    title: "Brand and Real Estate Films",
+    title: "Brand & Real Estate Films",
     copy: "Narrative films for brands and developments, from concept and script through final grade.",
   },
   {
@@ -154,15 +154,15 @@ export const motionServices: ServiceItem[] = [
     copy: "Accurate 3D renders and animations of products and systems, including parts that are hard to film.",
   },
   {
-    title: "Live Visuals and Stage Content",
+    title: "Live Visuals & Stage Content",
     copy: "Screen content and looping visuals for events, activations and retail environments.",
   },
   {
-    title: "Commercial and Digital Motion",
+    title: "Commercial & Digital Motion",
     copy: "Campaign assets produced for leading brands, adapted per market and channel.",
   },
   {
-    title: "Short-form and Social Motion",
+    title: "Short-form & Social Motion",
     copy: "Vertical cutdowns and social-first motion built from the same 3D and design system.",
   },
 ];
@@ -177,9 +177,9 @@ export const toolsAndCraft: string[] = [
 
 export const studioStats: StatItem[] = [
   { value: "2020", label: "Founded" },
-  { value: "4+", label: "Master Case Studies" },
-  { value: "50+", label: "Commercial Deliverables" },
-  { value: "100%", label: "Global Client Delivery" },
+  { value: "10+", label: "Yas Mall campaigns" },
+  { value: "6+", label: "Boat campaigns" },
+  { value: "100%", label: "Global client delivery" },
 ];
 
 export const socialLinks = [
@@ -195,5 +195,5 @@ export const projectTypes = [
   "Brand Film",
   "3D Visualization",
   "Live Visuals",
-  "Social and Digital Motion",
+  "Social & Digital Motion",
 ];

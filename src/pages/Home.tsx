@@ -1,25 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Plus, Play } from "lucide-react";
-import DotDivider from "../components/DotDivider";
 import ApproachSlider from "../components/ApproachSlider";
 import TimelineTrack from "../components/TimelineTrack";
-import TextReveal from "../components/animations/TextReveal";
-import FadeIn from "../components/animations/FadeIn";
-import ClientLogos from "../components/ClientLogos";
 
 const highlightedProjects = [
   {
-    slug: "thinking-architecture",
-    title: "Thinking Architecture",
-    meta: "Brand Film · Architectural CGI",
+    slug: "xiaomi-redmi-note-12",
+    title: "Xiaomi Redmi Note 12",
+    meta: "Product Launch Â· 3D Animation",
     image: "/assets/chrono-morph.jpg",
-    tags: ["Architectural CGI", "Spatial Motion", "3D LookDev"],
+    tags: ["3D CGI", "Product Launch", "Motion Design"],
   },
   {
     slug: "tata-power-ez-homes",
     title: "TATA Power EZ Homes",
-    meta: "Brand Film · Smart System",
+    meta: "Brand Film Â· Product System",
     image: "/assets/void-textiles.jpg",
     tags: ["Brand Film", "3D Motion", "Storytelling"],
   },
@@ -65,7 +61,7 @@ export const Home: React.FC = () => {
     <div className="px-3 sm:px-5">
       <div className="mx-auto max-w-[1600px]">
         {/* Dot4 Style Hero Canvas with Background Video */}
-        <section className="-mt-20 relative w-full h-[100svh] overflow-hidden flex flex-col justify-end p-6 sm:p-12 pb-12 sm:pb-16 bg-black">
+        <section className="relative mt-3 overflow-hidden rounded-[1.4rem] bg-black text-white px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-14 lg:h-[calc(100vh-6rem)] lg:min-h-[640px] shadow-2xl flex flex-col justify-end border-0">
           {/* Background Video */}
           <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
             <video
@@ -79,212 +75,200 @@ export const Home: React.FC = () => {
               <source src="/assets/hero-bg.mp4" type="video/mp4" />
             </video>
             {/* Cinematic Gradient Overlays for High Contrast Text Legibility */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/30" />
           </div>
 
-          {/* Bottom Row: Showreel Overlay */}
-          <FadeIn delay={0.6} direction="up" className="relative z-10 flex items-center justify-end">
-            {/* Interactive Showreel Hover Card */}
-            <Link
-              to="/showreel"
-              className="group flex w-full sm:w-auto max-w-[340px] items-center gap-3.5 rounded-2xl bg-white text-black p-2.5 pr-4 shadow-2xl transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] cursor-pointer select-none backdrop-blur-md border-0"
-            >
-              <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-xl bg-neutral-900 shadow-inner">
-                <img
-                  src="/assets/showreel-card.jpg"
-                  alt="Pixel Grid showreel preview"
-                  className="h-full w-full object-cover ease-out"
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-mono text-sm uppercase tracking-wider text-neutral-500 font-medium">
-                  Studio Reel
-                </span>
-                <span className="font-display text-sm font-bold leading-tight text-black">
-                  Watch Full Showreel
-                </span>
-              </div>
-              <span className="ml-auto flex size-8 shrink-0 items-center justify-center rounded-full bg-black text-white shadow-sm transition-transform duration-[400ms] ease-spring-vibe group-hover:scale-[1.1]">
-                <Play className="size-3.5 fill-current ml-0.5" />
-              </span>
-            </Link>
-          </FadeIn>
-        </section>
-
-        {/* We are Pixel Grid: Signature Dot4 Asymmetric Split Card (Simplified) */}
-        <FadeIn delay={0.1} className="my-16 sm:my-24 max-w-[1400px] mx-auto px-6 sm:px-12">
-          <div className="w-full flex flex-col md:flex-row items-center gap-6 sm:gap-8 rounded-2xl sm:rounded-3xl bg-brand-muted p-6 sm:p-10 md:p-12 lg:p-16 shadow-sm dark:shadow-2xl border-0">
-            <div className="flex-1">
-              <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium tracking-tight text-brand-foreground leading-tight md:leading-[1.15]">
-                Pixel Grid is a global creative company that brings brands, stories, and experiences to life through art, design, and technology.
-              </h2>
+          {/* Bottom Row: Left Headline & Subheadline + Right Showreel Card */}
+          <div className="relative z-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-12">
+            {/* Left: Main Hero Headline */}
+            <div data-reveal data-reveal-delay="50" className="max-w-2xl xl:max-w-3xl">
+              <h1 className="font-display text-[2.4rem] sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold leading-[1.05] tracking-tight text-white drop-shadow-md">
+                We make complex things understandable.
+              </h1>
             </div>
-            <div className="shrink-0 flex items-center justify-center pt-2 md:pt-0">
+
+            {/* Right: Interactive Showreel Hover Card */}
+            <div data-reveal data-reveal-delay="150" className="shrink-0 flex items-center lg:justify-end">
               <Link
-                to="/about"
-                className="group inline-flex items-center gap-2 sm:gap-3 rounded-full bg-brand-panel text-brand-panel-foreground px-5 md:px-7 py-3 md:py-4 text-sm sm:text-base font-medium tracking-wide shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 border-0"
+                to="/showreel"
+                className="group flex w-full sm:w-auto max-w-[340px] items-center gap-3.5 rounded-2xl bg-white text-black p-2.5 pr-4 shadow-2xl transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] cursor-pointer select-none backdrop-blur-md border-0"
               >
-                <span>More about us</span>
-                <ArrowRight className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
+                <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-xl bg-neutral-900 shadow-inner">
+                  <img
+                    src="/assets/showreel-card.jpg"
+                    alt="Pixel Grid showreel preview"
+                    className="h-full w-full object-cover ease-out"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-500 font-medium">
+                    Studio Reel
+                  </span>
+                  <span className="font-display text-[14px] font-bold leading-tight text-black">
+                    Watch Full Showreel
+                  </span>
+                </div>
+                <span className="ml-auto flex size-8 shrink-0 items-center justify-center rounded-full bg-black text-white shadow-sm transition-transform duration-[400ms] ease-spring-vibe group-hover:scale-[1.1]">
+                  <Play className="size-3.5 fill-current ml-0.5" />
+                </span>
               </Link>
             </div>
           </div>
-        </FadeIn>
+        </section>
 
-        <DotDivider />
+
+        {/* Studio Statement */}
+        <section data-reveal className="flex flex-col justify-center min-h-[75vh] lg:min-h-[90vh] py-24 sm:py-32">
+          <p className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3rem] xl:text-[3.25rem] font-medium leading-[1.2] tracking-[-0.02em] text-brand-foreground">
+            We develop visual ways to communicate products, technology and complex ideas using 3D, motion design and visual storytelling to reveal how things work, what matters, and why they matter.
+          </p>
+        </section>
+
 
         {/* Highlighted Work: Clean Borderless Project Cards */}
-        <section className="py-12 sm:py-24 max-w-[1600px] mx-auto px-6 sm:px-12">
-          <FadeIn delay={0.1} className="flex items-end justify-between mb-6 sm:mb-8">
-            <div>
-              <h2 className="font-serif text-4xl font-semibold tracking-tight sm:text-6xl text-brand-foreground">
-                Highlighted Work
-              </h2>
-            </div>
-            <Link
-              to="/work"
-              className="group hidden sm:inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-sm font-medium text-brand-foreground shadow-xs transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-brand-panel hover:text-brand-panel-foreground hover:shadow-md active:scale-95 border-0"
-            >
-              Discover More <ArrowRight className="size-4 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
-            </Link>
-          </FadeIn>
-
-          <div className="grid gap-12 md:gap-8 md:grid-cols-2">
+        <section className="py-6 sm:py-8">
+          <div className="grid gap-6 md:grid-cols-2">
             {highlightedProjects.map((project, i) => (
-              <FadeIn key={project.title} delay={0.2 + (i * 0.1)} className="h-full">
-                <Link
-                  to={`/work/${project.slug}`}
-                  className="block h-full group flex flex-col gap-4 sm:gap-6 cursor-pointer"
-                >
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-950">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-1.5">
-                    <h3 className="font-sans text-2xl sm:text-3xl font-medium tracking-tight text-brand-foreground">
+              <Link
+                key={project.title}
+                to={`/work/${project.slug}`}
+                data-reveal
+                data-reveal-delay={i === 0 ? "100" : "200"}
+                className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 transition-transform duration-[400ms] ease-spring-vibe hover:-translate-y-2 active:scale-[0.98] border-0"
+              >
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-neutral-950 shadow-inner">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-full w-full object-cover ease-out"
+                  />
+                </div>
+                <div className="flex items-end justify-between px-1 pb-1">
+                  <div>
+                    <h3 className="mt-1 font-display text-2xl font-bold tracking-tight sm:text-3xl text-brand-foreground">
                       {project.title}
                     </h3>
-                    <div className="flex flex-wrap gap-2 text-brand-subtle font-sans text-sm sm:text-base">
-                      {project.tags.join(" • ")}
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-brand-bg px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-brand-foreground font-medium border-0"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                </Link>
-              </FadeIn>
+                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:-rotate-45">
+                    <ArrowRight className="size-4" />
+                  </span>
+                </div>
+              </Link>
             ))}
           </div>
 
-          <div className="mt-12 text-center sm:hidden">
+          <div data-reveal className="mt-8 text-center">
             <Link
               to="/work"
-              className="group inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-sm font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] shadow-xs border-0"
+              className="group inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-[13px] font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] shadow-xs border-0"
             >
               Discover More <ArrowRight className="size-4 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
             </Link>
           </div>
         </section>
 
-        <DotDivider />
 
         {/* The Power of Our Approach Slider */}
-        <div className="max-w-[1600px] mx-auto px-6 sm:px-12"><FadeIn delay={0.1} fullWidth>
+        <div data-reveal>
           <ApproachSlider />
-        </FadeIn></div>
+        </div>
 
-        <div className="max-w-[1600px] mx-auto px-6 sm:px-12"><DotDivider /></div>
 
         {/* From Concept to Delivery Timeline */}
-        <div className="max-w-[1600px] mx-auto px-6 sm:px-12"><FadeIn delay={0.1} direction="up" fullWidth>
+        <div data-reveal>
           <TimelineTrack />
-        </FadeIn></div>
+        </div>
 
-        <div className="max-w-[1600px] mx-auto px-6 sm:px-12"><DotDivider /></div>
 
-        {/* How Motion Can Work for You - Unified Minimal Layout */}
-        <section className="py-12 sm:py-16 overflow-hidden w-full max-w-[1600px] mx-auto px-6 sm:px-12">
-          <div className="mx-auto max-w-[900px]">
-            <FadeIn delay={0.1} className="flex flex-col md:items-center md:text-center mb-10 sm:mb-12">
-              <h2 className="font-serif text-4xl lg:text-6xl font-semibold tracking-tight text-brand-foreground">
-                How Motion Can Work for You
+        {/* How Our Motion Can Work for You */}
+        <section className="py-6 sm:py-8 overflow-hidden w-full">
+          <div className="mx-auto max-w-[1600px]">
+            {/* Section Header */}
+            <div data-reveal className="flex flex-col gap-3 md:items-center md:text-center mb-6 sm:mb-8">
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-brand-foreground">
+                How Our Motion Can Work for You
               </h2>
-            </FadeIn>
+            </div>
 
-            <FadeIn delay={0.2} className="w-full flex flex-col gap-3">
-              {motionServices.map((service, i) => {
-                const isOpen = openService === i;
-                return (
-                  <div
-                    key={service.id}
-                    onMouseEnter={() => setOpenService(i)}
-                    onClick={() => setOpenService((prev) => (prev === i ? null : i))}
-                    tabIndex={-1}
-                    className={`overflow-hidden rounded-2xl transition-all duration-200 cursor-pointer border-0 outline-none ring-0 select-none ${
-                      isOpen
-                        ? "bg-brand-muted text-brand-foreground shadow-sm"
-                        : "bg-brand-bg text-brand-foreground hover:bg-brand-muted/50"
-                    }`}
-                  >
+            {/* Clean Centered Accordion Card */}
+            <div data-reveal data-reveal-delay="100" className="mx-auto w-full max-w-5xl rounded-2xl sm:rounded-3xl bg-brand-muted p-4 sm:p-6 lg:p-10 shadow-sm dark:shadow-2xl border-0">
+              <div
+                onMouseLeave={() => setOpenService(null)}
+                className="flex flex-col gap-3"
+              >
+                {motionServices.map((service, i) => {
+                  const isOpen = openService === i;
+                  return (
                     <div
-                      aria-expanded={isOpen}
-                      className="flex w-full items-center justify-between gap-4 p-5 sm:p-7 text-left select-none outline-none focus:outline-none ring-0"
-                    >
-                      <div className="flex items-center gap-4 sm:gap-6 min-w-0">
-                        <span
-                          className={`font-mono text-sm sm:text-base font-medium transition-colors ${
-                            isOpen ? "text-brand-foreground font-semibold" : "text-brand-subtle"
-                          }`}
-                        >
-                          {service.id}
-                        </span>
-                        <div className="flex flex-col min-w-0">
-                          <span className="truncate font-display text-lg sm:text-xl font-semibold tracking-tight text-brand-foreground">
-                            {service.title}
-                          </span>
-                        </div>
-                      </div>
-
-                      <span
-                        className={`flex size-8 sm:size-10 shrink-0 items-center justify-center rounded-full transition-all duration-200 ${
-                          isOpen
-                            ? "bg-brand-panel text-brand-panel-foreground rotate-45 shadow-xs"
-                            : "bg-brand-muted text-brand-foreground"
-                        }`}
-                      >
-                        <Plus className="size-4 sm:size-5" />
-                      </span>
-                    </div>
-
-                    {/* Pure CSS Morphing Grid Height Expansion */}
-                    <div
-                      className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
-                        isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                      key={service.id}
+                      onMouseEnter={() => setOpenService(i)}
+                      onClick={() => setOpenService((prev) => (prev === i ? null : i))}
+                      tabIndex={-1}
+                      className={`overflow-hidden rounded-xl sm:rounded-2xl transition-all duration-200 cursor-pointer border-0 outline-none ring-0 select-none ${
+                        isOpen
+                          ? "bg-brand-bg text-brand-foreground shadow-sm"
+                          : "bg-brand-muted/70 text-brand-foreground hover:bg-brand-muted"
                       }`}
                     >
-                      <div className="overflow-hidden">
-                        <div className="border-t border-brand-foreground/10 px-5 sm:px-7 pb-5 sm:pb-7 pt-4 text-base sm:text-lg leading-relaxed text-brand-subtle font-normal">
-                          <p>{service.copy}</p>
+                      <div
+                        aria-expanded={isOpen}
+                        className="flex w-full items-center justify-between gap-4 p-4 sm:p-5 text-left select-none outline-none focus:outline-none ring-0"
+                      >
+                        <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+                          <span
+                            className={`font-mono text-xs font-medium transition-colors ${
+                              isOpen ? "text-brand-foreground font-semibold" : "text-brand-subtle"
+                            }`}
+                          >
+                            {service.id}
+                          </span>
+                          <div className="flex flex-col min-w-0">
+                            <span className="truncate font-display text-base sm:text-lg font-semibold tracking-tight text-brand-foreground">
+                              {service.title}
+                            </span>
+                          </div>
+                        </div>
+
+                        <span
+                          className={`flex size-7 sm:size-8 shrink-0 items-center justify-center rounded-full transition-all duration-200 ${
+                            isOpen
+                              ? "bg-brand-panel text-brand-panel-foreground rotate-45 shadow-xs"
+                              : "bg-brand-bg text-brand-foreground"
+                          }`}
+                        >
+                          <Plus className="size-4" />
+                        </span>
+                      </div>
+
+                      {/* Pure CSS Morphing Grid Height Expansion */}
+                      <div
+                        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                        }`}
+                      >
+                        <div className="overflow-hidden">
+                          <div className="border-t border-brand-foreground/10 px-5 pb-5 pt-3 text-sm sm:text-base leading-relaxed text-brand-subtle font-normal">
+                            <p>{service.copy}</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
-            </FadeIn>
-
-            <FadeIn delay={0.3} className="mt-10 sm:mt-14 flex justify-center w-full">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground px-8 py-4 font-display text-base font-semibold shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] border-0 select-none cursor-pointer"
-              >
-                <span>Start a Project</span>
-                <ArrowRight className="size-5" />
-              </Link>
-            </FadeIn>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </section>
-        <div className="max-w-[1600px] mx-auto px-6 sm:px-12"><ClientLogos /></div>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FolderSearch, Sparkles, Palette, Film, RefreshCw, Send, Play, Pause, PartyPopper } from "lucide-react";
+import { FolderSearch, Sparkles, Palette, Film, RefreshCw, Send, Play, Pause } from "lucide-react";
 import confetti from "canvas-confetti";
 
 interface TimelineStep {
@@ -10,11 +10,12 @@ interface TimelineStep {
   colStart: number;
   colEnd: number;
   description: string;
+  deliverables: string[];
 }
 
-const TOTAL_COLS = 31;
-const START_NEEDLE = 1.61; // Column 1 center
-const END_NEEDLE = 98.39;   // Column 31 center
+const TOTAL_COLS = 30;
+const START_NEEDLE = 1.67; // Column 1 center
+const END_NEEDLE = 98.33;   // Column 30 center
 
 const pipelineSteps: TimelineStep[] = [
   {
@@ -26,6 +27,11 @@ const pipelineSteps: TimelineStep[] = [
     colEnd: 8,
     description:
       "We explore your objectives, research your brand, industry and target audience, and develop a clear creative roadmap for the project.",
+    deliverables: [
+      "Strategy session to explore your objectives",
+      "Research your brand, industry, and target audience",
+      "Develop a clear roadmap for the project",
+    ],
   },
   {
     id: 1,
@@ -36,6 +42,10 @@ const pipelineSteps: TimelineStep[] = [
     colEnd: 13,
     description:
       "Scriptwriting, storyboarding to visualize the flow, and developing style frames to establish the definitive visual direction.",
+    deliverables: [
+      "Storyboarding to visualize the flow",
+      "Style frames to define the visual direction",
+    ],
   },
   {
     id: 2,
@@ -46,6 +56,11 @@ const pipelineSteps: TimelineStep[] = [
     colEnd: 18,
     description:
       "Moodboards, color palette, typography styling, custom 3D asset modeling, procedural lighting, and overall aesthetic look-development.",
+    deliverables: [
+      "Moodboards and style development",
+      "Color palette, typography, and overall aesthetic",
+      "Custom illustrations, 3D models, or motion graphics",
+    ],
   },
   {
     id: 3,
@@ -56,6 +71,11 @@ const pipelineSteps: TimelineStep[] = [
     colEnd: 23,
     description:
       "Keyframe animation, fluid motion design, 3D rendering, multipass compositing, and impactful sound design & music mastering.",
+    deliverables: [
+      "Keyframe animation & fluid motion design",
+      "3D rendering and compositing (if applicable)",
+      "Sound design & music selection for maximum impact",
+    ],
   },
   {
     id: 4,
@@ -66,39 +86,37 @@ const pipelineSteps: TimelineStep[] = [
     colEnd: 26,
     description:
       "Iterative review and revisions based on your input, edit adjustments to timing, pacing, and transitions, followed by final quality checks.",
+    deliverables: [
+      "Review and revisions based on your input",
+      "Edit adjustments to timing, pacing, or transitions",
+      "Final quality checks before delivery",
+    ],
   },
   {
     id: 5,
     title: "Delivery & Implementation",
     shortTitle: "Delivery",
     icon: <Send className="size-4 shrink-0" />,
-    colStart: 24,
+    colStart: 22,
     colEnd: 30,
     description:
       "Optimized master exports for all your marketing channels in multiple formats, resolutions, and a final delivery package with usage guidelines.",
+    deliverables: [
+      "Optimized exports for all channels & resolutions",
+      "Final delivery package with usage guidelines",
+    ],
   },
-  {
-    id: 6,
-    title: "Wohoo!",
-    shortTitle: "Wohoo!",
-    icon: <PartyPopper className="size-4 shrink-0" />,
-    colStart: 29,
-    colEnd: 31,
-    description:
-      "It's time to celebrate. Your project is live and ready to make an impact. We'll pop the champagne and monitor the launch.",
-  }
 ];
 
-const stepProgressPoints = [5, 27, 45, 61, 74, 87, 97];
+const stepProgressPoints = [5, 25, 45, 63, 78, 90];
 
 const getStepFromProgress = (p: number): number => {
-  if (p < 16) return 0;
+  if (p < 18) return 0;
   if (p < 36) return 1;
-  if (p < 53) return 2;
-  if (p < 67.5) return 3;
-  if (p < 80.5) return 4;
-  if (p < 92) return 5;
-  return 6;
+  if (p < 54) return 2;
+  if (p < 72) return 3;
+  if (p < 84) return 4;
+  return 5;
 };
 
 export const TimelineTrack: React.FC = () => {
@@ -113,8 +131,8 @@ export const TimelineTrack: React.FC = () => {
   const activeStepRef = useRef<number>(0);
   const isAutoPlayingRef = useRef<boolean>(true);
   const hasFiredConfettiRef = useRef<boolean>(false);
-  const desktopWohooButtonRef = useRef<HTMLButtonElement | null>(null);
-  const mobileWohooButtonRef = useRef<HTMLButtonElement | null>(null);
+  const desktopStep6ButtonRef = useRef<HTMLButtonElement | null>(null);
+  const mobileStep6ButtonRef = useRef<HTMLButtonElement | null>(null);
   const glideTweenRef = useRef<{
     active: boolean;
     startProgress: number;
@@ -159,7 +177,7 @@ export const TimelineTrack: React.FC = () => {
   }, []);
 
   // Celebratory Confetti Burst directly centered at the Delivery Button (ONLY when section is actively visible)
-  const triggerWohooConfetti = (explicitButton?: HTMLElement | null) => {
+  const triggerDeliveryConfetti = (explicitButton?: HTMLElement | null) => {
     // STRICT GUARD: Never fire if the timeline section is not actively on screen
     if (!isVisibleRef.current) return;
 
@@ -169,9 +187,9 @@ export const TimelineTrack: React.FC = () => {
     // Target the actual interactive button element
     const targetEl =
       explicitButton ||
-      (desktopWohooButtonRef.current && desktopWohooButtonRef.current.offsetParent !== null
-        ? desktopWohooButtonRef.current
-        : mobileWohooButtonRef.current);
+      (desktopStep6ButtonRef.current && desktopStep6ButtonRef.current.offsetParent !== null
+        ? desktopStep6ButtonRef.current
+        : mobileStep6ButtonRef.current);
 
     if (targetEl) {
       const rect = targetEl.getBoundingClientRect();
@@ -292,10 +310,10 @@ export const TimelineTrack: React.FC = () => {
           hasFiredConfettiRef.current = false;
         }
 
-        // Fire celebratory confetti immediately upon reaching Wohoo! (only if visible)
-        if (progressRef.current >= 92.5 && !hasFiredConfettiRef.current) {
+        // Fire celebratory confetti immediately upon reaching Delivery & Implementation (only if visible)
+        if (progressRef.current >= 84 && !hasFiredConfettiRef.current) {
           hasFiredConfettiRef.current = true;
-          triggerWohooConfetti();
+          triggerDeliveryConfetti();
         }
 
         // Continuous linear mapping across active track bounds
@@ -334,9 +352,9 @@ export const TimelineTrack: React.FC = () => {
       duration: 380, // ~0.38s smooth split-second travel
     };
 
-    if (idx === 6) {
+    if (idx === 5) {
       hasFiredConfettiRef.current = true;
-      triggerWohooConfetti(e?.currentTarget);
+      triggerDeliveryConfetti(e?.currentTarget);
     }
   };
 
@@ -345,7 +363,7 @@ export const TimelineTrack: React.FC = () => {
       <div className="mx-auto max-w-[1600px]">
         {/* Section Header */}
         <div className="flex flex-col gap-3 md:items-center md:text-center mb-6 sm:mb-8">
-          <h2 className="font-serif text-4xl lg:text-6xl font-bold tracking-tight text-brand-foreground">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-foreground">
             From Concept to Delivery
           </h2>
         </div>
@@ -421,10 +439,10 @@ export const TimelineTrack: React.FC = () => {
                     return (
                       <div
                         key={s.id}
-                        className="relative grid grid-cols-[repeat(31,1fr)] items-center h-9 sm:h-9.5"
+                        className="relative grid grid-cols-[repeat(30,1fr)] items-center h-9 sm:h-9.5"
                       >
                         <button
-                          ref={idx === 6 ? desktopWohooButtonRef : undefined}
+                          ref={idx === 5 ? desktopStep6ButtonRef : undefined}
                           type="button"
                           onClick={(e) => handleSelectStep(idx, e)}
                           style={{
@@ -444,7 +462,7 @@ export const TimelineTrack: React.FC = () => {
                           >
                             {s.icon}
                           </span>
-                          <span className="font-display text-[12.5px] sm:text-sm font-medium tracking-tight whitespace-nowrap">
+                          <span className="font-display text-[12.5px] sm:text-[13px] font-medium tracking-tight whitespace-nowrap">
                             {s.title}
                           </span>
                         </button>
@@ -496,11 +514,11 @@ export const TimelineTrack: React.FC = () => {
             </div>
 
             {/* Bottom Timeline Controls */}
-            <div className="mt-4 pt-3 border-t border-brand-foreground/10 flex items-center justify-between font-mono text-sm uppercase tracking-wider text-brand-subtle">
+            <div className="mt-4 pt-3 border-t border-brand-foreground/10 flex items-center justify-between font-mono text-[11px] uppercase tracking-wider text-brand-subtle">
               <button
                 type="button"
                 onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-                className="inline-flex items-center gap-1.5 rounded-full bg-brand-bg px-2.5 py-1 text-sm font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 cursor-pointer border-0"
+                className="inline-flex items-center gap-1.5 rounded-full bg-brand-bg px-2.5 py-1 text-[10px] font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 cursor-pointer border-0"
                 title={isAutoPlaying ? "Pause Timeline Autoplay" : "Resume Timeline Autoplay"}
               >
                 {isAutoPlaying ? (
@@ -515,17 +533,17 @@ export const TimelineTrack: React.FC = () => {
                   </>
                 )}
               </button>
-              <span className="text-sm text-brand-subtle dark:text-neutral-500">
+              <span className="text-[10px] text-brand-subtle dark:text-neutral-500">
                 Click tracks to jump
               </span>
             </div>
           </div>
 
           {/* Right: Vertical Scrolling Content Reel with Crisp Zero-Ghosting Transitions */}
-          <div className="border-t lg:border-t-0 lg:border-l border-brand-foreground/10 bg-brand-bg/60 dark:bg-neutral-900/90 p-6 sm:p-8 flex flex-col justify-center">
+          <div className="border-t lg:border-t-0 lg:border-l border-brand-foreground/10 bg-brand-bg/60 dark:bg-neutral-900/90 p-6 sm:p-8 flex flex-col justify-between">
             <div>
               {/* Vertical Scrolling Content Reel */}
-              <div className="relative h-[180px] sm:h-[160px] overflow-hidden">
+              <div className="relative h-[300px] sm:h-[280px] overflow-hidden mt-5">
                 <div
                   className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] h-full"
                   style={{ transform: `translateY(-${activeStep * 100}%) translateZ(0)` }}
@@ -535,7 +553,7 @@ export const TimelineTrack: React.FC = () => {
                     return (
                       <div
                         key={s.id}
-                        className={`h-[180px] sm:h-[160px] shrink-0 flex flex-col justify-center transition-opacity duration-300 ease-out ${
+                        className={`h-[300px] sm:h-[280px] shrink-0 flex flex-col justify-start transition-opacity duration-300 ease-out ${
                           isActive ? "opacity-100" : "opacity-0 pointer-events-none"
                         }`}
                         style={{ backfaceVisibility: "hidden" }}
@@ -543,15 +561,31 @@ export const TimelineTrack: React.FC = () => {
                         <h3 className="font-display text-2xl font-bold tracking-tight text-black dark:text-white">
                           {s.title}
                         </h3>
-                        <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 font-normal">
+                        <p className="mt-2 text-[14px] leading-relaxed text-neutral-700 dark:text-neutral-300 font-normal">
                           {s.description}
                         </p>
+
+                        <div className="mt-4">
+                          <ul className="mt-2 space-y-1.5">
+                            {s.deliverables.map((item, i) => (
+                              <li
+                                key={i}
+                                className="flex items-start gap-2 text-neutral-900 dark:text-neutral-200 font-normal leading-snug"
+                              >
+                                <div className="size-1.5 rounded-full bg-black dark:bg-neutral-400 mt-1.5 shrink-0" />
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     );
                   })}
                 </div>
               </div>
             </div>
+
+
           </div>
         </div>
 
@@ -569,7 +603,7 @@ export const TimelineTrack: React.FC = () => {
                 }`}
               >
                 <button
-                  ref={idx === 6 ? mobileWohooButtonRef : undefined}
+                  ref={idx === 5 ? mobileStep6ButtonRef : undefined}
                   type="button"
                   onClick={(e) => handleSelectStep(idx, e)}
                   className="flex w-full items-center justify-between p-4 text-left cursor-pointer"
@@ -584,12 +618,12 @@ export const TimelineTrack: React.FC = () => {
                     >
                       {s.icon}
                     </span>
-                    <span className="font-display text-base font-medium tracking-tight">
+                    <span className="font-display text-[15px] sm:text-base font-medium tracking-tight">
                       {s.title}
                     </span>
                   </div>
                   <span
-                    className={`font-mono text-sm font-medium ${
+                    className={`font-mono text-xs font-medium ${
                       isOpen ? "text-white/70" : "text-neutral-500"
                     }`}
                   >
@@ -608,7 +642,17 @@ export const TimelineTrack: React.FC = () => {
                       <p className="leading-relaxed text-white/90 font-normal">
                         {s.description}
                       </p>
-
+                      <ul className="mt-3 space-y-2">
+                        {s.deliverables.map((item, i) => (
+                          <li
+                            key={i}
+                            className="flex items-start gap-2 text-white/90 text-[13px] font-normal"
+                          >
+                            <span className="text-white/60 mt-0.5">•</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>

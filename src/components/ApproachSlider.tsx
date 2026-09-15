@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ApproachItem {
   title: string;
+  tagline: string;
   copy: string;
   image: string;
   imageAlt: string;
@@ -11,18 +12,21 @@ interface ApproachItem {
 const approachItems: ApproachItem[] = [
   {
     title: "Design a Strong Visual Identity",
+    tagline: "Clarity & Character",
     copy: "From established brands to fresh beginnings, we ensure every visual element communicates clearly, feels intentional, and amplifies your identity across every touchpoint.",
     image: "/assets/chrono-morph.jpg",
     imageAlt: "Design a Strong Visual Identity — styleframe render",
   },
   {
     title: "Build to Scale",
+    tagline: "Modular Systems",
     copy: "We engineer modular 3D design systems built for flexibility and consistency across marketing campaigns, platforms, and international broadcast formats.",
     image: "/assets/void-textiles.jpg",
     imageAlt: "Build to Scale — modular 3D simulation system",
   },
   {
     title: "Launch with Impact",
+    tagline: "Engagement & Reach",
     copy: "We craft scroll-stopping motion and high-fidelity visuals that command attention, clarify technical value, and drive meaningful audience engagement.",
     image: "/assets/precision-archive.jpg",
     imageAlt: "Launch with Impact — high-end product visualization",
@@ -49,14 +53,14 @@ export const ApproachSlider: React.FC = () => {
           {/* Left Column: Text Canvas */}
           <div className="w-full p-6 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-between gap-8 sm:gap-12">
             <div>
-              <h2 className="font-serif text-4xl lg:text-6xl font-bold tracking-tight text-brand-foreground">
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-foreground">
                 The Power of Our Approach
               </h2>
 
               {/* 2-Column Tabs & Continuous Morphing Content */}
               <div className="mt-8 sm:mt-12 grid gap-6 sm:gap-8 md:grid-cols-[260px_1fr] lg:grid-cols-[280px_1fr] xl:grid-cols-[300px_1fr] items-start">
                 {/* Tab Options with Continuous Variable Font Morphing */}
-                <ul className="flex flex-col gap-3.5 font-display text-lg sm:text-2xl lg:text-2xl">
+                <ul className="flex flex-col gap-3.5 font-display text-lg sm:text-xl lg:text-2xl">
                   {approachItems.map((item, idx) => {
                     const isActive = activeIndex === idx;
                     return (
@@ -98,7 +102,7 @@ export const ApproachSlider: React.FC = () => {
                           }`}
                           style={{ backfaceVisibility: "hidden" }}
                         >
-                          <p className="text-base sm:text-lg lg:text-lg leading-relaxed text-brand-foreground/85 font-normal">
+                          <p className="text-base sm:text-lg lg:text-[18px] leading-relaxed text-brand-foreground/85 font-normal mt-2">
                             {item.copy}
                           </p>
                         </div>
@@ -108,6 +112,7 @@ export const ApproachSlider: React.FC = () => {
                 </div>
               </div>
             </div>
+
           </div>
 
           {/* Right Column: Physical Sliding Image Strip */}
