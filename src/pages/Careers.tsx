@@ -222,7 +222,7 @@ export const Careers: React.FC = () => {
 
 
         {/* 3. Spontaneous / Freelance General Roster Card */}
-        <section data-reveal className="rounded-2xl sm:rounded-3xl bg-brand-panel text-brand-panel-foreground p-8 sm:p-12 shadow-md border-0">
+        <section data-reveal className="rounded-2xl sm:rounded-3xl bg-brand-panel text-brand-panel-foreground p-8 sm:p-12 mt-12 sm:mt-16 lg:mt-20 shadow-md border-0">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div className="max-w-2xl space-y-3">
               <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-emerald-400 font-semibold">
@@ -233,7 +233,7 @@ export const Careers: React.FC = () => {
                 Don't see your exact role listed?
               </h2>
               <p className="text-base text-brand-panel-foreground/80 leading-relaxed">
-                We are constantly expanding our global roster of specialist freelance animators, sound designers, lookdev artists, and realtime creators for upcoming commercial sprints. Send over your reel anytime.
+                We are constantly expanding our global roster of specialist freelance animators, sound designers, lookdev artists, and realtime creators for upcoming commercial sprints.
               </p>
             </div>
 
