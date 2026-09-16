@@ -564,7 +564,7 @@ export const TimelineTrack: React.FC = () => {
                         >
                           {s.title}
                         </h3>
-                        <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 font-normal">
+                        <p className="mt-2 text-base leading-relaxed text-neutral-700 dark:text-neutral-300 font-normal">
                           {s.description}
                         </p>
 
@@ -646,7 +646,7 @@ export const TimelineTrack: React.FC = () => {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="border-t border-white/10 p-4 pt-3 text-sm">
+                    <div className="border-t border-white/10 p-4 pt-3 text-base">
                       <p className="leading-relaxed text-white/90 font-normal">
                         {s.description}
                       </p>
@@ -654,7 +654,7 @@ export const TimelineTrack: React.FC = () => {
                         {s.deliverables.map((item, i) => (
                           <li
                             key={i}
-                            className="flex items-start gap-2 text-white/90 text-xs font-normal"
+                            className="flex items-start gap-2 text-white/90 text-sm font-normal"
                           >
                             <span className="text-white/60 mt-0.5">•</span>
                             <span>{item}</span>
