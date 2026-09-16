@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { socialLinks } from "@/data/content";
@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
             {/* Left Side: Headline, Let's Talk CTA & Clean Email Line */}
             <div className="max-w-[620px] flex flex-col gap-6">
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-neutral-950 dark:text-brand-foreground leading-[1.08]">
-                Got a complex product? Let's make it look like magic. âœ¨
+                Got a complex product? Let's make it look like magic.
               </h2>
 
               <div className="flex flex-wrap items-center gap-4 sm:gap-5 pt-2">

@@ -230,7 +230,7 @@ export const Careers: React.FC = () => {
                 <span>Freelance Roster &amp; Spontaneous Submissions</span>
               </div>
               <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight">
-                Donâ€™t see your exact role listed?
+                Don't see your exact role listed?
               </h2>
               <p className="text-base text-brand-panel-foreground/80 leading-relaxed">
                 We are constantly expanding our global roster of specialist freelance animators, sound designers, lookdev artists, and realtime creators for upcoming commercial sprints. Send over your reel anytime.
