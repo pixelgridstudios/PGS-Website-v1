@@ -91,10 +91,10 @@ export const Home: React.FC = () => {
             <div data-reveal data-reveal-delay="150" className="shrink-0 flex items-center lg:justify-end">
               <Link
                 to="/showreel"
-                className="group flex items-center rounded-full bg-brand-bg/95 dark:bg-neutral-900/95 text-brand-foreground p-1.5 shadow-xl backdrop-blur-md transition-all duration-[400ms] ease-out hover:-translate-y-1 hover:shadow-2xl active:scale-[0.98] cursor-pointer select-none border-0"
+                className="group flex items-center rounded-2xl bg-brand-bg/95 dark:bg-neutral-900/95 text-brand-foreground p-1.5 sm:p-2 shadow-xl backdrop-blur-md transition-all duration-[400ms] ease-out hover:-translate-y-1 hover:shadow-2xl active:scale-[0.98] cursor-pointer select-none border-0"
               >
-                {/* Always-visible Circular Thumbnail */}
-                <div className="relative h-12 w-12 sm:h-14 sm:w-14 shrink-0 overflow-hidden rounded-full bg-black flex items-center justify-center z-10">
+                {/* Always-visible Rectangular Thumbnail */}
+                <div className="relative h-14 w-20 sm:h-16 sm:w-24 shrink-0 overflow-hidden rounded-xl bg-black flex items-center justify-center z-10">
                   <img
                     src="/assets/showreel-card.jpg"
                     alt="Showreel preview"
@@ -107,7 +107,7 @@ export const Home: React.FC = () => {
 
                 {/* Smooth Horizontal Slide-out Text */}
                 <div className="max-w-0 opacity-0 overflow-hidden transition-all duration-[400ms] ease-out group-hover:max-w-[200px] group-hover:opacity-100">
-                  <span className="font-display text-[14px] sm:text-[15px] font-bold leading-tight whitespace-nowrap pl-3 pr-5 block">
+                  <span className="font-display text-[14px] sm:text-[15px] font-bold leading-tight whitespace-nowrap pl-4 pr-5 block">
                     Watch Full Showreel
                   </span>
                 </div>
