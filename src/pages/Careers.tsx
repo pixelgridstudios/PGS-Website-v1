@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Briefcase,
@@ -43,13 +43,10 @@ export const Careers: React.FC = () => {
     <div className="px-3 sm:px-5">
       <div className="mx-auto max-w-[1600px] pt-8 sm:pt-12 pb-2 sm:pb-3">
         {/* 1. Page Header */}
-        <section data-reveal className="flex flex-col gap-4 max-w-4xl">
+        <section data-reveal className="flex flex-col gap-4 max-w-4xl mb-10 sm:mb-16">
           <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-foreground leading-[1.05]">
             Join the Studio
           </h1>
-          <p className="mt-2 text-lg sm:text-xl text-brand-subtle font-normal leading-relaxed max-w-3xl">
-            We build campaign-defining 3D launch films, procedural visual systems, and spatial CGI for products that matter. We are always looking for visionary artists, technical directors, and motion storytellers.
-          </p>
         </section>
 
 
