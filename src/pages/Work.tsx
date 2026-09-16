@@ -29,9 +29,6 @@ export const Work: React.FC = () => {
               <h1 className="font-display text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-brand-foreground">
                 Our Work
               </h1>
-              <p className="max-w-2xl text-base sm:text-lg text-brand-subtle font-normal">
-                Selected commercial films, 3D visualization, product animation, and motion design built for leading brands and technology pioneers.
-              </p>
             </div>
 
             {/* Direct Link to Dedicated Showreel Page */}
