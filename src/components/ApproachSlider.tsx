@@ -70,13 +70,13 @@ export const ApproachSlider: React.FC = () => {
                             onMouseEnter={() => setActiveIndex(idx)}
                             onClick={() => setActiveIndex(idx)}
                             style={{
-                              fontVariationSettings: isActive ? "'wght' 700" : "'wght' 400",
+                              fontVariationSettings: isActive ? "'wght' 700" : "'wght' 600",
                               transition: "font-variation-settings 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease, opacity 0.25s ease",
                             }}
-                            className={`text-left select-none cursor-pointer block w-full tracking-tight ${
+                            className={`text-left select-none cursor-pointer block w-full tracking-tight transition-all duration-300 ${
                               isActive
                                 ? "text-brand-foreground opacity-100"
-                                : "text-brand-subtle hover:text-brand-foreground hover:opacity-90"
+                                : "text-brand-foreground opacity-90 hover:opacity-100"
                             }`}
                           >
                             {item.title}
