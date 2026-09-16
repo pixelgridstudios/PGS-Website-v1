@@ -17,8 +17,8 @@ export const openPositions: JobPosition[] = [
     id: "senior-3d-motion-designer",
     title: "Senior 3D Motion Designer & LookDev",
     department: "3D & Motion",
-    location: "Flexible / Global",
-    type: "Full-Time",
+    location: "Remote",
+    type: "Full-Time / Contract",
     experience: "4+ Years in Commercial 3D",
     overview:
       "We are looking for a Senior 3D Motion Designer with exceptional taste in kinematic motion, photoreal lighting, and visual storytelling to lead commercial launch films and brand campaigns.",
@@ -47,8 +47,8 @@ export const openPositions: JobPosition[] = [
     id: "commercial-art-director",
     title: "Commercial Art Director / Motion Lead",
     department: "Art Direction & LookDev",
-    location: "Flexible / Global",
-    type: "Full-Time",
+    location: "Remote",
+    type: "Full-Time / Contract",
     experience: "5+ Years in Agency / Studio",
     overview:
       "Direct the creative trajectory, visual styleframes, and narrative pacing of multi-channel commercial campaigns for global and domestic brands.",
@@ -74,8 +74,8 @@ export const openPositions: JobPosition[] = [
     id: "creative-producer-coordinator",
     title: "Creative Producer & Studio Coordinator",
     department: "Production & Pipeline",
-    location: "Flexible / Global",
-    type: "Full-Time",
+    location: "Remote",
+    type: "Full-Time / Contract",
     experience: "3+ Years in Studio Production",
     overview:
       "Keep our productions synchronized, streamlined, and friction-free. You will manage project timelines, artist allocations, client feedback loops, and final delivery milestones.",
