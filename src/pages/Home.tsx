@@ -195,8 +195,8 @@ export const Home: React.FC = () => {
           <div className="mx-auto max-w-[1600px]">
             {/* Section Header */}
             <div data-reveal className="flex flex-col gap-3 md:items-center md:text-center mb-6 sm:mb-8">
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-brand-foreground">
-                How Our Motion Can Work for You
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-foreground">
+                What We Can Help You Visualise
               </h2>
             </div>
 

@@ -364,7 +364,7 @@ export const TimelineTrack: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col gap-3 md:items-center md:text-center mb-6 sm:mb-8">
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-foreground">
-            From Concept to Delivery
+            The Process Behind the Work
           </h2>
         </div>
 

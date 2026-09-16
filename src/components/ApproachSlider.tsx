@@ -54,7 +54,7 @@ export const ApproachSlider: React.FC = () => {
           <div className="w-full p-6 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-between gap-8 sm:gap-12">
             <div>
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-foreground">
-                The Power of Our Approach
+                The Value Behind the Visuals
               </h2>
 
               {/* 2-Column Tabs & Continuous Morphing Content */}
