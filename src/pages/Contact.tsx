@@ -46,7 +46,7 @@ export const Contact: React.FC = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [brief, setBrief] = useState("");
-  const [attachedFile, setAttachedFile] = useState<File | null>(null);
+  const [attachedFiles, setAttachedFiles] = useState<File[]>([]);
 
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -311,45 +311,50 @@ export const Contact: React.FC = () => {
                   </div>
 
                   <div>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-                      {attachedFile ? (
-                        <div className="inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-medium shadow-sm transition-all select-none border-0 bg-brand-foreground text-brand-bg ring-1 ring-brand-foreground">
-                          <Paperclip className="size-4 shrink-0" />
-                          <span className="truncate max-w-[150px] sm:max-w-[200px]">
-                            {attachedFile.name}
-                          </span>
-                          <button
-                            type="button"
-                            onClick={() => setAttachedFile(null)}
-                            className="ml-1 rounded-full p-0.5 hover:bg-brand-bg/20 text-brand-bg transition-colors cursor-pointer"
-                            aria-label="Remove attachment"
-                          >
-                            <X className="size-3.5" />
-                          </button>
-                        </div>
-                      ) : (
+                    <div className="flex flex-col gap-3">
+                      <div className="flex flex-wrap items-center gap-2">
+                        {attachedFiles.map((file, idx) => (
+                          <div key={`${file.name}-${idx}`} className="inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-medium shadow-sm transition-all select-none border-0 bg-brand-foreground text-brand-bg ring-1 ring-brand-foreground">
+                            <Paperclip className="size-3.5 shrink-0" />
+                            <span className="truncate max-w-[120px] sm:max-w-[150px]">
+                              {file.name}
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => setAttachedFiles(prev => prev.filter((_, i) => i !== idx))}
+                              className="ml-0.5 rounded-full p-0.5 hover:bg-brand-bg/20 text-brand-bg transition-colors cursor-pointer"
+                              aria-label={`Remove ${file.name}`}
+                            >
+                              <X className="size-3" />
+                            </button>
+                          </div>
+                        ))}
+
                         <div className="relative inline-flex">
                           <input
                             type="file"
                             id="file-upload"
+                            multiple
                             className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                             onChange={(e) => {
-                              if (e.target.files && e.target.files[0]) {
-                                setAttachedFile(e.target.files[0]);
+                              if (e.target.files) {
+                                const newFiles = Array.from(e.target.files);
+                                setAttachedFiles((prev) => [...prev, ...newFiles]);
                               }
+                              e.target.value = '';
                             }}
                           />
                           <label
                             htmlFor="file-upload"
-                            className="inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-medium shadow-sm transition-all cursor-pointer select-none border-0 bg-brand-bg text-brand-foreground ring-1 ring-brand-foreground/10 hover:ring-brand-foreground/30"
+                            className="inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-xs sm:text-sm font-medium shadow-sm transition-all cursor-pointer select-none border-0 bg-brand-bg text-brand-foreground ring-1 ring-brand-foreground/10 hover:ring-brand-foreground/30"
                           >
                             <Paperclip className="size-4 shrink-0" />
                             <span className="truncate max-w-[150px] sm:max-w-[200px]">
-                              Attach Files (Max 50MB)
+                              {attachedFiles.length > 0 ? "Add More" : "Attach Files (Max 50MB)"}
                             </span>
                           </label>
                         </div>
-                      )}
+                      </div>
                       <span className="text-xs text-brand-subtle">
                         For larger files, please share a <a href="https://wetransfer.com/" target="_blank" rel="noreferrer" className="underline hover:text-brand-foreground transition-colors">WeTransfer</a> or <a href="https://drive.google.com/" target="_blank" rel="noreferrer" className="underline hover:text-brand-foreground transition-colors">Drive</a> link in the brief above.
                       </span>
