@@ -35,6 +35,7 @@ const approachItems: ApproachItem[] = [
 
 export const ApproachSlider: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   const prevSlide = () => {
     setActiveIndex((prev) => (prev === 0 ? approachItems.length - 1 : prev - 1));
@@ -67,10 +68,11 @@ export const ApproachSlider: React.FC = () => {
                       <li key={item.title}>
                           <button
                             type="button"
-                            onMouseEnter={() => setActiveIndex(idx)}
+                            onMouseEnter={() => setHoverIndex(idx)}
+                            onMouseLeave={() => setHoverIndex(null)}
                             onClick={() => setActiveIndex(idx)}
                             style={{
-                              fontVariationSettings: isActive ? "'wght' 700" : "'wght' 600",
+                              fontVariationSettings: (isActive || hoverIndex === idx) ? "'wght' 700" : "'wght' 600",
                               transition: "font-variation-settings 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease, opacity 0.25s ease",
                             }}
                             className={`text-left select-none cursor-pointer block w-full tracking-tight transition-all duration-300 ${
