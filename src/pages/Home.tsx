@@ -233,11 +233,17 @@ export const Home: React.FC = () => {
                             {service.id}
                           </span>
                           <div className="flex flex-col min-w-0">
-                            <span className={`truncate font-display text-lg sm:text-xl lg:text-2xl tracking-tight transition-all duration-300 ${
-                              isOpen
-                                ? "text-brand-foreground font-bold opacity-100"
-                                : "text-brand-subtle font-normal"
-                            }`}>
+                            <span 
+                              className={`truncate font-display text-lg sm:text-xl lg:text-2xl tracking-tight transition-all duration-300 ${
+                                isOpen
+                                  ? "text-brand-foreground opacity-100"
+                                  : "text-brand-subtle"
+                              }`}
+                              style={{
+                                fontVariationSettings: isOpen ? "'wght' 700" : "'wght' 400",
+                                transition: "font-variation-settings 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease, opacity 0.25s ease",
+                              }}
+                            >
                               {service.title}
                             </span>
                           </div>
