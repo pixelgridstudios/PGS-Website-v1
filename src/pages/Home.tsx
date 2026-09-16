@@ -91,26 +91,28 @@ export const Home: React.FC = () => {
             <div data-reveal data-reveal-delay="150" className="shrink-0 flex items-center lg:justify-end">
               <Link
                 to="/showreel"
-                className="group flex w-full sm:w-auto max-w-[340px] items-center gap-3.5 rounded-2xl bg-white text-black p-2.5 pr-4 shadow-2xl transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] cursor-pointer select-none backdrop-blur-md border-0"
+                className="group flex items-center rounded-[2rem] bg-brand-bg/90 dark:bg-neutral-900/90 text-brand-foreground p-2 shadow-2xl backdrop-blur-md transition-all duration-[500ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] cursor-pointer select-none border border-brand-foreground/5 overflow-hidden"
               >
-                <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-xl bg-neutral-900 shadow-inner">
+                {/* Always-visible Icon / Thumbnail */}
+                <div className="relative h-14 w-14 sm:h-16 sm:w-16 shrink-0 overflow-hidden rounded-full bg-neutral-900 shadow-inner flex items-center justify-center group-hover:rounded-2xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
                   <img
                     src="/assets/showreel-card.jpg"
-                    alt="Pixel Grid showreel preview"
-                    className="h-full w-full object-cover ease-out"
+                    alt="Showreel preview"
+                    className="absolute inset-0 h-full w-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
                   />
+                  <div className="relative z-10 flex size-8 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm shadow-sm transition-transform duration-500 group-hover:scale-110">
+                    <Play className="size-3.5 fill-white ml-0.5" />
+                  </div>
                 </div>
-                <div className="flex flex-col">
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-500 font-medium">
-                    Studio Reel
-                  </span>
-                  <span className="font-display text-[14px] font-bold leading-tight text-black">
-                    Watch Full Showreel
-                  </span>
+
+                {/* Expanding Text Section */}
+                <div className="grid transition-[grid-template-columns,opacity] duration-[500ms] ease-[cubic-bezier(0.16,1,0.3,1)] grid-cols-[0fr] opacity-0 group-hover:grid-cols-[1fr] group-hover:opacity-100">
+                  <div className="overflow-hidden whitespace-nowrap">
+                    <span className="font-display text-[14px] sm:text-[15px] font-bold leading-tight pl-4 pr-5">
+                      Watch Full Showreel
+                    </span>
+                  </div>
                 </div>
-                <span className="ml-auto flex size-8 shrink-0 items-center justify-center rounded-full bg-black text-white shadow-sm transition-transform duration-[400ms] ease-spring-vibe group-hover:scale-[1.1]">
-                  <Play className="size-3.5 fill-current ml-0.5" />
-                </span>
               </Link>
             </div>
           </div>
