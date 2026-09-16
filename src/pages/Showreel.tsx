@@ -162,7 +162,7 @@ export const Showreel: React.FC = () => {
                     alt={ch.title}
                     className="h-full w-full object-cover"
                   />
-                  <span className="absolute bottom-2 left-2 rounded-md bg-black/80 px-2 py-0.5 font-mono text-[10px] font-medium text-white backdrop-blur-sm">
+                  <span className="absolute bottom-2 left-2 rounded-md bg-black/80 px-2 py-0.5 font-mono text-xs font-medium text-white backdrop-blur-sm">
                     {ch.time}
                   </span>
                 </div>

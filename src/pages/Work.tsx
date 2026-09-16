@@ -53,7 +53,7 @@ export const Work: React.FC = () => {
                   key={cat}
                   type="button"
                   onClick={() => setActiveCategory(cat)}
-                  className={`rounded-full px-5 py-2.5 text-xs sm:text-[13px] font-medium tracking-normal transition-all duration-200 active:scale-95 cursor-pointer select-none whitespace-nowrap border ${
+                  className={`rounded-full px-5 py-2.5 text-xs sm:text-xs font-medium tracking-normal transition-all duration-200 active:scale-95 cursor-pointer select-none whitespace-nowrap border ${
                     isSelected
                       ? "border-brand-foreground bg-brand-foreground text-brand-bg font-semibold"
                       : "border-brand-border bg-brand-bg text-brand-subtle hover:text-brand-foreground hover:border-brand-foreground/40"
@@ -92,7 +92,7 @@ export const Work: React.FC = () => {
                   <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl text-brand-foreground">
                     {project.title}
                   </h2>
-                  <ul className="mt-2 flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-brand-subtle font-medium">
+                  <ul className="mt-2 flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-wider text-brand-subtle font-medium">
                     <li>{project.category}</li>
                     <li className="size-1 rounded-full bg-brand-subtle/50" />
                     <li>{project.year}</li>

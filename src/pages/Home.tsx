@@ -107,7 +107,7 @@ export const Home: React.FC = () => {
 
                 {/* Smooth Horizontal Slide-out Text */}
                 <div className="max-w-0 opacity-0 overflow-hidden transition-all duration-[400ms] ease-out group-hover:max-w-[200px] group-hover:opacity-100">
-                  <span className="font-display text-[14px] sm:text-[15px] font-bold leading-tight whitespace-nowrap pl-4 pr-5 block">
+                  <span className="font-display text-sm sm:text-sm font-bold leading-tight whitespace-nowrap pl-4 pr-5 block">
                     Watch Full Showreel
                   </span>
                 </div>
@@ -152,7 +152,7 @@ export const Home: React.FC = () => {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-brand-bg px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-brand-foreground font-medium border-0"
+                          className="rounded-full bg-brand-bg px-3 py-1 font-mono text-xs uppercase tracking-wider text-brand-foreground font-medium border-0"
                         >
                           {tag}
                         </span>
@@ -170,7 +170,7 @@ export const Home: React.FC = () => {
           <div data-reveal className="mt-8 text-center">
             <Link
               to="/work"
-              className="group inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-[13px] font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] shadow-xs border-0"
+              className="group inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-xs font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] shadow-xs border-0"
             >
               Discover More <ArrowRight className="size-4 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
             </Link>

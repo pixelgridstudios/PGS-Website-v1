@@ -98,7 +98,7 @@ export const ApproachSlider: React.FC = () => {
                           }`}
                           style={{ backfaceVisibility: "hidden" }}
                         >
-                          <p className="text-base sm:text-lg lg:text-[18px] leading-relaxed text-brand-foreground/85 font-normal mt-2">
+                          <p className="text-base sm:text-lg lg:text-lg leading-relaxed text-brand-foreground/85 font-normal mt-2">
                             {item.copy}
                           </p>
                         </div>

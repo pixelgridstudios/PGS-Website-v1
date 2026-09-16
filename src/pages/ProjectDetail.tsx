@@ -52,7 +52,7 @@ export const ProjectDetail: React.FC = () => {
                 href={project.behanceUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-muted px-4 py-2 text-xs sm:text-[13px] font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 shadow-xs border-0"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-muted px-4 py-2 text-xs sm:text-xs font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 shadow-xs border-0"
               >
                 <span>Behance Project</span>
                 <ExternalLink className="size-3.5" />
@@ -62,7 +62,7 @@ export const ProjectDetail: React.FC = () => {
                 href={project.vimeoUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-muted px-4 py-2 text-xs sm:text-[13px] font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 shadow-xs border-0"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-muted px-4 py-2 text-xs sm:text-xs font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors duration-150 shadow-xs border-0"
               >
                 <span>Watch on Vimeo</span>
                 <ExternalLink className="size-3.5" />
@@ -89,7 +89,7 @@ export const ProjectDetail: React.FC = () => {
           {/* Metadata & Award Bar */}
           <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-brand-foreground/10">
             {/* Tag List */}
-            <ul className="flex flex-wrap items-center gap-2 font-mono text-xs sm:text-[13px] text-brand-subtle">
+            <ul className="flex flex-wrap items-center gap-2 font-mono text-xs sm:text-xs text-brand-subtle">
               {project.tags.map((tag, idx) => (
                 <li key={tag} className="flex items-center gap-2">
                   {idx > 0 && <span className="size-1 rounded-full bg-brand-subtle/50" />}

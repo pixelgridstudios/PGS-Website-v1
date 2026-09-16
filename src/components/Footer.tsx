@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
               <div className="flex flex-wrap items-center gap-4 sm:gap-5 pt-2">
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground px-7 sm:px-8 py-3 sm:py-3.5 font-display text-sm sm:text-[15px] font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 select-none cursor-pointer border-0"
+                  className="group inline-flex items-center gap-2.5 rounded-full bg-brand-panel text-brand-panel-foreground px-7 sm:px-8 py-3 sm:py-3.5 font-display text-sm sm:text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 select-none cursor-pointer border-0"
                 >
                   <span>Say Hi</span>
                   <ArrowRight className="size-4 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
                   <span className="text-neutral-600 dark:text-brand-subtle font-normal text-sm">or</span>
                   <a
                     href="mailto:hello@pixelgridstudios.com"
-                    className="font-display text-sm sm:text-[15px] font-semibold text-neutral-950 dark:text-brand-foreground hover:underline underline-offset-4 transition-colors"
+                    className="font-display text-sm sm:text-sm font-semibold text-neutral-950 dark:text-brand-foreground hover:underline underline-offset-4 transition-colors"
                   >
                     hello@pixelgridstudios.com
                   </a>
@@ -99,7 +99,7 @@ export const Footer: React.FC = () => {
 
             {/* 3. Right: Legal Links & Copyright */}
             <div className="flex flex-col md:items-end gap-1.5 font-mono text-xs text-neutral-700 dark:text-brand-subtle text-center md:text-right">
-              <div className="flex items-center justify-center md:justify-end gap-3 text-[11px]">
+              <div className="flex items-center justify-center md:justify-end gap-3 text-xs">
                 <Link
                   to="/privacy-policy"
                   className="text-neutral-800 hover:text-black dark:text-brand-subtle dark:hover:text-brand-foreground hover:underline transition-colors border-0"

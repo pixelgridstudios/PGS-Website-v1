@@ -262,7 +262,7 @@ export const PrivacyPolicy: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => scrollToSection(sec.id)}
-                      className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left font-display text-[14px] sm:text-[15px] font-semibold tracking-normal transition-colors duration-150 cursor-pointer border-0 ${
+                      className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left font-display text-sm sm:text-sm font-semibold tracking-normal transition-colors duration-150 cursor-pointer border-0 ${
                         isActive
                           ? "bg-brand-panel text-brand-panel-foreground shadow-xs"
                           : "text-brand-subtle hover:text-brand-foreground hover:bg-brand-bg"
@@ -285,7 +285,7 @@ export const PrivacyPolicy: React.FC = () => {
               </span>
               <a
                 href="mailto:hello@pixelgridstudios.com"
-                className="font-mono text-[13px] font-medium text-brand-foreground hover:underline"
+                className="font-mono text-xs font-medium text-brand-foreground hover:underline"
               >
                 hello@pixelgridstudios.com
               </a>
@@ -330,7 +330,7 @@ export const PrivacyPolicy: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="text-sm sm:text-[15px] leading-relaxed text-brand-subtle font-normal">
+                <div className="text-sm sm:text-sm leading-relaxed text-brand-subtle font-normal">
                   {sec.content}
                 </div>
               </section>
