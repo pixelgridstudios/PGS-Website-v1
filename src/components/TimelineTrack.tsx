@@ -558,7 +558,7 @@ export const TimelineTrack: React.FC = () => {
                         }`}
                         style={{ backfaceVisibility: "hidden" }}
                       >
-                        <h3 className="font-display text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-black dark:text-white">
+                        <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-black dark:text-white">
                           {s.title}
                         </h3>
                         <p className="mt-2 text-[14px] leading-relaxed text-neutral-700 dark:text-neutral-300 font-normal">
@@ -618,7 +618,7 @@ export const TimelineTrack: React.FC = () => {
                     >
                       {s.icon}
                     </span>
-                    <span className="font-display text-lg sm:text-xl lg:text-2xl font-bold tracking-tight">
+                    <span className="font-display text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight">
                       {s.title}
                     </span>
                   </div>
