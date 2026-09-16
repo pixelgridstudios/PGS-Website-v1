@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
 import { projects } from "@/data/projects";
@@ -23,7 +23,7 @@ export const Work: React.FC = () => {
     <div className="px-3 sm:px-5">
       <div className="mx-auto max-w-[1600px] py-8 sm:py-12">
         {/* Page Heading & Top Row with Watch Showreel Action */}
-        <div data-reveal className="flex flex-col gap-6">
+        <div data-reveal className="flex flex-col gap-6 mb-8 sm:mb-12">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div className="flex flex-col gap-3">
               <h1 className="font-display text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-brand-foreground">
