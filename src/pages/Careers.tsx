@@ -240,7 +240,7 @@ export const Careers: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
               <Link
                 to="/careers/apply?role=Freelance+Roster+%26+General+Specialist"
-                className="group h-12 px-7 sm:px-8 inline-flex items-center justify-center gap-2 rounded-full bg-white text-black text-xs sm:text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] border-0 select-none cursor-pointer shrink-0"
+                className="group h-12 px-7 sm:px-8 inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel-foreground text-brand-panel text-xs sm:text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] border-0 select-none cursor-pointer shrink-0"
               >
                 <span>Join Freelance Network</span>
                 <ArrowRight className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />
@@ -249,7 +249,7 @@ export const Careers: React.FC = () => {
               <button
                 type="button"
                 onClick={handleCopyEmail}
-                className="h-12 px-6 inline-flex items-center justify-center gap-2 rounded-full bg-white/10 text-white text-xs sm:text-sm font-mono font-medium transition-all duration-[400ms] ease-spring-vibe hover:bg-white/20 active:scale-95 border-0 cursor-pointer"
+                className="h-12 px-6 inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel-foreground/10 text-brand-panel-foreground text-xs sm:text-sm font-mono font-medium transition-all duration-[400ms] ease-spring-vibe hover:bg-brand-panel-foreground/20 active:scale-95 border-0 cursor-pointer"
               >
                 {copiedEmail ? (
                   <>
