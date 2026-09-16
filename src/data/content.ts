@@ -77,15 +77,15 @@ export const allProjects: Project[] = [
 
 export const approachItems: ApproachItem[] = [
   {
-    title: "Make Complex Things Easy to Understand",
+    title: "Complexity Simplified",
     copy: "We study products, technology, and systems to find the clearest way to explain them through 3D, motion, and visual storytelling.",
   },
   {
-    title: "Build Visual Systems That Can Adapt",
+    title: "Adaptable Visual Systems",
     copy: "We create modular 3D and motion assets that can be extended across campaigns, platforms, formats, and markets.",
   },
   {
-    title: "Turn Ideas Into Visual Experiences",
+    title: "Ideas into Storytelling",
     copy: "We combine clarity, motion, and high-fidelity design to make products and ideas easier to see, understand, and remember.",
   },
 ];

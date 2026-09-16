@@ -11,25 +11,25 @@ interface ApproachItem {
 
 const approachItems: ApproachItem[] = [
   {
-    title: "Make Complex Things Easy to Understand",
+    title: "Complexity Simplified",
     tagline: "Clarity & Character",
     copy: "We study products, technology, and systems to find the clearest way to explain them through 3D, motion, and visual storytelling.",
     image: "/assets/chrono-morph.jpg",
-    imageAlt: "Make Complex Things Easy to Understand — styleframe render",
+    imageAlt: "Complexity Simplified — styleframe render",
   },
   {
-    title: "Build Visual Systems That Can Adapt",
+    title: "Adaptable Visual Systems",
     tagline: "Modular Systems",
     copy: "We create modular 3D and motion assets that can be extended across campaigns, platforms, formats, and markets.",
     image: "/assets/void-textiles.jpg",
-    imageAlt: "Build Visual Systems That Can Adapt — modular 3D simulation system",
+    imageAlt: "Adaptable Visual Systems — modular 3D simulation system",
   },
   {
-    title: "Turn Ideas Into Visual Experiences",
+    title: "Ideas into Storytelling",
     tagline: "Engagement & Reach",
     copy: "We combine clarity, motion, and high-fidelity design to make products and ideas easier to see, understand, and remember.",
     image: "/assets/precision-archive.jpg",
-    imageAlt: "Turn Ideas Into Visual Experiences — high-end product visualization",
+    imageAlt: "Ideas into Storytelling — high-end product visualization",
   },
 ];
 
