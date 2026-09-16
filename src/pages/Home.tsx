@@ -91,27 +91,25 @@ export const Home: React.FC = () => {
             <div data-reveal data-reveal-delay="150" className="shrink-0 flex items-center lg:justify-end">
               <Link
                 to="/showreel"
-                className="group flex items-center rounded-[2rem] bg-brand-bg/90 dark:bg-neutral-900/90 text-brand-foreground p-2 shadow-2xl backdrop-blur-md transition-all duration-[500ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] cursor-pointer select-none border border-brand-foreground/5 overflow-hidden"
+                className="group flex items-center rounded-full bg-brand-bg/95 dark:bg-neutral-900/95 text-brand-foreground p-1.5 shadow-xl backdrop-blur-md transition-all duration-[400ms] ease-out hover:-translate-y-1 hover:shadow-2xl active:scale-[0.98] cursor-pointer select-none border-0"
               >
-                {/* Always-visible Icon / Thumbnail */}
-                <div className="relative h-14 w-14 sm:h-16 sm:w-16 shrink-0 overflow-hidden rounded-full bg-neutral-900 shadow-inner flex items-center justify-center group-hover:rounded-2xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                {/* Always-visible Circular Thumbnail */}
+                <div className="relative h-12 w-12 sm:h-14 sm:w-14 shrink-0 overflow-hidden rounded-full bg-black flex items-center justify-center z-10">
                   <img
                     src="/assets/showreel-card.jpg"
                     alt="Showreel preview"
-                    className="absolute inset-0 h-full w-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                    className="absolute inset-0 h-full w-full object-cover opacity-75 group-hover:opacity-100 transition-opacity duration-500"
                   />
                   <div className="relative z-10 flex size-8 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm shadow-sm transition-transform duration-500 group-hover:scale-110">
                     <Play className="size-3.5 fill-white ml-0.5" />
                   </div>
                 </div>
 
-                {/* Expanding Text Section */}
-                <div className="grid transition-[grid-template-columns,opacity] duration-[500ms] ease-[cubic-bezier(0.16,1,0.3,1)] grid-cols-[0fr] opacity-0 group-hover:grid-cols-[1fr] group-hover:opacity-100">
-                  <div className="overflow-hidden whitespace-nowrap">
-                    <span className="font-display text-[14px] sm:text-[15px] font-bold leading-tight pl-4 pr-5">
-                      Watch Full Showreel
-                    </span>
-                  </div>
+                {/* Smooth Horizontal Slide-out Text */}
+                <div className="max-w-0 opacity-0 overflow-hidden transition-all duration-[400ms] ease-out group-hover:max-w-[200px] group-hover:opacity-100">
+                  <span className="font-display text-[14px] sm:text-[15px] font-bold leading-tight whitespace-nowrap pl-3 pr-5 block">
+                    Watch Full Showreel
+                  </span>
                 </div>
               </Link>
             </div>
