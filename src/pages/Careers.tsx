@@ -108,7 +108,7 @@ export const Careers: React.FC = () => {
                           <MapPin className="size-3.5" />
                           {position.location}
                         </span>
-                        <span>Â·</span>
+                        <span>·</span>
                         <span className="flex items-center gap-1">
                           <Clock className="size-3.5" />
                           {position.type}

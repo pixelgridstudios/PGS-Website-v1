@@ -47,7 +47,7 @@ const termsSections = [
     content: (
       <div className="space-y-4">
         <p>
-          All creative works showcased on this websiteâ€”including showreels, 3D motion styleframes, procedural shaders, typography, UI mockups, and proprietary pipeline codeâ€”remain the exclusive intellectual property of Pixel Grid Studios or respective client brand licensors.
+          All creative works showcased on this website—including showreels, 3D motion styleframes, procedural shaders, typography, UI mockups, and proprietary pipeline code—remain the exclusive intellectual property of Pixel Grid Studios or respective client brand licensors.
         </p>
         <div className="p-4 rounded-xl bg-brand-bg text-brand-subtle text-xs font-mono space-y-2 border-0">
           <div><strong className="text-brand-foreground">Client Deliverables:</strong> Upon full payment of all contracted milestone fees, final delivered render files (master Prores/MP4/H.264 exports) are transferred to the client with full commercial usage rights as defined in the Statement of Work (SOW).</div>
@@ -329,7 +329,7 @@ export const TermsConditions: React.FC = () => {
         {/* Footer Contact Quick Link */}
         <section data-reveal className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="font-mono text-xs text-brand-subtle">
-            Pixel Grid Studios Â· Commercial Terms of Service Â· Updated August 2026
+            Pixel Grid Studios · Commercial Terms of Service · Updated August 2026
           </span>
           <Link
             to="/contact"

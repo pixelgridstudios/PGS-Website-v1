@@ -81,7 +81,7 @@ export const Work: React.FC = () => {
               <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-neutral-950 shadow-inner">
                 <img
                   src={project.thumbnail}
-                  alt={`${project.title} â€” project by Pixel Grid Studios`}
+                  alt={`${project.title} — project by Pixel Grid Studios`}
                   className="h-full w-full object-cover ease-out"
                 />
               </div>

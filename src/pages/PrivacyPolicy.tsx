@@ -342,7 +342,7 @@ export const PrivacyPolicy: React.FC = () => {
         {/* Footer Contact Quick Link */}
         <section data-reveal className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="font-mono text-xs text-brand-subtle">
-            Pixel Grid Studios Â· Legal &amp; Privacy Standards Â· Updated August 2026
+            Pixel Grid Studios · Legal &amp; Privacy Standards · Updated August 2026
           </span>
           <Link
             to="/contact"

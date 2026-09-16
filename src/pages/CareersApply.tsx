@@ -161,7 +161,7 @@ export const CareersApply: React.FC = () => {
 
             <div className="space-y-3 max-w-xl mx-auto">
               <span className="font-mono text-xs uppercase tracking-widest text-emerald-500 font-semibold">
-                Application Received Â· 48-Hour Turnaround
+                Application Received · 48-Hour Turnaround
               </span>
               <h1 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-brand-foreground">
                 Thank you, {name.split(" ")[0]}!
@@ -182,7 +182,7 @@ export const CareersApply: React.FC = () => {
               <div className="pt-2"><span className="text-brand-subtle">Target Role:</span> <strong className="text-brand-foreground">{selectedPosition.title}</strong></div>
               <div><span className="text-brand-subtle">Candidate:</span> <strong className="text-brand-foreground">{name}</strong> ({email})</div>
               <div><span className="text-brand-subtle">Showreel URL:</span> <a href={portfolioUrl} target="_blank" rel="noreferrer" className="text-brand-foreground underline">{portfolioUrl}</a></div>
-              <div><span className="text-brand-subtle">Experience &amp; Availability:</span> <strong className="text-brand-foreground">{experience} Â· {availability}</strong></div>
+              <div><span className="text-brand-subtle">Experience &amp; Availability:</span> <strong className="text-brand-foreground">{experience} · {availability}</strong></div>
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -220,12 +220,12 @@ export const CareersApply: React.FC = () => {
                     <MapPin className="size-3.5" />
                     {selectedPosition.location}
                   </span>
-                  <span>Â·</span>
+                  <span>·</span>
                   <span className="flex items-center gap-1">
                     <Clock className="size-3.5" />
                     {selectedPosition.type}
                   </span>
-                  <span>Â·</span>
+                  <span>·</span>
                   <span>{selectedPosition.experience}</span>
                 </div>
 
@@ -263,7 +263,7 @@ export const CareersApply: React.FC = () => {
                     href="#application-card"
                     className="h-10 px-6 inline-flex items-center justify-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground text-xs sm:text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] border-0 shrink-0"
                   >
-                    <span>Apply for Role â†“</span>
+                    <span>Apply for Role ↓</span>
                   </a>
                 </div>
               </div>

@@ -21,23 +21,23 @@ const projectTypes = [
 
 const budgetRanges = [
   "< $5,000",
-  "$5,000 â€“ $15,000",
-  "$15,000 â€“ $30,000",
+  "$5,000 - $15,000",
+  "$15,000 - $30,000",
   "$30,000+",
 ];
 
 const timelineRanges = [
   "Immediate (< 2 weeks)",
-  "2 â€“ 4 Weeks",
-  "1 â€“ 2 Months",
-  "2 â€“ 3 Months",
+  "2 - 4 Weeks",
+  "1 - 2 Months",
+  "2 - 3 Months",
   "Flexible",
 ];
 
 export const Contact: React.FC = () => {
   const [selectedTypes, setSelectedTypes] = useState<string[]>(["Product Launch Film"]);
-  const [selectedBudget, setSelectedBudget] = useState<string>("$5,000 â€“ $15,000");
-  const [selectedTimeline, setSelectedTimeline] = useState<string>("2 â€“ 4 Weeks");
+  const [selectedBudget, setSelectedBudget] = useState<string>("$5,000 - $15,000");
+  const [selectedTimeline, setSelectedTimeline] = useState<string>("2 - 4 Weeks");
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [legalOpen, setLegalOpen] = useState<boolean>(false);
 
@@ -171,7 +171,7 @@ export const Contact: React.FC = () => {
                     }}
                     className="mt-6 inline-flex items-center gap-2 rounded-full border border-brand-panel-foreground/30 px-6 py-2.5 text-xs font-medium text-brand-panel-foreground hover:bg-brand-panel-foreground hover:text-brand-panel transition-colors cursor-pointer"
                   >
-                    <span>â† Send another inquiry</span>
+                    <span>&larr; Send another inquiry</span>
                   </button>
                 </div>
               ) : (

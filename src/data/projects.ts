@@ -48,7 +48,7 @@ export const projects: ProjectData[] = [
     id: "01",
     slug: "xiaomi-redmi-note-12",
     title: "Xiaomi Redmi Note 12",
-    subtitle: "Superpower in Motion Â· 3D Product Launch",
+    subtitle: "Superpower in Motion · 3D Product Launch",
     client: "Xiaomi Global",
     year: "2023",
     category: "Product Animation",
@@ -108,7 +108,7 @@ export const projects: ProjectData[] = [
     nextProject: {
       slug: "tata-power-ez-homes",
       title: "TATA Power EZ Homes",
-      meta: "Brand Film Â· Smart System",
+      meta: "Brand Film · Smart System",
       thumbnail: "/assets/void-textiles.jpg",
     },
   },
@@ -116,12 +116,12 @@ export const projects: ProjectData[] = [
     id: "02",
     slug: "tata-power-ez-homes",
     title: "TATA Power EZ Homes",
-    subtitle: "Intelligent Living Ecosystem Â· Brand Film",
+    subtitle: "Intelligent Living Ecosystem · Brand Film",
     client: "TATA Power",
     year: "2024",
     category: "Brand Design",
     tags: ["Brand Film", "3D Motion", "Storytelling", "Smart Systems"],
-    award: "Staff Pick â€” Motion Graphics Network",
+    award: "Staff Pick — Motion Graphics Network",
     behanceUrl: "https://www.behance.net/search/projects?search=tata+power+ez+homes",
     vimeoUrl: "https://vimeo.com/1184766383",
     vimeoId: "1184766383",
@@ -129,7 +129,7 @@ export const projects: ProjectData[] = [
     heroVideo: "/assets/breakdown-loop.mp4",
     heroVideoPoster: "/assets/void-textiles.jpg",
     brief: {
-      title: "TATA Power EZ Homes â€” Visualizing Invisible Connectivity",
+      title: "TATA Power EZ Homes — Visualizing Invisible Connectivity",
       description: [
         "TATA Power EZ Homes required an intuitive brand film to demonstrate how IoT home automation effortlessly manages energy consumption, climate control, and ambient lighting across residential spaces.",
         "Our team conceptualized and executed a stylized 3D architectural narrative where invisible wireless data streams and energy pathways are visualized as fluid luminous particles interacting with modern architectural interiors.",
@@ -285,7 +285,7 @@ export const projects: ProjectData[] = [
     nextProject: {
       slug: "netflix-screens",
       title: "Netflix Original Series",
-      meta: "Screen Design Â· Broadcast Motion",
+      meta: "Screen Design · Broadcast Motion",
       thumbnail: "/assets/void-textiles.jpg",
     },
   },
@@ -295,7 +295,7 @@ export const projects: ProjectData[] = [
     title: "Netflix Original Series Screens",
     subtitle: "In-Show UI & Motion Graphics Systems",
     client: "Netflix India / StartUp Media",
-    year: "2019â€“2020",
+    year: "2019-2020",
     category: "Motion Design",
     tags: ["Screen UI Design", "Broadcast Motion", "Title Sequences", "After Effects"],
     award: "Industry Broadcast Motion Craft Recognition",
@@ -306,16 +306,16 @@ export const projects: ProjectData[] = [
     heroVideo: "/assets/breakdown-loop.mp4",
     heroVideoPoster: "/assets/void-textiles.jpg",
     brief: {
-      title: "Netflix India Originals â€” Screen Design & Narrative In-Show Graphics",
+      title: "Netflix India Originals — Screen Design & Narrative In-Show Graphics",
       description: [
         "During his tenure as Motion Designer at StartUp Media (Mumbai, 2019), founder Subhanshu Gajbhiye crafted specialized in-show digital screens, user interfaces, phone animations, and motion sequences for critically acclaimed Netflix series.",
-        "Featured credits include Sacred Games Season 2, The Royals, Mismatched, CTRL, Choked, and AK vs AK â€” creating authentic, diegetic screen motion that directly advanced the storylines.",
+        "Featured credits include Sacred Games Season 2, The Royals, Mismatched, CTRL, Choked, and AK vs AK — creating authentic, diegetic screen motion that directly advanced the storylines.",
       ],
     },
     sections: [
       {
         heading: "Diegetic UI Design for High-Stakes Storytelling",
-        copy: "Each screen was custom-designed to match character personas and narrative tension â€” from biometric hacking terminals to high-frequency surveillance interfaces and authentic mobile OS mockups.",
+        copy: "Each screen was custom-designed to match character personas and narrative tension — from biometric hacking terminals to high-frequency surveillance interfaces and authentic mobile OS mockups.",
         layout: "two-column-images",
         images: [
           { src: "/assets/styleframe-tech.jpg", alt: "Sacred Games Terminal UI" },
@@ -337,7 +337,7 @@ export const projects: ProjectData[] = [
     nextProject: {
       slug: "xiaomi-redmi-note-12",
       title: "Xiaomi Redmi Note 12",
-      meta: "Product Launch Â· 3D Animation",
+      meta: "Product Launch · 3D Animation",
       thumbnail: "/assets/chrono-morph.jpg",
     },
   },

@@ -6,35 +6,35 @@ const reelChapters = [
   {
     time: "00:00",
     title: "Xiaomi Redmi Note 12",
-    discipline: "Product Launch Â· 3D CGI",
+    discipline: "Product Launch · 3D CGI",
     slug: "xiaomi-redmi-note-12",
     image: "/assets/chrono-morph.jpg",
   },
   {
     time: "00:18",
     title: "TATA Power EZ Homes",
-    discipline: "Brand Film Â· Smart System",
+    discipline: "Brand Film · Smart System",
     slug: "tata-power-ez-homes",
     image: "/assets/void-textiles.jpg",
   },
   {
     time: "00:35",
     title: "Yas Mall Abu Dhabi",
-    discipline: "Experiential Â· 8K LED Canvas",
+    discipline: "Experiential · 8K LED Canvas",
     slug: "yas-mall",
     image: "/assets/precision-archive.jpg",
   },
   {
     time: "00:52",
     title: "boAt Lifestyle",
-    discipline: "Acoustic Simulation Â· 3D CGI",
+    discipline: "Acoustic Simulation · 3D CGI",
     slug: "boat-lifestyle",
     image: "/assets/chrono-morph.jpg",
   },
   {
     time: "01:10",
     title: "Netflix India Originals",
-    discipline: "Broadcast UI Â· Screen Design",
+    discipline: "Broadcast UI · Screen Design",
     slug: "netflix-screens",
     image: "/assets/void-textiles.jpg",
   },
@@ -71,7 +71,7 @@ export const Showreel: React.FC = () => {
             <div>
               <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-brand-subtle font-medium mb-2">
                 <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Pixel Grid Studios Â· 2026 Edition</span>
+                <span>Pixel Grid Studios · 2026 Edition</span>
               </div>
               <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-foreground">
                 Studio Showreel
@@ -126,7 +126,7 @@ export const Showreel: React.FC = () => {
         <section data-reveal data-reveal-delay="100" className="mt-8 overflow-hidden rounded-2xl sm:rounded-3xl bg-black shadow-2xl border-0">
           <div className="aspect-[16/9] w-full overflow-hidden">
             <iframe
-              title="Pixel Grid Studios Showreel Â· Vimeo 4K Player"
+              title="Pixel Grid Studios Showreel · Vimeo 4K Player"
               src="https://player.vimeo.com/video/1182784182?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
               className="h-full w-full border-0"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write"

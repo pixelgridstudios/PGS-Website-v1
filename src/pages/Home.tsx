@@ -8,14 +8,14 @@ const highlightedProjects = [
   {
     slug: "xiaomi-redmi-note-12",
     title: "Xiaomi Redmi Note 12",
-    meta: "Product Launch Â· 3D Animation",
+    meta: "Product Launch · 3D Animation",
     image: "/assets/chrono-morph.jpg",
     tags: ["3D CGI", "Product Launch", "Motion Design"],
   },
   {
     slug: "tata-power-ez-homes",
     title: "TATA Power EZ Homes",
-    meta: "Brand Film Â· Product System",
+    meta: "Brand Film · Product System",
     image: "/assets/void-textiles.jpg",
     tags: ["Brand Film", "3D Motion", "Storytelling"],
   },

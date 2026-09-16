@@ -112,7 +112,7 @@ export const ProjectDetail: React.FC = () => {
         <section data-reveal data-reveal-delay="100" className="mt-8 overflow-hidden rounded-2xl sm:rounded-3xl bg-black shadow-2xl border-0">
           <div className="aspect-[16/9] w-full overflow-hidden">
             <iframe
-              title={`${project.title} Film Â· Vimeo Player`}
+              title={`${project.title} Film · Vimeo Player`}
               src={`https://player.vimeo.com/video/${project.vimeoId}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
               className="h-full w-full border-0"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write"

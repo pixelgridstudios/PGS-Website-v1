@@ -106,7 +106,7 @@ export const Footer: React.FC = () => {
                 >
                   Privacy Policy
                 </Link>
-                <span className="opacity-40">Â·</span>
+                <span className="opacity-40">·</span>
                 <Link
                   to="/terms-conditions"
                   className="text-neutral-800 hover:text-black dark:text-brand-subtle dark:hover:text-brand-foreground hover:underline transition-colors border-0"
@@ -115,7 +115,7 @@ export const Footer: React.FC = () => {
                 </Link>
               </div>
               <p className="font-normal">
-                <span>Pixel Grid Studios Â© 2026.</span> <span>All Rights Reserved</span>
+                <span>Pixel Grid Studios © 2026.</span> <span>All Rights Reserved</span>
               </p>
             </div>
           </div>
