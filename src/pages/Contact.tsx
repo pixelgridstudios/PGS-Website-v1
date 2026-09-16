@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Mail, Globe, ChevronDown, CheckCircle2, ArrowRight } from "lucide-react";
 import InButtonMailSlot from "@/components/InButtonMailSlot";
@@ -434,14 +434,28 @@ export const Contact: React.FC = () => {
           >
             <div className="overflow-hidden">
               <div className="rounded-xl bg-brand-bg p-6 text-sm text-brand-subtle border-0">
-                <ul className="space-y-2 font-mono text-xs">
-                  <li><strong className="text-brand-foreground font-semibold">Studio:</strong> Pixel Grid Studios</li>
-                  <li><strong className="text-brand-foreground font-semibold">Founder / CD:</strong> Subhanshu Gajbhiye</li>
-                  <li><strong className="text-brand-foreground font-semibold">Base:</strong> Pune, Maharashtra, India</li>
-                  <li><strong className="text-brand-foreground font-semibold">Capabilities:</strong> Pan-India &amp; Global Remote</li>
-                  <li><strong className="text-brand-foreground font-semibold">Direct Contact:</strong> hello@pixelgridstudios.com</li>
-                </ul>
-
+                <div className="flex flex-col border-y border-brand-foreground/5 mt-1">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b border-brand-foreground/5 gap-1 sm:gap-4">
+                    <span className="text-sm text-brand-subtle">Studio</span>
+                    <span className="text-sm font-medium text-brand-foreground">Pixel Grid Studios</span>
+                  </div>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b border-brand-foreground/5 gap-1 sm:gap-4">
+                    <span className="text-sm text-brand-subtle">Founder / CD</span>
+                    <span className="text-sm font-medium text-brand-foreground">Subhanshu Gajbhiye</span>
+                  </div>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b border-brand-foreground/5 gap-1 sm:gap-4">
+                    <span className="text-sm text-brand-subtle">Base</span>
+                    <span className="text-sm font-medium text-brand-foreground">Pune, Maharashtra, India</span>
+                  </div>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b border-brand-foreground/5 gap-1 sm:gap-4">
+                    <span className="text-sm text-brand-subtle">Capabilities</span>
+                    <span className="text-sm font-medium text-brand-foreground">Pan-India &amp; Global Remote</span>
+                  </div>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between py-3 gap-1 sm:gap-4">
+                    <span className="text-sm text-brand-subtle">Direct Contact</span>
+                    <a href="mailto:subhanshu@pixelgridstudios.com" className="text-sm font-medium text-brand-foreground hover:opacity-70 transition-opacity">subhanshu@pixelgridstudios.com</a>
+                  </div>
+                </div>
                 {/* Direct Preview Links */}
                 <div className="mt-5 pt-4 border-t border-brand-foreground/10 flex flex-wrap items-center gap-3">
                   <Link
