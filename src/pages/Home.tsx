@@ -233,7 +233,11 @@ export const Home: React.FC = () => {
                             {service.id}
                           </span>
                           <div className="flex flex-col min-w-0">
-                            <span className="truncate font-display text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-brand-foreground">
+                            <span className={`truncate font-display text-lg sm:text-xl lg:text-2xl tracking-tight transition-all duration-300 ${
+                              isOpen
+                                ? "text-brand-foreground font-bold opacity-100"
+                                : "text-brand-subtle font-normal"
+                            }`}>
                               {service.title}
                             </span>
                           </div>
