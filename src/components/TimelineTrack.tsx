@@ -559,7 +559,7 @@ export const TimelineTrack: React.FC = () => {
                         style={{ backfaceVisibility: "hidden" }}
                       >
                         <h3 
-                          className="font-display text-lg sm:text-xl lg:text-2xl tracking-tight text-black dark:text-white"
+                          className="font-display text-lg lg:text-2xl tracking-tight text-black dark:text-white"
                           style={{ fontVariationSettings: "'wght' 700" }}
                         >
                           {s.title}
@@ -622,7 +622,7 @@ export const TimelineTrack: React.FC = () => {
                       {s.icon}
                     </span>
                     <span 
-                      className={`font-display text-lg sm:text-xl lg:text-2xl tracking-tight transition-all duration-300 ${
+                      className={`font-display text-lg lg:text-2xl tracking-tight transition-all duration-300 ${
                         isOpen ? "opacity-100" : "opacity-90"
                       }`}
                       style={{ fontVariationSettings: isOpen ? "'wght' 700" : "'wght' 600" }}

@@ -234,7 +234,7 @@ export const Home: React.FC = () => {
                           </span>
                           <div className="flex flex-col min-w-0">
                             <span 
-                              className={`truncate font-display text-lg sm:text-xl lg:text-2xl tracking-tight transition-all duration-300 ${
+                              className={`truncate font-display text-lg lg:text-2xl tracking-tight transition-all duration-300 ${
                                 isOpen
                                   ? "text-brand-foreground opacity-100"
                                   : "text-brand-foreground opacity-90"

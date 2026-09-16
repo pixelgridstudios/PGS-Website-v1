@@ -60,7 +60,7 @@ export const ApproachSlider: React.FC = () => {
               {/* 2-Column Tabs & Continuous Morphing Content */}
               <div className="mt-8 sm:mt-12 grid gap-6 sm:gap-8 md:grid-cols-[260px_1fr] lg:grid-cols-[280px_1fr] xl:grid-cols-[300px_1fr] items-start">
                 {/* Tab Options with Continuous Variable Font Morphing */}
-                <ul className="flex flex-col gap-3.5 font-display text-lg sm:text-xl lg:text-2xl">
+                <ul className="flex flex-col gap-3.5 font-display text-lg lg:text-2xl">
                   {approachItems.map((item, idx) => {
                     const isActive = activeIndex === idx;
                     return (
