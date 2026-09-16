@@ -434,26 +434,26 @@ export const Contact: React.FC = () => {
           >
             <div className="overflow-hidden">
               <div className="rounded-xl bg-brand-bg p-6 text-sm text-brand-subtle border-0">
-                <div className="flex flex-col border-y border-brand-foreground/5 mt-1">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b border-brand-foreground/5 gap-1 sm:gap-4">
-                    <span className="text-sm text-brand-subtle">Studio</span>
-                    <span className="text-sm font-medium text-brand-foreground">Pixel Grid Studios</span>
+                <div className="flex flex-col gap-2.5 mt-2 max-w-md">
+                  <div className="grid grid-cols-[100px_1fr] sm:grid-cols-[120px_1fr] items-start gap-4">
+                    <span className="text-xs text-brand-subtle">Studio</span>
+                    <span className="text-xs font-medium text-brand-foreground">Pixel Grid Studios</span>
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b border-brand-foreground/5 gap-1 sm:gap-4">
-                    <span className="text-sm text-brand-subtle">Founder / CD</span>
-                    <span className="text-sm font-medium text-brand-foreground">Subhanshu Gajbhiye</span>
+                  <div className="grid grid-cols-[100px_1fr] sm:grid-cols-[120px_1fr] items-start gap-4">
+                    <span className="text-xs text-brand-subtle">Founder / CD</span>
+                    <span className="text-xs font-medium text-brand-foreground">Subhanshu Gajbhiye</span>
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b border-brand-foreground/5 gap-1 sm:gap-4">
-                    <span className="text-sm text-brand-subtle">Base</span>
-                    <span className="text-sm font-medium text-brand-foreground">Pune, Maharashtra, India</span>
+                  <div className="grid grid-cols-[100px_1fr] sm:grid-cols-[120px_1fr] items-start gap-4">
+                    <span className="text-xs text-brand-subtle">Base</span>
+                    <span className="text-xs font-medium text-brand-foreground">Pune, Maharashtra, India</span>
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b border-brand-foreground/5 gap-1 sm:gap-4">
-                    <span className="text-sm text-brand-subtle">Capabilities</span>
-                    <span className="text-sm font-medium text-brand-foreground">Pan-India &amp; Global Remote</span>
+                  <div className="grid grid-cols-[100px_1fr] sm:grid-cols-[120px_1fr] items-start gap-4">
+                    <span className="text-xs text-brand-subtle">Capabilities</span>
+                    <span className="text-xs font-medium text-brand-foreground">Pan-India &amp; Global Remote</span>
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between py-3 gap-1 sm:gap-4">
-                    <span className="text-sm text-brand-subtle">Direct Contact</span>
-                    <a href="mailto:subhanshu@pixelgridstudios.com" className="text-sm font-medium text-brand-foreground hover:opacity-70 transition-opacity">subhanshu@pixelgridstudios.com</a>
+                  <div className="grid grid-cols-[100px_1fr] sm:grid-cols-[120px_1fr] items-start gap-4">
+                    <span className="text-xs text-brand-subtle">Direct Contact</span>
+                    <a href="mailto:subhanshu@pixelgridstudios.com" className="text-xs font-medium text-brand-foreground hover:opacity-70 transition-opacity">subhanshu@pixelgridstudios.com</a>
                   </div>
                 </div>
                 {/* Direct Preview Links */}
