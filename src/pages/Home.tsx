@@ -200,8 +200,8 @@ export const Home: React.FC = () => {
               </h2>
             </div>
 
-            {/* Clean Centered Accordion Card */}
-            <div data-reveal data-reveal-delay="100" className="mx-auto w-full max-w-5xl rounded-2xl sm:rounded-3xl bg-brand-muted p-4 sm:p-6 lg:p-10 shadow-sm dark:shadow-2xl border-0">
+            {/* Clean Full-Width Accordion Card */}
+            <div data-reveal data-reveal-delay="100" className="mx-auto w-full rounded-2xl sm:rounded-3xl bg-brand-muted p-4 sm:p-6 lg:p-10 shadow-sm dark:shadow-2xl border-0">
               <div
                 onMouseLeave={() => setOpenService(null)}
                 className="flex flex-col gap-3"
