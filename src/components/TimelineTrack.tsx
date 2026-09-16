@@ -97,7 +97,7 @@ const pipelineSteps: TimelineStep[] = [
     title: "Delivery & Implementation",
     shortTitle: "Delivery",
     icon: <Send className="size-4 shrink-0" />,
-    colStart: 22,
+    colStart: 25,
     colEnd: 30,
     description:
       "Optimized master exports for all your marketing channels in multiple formats, resolutions, and a final delivery package with usage guidelines.",
