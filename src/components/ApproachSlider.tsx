@@ -11,25 +11,25 @@ interface ApproachItem {
 
 const approachItems: ApproachItem[] = [
   {
-    title: "Design a Strong Visual Identity",
+    title: "Make Complex Things Easy to Understand",
     tagline: "Clarity & Character",
-    copy: "From established brands to fresh beginnings, we ensure every visual element communicates clearly, feels intentional, and amplifies your identity across every touchpoint.",
+    copy: "We study products, technology, and systems to find the clearest way to explain them through 3D, motion, and visual storytelling.",
     image: "/assets/chrono-morph.jpg",
-    imageAlt: "Design a Strong Visual Identity — styleframe render",
+    imageAlt: "Make Complex Things Easy to Understand — styleframe render",
   },
   {
-    title: "Build to Scale",
+    title: "Build Visual Systems That Can Adapt",
     tagline: "Modular Systems",
-    copy: "We engineer modular 3D design systems built for flexibility and consistency across marketing campaigns, platforms, and international broadcast formats.",
+    copy: "We create modular 3D and motion assets that can be extended across campaigns, platforms, formats, and markets.",
     image: "/assets/void-textiles.jpg",
-    imageAlt: "Build to Scale — modular 3D simulation system",
+    imageAlt: "Build Visual Systems That Can Adapt — modular 3D simulation system",
   },
   {
-    title: "Launch with Impact",
+    title: "Turn Ideas Into Visual Experiences",
     tagline: "Engagement & Reach",
-    copy: "We craft scroll-stopping motion and high-fidelity visuals that command attention, clarify technical value, and drive meaningful audience engagement.",
+    copy: "We combine clarity, motion, and high-fidelity design to make products and ideas easier to see, understand, and remember.",
     image: "/assets/precision-archive.jpg",
-    imageAlt: "Launch with Impact — high-end product visualization",
+    imageAlt: "Turn Ideas Into Visual Experiences — high-end product visualization",
   },
 ];
 

@@ -77,16 +77,16 @@ export const allProjects: Project[] = [
 
 export const approachItems: ApproachItem[] = [
   {
-    title: "Design a Strong Visual Identity",
-    copy: "From established brands to fresh beginnings, we make sure every visual element communicates clearly, feels considered, and amplifies your identity. We focus on clarity and character, so your brand resonates wherever it appears.",
+    title: "Make Complex Things Easy to Understand",
+    copy: "We study products, technology, and systems to find the clearest way to explain them through 3D, motion, and visual storytelling.",
   },
   {
-    title: "Build to Scale",
-    copy: "We approach every project with a design system in mind, built for flexibility and scalability across campaigns, platforms, and applications. Each system is modular, forming a foundation that can grow, adapt, and support the brand over time.",
+    title: "Build Visual Systems That Can Adapt",
+    copy: "We create modular 3D and motion assets that can be extended across campaigns, platforms, formats, and markets.",
   },
   {
-    title: "Launch with Impact",
-    copy: "From strategy to execution, we deliver work that captures attention and communicates the idea clearly. Coupled with proven results, our work drives high engagement, generates views, and creates scroll-stopping moments.",
+    title: "Turn Ideas Into Visual Experiences",
+    copy: "We combine clarity, motion, and high-fidelity design to make products and ideas easier to see, understand, and remember.",
   },
 ];
 
