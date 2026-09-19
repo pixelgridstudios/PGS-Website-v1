@@ -105,7 +105,7 @@ export const Header: React.FC = () => {
                   { label: "HOME", path: "/" },
                   { label: "WORK", path: "/work" },
                   { label: "STUDIO", path: "/about" },
-                  { label: "CAREERS", path: "/careers" },
+                  // { label: "CAREERS", path: "/careers" },
                   { label: "CONTACT", path: "/contact" },
                 ].map((item) => (
                   <li key={item.path}>

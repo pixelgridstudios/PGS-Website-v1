@@ -10,8 +10,8 @@ import { ProjectDetail } from "@/pages/ProjectDetail";
 import { Showreel } from "@/pages/Showreel";
 import { About } from "@/pages/About";
 import { Contact } from "@/pages/Contact";
-import { Careers } from "@/pages/Careers";
-import { CareersApply } from "@/pages/CareersApply";
+// import { Careers } from "@/pages/Careers";
+// import { CareersApply } from "@/pages/CareersApply";
 import { PrivacyPolicy } from "@/pages/PrivacyPolicy";
 import { TermsConditions } from "@/pages/TermsConditions";
 import { NotFound } from "@/pages/NotFound";
@@ -27,9 +27,9 @@ const AnimatedRoutes: React.FC = () => {
         <Route path="/showreel" element={<Showreel />} />
         <Route path="/work/:slug" element={<ProjectDetail />} />
         <Route path="/about" element={<About />} />
-        <Route path="/careers" element={<Careers />} />
+        {/* <Route path="/careers" element={<Careers />} />
         <Route path="/careers/apply" element={<CareersApply />} />
-        <Route path="/apply" element={<CareersApply />} />
+        <Route path="/apply" element={<CareersApply />} /> */}
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/privacy-policies" element={<PrivacyPolicy />} />
