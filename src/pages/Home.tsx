@@ -55,8 +55,7 @@ const motionServices = [
 ];
 
 export const Home: React.FC = () => {
-  const [openService, setOpenService] = useState<number | null>(0);
-  const [hoverService, setHoverService] = useState<number | null>(null);
+  const [openService, setOpenService] = useState<number | null>(null);
 
   return (
     <div className="px-3 sm:px-5">
@@ -168,7 +167,7 @@ export const Home: React.FC = () => {
             ))}
           </div>
 
-          <div data-reveal className="mt-8 text-center">
+          <div data-reveal className="mt-8 text-right">
             <Link
               to="/work"
               className="group inline-flex items-center gap-2 rounded-full bg-brand-muted px-6 py-3 text-xs font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] shadow-xs border-0"
@@ -212,8 +211,7 @@ export const Home: React.FC = () => {
                   return (
                     <div
                       key={service.id}
-                      onMouseEnter={() => setHoverService(i)}
-                      onMouseLeave={() => setHoverService(null)}
+                      onMouseEnter={() => setOpenService(i)}
                       onClick={() => setOpenService((prev) => (prev === i ? null : i))}
                       tabIndex={-1}
                       className={`overflow-hidden rounded-xl sm:rounded-2xl transition-all duration-200 cursor-pointer border-0 outline-none ring-0 select-none ${
@@ -237,12 +235,12 @@ export const Home: React.FC = () => {
                           <div className="flex flex-col min-w-0">
                             <span 
                               className={`truncate font-display text-lg lg:text-2xl tracking-tight transition-all duration-300 ${
-                                isOpen || hoverService === i
+                                isOpen
                                   ? "text-brand-foreground opacity-100"
                                   : "text-brand-foreground opacity-90"
                               }`}
                               style={{
-                                fontVariationSettings: (isOpen || hoverService === i) ? "'wght' 700" : "'wght' 600",
+                                fontVariationSettings: isOpen ? "'wght' 700" : "'wght' 600",
                                 transition: "font-variation-settings 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease, opacity 0.25s ease",
                               }}
                             >
