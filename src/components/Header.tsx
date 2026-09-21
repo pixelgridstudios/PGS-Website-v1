@@ -45,7 +45,7 @@ export const Header: React.FC = () => {
             <img
               src="/assets/pg-emblem-animated.gif"
               alt="Pixel Grid Animated"
-              className="absolute left-0 bottom-0 h-[28px] w-auto sm:h-[34px] max-w-none dark:invert object-[left_bottom] object-contain select-none shrink-0 origin-bottom-left opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none"
+              className="absolute left-0 bottom-0 h-[22px] w-auto sm:h-[27px] max-w-none dark:invert object-[left_bottom] object-contain select-none shrink-0 origin-bottom-left opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none"
             />
           </Link>
         </div>
