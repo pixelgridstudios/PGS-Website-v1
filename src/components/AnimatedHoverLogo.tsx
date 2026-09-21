@@ -8,7 +8,7 @@ interface AnimatedHoverLogoProps {
 export const AnimatedHoverLogo: React.FC<AnimatedHoverLogoProps> = ({ setIsOpen }) => {
   const [currentFrame, setCurrentFrame] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const totalFrames = 63;
+  const totalFrames = 32; // The animation holds at frame 31. Frames 32-62 are the built-in animate-out which we skip in favor of smooth reverse playback.
   const timerRef = useRef<number | null>(null);
 
   // Preload images to ensure flicker-free animation
