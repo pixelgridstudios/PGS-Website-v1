@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
     <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-5 pointer-events-none">
       <div className="mx-auto flex max-w-[1600px] items-center justify-between">
         {/* Left: Emblem Logo Only (Fixed Height Container to prevent layout shift) */}
-        <div className="pointer-events-auto flex h-16 sm:h-20 items-center">
+        <div className="pointer-events-auto flex h-9 sm:h-10 items-center">
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
@@ -39,13 +39,13 @@ export const Header: React.FC = () => {
             <img
               src="/assets/pg-emblem.png"
               alt="Pixel Grid"
-              className="h-[60px] w-auto sm:h-[72px] dark:invert object-contain select-none shrink-0 transition-opacity duration-300 group-hover:opacity-0"
+              className="h-[26px] w-auto sm:h-[28px] dark:invert object-contain select-none shrink-0 transition-opacity duration-300 group-hover:opacity-0"
             />
             {/* Animated GIF on Hover */}
             <img
               src="/assets/pg-emblem-animated.gif"
               alt="Pixel Grid Animated"
-              className="absolute left-0 top-0 h-[60px] w-auto sm:h-[72px] dark:invert object-contain select-none shrink-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              className="absolute left-0 bottom-0 h-[36px] w-auto sm:h-[40px] dark:invert object-[left_bottom] object-contain select-none shrink-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
             />
           </Link>
         </div>
