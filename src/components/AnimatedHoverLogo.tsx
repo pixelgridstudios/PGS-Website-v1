@@ -64,13 +64,13 @@ export const AnimatedHoverLogo: React.FC<AnimatedHoverLogoProps> = ({ setIsOpen 
       <img
         src="/assets/pg-emblem.png"
         alt="Pixel Grid"
-        className={`h-[26px] w-auto sm:h-[28px] dark:invert object-contain select-none shrink-0 ${isHovered || currentFrame > 0 ? "opacity-0" : "opacity-100"}`}
+        className={`h-[29px] w-auto sm:h-[31px] dark:invert object-contain select-none shrink-0 ${isHovered || currentFrame > 0 ? "opacity-0" : "opacity-100"}`}
       />
       {/* Animated Sequence Frames on Hover */}
       <img
         src={`/assets/pg-emblem-frames/frame_${currentFrame}.png`}
         alt="Pixel Grid Animated"
-        className={`absolute left-0 bottom-0 h-[24px] w-auto sm:h-[29px] max-w-none invert dark:invert-0 object-[left_bottom] object-contain select-none shrink-0 origin-bottom-left pointer-events-none ${isHovered || currentFrame > 0 ? "opacity-100" : "opacity-0"}`}
+        className={`absolute left-0 bottom-0 h-[26px] w-auto sm:h-[32px] max-w-none invert dark:invert-0 object-[left_bottom] object-contain select-none shrink-0 origin-bottom-left pointer-events-none ${isHovered || currentFrame > 0 ? "opacity-100" : "opacity-0"}`}
       />
     </Link>
   );
