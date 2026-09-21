@@ -378,15 +378,15 @@ export const Contact: React.FC = () => {
             <div className="relative flex min-h-[300px] lg:min-h-full flex-col items-center justify-center bg-transparent p-8 sm:p-10 lg:p-12 xl:p-14 text-brand-foreground border-0">
               <div className="flex flex-col items-center justify-center select-none space-y-4">
                 <div className="flex items-baseline gap-1.5 sm:gap-2.5">
-                  <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-display font-bold tracking-tight tabular-nums text-brand-foreground leading-none">
+                  <div className="flex items-center text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-display font-bold tracking-tight tabular-nums text-brand-foreground leading-none">
                     <span>{hours}</span>
-                    <span className={`mx-0.5 transition-opacity duration-150 ${colonVisible ? "opacity-100" : "opacity-25"}`}>
+                    <span className={`mx-0.5 relative -top-[0.08em] transition-opacity duration-150 ${colonVisible ? "opacity-100" : "opacity-25"}`}>
                       :
                     </span>
                     <span>{minutes}</span>
                   </div>
                   <span className="font-mono text-lg sm:text-xl lg:text-2xl font-semibold text-emerald-500 dark:text-emerald-400 tabular-nums">
-                    :{seconds}
+                    <span className="relative -top-[0.08em] mr-0.5">:</span>{seconds}
                   </span>
                 </div>
 
