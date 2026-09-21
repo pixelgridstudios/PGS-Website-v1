@@ -92,7 +92,7 @@ export const Home: React.FC = () => {
             <div data-reveal data-reveal-delay="150" className="shrink-0 flex items-center lg:justify-end">
               <Link
                 to="/showreel"
-                className="group flex items-center rounded-2xl bg-white/95 dark:bg-neutral-900/95 text-black dark:text-white p-1.5 sm:p-2 shadow-xl backdrop-blur-md transition-all duration-[400ms] ease-out hover:shadow-2xl active:scale-[0.98] cursor-pointer select-none border-0"
+                className="group flex items-center rounded-2xl bg-white/95 dark:bg-neutral-900/95 text-black dark:text-white p-1.5 sm:p-2 shadow-xl backdrop-blur-md transition-all duration-[400ms] ease-in-out hover:shadow-2xl active:scale-[0.98] cursor-pointer select-none border-0"
               >
                 {/* Always-visible Rectangular Thumbnail */}
                 <div className="relative h-14 w-20 sm:h-16 sm:w-24 shrink-0 overflow-hidden rounded-xl bg-black flex items-center justify-center z-10">
@@ -107,10 +107,12 @@ export const Home: React.FC = () => {
                 </div>
 
                 {/* Smooth Horizontal Slide-out Text */}
-                <div className="max-w-0 opacity-0 overflow-hidden transition-all duration-[400ms] ease-out group-hover:max-w-[200px] group-hover:opacity-100">
-                  <span className="font-display text-sm sm:text-sm font-bold leading-tight whitespace-nowrap pl-4 pr-5 block">
-                    Watch Full Showreel
-                  </span>
+                <div className="grid grid-cols-[0fr] opacity-0 overflow-hidden transition-all duration-[400ms] ease-in-out group-hover:grid-cols-[1fr] group-hover:opacity-100">
+                  <div className="overflow-hidden">
+                    <span className="font-display text-sm sm:text-sm font-bold leading-tight whitespace-nowrap pl-4 pr-5 block">
+                      Watch Full Showreel
+                    </span>
+                  </div>
                 </div>
               </Link>
             </div>
