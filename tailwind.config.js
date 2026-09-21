@@ -29,6 +29,21 @@ export default {
         'spring-vibe': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
         'spring-soft': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
       },
+      animation: {
+        'gradient-x': 'gradient-x 6s ease infinite',
+      },
+      keyframes: {
+        'gradient-x': {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center'
+          }
+        }
+      }
     },
   },
   plugins: [],

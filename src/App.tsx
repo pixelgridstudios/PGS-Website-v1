@@ -15,6 +15,7 @@ import { Contact } from "@/pages/Contact";
 import { PrivacyPolicy } from "@/pages/PrivacyPolicy";
 import { TermsConditions } from "@/pages/TermsConditions";
 import { NotFound } from "@/pages/NotFound";
+import { Playground } from "@/pages/Playground";
 
 const AnimatedRoutes: React.FC = () => {
   const location = useLocation();
@@ -23,6 +24,7 @@ const AnimatedRoutes: React.FC = () => {
     <main key={location.pathname} className="page-fade-in">
       <Routes location={location}>
         <Route path="/" element={<Home />} />
+        <Route path="/playground" element={<Playground />} />
         <Route path="/work" element={<Work />} />
         <Route path="/showreel" element={<Showreel />} />
         <Route path="/work/:slug" element={<ProjectDetail />} />
