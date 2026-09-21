@@ -32,7 +32,7 @@ export const AnimatedHoverLogo: React.FC<AnimatedHoverLogoProps> = ({ setIsOpen 
           }
           return prev + 1;
         });
-      }, 30); // ~33fps
+      }, 25); // ~40fps (20% faster)
     } else {
       // Play in reverse
       timerRef.current = window.setInterval(() => {
@@ -43,7 +43,7 @@ export const AnimatedHoverLogo: React.FC<AnimatedHoverLogoProps> = ({ setIsOpen 
           }
           return prev - 1;
         });
-      }, 30);
+      }, 25); // ~40fps (20% faster)
     }
 
     return () => {
