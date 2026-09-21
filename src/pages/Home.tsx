@@ -82,7 +82,7 @@ export const Home: React.FC = () => {
           {/* Bottom Row: Left Headline & Subheadline + Right Showreel Card */}
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-12">
             {/* Left: Main Hero Headline */}
-            <div data-reveal data-reveal-delay="50" className="max-w-2xl xl:max-w-3xl min-h-[3em] sm:min-h-0">
+            <div data-reveal data-reveal-delay="50" className="max-w-2xl xl:max-w-3xl">
               <h1 className="font-display text-[2.4rem] sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold leading-[1.05] tracking-tight text-white drop-shadow-md">
                 <Typewriter text="We make complex things understandable." speed={40} delay={500} />
               </h1>

@@ -34,9 +34,15 @@ export const Typewriter: React.FC<TypewriterProps> = ({ text, speed = 50, delay 
   }, [text, speed, isStarted]);
 
   return (
-    <>
-      {displayedText}
-      <span className="inline-block w-[0.1em] h-[0.9em] ml-[0.05em] align-middle bg-current animate-pulse opacity-75" />
-    </>
+    <span className="relative inline-block w-full">
+      {/* Invisible ghost text forces the container to its final layout size instantly */}
+      <span className="invisible pointer-events-none">{text}</span>
+      
+      {/* Absolute overlay renders the actual typing effect without moving anything */}
+      <span className="absolute top-0 left-0 w-full h-full text-left">
+        {displayedText}
+        <span className="inline-block w-[0.1em] h-[0.9em] ml-[0.05em] align-middle bg-current animate-pulse opacity-75" />
+      </span>
+    </span>
   );
 };
