@@ -32,13 +32,20 @@ export const Header: React.FC = () => {
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
-            className="flex items-center transition-opacity duration-200 hover:opacity-75"
+            className="group relative flex items-center transition-opacity duration-300"
             aria-label="Pixel Grid home"
           >
+            {/* Static Default Logo */}
             <img
               src="/assets/pg-emblem.png"
               alt="Pixel Grid"
-              className="h-[26px] w-auto sm:h-[28px] dark:invert object-contain select-none shrink-0"
+              className="h-[26px] w-auto sm:h-[28px] dark:invert object-contain select-none shrink-0 transition-opacity duration-300 group-hover:opacity-0"
+            />
+            {/* Animated GIF on Hover */}
+            <img
+              src="/assets/pg-emblem-animated.gif"
+              alt="Pixel Grid Animated"
+              className="absolute left-0 top-0 h-[26px] w-auto sm:h-[28px] dark:invert object-contain select-none shrink-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
             />
           </Link>
         </div>
