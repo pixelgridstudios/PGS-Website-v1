@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Plus, Play } from "lucide-react";
 import ApproachSlider from "../components/ApproachSlider";
 import TimelineTrack from "../components/TimelineTrack";
+import { SpotlightCard } from "../components/SpotlightCard";
 
 const highlightedProjects = [
   {
@@ -129,19 +130,12 @@ export const Home: React.FC = () => {
         <section className="py-6 sm:py-8">
           <div className="grid gap-6 md:grid-cols-2">
             {highlightedProjects.map((project, i) => (
-              <Link
+              <SpotlightCard
                 key={project.title}
                 to={`/work/${project.slug}`}
-                data-reveal
-                data-reveal-delay={i === 0 ? "100" : "200"}
-                className="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 transition-transform duration-[400ms] ease-spring-vibe hover:-translate-y-2 active:scale-[0.98] border-0"
+                delay={i === 0 ? "100" : "200"}
+                className="rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 transition-transform duration-[400ms] ease-spring-vibe hover:-translate-y-2 active:scale-[0.98] border-0"
               >
-                {/* Subtle Animated Gradient Hover Overlay */}
-                <div 
-                  className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-purple-500/10 to-pink-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-[600ms] animate-gradient-x pointer-events-none z-0" 
-                  style={{ backgroundSize: '200% 200%' }} 
-                />
-
                 <div className="relative z-10 aspect-[16/10] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-neutral-950 shadow-inner">
                   <img
                     src={project.image}
@@ -169,7 +163,7 @@ export const Home: React.FC = () => {
                     <ArrowRight className="size-4" />
                   </span>
                 </div>
-              </Link>
+              </SpotlightCard>
             ))}
           </div>
 

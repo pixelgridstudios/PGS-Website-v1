@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
 import { projects } from "@/data/projects";
+import { SpotlightCard } from "../components/SpotlightCard";
 
 const filterCategories = [
   "All",
@@ -70,19 +71,12 @@ export const Work: React.FC = () => {
         {/* 2-Column Project Grid: Preserves Grey Hierarchy across Modes */}
         <div className="grid gap-6 md:grid-cols-2">
           {filteredProjects.map((project, idx) => (
-            <Link
+            <SpotlightCard
               key={project.id}
               to={`/work/${project.slug}`}
-              data-reveal
-              data-reveal-delay={idx % 2 === 0 ? "100" : "200"}
-              className="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 transition-transform duration-[400ms] ease-spring-vibe hover:-translate-y-2 active:scale-[0.98] border-0"
+              delay={idx % 2 === 0 ? "100" : "200"}
+              className="rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 transition-transform duration-[400ms] ease-spring-vibe hover:-translate-y-2 active:scale-[0.98] border-0"
             >
-              {/* Subtle Animated Gradient Hover Overlay */}
-              <div 
-                className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-purple-500/10 to-pink-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-[600ms] animate-gradient-x pointer-events-none z-0" 
-                style={{ backgroundSize: '200% 200%' }} 
-              />
-
               {/* 16:9 Aspect Video Container */}
               <div className="relative z-10 aspect-[16/9] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-neutral-950 shadow-inner">
                 <img
@@ -111,7 +105,7 @@ export const Work: React.FC = () => {
                   </span>
                 </div>
               </div>
-            </Link>
+            </SpotlightCard>
           ))}
         </div>
       </div>
