@@ -129,7 +129,7 @@ export const Contact: React.FC = () => {
         <section data-reveal data-reveal-delay="100" className="mt-8 rounded-2xl sm:rounded-3xl bg-brand-muted shadow-xl border-0 overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left (50%): Project Intake Form */}
-            <div className="p-8 sm:p-10 lg:p-12 xl:p-14 bg-brand-bg/95 flex flex-col justify-between">
+            <div className="p-8 sm:p-10 lg:p-12 xl:p-14 bg-transparent flex flex-col justify-between">
               <div>
                 <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl text-brand-foreground">
                   Let's Connect!
@@ -137,27 +137,29 @@ export const Contact: React.FC = () => {
               </div>
 
               {submitted ? (
-                <div className="mt-8 rounded-2xl bg-brand-panel p-8 sm:p-10 text-brand-panel-foreground animate-in fade-in zoom-in-95 duration-300 border-0 shadow-lg">
+                <div className="mt-8 rounded-2xl bg-brand-bg p-8 sm:p-10 text-brand-foreground animate-in fade-in zoom-in-95 duration-300 border border-brand-foreground/10 shadow-lg">
                   <div className="flex items-center gap-3">
-                    <span className="flex size-12 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
+                    <span className="flex size-12 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-500 dark:bg-emerald-500/20 dark:text-emerald-400">
                       <CheckCircle2 className="size-7" />
                     </span>
                     <div>
-                      <span className="font-mono text-xs uppercase tracking-widest text-emerald-400 font-semibold">
-                        Transmission Complete
-                      </span>
-                      <h3 className="font-display text-2xl sm:text-3xl font-bold">Brief Received!</h3>
+                      <h3 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-brand-foreground">
+                        Brief Sealed
+                      </h3>
+                      <p className="font-mono text-xs uppercase tracking-wider text-emerald-500 dark:text-emerald-400 font-medium mt-1">
+                        Successfully Dispatched
+                      </p>
                     </div>
                   </div>
 
-                  <p className="mt-4 text-sm sm:text-base text-brand-panel-foreground/80 leading-relaxed">
-                    Thank you, <strong className="text-white font-semibold">{firstName || "there"}</strong>. Your project brief has been sealed and delivered directly to Subhanshu Gajbhiye's studio desk. We will review your requirements and respond within 24 hours.
+                  <p className="mt-4 text-sm sm:text-base text-brand-subtle leading-relaxed">
+                    Thank you, <strong className="text-brand-foreground font-semibold">{firstName || "there"}</strong>. Your project brief has been sealed and delivered directly to Subhanshu Gajbhiye's studio desk. We will review your requirements and respond within 24 hours.
                   </p>
 
-                  <div className="mt-6 p-4 rounded-xl bg-brand-panel-foreground/5 border border-brand-panel-foreground/10 font-mono text-xs text-brand-panel-foreground/75 space-y-1">
-                    <div><strong>Direct Recipient:</strong> Subhanshu Gajbhiye (Creative Director)</div>
-                    <div><strong>Studio Desk:</strong> hello@pixelgridstudios.com</div>
-                    <div><strong>Selected Service:</strong> {selectedTypes.join(", ")}</div>
+                  <div className="mt-6 p-4 rounded-xl bg-brand-foreground/5 border border-brand-foreground/10 font-mono text-xs text-brand-subtle space-y-1">
+                    <div><strong className="text-brand-foreground">Direct Recipient:</strong> Subhanshu Gajbhiye (Creative Director)</div>
+                    <div><strong className="text-brand-foreground">Studio Desk:</strong> hello@pixelgridstudios.com</div>
+                    <div><strong className="text-brand-foreground">Selected Service:</strong> {selectedTypes.join(", ")}</div>
                   </div>
 
                   <button
@@ -169,7 +171,7 @@ export const Contact: React.FC = () => {
                       setEmail("");
                       setBrief("");
                     }}
-                    className="mt-6 inline-flex items-center gap-2 rounded-full border border-brand-panel-foreground/30 px-6 py-2.5 text-xs font-medium text-brand-panel-foreground hover:bg-brand-panel-foreground hover:text-brand-panel transition-colors cursor-pointer"
+                    className="mt-6 inline-flex items-center gap-2 rounded-full border border-brand-foreground/20 px-6 py-2.5 text-xs font-medium text-brand-foreground hover:bg-brand-foreground hover:text-brand-bg transition-colors cursor-pointer"
                   >
                     <span>&larr; Send another inquiry</span>
                   </button>
@@ -373,14 +375,14 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Right (50%): Studio Clock & Headquarters */}
-            <div className="relative flex min-h-[360px] lg:min-h-full flex-col justify-between bg-brand-panel p-8 sm:p-10 lg:p-12 xl:p-14 text-brand-panel-foreground border-0">
+            <div className="relative flex min-h-[360px] lg:min-h-full flex-col justify-between bg-transparent p-8 sm:p-10 lg:p-12 xl:p-14 text-brand-foreground border-0">
               {/* 1. Top Bar: Studio HQ & Live Status */}
-              <div className="flex items-center justify-between border-b border-brand-panel-foreground/15 pb-4">
-                <span className="font-mono text-xs uppercase tracking-[0.25em] text-brand-panel-foreground/60 font-medium">
+              <div className="flex items-center justify-between border-b border-brand-foreground/15 pb-4">
+                <span className="font-mono text-xs uppercase tracking-[0.25em] text-brand-subtle font-medium">
                   Studio Headquarters
                 </span>
-                <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-emerald-400 font-medium">
-                  <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-emerald-500 dark:text-emerald-400 font-medium">
+                  <span className="size-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
                   Online
                 </span>
               </div>
@@ -388,26 +390,26 @@ export const Contact: React.FC = () => {
               {/* 2. Main Studio Clock Display (Harmonious Unified Lockup) */}
               <div className="my-auto py-6 select-none space-y-3">
                 <div className="flex items-baseline gap-1.5 sm:gap-2.5">
-                  <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-display font-bold tracking-tight tabular-nums text-brand-panel-foreground leading-none">
+                  <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-display font-bold tracking-tight tabular-nums text-brand-foreground leading-none">
                     <span>{hours}</span>
                     <span className={`mx-0.5 transition-opacity duration-150 ${colonVisible ? "opacity-100" : "opacity-25"}`}>
                       :
                     </span>
                     <span>{minutes}</span>
                   </div>
-                  <span className="font-mono text-lg sm:text-xl lg:text-2xl font-semibold text-emerald-400 tabular-nums">
+                  <span className="font-mono text-lg sm:text-xl lg:text-2xl font-semibold text-emerald-500 dark:text-emerald-400 tabular-nums">
                     :{seconds}
                   </span>
                 </div>
 
-                <div className="font-mono text-xs sm:text-sm text-brand-panel-foreground/60 tracking-wider">
+                <div className="font-mono text-xs sm:text-sm text-brand-subtle tracking-wider">
                   {dateString}
                 </div>
               </div>
 
               {/* 3. Bottom Bar */}
-              <div className="border-t border-brand-panel-foreground/15 pt-4">
-                <p className="font-mono text-xs text-brand-panel-foreground/60">
+              <div className="border-t border-brand-foreground/15 pt-4">
+                <p className="font-mono text-xs text-brand-subtle">
                   We respond to all project inquiries within 24 hours.
                 </p>
               </div>
