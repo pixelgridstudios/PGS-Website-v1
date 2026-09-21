@@ -41,11 +41,11 @@ export const Header: React.FC = () => {
               alt="Pixel Grid"
               className="h-[26px] w-auto sm:h-[28px] dark:invert object-contain select-none shrink-0 transition-opacity duration-300 group-hover:opacity-0"
             />
-            {/* Animated GIF on Hover */}
+            {/* Animated GIF on Hover (Unconstrained Bounding Box) */}
             <img
               src="/assets/pg-emblem-animated.gif"
               alt="Pixel Grid Animated"
-              className="absolute left-0 bottom-0 h-[36px] w-auto sm:h-[40px] dark:invert object-[left_bottom] object-contain select-none shrink-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              className="absolute left-0 bottom-0 h-[100px] w-auto sm:h-[120px] max-w-none dark:invert object-[left_bottom] object-contain select-none shrink-0 origin-bottom-left opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none"
             />
           </Link>
         </div>
