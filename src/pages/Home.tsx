@@ -70,13 +70,12 @@ export const Home: React.FC = () => {
               loop
               muted
               playsInline
-              className="h-full w-full object-cover opacity-60 transition-opacity duration-700"
+              className="h-full w-full object-cover transition-opacity duration-700"
               poster="/assets/showreel-card.jpg"
             >
               <source src="/assets/hero-bg.mp4" type="video/mp4" />
             </video>
-            {/* Cinematic Gradient Overlays for High Contrast Text Legibility */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/30" />
+            {/* Note: Overlays removed per user request for a brighter video */}
           </div>
 
           {/* Bottom Row: Left Headline & Subheadline + Right Showreel Card */}
