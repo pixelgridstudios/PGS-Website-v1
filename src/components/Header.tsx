@@ -6,6 +6,7 @@ import { useTheme } from "@/context/ThemeContext";
 export const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
+  const [gifKey, setGifKey] = useState(Date.now());
   const timeoutRef = useRef<number | null>(null);
 
   const handleMouseEnter = () => {
@@ -32,6 +33,7 @@ export const Header: React.FC = () => {
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
+            onMouseEnter={() => setGifKey(Date.now())}
             className="group relative flex items-center transition-opacity duration-300"
             aria-label="Pixel Grid home"
           >
@@ -43,7 +45,7 @@ export const Header: React.FC = () => {
             />
             {/* Animated GIF on Hover (Unconstrained Bounding Box) */}
             <img
-              src="/assets/pg-emblem-animated.gif"
+              src={`/assets/pg-emblem-animated.gif?t=${gifKey}`}
               alt="Pixel Grid Animated"
               className="absolute left-0 bottom-0 h-[22px] w-auto sm:h-[27px] max-w-none invert dark:invert-0 object-[left_bottom] object-contain select-none shrink-0 origin-bottom-left opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none"
             />
