@@ -75,14 +75,14 @@ export const Work: React.FC = () => {
               to={`/work/${project.slug}`}
               data-reveal
               data-reveal-delay={idx % 2 === 0 ? "100" : "200"}
-              className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 transition-transform duration-[400ms] ease-spring-vibe hover:-translate-y-2 active:scale-[0.98] border-0"
+              className="group overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-3.5 sm:p-4.5 md:p-5 flex flex-col gap-4 sm:gap-5 transition-all duration-[500ms] ease-spring-vibe hover:-translate-y-2 hover:bg-brand-subtle/10 hover:shadow-2xl hover:shadow-brand-foreground/5 active:scale-[0.98] border-0"
             >
               {/* 16:9 Aspect Video Container */}
               <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-neutral-950 shadow-inner">
                 <img
                   src={project.thumbnail}
                   alt={`${project.title} — project by Pixel Grid Studios`}
-                  className="h-full w-full object-cover ease-out"
+                  className="h-full w-full object-cover transition-transform duration-[700ms] ease-spring-vibe group-hover:scale-105"
                 />
               </div>
 
@@ -100,7 +100,7 @@ export const Work: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-2.5 shrink-0">
-                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md transition-transform duration-[400ms] ease-spring-vibe group-hover:-rotate-45">
+                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md transition-all duration-[500ms] ease-spring-vibe group-hover:-rotate-45 group-hover:scale-110">
                     <ArrowRight className="size-4" />
                   </span>
                 </div>
