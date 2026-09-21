@@ -19,7 +19,10 @@ export const Playground: React.FC = () => {
             Oversized background slowly pans back and forth. Extremely performant. Best for backgrounds or large cards.
           </p>
           
-          <div className="w-full h-48 rounded-xl bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 animate-gradient-x shadow-inner flex items-center justify-center">
+          <div 
+            className="w-full h-48 rounded-xl bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 animate-gradient-x shadow-inner flex items-center justify-center"
+            style={{ backgroundSize: '200% 200%' }}
+          >
             <span className="text-white font-medium bg-black/20 px-4 py-2 rounded-lg backdrop-blur-md">Pure CSS</span>
           </div>
         </div>
@@ -34,7 +37,7 @@ export const Playground: React.FC = () => {
           <div className="w-full h-48 rounded-xl bg-brand-bg flex items-center justify-center border border-brand-border">
             <h3 
               className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-500 to-purple-500 animate-gradient-x"
-              style={{ fontVariationSettings: "'wght' 800" }}
+              style={{ fontVariationSettings: "'wght' 800", backgroundSize: '200% 200%' }}
             >
               Pixel Grid
             </h3>
@@ -50,12 +53,12 @@ export const Playground: React.FC = () => {
           
           <motion.div 
             className="w-full h-48 rounded-xl shadow-inner flex items-center justify-center"
+            style={{
+              background: "linear-gradient(135deg, #FF0080, #7928CA, #FF0080)",
+              backgroundSize: "200% 200%",
+            }}
             animate={{
-              background: [
-                "linear-gradient(135deg, #FF0080, #7928CA)",
-                "linear-gradient(135deg, #7928CA, #FF0080)",
-                "linear-gradient(135deg, #FF0080, #7928CA)"
-              ]
+              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
             }}
             transition={{
               duration: 4,
@@ -79,15 +82,15 @@ export const Playground: React.FC = () => {
             <div className="absolute inset-0 bg-indigo-900" />
             
             {/* Blob 1 */}
-            <div className="absolute top-0 left-0 w-32 h-32 bg-purple-500 rounded-full mix-blend-screen filter blur-[40px] animate-gradient-x opacity-70" />
+            <div className="absolute top-0 left-0 w-48 h-48 bg-purple-500 rounded-full mix-blend-screen filter blur-[40px] animate-gradient-x opacity-70" />
             
             {/* Blob 2 */}
-            <div className="absolute bottom-0 right-0 w-40 h-40 bg-pink-500 rounded-full mix-blend-screen filter blur-[50px] animate-gradient-x opacity-70" style={{ animationDelay: '2s' }} />
+            <div className="absolute bottom-0 right-0 w-56 h-56 bg-pink-500 rounded-full mix-blend-screen filter blur-[50px] animate-gradient-x opacity-70" style={{ animationDelay: '2s' }} />
             
             {/* Blob 3 */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-blue-500 rounded-full mix-blend-screen filter blur-[60px] animate-gradient-x opacity-60" style={{ animationDelay: '4s' }} />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500 rounded-full mix-blend-screen filter blur-[60px] animate-gradient-x opacity-60" style={{ animationDelay: '4s' }} />
 
-            <div className="absolute inset-0 flex items-center justify-center z-10">
+            <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
               <span className="text-white font-medium bg-white/10 px-4 py-2 rounded-lg backdrop-blur-md border border-white/20">CSS Blobs</span>
             </div>
           </div>
