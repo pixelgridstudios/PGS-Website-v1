@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Sun, Moon } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 
+import { AnimatedHoverLogo } from "./AnimatedHoverLogo";
+
 export const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
-  const [gifKey, setGifKey] = useState(Date.now());
   const timeoutRef = useRef<number | null>(null);
 
   const handleMouseEnter = () => {
@@ -30,26 +31,7 @@ export const Header: React.FC = () => {
       <div className="mx-auto flex max-w-[1600px] items-center justify-between">
         {/* Left: Emblem Logo Only (Fixed Height Container to prevent layout shift) */}
         <div className="pointer-events-auto flex h-9 sm:h-10 items-center">
-          <Link
-            to="/"
-            onClick={() => setIsOpen(false)}
-            onMouseEnter={() => setGifKey(Date.now())}
-            className="group relative flex items-center transition-opacity duration-300"
-            aria-label="Pixel Grid home"
-          >
-            {/* Static Default Logo */}
-            <img
-              src="/assets/pg-emblem.png"
-              alt="Pixel Grid"
-              className="h-[26px] w-auto sm:h-[28px] dark:invert object-contain select-none shrink-0 transition-opacity duration-300 group-hover:opacity-0"
-            />
-            {/* Animated GIF on Hover (Unconstrained Bounding Box) */}
-            <img
-              src={`/assets/pg-emblem-animated.gif?t=${gifKey}`}
-              alt="Pixel Grid Animated"
-              className="absolute left-0 bottom-0 h-[22px] w-auto sm:h-[27px] max-w-none invert dark:invert-0 object-[left_bottom] object-contain select-none shrink-0 origin-bottom-left opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none"
-            />
-          </Link>
+          <AnimatedHoverLogo setIsOpen={setIsOpen} />
         </div>
 
         {/* Right: Theme Toggle + Contact Pill + Floating Dropdown (50% Frosted Glass Styling) */}
