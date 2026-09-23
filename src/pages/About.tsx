@@ -64,7 +64,7 @@ export const About: React.FC = () => {
 
   return (
     <div className="px-3 sm:px-5">
-      <div className="mx-auto max-w-[1600px] py-8 sm:py-12 space-y-16 lg:space-y-32">
+      <div className="mx-auto max-w-[1600px] py-8 sm:py-12 space-y-12 lg:space-y-20">
         
         {/* Intro Section */}
         <section data-reveal className="flex flex-col lg:flex-row gap-8 lg:gap-16 pt-8">
@@ -251,7 +251,7 @@ export const About: React.FC = () => {
         </section>
 
         {/* Bottom CTA Box (Seamless Borderless) */}
-        <section data-reveal className="rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-8 sm:p-12 shadow-sm dark:shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 border-0 mb-12">
+        <section data-reveal className="rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground p-8 sm:p-12 shadow-sm dark:shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 border-0">
           <div>
             <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-brand-subtle font-medium mb-2">
               <Sparkles className="size-4 text-brand-foreground" />
