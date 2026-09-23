@@ -80,9 +80,9 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Main Hero Headline */}
-          <div className="relative z-10 w-full max-w-2xl xl:max-w-3xl">
+          <div className="relative z-10 w-full max-w-2xl xl:max-w-3xl pr-24 sm:pr-0">
             <div data-reveal data-reveal-delay="50">
-              <h1 className="font-display text-[2.4rem] sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold leading-[1.05] tracking-tight text-white drop-shadow-md">
+              <h1 className="font-display text-[2rem] sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold leading-[1.05] tracking-tight text-white drop-shadow-md">
                 <Typewriter text={"We make complex things\nunderstandable."} speed={40} delay={500} />
               </h1>
             </div>
