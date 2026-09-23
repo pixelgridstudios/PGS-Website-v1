@@ -79,43 +79,42 @@ export const Home: React.FC = () => {
             {/* Note: Overlays removed per user request for a brighter video */}
           </div>
 
-          {/* Bottom Row: Left Headline & Subheadline + Right Showreel Card */}
-          <div className="relative z-10 flex flex-col-reverse lg:flex-row lg:items-end justify-between lg:justify-between gap-8 lg:gap-12 h-full lg:h-auto">
-            {/* Left: Main Hero Headline */}
-            <div data-reveal data-reveal-delay="50" className="max-w-2xl xl:max-w-3xl">
+          {/* Main Hero Headline */}
+          <div className="relative z-10 w-full max-w-2xl xl:max-w-3xl">
+            <div data-reveal data-reveal-delay="50">
               <h1 className="font-display text-[2.4rem] sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold leading-[1.05] tracking-tight text-white drop-shadow-md">
                 <Typewriter text={"We make complex things\nunderstandable."} speed={40} delay={500} />
               </h1>
             </div>
+          </div>
 
-            {/* Right: Interactive Showreel Hover Card */}
-            <div data-reveal data-reveal-delay="150" className="shrink-0 flex items-center justify-end w-full lg:w-auto">
-              <Link
-                to="/showreel"
-                className="group flex items-center rounded-2xl bg-white/95 dark:bg-neutral-900/95 text-black dark:text-white p-1.5 sm:p-2 shadow-xl backdrop-blur-md transition-all duration-[400ms] ease-in-out hover:shadow-2xl active:scale-[0.98] cursor-pointer select-none border-0"
-              >
-                {/* Always-visible Rectangular Thumbnail */}
-                <div className="relative h-14 w-20 sm:h-16 sm:w-24 shrink-0 overflow-hidden rounded-xl bg-black flex items-center justify-center z-10">
-                  <img
-                    src="/assets/showreel-card.jpg"
-                    alt="Showreel preview"
-                    className="absolute inset-0 h-full w-full object-cover opacity-75 group-hover:opacity-100 transition-opacity duration-500"
-                  />
-                  <div className="relative z-10 flex size-8 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm shadow-sm transition-transform duration-500 group-hover:scale-110">
-                    <Play className="size-3.5 fill-white ml-0.5" />
-                  </div>
+          {/* Absolute Positioned Showreel Button (Anchored strictly to Bottom Right) */}
+          <div data-reveal data-reveal-delay="150" className="absolute bottom-10 right-6 sm:bottom-12 sm:right-10 lg:bottom-14 lg:right-14 shrink-0 z-20">
+            <Link
+              to="/showreel"
+              className="group flex items-center rounded-2xl bg-white/95 dark:bg-neutral-900/95 text-black dark:text-white p-1.5 sm:p-2 shadow-xl backdrop-blur-md transition-all duration-[400ms] ease-in-out hover:shadow-2xl active:scale-[0.98] cursor-pointer select-none border-0"
+            >
+              {/* Always-visible Rectangular Thumbnail */}
+              <div className="relative h-14 w-20 sm:h-16 sm:w-24 shrink-0 overflow-hidden rounded-xl bg-black flex items-center justify-center z-10">
+                <img
+                  src="/assets/showreel-card.jpg"
+                  alt="Showreel preview"
+                  className="absolute inset-0 h-full w-full object-cover opacity-75 group-hover:opacity-100 transition-opacity duration-500"
+                />
+                <div className="relative z-10 flex size-8 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm shadow-sm transition-transform duration-500 group-hover:scale-110">
+                  <Play className="size-3.5 fill-white ml-0.5" />
                 </div>
+              </div>
 
-                {/* Smooth Horizontal Slide-out Text */}
-                <div className="grid grid-cols-[0fr] opacity-0 overflow-hidden transition-all duration-[400ms] ease-in-out group-hover:grid-cols-[1fr] group-hover:opacity-100">
-                  <div className="overflow-hidden">
-                    <span className="font-display text-sm sm:text-sm font-bold leading-tight whitespace-nowrap pl-4 pr-5 block">
-                      Watch Full Showreel
-                    </span>
-                  </div>
+              {/* Smooth Horizontal Slide-out Text */}
+              <div className="grid grid-cols-[0fr] opacity-0 overflow-hidden transition-all duration-[400ms] ease-in-out group-hover:grid-cols-[1fr] group-hover:opacity-100">
+                <div className="overflow-hidden">
+                  <span className="font-display text-sm sm:text-sm font-bold leading-tight whitespace-nowrap pl-4 pr-5 block">
+                    Watch Full Showreel
+                  </span>
                 </div>
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
         </section>
 
