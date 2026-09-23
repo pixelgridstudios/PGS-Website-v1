@@ -63,7 +63,7 @@ export const Home: React.FC = () => {
     <div className="px-3 sm:px-5">
       <div className="mx-auto max-w-[1600px]">
         {/* Dot4 Style Hero Canvas with Background Video */}
-        <section className="relative mt-3 overflow-hidden rounded-[1.4rem] bg-black text-white px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-14 lg:h-[calc(100vh-6rem)] lg:min-h-[640px] shadow-2xl flex flex-col justify-end border-0">
+        <section className="relative mt-3 overflow-hidden rounded-[1.4rem] bg-black text-white px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-14 min-h-[75vh] sm:min-h-[640px] lg:h-[calc(100vh-6rem)] shadow-2xl flex flex-col justify-end border-0">
           {/* Background Video */}
           <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
             <video
@@ -80,7 +80,7 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Bottom Row: Left Headline & Subheadline + Right Showreel Card */}
-          <div className="relative z-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-12">
+          <div className="relative z-10 flex flex-col-reverse lg:flex-row lg:items-end justify-between lg:justify-between gap-8 lg:gap-12 h-full lg:h-auto">
             {/* Left: Main Hero Headline */}
             <div data-reveal data-reveal-delay="50" className="max-w-2xl xl:max-w-3xl">
               <h1 className="font-display text-[2.4rem] sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold leading-[1.05] tracking-tight text-white drop-shadow-md">
@@ -89,7 +89,7 @@ export const Home: React.FC = () => {
             </div>
 
             {/* Right: Interactive Showreel Hover Card */}
-            <div data-reveal data-reveal-delay="150" className="shrink-0 flex items-center lg:justify-end">
+            <div data-reveal data-reveal-delay="150" className="shrink-0 flex items-center justify-end w-full lg:w-auto">
               <Link
                 to="/showreel"
                 className="group flex items-center rounded-2xl bg-white/95 dark:bg-neutral-900/95 text-black dark:text-white p-1.5 sm:p-2 shadow-xl backdrop-blur-md transition-all duration-[400ms] ease-in-out hover:shadow-2xl active:scale-[0.98] cursor-pointer select-none border-0"
