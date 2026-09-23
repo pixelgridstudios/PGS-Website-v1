@@ -1,31 +1,35 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles, Plus, Minus } from "lucide-react";
+import { ArrowRight, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 
 const services = [
   {
     id: "01",
     title: "Motion Graphics",
     tagline: "Our foundation.",
-    desc: "We design and animate visuals that help brands communicate with clarity and character. From campaign assets to full visual systems, we focus on movement that feels intentional, refined, and built to last."
+    desc: "We design and animate visuals that help brands communicate with clarity and character. From campaign assets to full visual systems, we focus on movement that feels intentional, refined, and built to last.",
+    image: "/assets/styleframe-glass.jpg"
   },
   {
     id: "02",
     title: "3D Design",
     tagline: "Handcrafted depth.",
-    desc: "3D allows us to move past a flat frame. We build objects and environments by hand. Every material, every detail, exists to support the design and vision. This is how we add depth to a brand's world."
+    desc: "3D allows us to move past a flat frame. We build objects and environments by hand. Every material, every detail, exists to support the design and vision. This is how we add depth to a brand's world.",
+    image: "/assets/styleframe-hardware.jpg"
   },
   {
     id: "03",
     title: "Brand Systems",
     tagline: "Built to scale.",
-    desc: "Instead of creating isolated pieces, we build structured visual systems. A foundation that enables multiple videos, renders, and applications to live together. Consistent, flexible, and designed to grow with the brand."
+    desc: "Instead of creating isolated pieces, we build structured visual systems. A foundation that enables multiple videos, renders, and applications to live together. Consistent, flexible, and designed to grow with the brand.",
+    image: "/assets/styleframe-tech.jpg"
   },
   {
     id: "04",
     title: "Tailored Work",
     tagline: "Custom by design.",
-    desc: "Every brand is different, and so is every collaboration. We work closely with our clients, thinking alongside them and refining solutions that respond directly to their goals. Flexible in execution, consistent in quality."
+    desc: "Every brand is different, and so is every collaboration. We work closely with our clients, thinking alongside them and refining solutions that respond directly to their goals. Flexible in execution, consistent in quality.",
+    image: "/assets/styleframe-abstract.jpg"
   }
 ];
 
@@ -48,7 +52,15 @@ const team = [
 ];
 
 export const About: React.FC = () => {
-  const [openService, setOpenService] = useState<string>("01");
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  const prevSlide = () => {
+    setActiveIndex((prev) => (prev === 0 ? services.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setActiveIndex((prev) => (prev === services.length - 1 ? 0 : prev + 1));
+  };
 
   return (
     <div className="px-3 sm:px-5">
@@ -101,71 +113,140 @@ export const About: React.FC = () => {
           </div>
         </section>
 
-        {/* Services Section (Dot4 Inspired Interactive Accordion/List) */}
-        <section data-reveal className="flex flex-col gap-10">
-          <div className="max-w-xl">
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl tracking-tight text-brand-foreground" style={{ fontVariationSettings: "'wght' 700" }}>
-              Services
-            </h2>
-            <p className="mt-4 text-brand-subtle text-lg">
-              Our combined skills offer a vast amount of services within the field of digital art and motion graphics.
-            </p>
-          </div>
+                {/* Services Section (ApproachSlider Inspired) */}
+        <section data-reveal className="w-full">
+          <div className="w-full flex flex-col lg:grid lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_480px] rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground overflow-hidden shadow-sm dark:shadow-2xl border-0">
+            
+            {/* Left Column: Text Canvas */}
+            <div className="w-full p-6 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-between gap-8 sm:gap-12">
+              <div>
+                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl tracking-tight text-brand-foreground" style={{ fontVariationSettings: "'wght' 700" }}>
+                  Services
+                </h2>
 
-          <div className="grid lg:grid-cols-[1fr_1fr] gap-8 lg:gap-16 items-start">
-            {/* Left: Interactive List */}
-            <div className="flex flex-col w-full gap-2">
-              {services.map((service) => {
-                const isOpen = openService === service.id;
-                return (
-                  <button
-                    key={service.id}
-                    onClick={() => setOpenService(service.id)}
-                    className="group text-left border-b border-brand-border/40 py-6 transition-colors duration-300"
-                  >
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-display text-2xl sm:text-3xl transition-colors duration-300 text-brand-foreground" style={{ fontVariationSettings: "'wght' 600" }}>
-                        {service.title}
-                      </h3>
-                      <div className={`p-2 rounded-full transition-colors duration-300 ${isOpen ? "bg-brand-foreground text-brand-bg" : "bg-brand-muted text-brand-foreground group-hover:bg-brand-panel group-hover:text-brand-panel-foreground"}`}>
-                        {isOpen ? <Minus className="size-5" /> : <Plus className="size-5" />}
-                      </div>
-                    </div>
-                    {/* Mobile Only Desc Dropdown */}
-                    <div className={`grid transition-all duration-[400ms] ease-spring-vibe lg:hidden ${isOpen ? "grid-rows-[1fr] mt-6 opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-                      <div className="overflow-hidden">
-                        <p className="text-brand-foreground font-medium mb-3">{service.tagline}</p>
-                        <p className="text-brand-subtle text-base leading-relaxed">{service.desc}</p>
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
+                {/* 2-Column Tabs & Continuous Morphing Content */}
+                <div className="mt-8 sm:mt-12 grid gap-6 sm:gap-8 md:grid-cols-[260px_1fr] lg:grid-cols-[280px_1fr] xl:grid-cols-[300px_1fr] items-start">
+                  {/* Tab Options */}
+                  <ul className="flex flex-col gap-3.5 font-display text-lg lg:text-2xl">
+                    {services.map((service, idx) => {
+                      const isActive = activeIndex === idx;
+                      return (
+                        <li key={service.id}>
+                            <button
+                              type="button"
+                              onMouseEnter={() => setActiveIndex(idx)}
+                              onClick={() => setActiveIndex(idx)}
+                              style={{
+                                fontVariationSettings: isActive ? "'wght' 700" : "'wght' 600",
+                                transition: "font-variation-settings 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease, opacity 0.25s ease",
+                              }}
+                              className={`text-left select-none cursor-pointer block w-full tracking-tight transition-all duration-300 ${
+                                isActive
+                                  ? "text-brand-foreground opacity-100"
+                                  : "text-brand-foreground opacity-90 hover:opacity-100"
+                              }`}
+                            >
+                              {service.title}
+                            </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
 
-            {/* Right: Desktop Desc Display */}
-            <div className="hidden lg:block sticky top-32 rounded-3xl bg-brand-muted p-10 xl:p-14 border-0">
-              {services.map((service) => (
-                <div
-                  key={service.id}
-                  className={`absolute inset-10 xl:inset-14 transition-all duration-500 ${openService === service.id ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-8 pointer-events-none"}`}
-                >
-                  <p className="font-display text-2xl text-brand-foreground font-bold mb-6">
-                    {service.tagline}
-                  </p>
-                  <p className="text-lg xl:text-xl text-brand-subtle leading-relaxed">
-                    {service.desc}
-                  </p>
+                  {/* Vertical Sliding Text Reel */}
+                  <div className="relative h-[250px] sm:h-[220px] md:h-[260px] lg:h-[260px] overflow-hidden border-t md:border-t-0 md:border-l border-brand-foreground/10 pt-5 md:pt-0 md:pl-8">
+                    <div
+                      className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] h-full"
+                      style={{ transform: `translateY(-${activeIndex * 100}%) translateZ(0)` }}
+                    >
+                      {services.map((service, idx) => {
+                        const isActive = activeIndex === idx;
+                        return (
+                          <div
+                            key={service.id}
+                            className={`h-[250px] sm:h-[220px] md:h-[260px] lg:h-[260px] shrink-0 flex flex-col justify-start transition-opacity duration-300 ease-out ${
+                              isActive ? "opacity-100" : "opacity-0 pointer-events-none"
+                            }`}
+                            style={{ backfaceVisibility: "hidden" }}
+                          >
+                            <p className="font-display text-xl text-brand-foreground mb-3" style={{ fontVariationSettings: "'wght' 700" }}>
+                              {service.tagline}
+                            </p>
+                            <p className="text-base sm:text-lg lg:text-lg leading-relaxed text-brand-foreground/85 font-normal">
+                              {service.desc}
+                            </p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
-              ))}
-              {/* Invisible spacer to maintain height */}
-              <div className="invisible pointer-events-none">
-                <p className="font-display text-2xl mb-6">Spacer Tagline</p>
-                <p className="text-lg xl:text-xl leading-relaxed">
-                  Instead of creating isolated pieces, we build structured visual systems. A foundation that enables multiple videos, renders, and applications to live together. Consistent, flexible, and designed to grow with the brand.
-                </p>
               </div>
             </div>
+
+            {/* Right Column: Physical Sliding Image Strip */}
+            <div className="p-4 sm:p-6 lg:p-6 xl:p-8 flex items-center justify-center bg-brand-bg/40 border-t lg:border-t-0 lg:border-l border-brand-foreground/10">
+              <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] xl:aspect-[1/1] max-h-[460px] rounded-xl sm:rounded-2xl overflow-hidden bg-brand-muted shadow-md group border-0">
+                {/* Continuous Horizontal Strip */}
+                <div
+                  className="flex h-full w-full transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+                  style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+                >
+                  {services.map((service) => (
+                    <div key={service.id} className="relative h-full w-full shrink-0">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="h-full w-full object-cover transition-transform duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {/* Inset Circular Controls */}
+                <div className="absolute bottom-4 right-4 flex items-center gap-2 z-10">
+                  <button
+                    type="button"
+                    onClick={prevSlide}
+                    aria-label="Previous approach"
+                    className="flex size-9 sm:size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md transition-opacity duration-150 hover:opacity-90 cursor-pointer border-0"
+                  >
+                    <ChevronLeft className="size-4 sm:size-5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={nextSlide}
+                    aria-label="Next approach"
+                    className="flex size-9 sm:size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md transition-opacity duration-150 hover:opacity-90 cursor-pointer border-0"
+                  >
+                    <ChevronRight className="size-4 sm:size-5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Indicator Bar */}
+          <div className="block md:hidden mt-4">
+            <ul className="flex justify-center gap-2 items-center">
+              {services.map((_, i) => (
+                <li key={i} className="h-8 flex-1 flex items-center">
+                  <button
+                    type="button"
+                    onClick={() => setActiveIndex(i)}
+                    className="w-full h-1 rounded-full transition-colors duration-200"
+                  >
+                    <div
+                      className={`w-full h-1 rounded-full transition-colors duration-300 ${
+                        activeIndex === i
+                          ? "bg-brand-foreground"
+                          : "bg-brand-foreground/20"
+                      }`}
+                    />
+                  </button>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
