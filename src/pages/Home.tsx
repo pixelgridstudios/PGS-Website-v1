@@ -79,17 +79,17 @@ export const Home: React.FC = () => {
             {/* Note: Overlays removed per user request for a brighter video */}
           </div>
 
-          {/* Main Hero Headline */}
-          <div className="relative z-10 w-full max-w-2xl xl:max-w-4xl pr-24 sm:pr-0">
-            <div data-reveal data-reveal-delay="50">
-              <h1 className="font-display text-[2rem] sm:text-[2.75rem] md:text-5xl lg:text-6xl xl:text-[4.25rem] font-bold leading-[1.05] tracking-tight text-white drop-shadow-md">
+          {/* Main Content Wrapper (Stacks inline on Mobile, Absolute on Desktop) */}
+          <div className="relative z-10 w-full flex flex-col gap-5 sm:block">
+            {/* Main Hero Headline */}
+            <div className="w-full max-w-2xl xl:max-w-4xl" data-reveal data-reveal-delay="50">
+              <h1 className="font-display text-[2.5rem] sm:text-[2.75rem] md:text-5xl lg:text-6xl xl:text-[4.25rem] font-bold leading-[1.05] tracking-tight text-white drop-shadow-md">
                 <Typewriter text={"We make complex things\nunderstandable."} speed={40} delay={500} />
               </h1>
             </div>
-          </div>
 
-          {/* Absolute Positioned Showreel Button (Anchored strictly to Bottom Right) */}
-          <div data-reveal data-reveal-delay="150" className="absolute bottom-10 right-6 sm:bottom-12 sm:right-10 lg:bottom-14 lg:right-14 shrink-0 z-20">
+            {/* Showreel Button (Flows under text on mobile, anchors to bottom-right on desktop) */}
+            <div data-reveal data-reveal-delay="150" className="self-start sm:absolute sm:bottom-0 sm:right-10 lg:-bottom-2 lg:right-14 shrink-0 z-20">
             <Link
               to="/showreel"
               className="group flex items-center rounded-2xl bg-white/95 dark:bg-neutral-900/95 text-black dark:text-white p-1.5 sm:p-2 shadow-xl backdrop-blur-md transition-all duration-[400ms] ease-in-out hover:shadow-2xl active:scale-[0.98] cursor-pointer select-none border-0"
@@ -115,6 +115,7 @@ export const Home: React.FC = () => {
                 </div>
               </div>
             </Link>
+            </div>
           </div>
         </section>
 
