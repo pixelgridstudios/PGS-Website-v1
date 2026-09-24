@@ -21,13 +21,6 @@ const highlightedProjects = [
     image: "/assets/void-textiles-DxX08qfd.jpg",
     tags: ["Product Animation"],
   },
-  {
-    slug: "boat-rockerz-650-pro",
-    title: "Boat Rockerz 650 Pro",
-    meta: "VFX / CGI",
-    image: "/assets/precision-archive-D1t0VcXE.jpg",
-    tags: ["VFX / CGI"],
-  },
 ];
 
 const motionServices = [
