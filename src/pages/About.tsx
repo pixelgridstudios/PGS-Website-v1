@@ -295,7 +295,7 @@ export const About: React.FC = () => {
 
           {/* MOBILE / TABLET LAYOUT (Dot4 Free-Scroll Native) */}
         <div className="md:hidden flex flex-col gap-6 w-full mt-4">
-          <h2 className="font-display text-[2.25rem] font-bold tracking-tight text-brand-foreground leading-tight px-4" style={{ fontVariationSettings: "'wght' 700" }}>
+          <h2 className="font-display text-[2.25rem] font-bold tracking-tight text-brand-foreground leading-tight" style={{ fontVariationSettings: "'wght' 700" }}>
             Services
           </h2>
           
@@ -307,7 +307,7 @@ export const About: React.FC = () => {
             onMouseLeave={handleMouseLeave}
             onMouseUp={handleMouseUp}
             onMouseMove={handleMouseMove}
-            className="flex overflow-x-auto gap-6 px-4 pb-2 [&::-webkit-scrollbar]:hidden cursor-grab active:cursor-grabbing w-full"
+            className="flex overflow-x-auto gap-6 -mx-4 px-4 pb-2 [&::-webkit-scrollbar]:hidden cursor-grab active:cursor-grabbing w-full"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
           >
             {services.map((service, idx) => (
@@ -331,7 +331,7 @@ export const About: React.FC = () => {
           </div>
           
           {/* Dot4 Dash Indicators */}
-          <div className="flex justify-center gap-2 items-center px-4 mt-2">
+          <div className="flex justify-center gap-2 items-center mt-2">
             {services.map((_, i) => (
               <button
                 key={i}
