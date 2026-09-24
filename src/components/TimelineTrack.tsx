@@ -371,7 +371,7 @@ export const TimelineTrack: React.FC = () => {
         {/* Unified Timeline & Inspector Container: Clean Borderless Outer Card */}
         <div
           ref={timelineCardRef}
-          className="hidden lg:grid lg:grid-cols-[1.25fr_360px] xl:grid-cols-[1.3fr_390px] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-xl border-0"
+          className="flex flex-col lg:grid lg:grid-cols-[1.25fr_360px] xl:grid-cols-[1.3fr_390px] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-xl border-0"
         >
           {/* Left: Interactive Multi-Track DAW Timeline */}
           <div className="relative p-6 sm:p-8 flex flex-col justify-between select-none bg-brand-muted/80 dark:bg-neutral-950/80">
@@ -592,83 +592,7 @@ export const TimelineTrack: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile / Tablet Step Accordion Stack */}
-        <div className="mt-6 grid gap-2.5 lg:hidden">
-          {pipelineSteps.map((s, idx) => {
-            const isOpen = activeStep === idx;
-            return (
-              <div
-                key={s.id}
-                className={`overflow-hidden rounded-xl transition-colors duration-200 shadow-xs border-0 ${
-                  isOpen
-                    ? "bg-black text-white shadow-md dark:bg-neutral-900"
-                    : "bg-white text-black hover:bg-neutral-200 dark:bg-neutral-900/70 dark:text-white"
-                }`}
-              >
-                <button
-                  ref={idx === 5 ? mobileStep6ButtonRef : undefined}
-                  type="button"
-                  onClick={(e) => handleSelectStep(idx, e)}
-                  className="flex w-full items-center justify-between p-4 text-left cursor-pointer"
-                >
-                  <div className="flex items-center gap-3">
-                    <span
-                      className={`flex size-8 items-center justify-center rounded-lg ${
-                        isOpen
-                          ? "bg-white/15 text-white"
-                          : "bg-neutral-100 text-black dark:bg-neutral-800 dark:text-white"
-                      }`}
-                    >
-                      {s.icon}
-                    </span>
-                    <span 
-                      className={`font-display text-lg lg:text-2xl tracking-tight transition-all duration-300 ${
-                        isOpen ? "opacity-100" : "opacity-90"
-                      }`}
-                      style={{ fontVariationSettings: isOpen ? "'wght' 700" : "'wght' 600" }}
-                    >
-                      {s.title}
-                    </span>
-                  </div>
-                  <span
-                    className={`font-mono text-xs font-medium ${
-                      isOpen ? "text-white/70" : "text-neutral-500"
-                    }`}
-                  >
-                    0{idx + 1}
-                  </span>
-                </button>
-
-                {/* Pure CSS Grid Expansion */}
-                <div
-                  className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out bg-neutral-950 ${
-                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                  }`}
-                >
-                  <div className="overflow-hidden">
-                    <div className="border-t border-white/10 p-4 pt-3 text-base">
-                      <p className="leading-relaxed text-white/90 font-normal">
-                        {s.description}
-                      </p>
-                      <ul className="mt-3 space-y-2">
-                        {s.deliverables.map((item, i) => (
-                          <li
-                            key={i}
-                            className="flex items-start gap-2 text-white/90 text-sm font-normal"
-                          >
-                            <span className="text-white/60 mt-0.5">•</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
               </div>
-            );
-          })}
-        </div>
-      </div>
     </section>
   );
 };
