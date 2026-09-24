@@ -226,9 +226,9 @@ export const ApproachSlider: React.FC = () => {
 
         {/* MOBILE / TABLET LAYOUT (Dot4 Free-Scroll Native) */}
         <div className="md:hidden flex flex-col gap-6 w-full mt-4">
-          <h2 className="font-display text-[2.25rem] font-bold tracking-tight text-brand-foreground leading-tight px-4">
-            The Value Behind<br/>the Visuals
-          </h2>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-foreground leading-tight px-4 sm:whitespace-nowrap">
+              The Value Behind the Visuals
+            </h2>
           
           {/* Native Horizontal Scroll Container */}
           <div 
