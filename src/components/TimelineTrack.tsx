@@ -127,33 +127,65 @@ export const TimelineTrack: React.FC = () => {
   const isVisibleRef = useRef<boolean>(false);
   const timelineCardRef = useRef<HTMLDivElement>(null);
 
-  // Drag to scroll for mobile carousel preview on desktop
+  // Physics-based Drag to Scroll with Inertia
   const carouselRef = useRef<HTMLDivElement>(null);
   const isDraggingRef = useRef<boolean>(false);
   const startXRef = useRef<number>(0);
   const scrollLeftRef = useRef<number>(0);
+  const velocityRef = useRef<number>(0);
+  const lastTimeRef = useRef<number>(0);
+  const lastMouseXRef = useRef<number>(0);
+  const rafRef = useRef<number | null>(null);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!carouselRef.current) return;
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
     isDraggingRef.current = true;
     startXRef.current = e.pageX - carouselRef.current.offsetLeft;
     scrollLeftRef.current = carouselRef.current.scrollLeft;
+    lastMouseXRef.current = e.pageX;
+    lastTimeRef.current = performance.now();
+    velocityRef.current = 0;
   };
 
   const handleMouseLeave = () => {
-    isDraggingRef.current = false;
+    if (isDraggingRef.current) handleMouseUp();
   };
 
   const handleMouseUp = () => {
     isDraggingRef.current = false;
+    
+    // Apply inertia based on release velocity
+    const applyInertia = () => {
+      if (!carouselRef.current) return;
+      if (Math.abs(velocityRef.current) > 0.1) {
+        carouselRef.current.scrollLeft -= velocityRef.current * 16; 
+        velocityRef.current *= 0.92; // Friction multiplier
+        rafRef.current = requestAnimationFrame(applyInertia);
+      }
+    };
+    
+    if (Math.abs(velocityRef.current) > 0.2) {
+      rafRef.current = requestAnimationFrame(applyInertia);
+    }
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDraggingRef.current || !carouselRef.current) return;
     e.preventDefault();
+    
     const x = e.pageX - carouselRef.current.offsetLeft;
     const walk = (x - startXRef.current) * 1.5;
     carouselRef.current.scrollLeft = scrollLeftRef.current - walk;
+    
+    // Track velocity for inertia
+    const now = performance.now();
+    const dt = now - lastTimeRef.current;
+    if (dt > 0) {
+      velocityRef.current = (e.pageX - lastMouseXRef.current) / dt;
+    }
+    lastMouseXRef.current = e.pageX;
+    lastTimeRef.current = now;
   };
 
   const playheadRef = useRef<HTMLDivElement>(null);
@@ -638,7 +670,7 @@ export const TimelineTrack: React.FC = () => {
             {pipelineSteps.map((s, idx) => (
               <div 
                 key={s.id}
-                className="shrink-0 w-[85vw] sm:w-[60vw] md:w-[45vw] bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-8 flex flex-col shadow-sm border border-black/5 dark:border-white/5"
+                className="shrink-0 w-[85vw] sm:w-[60vw] md:w-[45vw] bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-8 flex flex-col shadow-sm border border-black/5 dark:border-white/5 transition-transform duration-300 ease-out hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
                 <div className="flex flex-col gap-6 h-full">
                   {/* Card Header: Icon & Number */}
