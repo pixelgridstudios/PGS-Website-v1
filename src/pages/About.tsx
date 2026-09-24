@@ -208,10 +208,10 @@ export const About: React.FC = () => {
                                 transition: "font-variation-settings 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease, opacity 0.25s ease",
                               }}
                               className={`text-left select-none cursor-pointer block w-full tracking-tight transition-all duration-300 ${
-                                isActive
-                                  ? "text-brand-foreground opacity-100"
-                                  : "text-brand-foreground opacity-90 hover:opacity-100"
-                              }`}
+                              isActive
+                                ? "text-brand-foreground opacity-100 scale-100"
+                                : "text-brand-subtle opacity-60 hover:opacity-100 hover:text-brand-foreground scale-[0.98] origin-left"
+                            }`}
                             >
                               {service.title}
                             </button>

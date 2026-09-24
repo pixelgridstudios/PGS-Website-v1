@@ -142,8 +142,8 @@ export const ApproachSlider: React.FC = () => {
                             }}
                             className={`text-left select-none cursor-pointer block w-full tracking-tight transition-all duration-300 ${
                               isActive
-                                ? "text-brand-foreground opacity-100"
-                                : "text-brand-foreground opacity-90 hover:opacity-100"
+                                ? "text-brand-foreground opacity-100 scale-100"
+                                : "text-brand-subtle opacity-60 hover:opacity-100 hover:text-brand-foreground scale-[0.98] origin-left"
                             }`}
                           >
                             {item.title}
