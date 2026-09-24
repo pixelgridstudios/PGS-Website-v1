@@ -221,7 +221,7 @@ export const About: React.FC = () => {
                   </ul>
 
                   {/* Vertical Sliding Text Reel */}
-                  <div className="relative h-[250px] sm:h-[220px] md:h-[260px] lg:h-[260px] overflow-hidden border-t md:border-t-0 md:border-l border-brand-foreground/10 pt-5 md:pt-0 md:pl-8">
+                  <div className="relative h-[250px] sm:h-[220px] md:h-[260px] lg:h-[260px] overflow-hidden border-t md:border-t-0 md:border-l border-black/10 dark:border-white/10 pt-5 md:pt-0 md:pl-8">
                     <div
                       className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] h-full"
                       style={{ transform: `translateY(-${activeIndex * 100}%) translateZ(0)` }}
@@ -239,7 +239,7 @@ export const About: React.FC = () => {
                             <p className="font-display text-xl text-brand-foreground mb-3" style={{ fontVariationSettings: "'wght' 700" }}>
                               {service.tagline}
                             </p>
-                            <p className="text-base sm:text-lg lg:text-lg leading-relaxed text-brand-foreground/85 font-normal">
+                            <p className="text-base sm:text-lg lg:text-lg leading-relaxed text-black/80 dark:text-white/80 font-normal">
                               {service.desc}
                             </p>
                           </div>
@@ -252,7 +252,7 @@ export const About: React.FC = () => {
             </div>
 
             {/* Right Column: Physical Sliding Image Strip */}
-            <div className="p-4 sm:p-6 lg:p-6 xl:p-8 flex items-center justify-center bg-brand-bg/40 border-t lg:border-t-0 lg:border-l border-brand-foreground/10">
+            <div className="p-4 sm:p-6 lg:p-6 xl:p-8 flex items-center justify-center bg-black/5 dark:bg-white/5 border-t lg:border-t-0 lg:border-l border-black/10 dark:border-white/10">
               <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] xl:aspect-[1/1] max-h-[460px] rounded-xl sm:rounded-2xl overflow-hidden bg-brand-muted shadow-md group border-0">
                 {/* Continuous Horizontal Strip */}
                 <div
@@ -322,7 +322,7 @@ export const About: React.FC = () => {
                   <h3 className="font-display text-2xl font-bold text-brand-foreground tracking-tight">
                     {service.title}
                   </h3>
-                  <p className="mt-3 text-[1.05rem] leading-[1.6] text-brand-foreground/80">
+                  <p className="mt-3 text-[1.05rem] leading-[1.6] text-black/80 dark:text-white/80">
                     {service.desc}
                   </p>
                 </div>
@@ -345,7 +345,7 @@ export const About: React.FC = () => {
                 className={`h-1 rounded-full transition-all duration-300 ${
                   activeIndex === i 
                     ? "w-8 bg-brand-foreground" 
-                    : "w-8 bg-brand-foreground/20 hover:bg-brand-foreground/40"
+                    : "w-8 bg-black/20 dark:bg-white/20 hover:bg-black/40 dark:hover:bg-white/40"
                 }`}
                 aria-label={`Go to slide ${i + 1}`}
               />
@@ -367,7 +367,7 @@ export const About: React.FC = () => {
           </div>
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground px-8 py-4 font-display text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-accent/20 active:scale-95 shrink-0 border-0"
+            className="group inline-flex items-center gap-2 rounded-full bg-brand-panel text-brand-panel-foreground px-8 py-4 font-display text-sm font-medium shadow-md transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl hover:shadow-black/20 dark:shadow-white/20 active:scale-95 shrink-0 border-0"
           >
             <span>Start a Conversation</span>
             <ArrowRight className="size-4 shrink-0 transition-transform duration-[400ms] ease-spring-vibe group-hover:translate-x-1" />

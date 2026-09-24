@@ -154,7 +154,7 @@ export const ApproachSlider: React.FC = () => {
                 </ul>
 
                 {/* Vertical Sliding Text Reel */}
-                <div className="relative h-[180px] overflow-hidden border-l border-brand-foreground/10 pl-8">
+                <div className="relative h-[180px] overflow-hidden border-l border-black/10 dark:border-white/10 pl-8">
                   <div
                     className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] h-full"
                     style={{ transform: `translateY(-${activeIndex * 100}%) translateZ(0)` }}
@@ -169,7 +169,7 @@ export const ApproachSlider: React.FC = () => {
                           }`}
                           style={{ backfaceVisibility: "hidden" }}
                         >
-                          <p className="text-lg lg:text-lg leading-relaxed text-brand-foreground/85 font-normal mt-2">
+                          <p className="text-lg lg:text-lg leading-relaxed text-black/80 dark:text-white/80 font-normal mt-2">
                             {item.copy}
                           </p>
                         </div>
@@ -182,7 +182,7 @@ export const ApproachSlider: React.FC = () => {
           </div>
 
           {/* Right Column: Physical Sliding Image Strip */}
-          <div className="p-6 lg:p-6 xl:p-8 flex items-center justify-center bg-brand-bg/40 border-l border-brand-foreground/10">
+          <div className="p-6 lg:p-6 xl:p-8 flex items-center justify-center bg-black/5 dark:bg-white/5 border-l border-black/10 dark:border-white/10">
             <div className="relative w-full aspect-[4/3] xl:aspect-[1/1] max-h-[460px] rounded-2xl overflow-hidden bg-brand-muted shadow-md group border-0">
               {/* Continuous Horizontal Strip */}
               <div
@@ -253,7 +253,7 @@ export const ApproachSlider: React.FC = () => {
                   <h3 className="font-display text-2xl font-bold text-brand-foreground tracking-tight">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-[1.05rem] leading-[1.6] text-brand-foreground/80">
+                  <p className="mt-3 text-[1.05rem] leading-[1.6] text-black/80 dark:text-white/80">
                     {item.copy}
                   </p>
                 </div>
@@ -276,7 +276,7 @@ export const ApproachSlider: React.FC = () => {
                 className={`h-1 rounded-full transition-all duration-300 ${
                   activeIndex === i 
                     ? "w-8 bg-brand-foreground" 
-                    : "w-8 bg-brand-foreground/20 hover:bg-brand-foreground/40"
+                    : "w-8 bg-black/20 dark:bg-white/20 hover:bg-black/40 dark:hover:bg-white/40"
                 }`}
                 aria-label={`Go to slide ${i + 1}`}
               />
