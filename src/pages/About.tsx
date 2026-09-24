@@ -307,7 +307,7 @@ export const About: React.FC = () => {
             onMouseLeave={handleMouseLeave}
             onMouseUp={handleMouseUp}
             onMouseMove={handleMouseMove}
-            className="flex overflow-x-auto gap-6 -mx-4 px-4 pb-2 [&::-webkit-scrollbar]:hidden cursor-grab active:cursor-grabbing w-full"
+            className="flex overflow-x-auto gap-6 -mx-4 px-4 pb-2 [&::-webkit-scrollbar]:hidden cursor-grab active:cursor-grabbing"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
           >
             {services.map((service, idx) => (
