@@ -434,14 +434,15 @@ export const Contact: React.FC = () => {
                 Social Networks
               </span>
               <div className="mt-1.5 flex flex-wrap gap-2">
-                {socials.map((s) => (
+                {socialLinks.map((s) => (
                   <a
                     key={s.name}
                     href={s.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="rounded-full bg-brand-bg px-3.5 py-1 font-mono text-xs font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors shadow-xs border-0"
+                    className="flex items-center rounded-full bg-brand-bg px-4 py-2 font-mono text-xs font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors shadow-xs border-0"
                   >
+                    {getSocialIcon(s.name)}
                     {s.name}
                   </a>
                 ))}
