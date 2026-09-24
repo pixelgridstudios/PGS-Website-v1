@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ApproachItem {
@@ -15,27 +15,26 @@ const approachItems: ApproachItem[] = [
     tagline: "Clarity & Character",
     copy: "From established brands to fresh beginnings, we make sure every visual element communicates clearly, feels considered, and amplifies your identity. We focus on clarity and character, so your brand resonates wherever it appears.",
     image: "/assets/styleframe-glass.jpg",
-    imageAlt: "Design a Strong Visual Identity ? styleframe exploration",
+    imageAlt: "Design a Strong Visual Identity – styleframe exploration",
   },
   {
     title: "Adaptable Visual Systems",
     tagline: "Built to Scale",
     copy: "We approach every project with a design system in mind, built for flexibility and scalability across campaigns, platforms, and applications. Each system is modular, forming a foundation that can grow, adapt, and support the brand over time.",
     image: "/assets/void-textiles.jpg",
-    imageAlt: "Adaptable Visual Systems ? modular 3D simulation system",
+    imageAlt: "Adaptable Visual Systems – modular 3D simulation system",
   },
   {
     title: "Ideas into Storytelling",
     tagline: "Engagement & Reach",
     copy: "We combine clarity, motion, and high-fidelity design to make products and ideas easier to see, understand, and remember.",
     image: "/assets/precision-archive.jpg",
-    imageAlt: "Ideas into Storytelling ? high-end product visualization",
+    imageAlt: "Ideas into Storytelling – high-end product visualization",
   },
 ];
 
 export const ApproachSlider: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const touchStartX = useRef<number | null>(null);
 
   // Physics-based Drag to Scroll for Mobile Layout
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -46,6 +45,14 @@ export const ApproachSlider: React.FC = () => {
   const lastTimeRef = useRef<number>(0);
   const lastMouseXRef = useRef<number>(0);
   const rafRef = useRef<number | null>(null);
+
+  const prevSlide = () => {
+    setActiveIndex((prev) => (prev === 0 ? approachItems.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setActiveIndex((prev) => (prev === approachItems.length - 1 ? 0 : prev + 1));
+  };
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!carouselRef.current) return;
@@ -101,31 +108,6 @@ export const ApproachSlider: React.FC = () => {
     if (newIndex >= 0 && newIndex < approachItems.length) {
       setActiveIndex(newIndex);
     }
-  };
-
-  const prevSlide = () => {
-    setActiveIndex((prev) => (prev === 0 ? approachItems.length - 1 : prev - 1));
-  };
-
-  const nextSlide = () => {
-    setActiveIndex((prev) => (prev === approachItems.length - 1 ? 0 : prev + 1));
-  };
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
-    const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX.current - touchEndX;
-
-    if (diff > 40) {
-      nextSlide(); // Swiped left
-    } else if (diff < -40) {
-      prevSlide(); // Swiped right
-    }
-    touchStartX.current = null;
   };
 
   return (
@@ -242,64 +224,55 @@ export const ApproachSlider: React.FC = () => {
         </div>
 
 
-        {/* MOBILE / TABLET LAYOUT (Dot4 Match) */}
-        <div className="md:hidden flex flex-col gap-6 w-full">
-          <h2 className="font-display text-[2rem] sm:text-4xl font-bold tracking-tight text-brand-foreground leading-tight px-1">
+        {/* MOBILE / TABLET LAYOUT (Dot4 Free-Scroll Native) */}
+        <div className="md:hidden flex flex-col gap-6 w-full mt-4">
+          <h2 className="font-display text-[2.25rem] font-bold tracking-tight text-brand-foreground leading-tight px-4">
             The Value Behind<br/>the Visuals
           </h2>
           
-          {/* Swipable Image Container */}
+          {/* Native Horizontal Scroll Container */}
           <div 
-            className="w-full aspect-[16/11] rounded-2xl overflow-hidden shadow-sm relative bg-brand-muted touch-pan-y"
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
+            ref={carouselRef}
+            onScroll={handleScroll}
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            className="flex overflow-x-auto gap-6 px-4 pb-2 [&::-webkit-scrollbar]:hidden cursor-grab active:cursor-grabbing w-full"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
           >
-            <div 
-              className="flex h-full w-full transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
-              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-            >
-              {approachItems.map((item) => (
-                <img 
-                  key={item.title} 
-                  src={item.image} 
-                  alt={item.imageAlt}
-                  className="w-full h-full shrink-0 object-cover pointer-events-none" 
-                />
-              ))}
-            </div>
-          </div>
-          
-          {/* Content Reel */}
-          <div className="relative h-[220px] overflow-hidden w-full px-1">
-             <div 
-                className="flex flex-col h-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                style={{ transform: `translateY(-${activeIndex * 100}%)` }}
+            {approachItems.map((item, idx) => (
+              <div 
+                key={item.title} 
+                className="shrink-0 w-[85vw] sm:w-[60vw] flex flex-col gap-5 transition-transform duration-300 ease-out hover:scale-[1.02] active:scale-[0.98]"
               >
-                {approachItems.map((item, idx) => (
-                  <div 
-                    key={item.title} 
-                    className={`h-[220px] shrink-0 flex flex-col justify-start transition-opacity duration-300 ${
-                      activeIndex === idx ? 'opacity-100' : 'opacity-0'
-                    }`}
-                  >
-                    <h3 className="font-display text-2xl font-bold text-brand-foreground tracking-tight">
-                      {item.title}
-                    </h3>
-                    <p className="mt-3 text-[1.05rem] leading-[1.6] text-brand-foreground/80">
-                      {item.copy}
-                    </p>
-                  </div>
-                ))}
-             </div>
+                <div className="w-full aspect-[16/11] rounded-2xl overflow-hidden shadow-sm bg-brand-muted shrink-0">
+                  <img src={item.image} alt={item.imageAlt} className="w-full h-full object-cover pointer-events-none" />
+                </div>
+                <div className="flex flex-col">
+                  <h3 className="font-display text-2xl font-bold text-brand-foreground tracking-tight">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-[1.05rem] leading-[1.6] text-brand-foreground/80">
+                    {item.copy}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
           
           {/* Dot4 Dash Indicators */}
-          <div className="flex justify-start gap-2 items-center px-1">
+          <div className="flex justify-start gap-2 items-center px-4 mt-2">
             {approachItems.map((_, i) => (
               <button
                 key={i}
                 type="button"
-                onClick={() => setActiveIndex(i)}
+                onClick={() => {
+                   if (carouselRef.current) {
+                     const cardWidth = (carouselRef.current.children[0] as HTMLElement).offsetWidth + 24;
+                     carouselRef.current.scrollTo({ left: cardWidth * i, behavior: 'smooth' });
+                   }
+                }}
                 className={`h-1 rounded-full transition-all duration-300 ${
                   activeIndex === i 
                     ? "w-8 bg-brand-foreground" 
