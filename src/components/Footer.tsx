@@ -88,7 +88,7 @@ export const Footer: React.FC = () => {
                 <img
                   src="/assets/pixel-grid-logo.png"
                   alt="Pixel Grid Studios"
-                  className="h-11 sm:h-12 md:h-14 lg:h-16 w-auto object-contain dark:invert select-none"
+                  className="h-9 sm:h-10 md:h-10 lg:h-11 w-auto object-contain dark:invert select-none"
                 />
               </Link>
             </div>
