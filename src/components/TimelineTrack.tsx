@@ -126,6 +126,36 @@ export const TimelineTrack: React.FC = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const isVisibleRef = useRef<boolean>(false);
   const timelineCardRef = useRef<HTMLDivElement>(null);
+
+  // Drag to scroll for mobile carousel preview on desktop
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const isDraggingRef = useRef<boolean>(false);
+  const startXRef = useRef<number>(0);
+  const scrollLeftRef = useRef<number>(0);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!carouselRef.current) return;
+    isDraggingRef.current = true;
+    startXRef.current = e.pageX - carouselRef.current.offsetLeft;
+    scrollLeftRef.current = carouselRef.current.scrollLeft;
+  };
+
+  const handleMouseLeave = () => {
+    isDraggingRef.current = false;
+  };
+
+  const handleMouseUp = () => {
+    isDraggingRef.current = false;
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDraggingRef.current || !carouselRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - carouselRef.current.offsetLeft;
+    const walk = (x - startXRef.current) * 1.5;
+    carouselRef.current.scrollLeft = scrollLeftRef.current - walk;
+  };
+
   const playheadRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<number>(5);
   const activeStepRef = useRef<number>(0);
@@ -596,7 +626,15 @@ export const TimelineTrack: React.FC = () => {
 
         {/* Dot4-Style Mobile/Tablet Swipeable Card Carousel */}
         <div className="mt-8 block lg:hidden w-full">
-          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 -mx-6 px-6 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          <div 
+            ref={carouselRef}
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 -mx-6 px-6 [&::-webkit-scrollbar]:hidden cursor-grab active:cursor-grabbing" 
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
             {pipelineSteps.map((s, idx) => (
               <div 
                 key={s.id}
