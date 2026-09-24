@@ -2,14 +2,20 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Mail, Globe, ChevronDown, CheckCircle2, ArrowRight, Paperclip, X } from "lucide-react";
 import InButtonMailSlot from "@/components/InButtonMailSlot";
+import { socialLinks } from "@/data/content";
+import { FaInstagram, FaXTwitter, FaLinkedin, FaBehance } from "react-icons/fa6";
 
-const socials = [
-  { name: "Instagram", href: "https://instagram.com" },
-  { name: "X", href: "https://x.com" },
-  { name: "Vimeo", href: "https://vimeo.com" },
-  { name: "Behance", href: "https://behance.net" },
-  { name: "LinkedIn", href: "https://linkedin.com" },
-];
+const getSocialIcon = (name: string) => {
+  switch (name) {
+    case "Instagram": return <FaInstagram className="size-4 mr-2" />;
+    case "X": return <FaXTwitter className="size-4 mr-2" />;
+    case "LinkedIn": return <FaLinkedin className="size-4 mr-2" />;
+    case "Behance": return <FaBehance className="size-4 mr-2" />;
+    default: return null;
+  }
+};
+
+
 
 const projectTypes = [
   "Product Launch Film",
