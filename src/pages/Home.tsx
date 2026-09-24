@@ -8,18 +8,25 @@ import { Typewriter } from "../components/Typewriter";
 
 const highlightedProjects = [
   {
-    slug: "xiaomi-redmi-note-12",
-    title: "Xiaomi Redmi Note 12",
-    meta: "Product Launch · 3D Animation",
+    slug: "thinking-architecture",
+    title: "Thinking architecture",
+    meta: "Product Launch A 3D Animation",
     image: "/assets/chrono-morph.jpg",
     tags: ["3D CGI", "Product Launch", "Motion Design"],
   },
   {
-    slug: "tata-power-ez-homes",
-    title: "TATA Power EZ Homes",
-    meta: "Brand Film · Product System",
+    slug: "tata-power",
+    title: "Tata power",
+    meta: "Brand Film A Product System",
     image: "/assets/void-textiles.jpg",
     tags: ["Brand Film", "3D Motion", "Storytelling"],
+  },
+  {
+    slug: "boat-rockerz-pro",
+    title: "Boat Rockerz Pro",
+    meta: "Product Motion A Short-form",
+    image: "/assets/precision-archive.jpg",
+    tags: ["Product Motion", "Acoustic Simulation", "3D CGI"],
   },
 ];
 
@@ -80,9 +87,9 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Main Hero Headline */}
-          <div className="relative z-10 w-full max-w-2xl xl:max-w-3xl pr-24 sm:pr-0">
+          <div className="relative z-10 w-full max-w-2xl xl:max-w-4xl pr-24 sm:pr-0">
             <div data-reveal data-reveal-delay="50">
-              <h1 className="font-display text-[2rem] sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold leading-[1.05] tracking-tight text-white drop-shadow-md">
+              <h1 className="font-display text-[2rem] sm:text-[2.75rem] md:text-5xl lg:text-6xl xl:text-[4.25rem] font-bold leading-[1.05] tracking-tight text-white drop-shadow-md">
                 <Typewriter text={"We make complex things\nunderstandable."} speed={40} delay={500} />
               </h1>
             </div>
