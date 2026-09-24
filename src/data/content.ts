@@ -32,39 +32,39 @@ export interface StatItem {
 export const highlightedProjects: Project[] = [
   {
     id: "thinking-architecture",
-    title: "Thinking architecture",
+    title: "Thinking Architecture",
     image: "/assets/chrono-morph-Db8Qrzc2.jpg",
     width: 1200,
     height: 800,
-    tags: ["Product Launch", "3D Animation"],
+    tags: ["Brand Design"],
   },
   {
-    id: "tata-power",
-    title: "Tata power",
+    id: "tata-power-ez-homes",
+    title: "TATA Power EZ Homes",
     image: "/assets/void-textiles-DxX08qfd.jpg",
     width: 1200,
     height: 800,
-    tags: ["Brand Film", "Product System"],
+    tags: ["Product Animation"],
   },
 ];
 
 export const allProjects: Project[] = [
   {
     id: "thinking-architecture",
-    title: "Thinking architecture",
-    meta: "Product Launch A 3D Animation",
+    title: "Thinking Architecture",
+    meta: "Brand Design",
     image: "/assets/chrono-morph-Db8Qrzc2.jpg",
   },
   {
-    id: "tata-power",
-    title: "Tata power",
-    meta: "Brand Film A Product System",
+    id: "tata-power-ez-homes",
+    title: "TATA Power EZ Homes",
+    meta: "Product Animation",
     image: "/assets/void-textiles-DxX08qfd.jpg",
   },
   {
-    id: "boat-rockerz-pro",
-    title: "Boat Rockerz Pro",
-    meta: "Product Motion A Short-form",
+    id: "boat-rockerz-650-pro",
+    title: "Boat Rockerz 650 Pro",
+    meta: "VFX / CGI",
     image: "/assets/precision-archive-D1t0VcXE.jpg",
   },
 ];
@@ -185,9 +185,7 @@ export const socialLinks = [
 ];
 
 export const projectTypes = [
-  "Product Launch Film",
-  "Brand Film",
-  "3D Visualization",
-  "Live Visuals",
-  "Social & Digital Motion",
+  "Brand Design",
+  "Product Animation",
+  "VFX / CGI",
 ];

@@ -9,24 +9,24 @@ import { Typewriter } from "../components/Typewriter";
 const highlightedProjects = [
   {
     slug: "thinking-architecture",
-    title: "Thinking architecture",
-    meta: "Product Launch A 3D Animation",
-    image: "/assets/chrono-morph.jpg",
-    tags: ["3D CGI", "Product Launch", "Motion Design"],
+    title: "Thinking Architecture",
+    meta: "Brand Design",
+    image: "/assets/chrono-morph-Db8Qrzc2.jpg",
+    tags: ["Brand Design"],
   },
   {
-    slug: "tata-power",
-    title: "Tata power",
-    meta: "Brand Film A Product System",
-    image: "/assets/void-textiles.jpg",
-    tags: ["Brand Film", "3D Motion", "Storytelling"],
+    slug: "tata-power-ez-homes",
+    title: "TATA Power EZ Homes",
+    meta: "Product Animation",
+    image: "/assets/void-textiles-DxX08qfd.jpg",
+    tags: ["Product Animation"],
   },
   {
-    slug: "boat-rockerz-pro",
-    title: "Boat Rockerz Pro",
-    meta: "Product Motion A Short-form",
-    image: "/assets/precision-archive.jpg",
-    tags: ["Product Motion", "Acoustic Simulation", "3D CGI"],
+    slug: "boat-rockerz-650-pro",
+    title: "Boat Rockerz 650 Pro",
+    meta: "VFX / CGI",
+    image: "/assets/precision-archive-D1t0VcXE.jpg",
+    tags: ["VFX / CGI"],
   },
 ];
 

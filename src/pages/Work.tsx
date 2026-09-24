@@ -6,11 +6,9 @@ import { SpotlightCard } from "../components/SpotlightCard";
 
 const filterCategories = [
   "All",
-  "Product Animation",
   "Brand Design",
-  "Event Visuals",
-  "Product Motion",
-  "Motion Design",
+  "Product Animation",
+  "VFX / CGI",
 ];
 
 export const Work: React.FC = () => {
