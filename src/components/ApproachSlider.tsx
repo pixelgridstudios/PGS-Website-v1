@@ -37,6 +37,72 @@ export const ApproachSlider: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const touchStartX = useRef<number | null>(null);
 
+  // Physics-based Drag to Scroll for Mobile Layout
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const isDraggingRef = useRef<boolean>(false);
+  const startXRef = useRef<number>(0);
+  const scrollLeftRef = useRef<number>(0);
+  const velocityRef = useRef<number>(0);
+  const lastTimeRef = useRef<number>(0);
+  const lastMouseXRef = useRef<number>(0);
+  const rafRef = useRef<number | null>(null);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!carouselRef.current) return;
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    isDraggingRef.current = true;
+    startXRef.current = e.pageX - carouselRef.current.offsetLeft;
+    scrollLeftRef.current = carouselRef.current.scrollLeft;
+    lastMouseXRef.current = e.pageX;
+    lastTimeRef.current = performance.now();
+    velocityRef.current = 0;
+  };
+
+  const handleMouseLeave = () => {
+    if (isDraggingRef.current) handleMouseUp();
+  };
+
+  const handleMouseUp = () => {
+    isDraggingRef.current = false;
+    const applyInertia = () => {
+      if (!carouselRef.current) return;
+      if (Math.abs(velocityRef.current) > 0.1) {
+        carouselRef.current.scrollLeft -= velocityRef.current * 16; 
+        velocityRef.current *= 0.92;
+        rafRef.current = requestAnimationFrame(applyInertia);
+      }
+    };
+    if (Math.abs(velocityRef.current) > 0.2) {
+      rafRef.current = requestAnimationFrame(applyInertia);
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDraggingRef.current || !carouselRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - carouselRef.current.offsetLeft;
+    const walk = (x - startXRef.current) * 1.5;
+    carouselRef.current.scrollLeft = scrollLeftRef.current - walk;
+    
+    const now = performance.now();
+    const dt = now - lastTimeRef.current;
+    if (dt > 0) {
+      velocityRef.current = (e.pageX - lastMouseXRef.current) / dt;
+    }
+    lastMouseXRef.current = e.pageX;
+    lastTimeRef.current = now;
+  };
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    if (!carouselRef.current || carouselRef.current.children.length === 0) return;
+    const scrollLeft = e.currentTarget.scrollLeft;
+    const cardWidth = (carouselRef.current.children[0] as HTMLElement).offsetWidth + 24; // Account for gap
+    const newIndex = Math.round(scrollLeft / cardWidth);
+    if (newIndex >= 0 && newIndex < approachItems.length) {
+      setActiveIndex(newIndex);
+    }
+  };
+
   const prevSlide = () => {
     setActiveIndex((prev) => (prev === 0 ? approachItems.length - 1 : prev - 1));
   };
