@@ -262,7 +262,7 @@ export const ApproachSlider: React.FC = () => {
           </div>
           
           {/* Dot4 Dash Indicators */}
-          <div className="flex justify-start gap-2 items-center px-4 mt-2">
+          <div className="flex justify-center gap-2 items-center px-4 mt-2">
             {approachItems.map((_, i) => (
               <button
                 key={i}
