@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
             type="button"
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-            className="flex size-9 sm:size-10 items-center justify-center rounded-full bg-white/50 backdrop-blur-xl hover:bg-white/75 dark:bg-white/10 dark:hover:bg-white/20 text-black dark:text-white shadow-sm transition-colors duration-200 cursor-pointer select-none border-0 shrink-0"
+            className="hidden sm:flex size-9 sm:size-10 items-center justify-center rounded-full bg-white/50 backdrop-blur-xl hover:bg-white/75 dark:bg-white/10 dark:hover:bg-white/20 text-black dark:text-white shadow-sm transition-colors duration-200 cursor-pointer select-none border-0 shrink-0"
           >
             {theme === "dark" ? (
               <Sun className="size-4 text-amber-300" />
@@ -54,7 +54,7 @@ export const Header: React.FC = () => {
           <Link
             to="/contact"
             onClick={() => setIsOpen(false)}
-            className="group inline-flex h-9 sm:h-10 items-center justify-center gap-2 rounded-full bg-black px-4 sm:px-5 text-xs sm:text-xs font-medium uppercase tracking-wider text-white shadow-sm transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] dark:bg-white dark:text-black hover:shadow-lg dark:hover:shadow-white/20 select-none border-0 shrink-0"
+            className="hidden sm:inline-flex group h-9 sm:h-10 items-center justify-center gap-2 rounded-full bg-black px-4 sm:px-5 text-xs sm:text-xs font-medium uppercase tracking-wider text-white shadow-sm transition-all duration-[400ms] ease-spring-vibe hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] dark:bg-white dark:text-black hover:shadow-lg dark:hover:shadow-white/20 select-none border-0 shrink-0"
           >
             <span>CONTACT</span>
             <span className="w-3.5 flex items-center justify-center shrink-0">
@@ -85,10 +85,10 @@ export const Header: React.FC = () => {
 
             {/* Floating Dropdown (Heavy Frosted Blur & 80% White) */}
             <div
-              className={`absolute top-full right-0 mt-2.5 w-48 sm:w-52 overflow-hidden rounded-2xl bg-white/80 backdrop-blur-2xl p-1.5 shadow-2xl transition-all duration-200 ease-out origin-top-right z-50 dark:bg-neutral-900/90 border-0 ${
+              className={`absolute top-full right-0 mt-2.5 w-48 sm:w-52 overflow-hidden rounded-2xl bg-white/80 backdrop-blur-2xl p-1.5 shadow-2xl transition-all duration-[400ms] ease-spring-vibe origin-top-right z-50 dark:bg-neutral-900/90 border-0 ${
                 isOpen
-                  ? "opacity-100 pointer-events-auto"
-                  : "opacity-0 pointer-events-none"
+                  ? "opacity-100 pointer-events-auto scale-100 translate-y-0"
+                  : "opacity-0 pointer-events-none scale-[0.92] -translate-y-3"
               }`}
             >
               <ul className="flex flex-col gap-1">
@@ -109,6 +109,17 @@ export const Header: React.FC = () => {
                     </Link>
                   </li>
                 ))}
+                
+                {/* Mobile-only Theme Toggle inside Dropdown */}
+                <li className="sm:hidden mt-1 border-t border-black/5 dark:border-white/5 pt-1">
+                  <button
+                    onClick={() => { toggleTheme(); setIsOpen(false); }}
+                    className="flex w-full items-center justify-between rounded-xl px-4 py-2.5 font-display text-xs font-medium tracking-wider uppercase text-neutral-800 hover:bg-black/5 hover:text-black dark:text-neutral-200 dark:hover:bg-white/10 dark:hover:text-white transition-colors duration-150 border-0 select-none cursor-pointer"
+                  >
+                    <span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>
+                    {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
