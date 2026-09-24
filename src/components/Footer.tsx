@@ -1,37 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Instagram, Twitter, Linkedin } from "lucide-react";
-
-// Custom Behance Icon matching Lucide style (24x24 viewBox, stroke width 2)
-const BehanceIcon = ({ className }: { className?: string }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
-    className={className}
-  >
-    <path d="M4 6.5h4.5c2 0 3.5 1 3.5 2.5 0 1-.5 1.5-1.5 2 1.5.5 2.5 1.5 2.5 3 0 2-2 3.5-4.5 3.5H4V6.5z" />
-    <path d="M4 12.5h4" />
-    <path d="M8.5 6.5v6" />
-    <path d="M14 11.5h5.5" />
-    <path d="M19.5 14c-.5 2-2.5 3.5-5 3.5-3 0-5.5-2.5-5.5-5.5s2.5-5.5 5.5-5.5c2 0 4 1 5 3l-1.5 1c-1-1.5-2-2-3.5-2-2 0-3.5 1.5-3.5 3.5s1.5 3.5 3.5 3.5c1.5 0 2.5-1 3-2.5h-3v-1.5h4.5z" />
-  </svg>
-);
+import { ArrowRight } from "lucide-react";
 
 const getSocialIcon = (name: string) => {
   switch (name) {
-    case "Instagram": return <Instagram className="size-5" />;
-    case "X": return <Twitter className="size-5" />;
-    case "LinkedIn": return <Linkedin className="size-5" />;
-    case "Behance": return <BehanceIcon className="size-5" />;
+    case "Instagram": return <FaInstagram className="size-5" />;
+    case "X": return <FaXTwitter className="size-5" />;
+    case "LinkedIn": return <FaLinkedin className="size-5" />;
+    case "Behance": return <FaBehance className="size-5" />;
     default: return name;
   }
 };
 import { socialLinks } from "@/data/content";
+import { FaInstagram, FaXTwitter, FaLinkedin, FaBehance } from "react-icons/fa6";
 
 export const Footer: React.FC = () => {
   return (
