@@ -371,7 +371,7 @@ export const TimelineTrack: React.FC = () => {
         {/* Unified Timeline & Inspector Container: Clean Borderless Outer Card */}
         <div
           ref={timelineCardRef}
-          className="flex flex-col lg:grid lg:grid-cols-[1.25fr_360px] xl:grid-cols-[1.3fr_390px] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-xl border-0"
+          className="hidden lg:grid lg:grid-cols-[1.25fr_360px] xl:grid-cols-[1.3fr_390px] rounded-2xl sm:rounded-3xl bg-brand-muted overflow-hidden shadow-sm dark:shadow-xl border-0"
         >
           {/* Left: Interactive Multi-Track DAW Timeline */}
           <div className="relative p-6 sm:p-8 flex flex-col justify-between select-none bg-brand-muted/80 dark:bg-neutral-950/80">
@@ -593,6 +593,63 @@ export const TimelineTrack: React.FC = () => {
         </div>
 
               </div>
+
+        {/* Dot4-Style Mobile/Tablet Swipeable Card Carousel */}
+        <div className="mt-8 block lg:hidden w-full">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 -mx-6 px-6 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            {pipelineSteps.map((s, idx) => (
+              <div 
+                key={s.id}
+                className="snap-center shrink-0 w-[85vw] sm:w-[60vw] md:w-[45vw] bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-8 flex flex-col shadow-sm border border-black/5 dark:border-white/5"
+              >
+                <div className="flex flex-col gap-6 h-full">
+                  {/* Card Header: Icon & Number */}
+                  <div className="flex items-center justify-between">
+                     <div className="flex size-12 items-center justify-center rounded-xl bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white">
+                        {s.icon}
+                     </div>
+                     <span className="font-mono text-sm font-medium text-neutral-400 dark:text-neutral-500">
+                       0{idx + 1}
+                     </span>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="flex-1">
+                    <h4 
+                      className="font-display text-2xl tracking-tight text-black dark:text-white mb-3"
+                      style={{ fontVariationSettings: "'wght' 700" }}
+                    >
+                      {s.title}
+                    </h4>
+                    <p className="text-base leading-relaxed text-neutral-600 dark:text-neutral-400 font-normal">
+                      {s.description}
+                    </p>
+                  </div>
+                  
+                  {/* Deliverables */}
+                  <div className="mt-2 pt-5 border-t border-black/10 dark:border-white/10">
+                    <ul className="space-y-2.5">
+                      {s.deliverables.map((item, i) => (
+                        <li key={i} className="flex items-start gap-2.5 text-sm text-neutral-800 dark:text-neutral-300 font-normal">
+                          <div className="size-1.5 rounded-full bg-black/30 dark:bg-white/30 mt-1.5 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Visual swipe hint */}
+          <div className="flex justify-center items-center gap-1.5 -mt-2 mb-4">
+            {pipelineSteps.map((_, i) => (
+              <div key={i} className="h-1.5 w-1.5 rounded-full bg-black/10 dark:bg-white/10" />
+            ))}
+          </div>
+        </div>
+
     </section>
   );
 };
