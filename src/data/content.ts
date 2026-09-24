@@ -177,11 +177,10 @@ export const studioStats: StatItem[] = [
 ];
 
 export const socialLinks = [
-  { name: "Instagram", href: "https://instagram.com" },
-  { name: "X", href: "https://x.com" },
-  { name: "Vimeo", href: "https://vimeo.com" },
-  { name: "Behance", href: "https://behance.net" },
-  { name: "LinkedIn", href: "https://linkedin.com" },
+  { name: "Instagram", href: "https://instagram.com/pixelgridstudios" },
+  { name: "X", href: "https://x.com/heypixelgrid" },
+  { name: "Vimeo", href: "https://vimeo.com/user245010560" },
+  { name: "Behance", href: "https://www.behance.net/pixelgridstudios" },
 ];
 
 export const projectTypes = [
