@@ -7,10 +7,10 @@ import { FaInstagram, FaXTwitter, FaLinkedin, FaBehance } from "react-icons/fa6"
 
 const getSocialIcon = (name: string) => {
   switch (name) {
-    case "Instagram": return <FaInstagram className="size-4 mr-2" />;
-    case "X": return <FaXTwitter className="size-4 mr-2" />;
-    case "LinkedIn": return <FaLinkedin className="size-4 mr-2" />;
-    case "Behance": return <FaBehance className="size-4 mr-2" />;
+    case "Instagram": return <FaInstagram className="size-4 mr-2 pointer-events-none" />;
+    case "X": return <FaXTwitter className="size-4 mr-2 pointer-events-none" />;
+    case "LinkedIn": return <FaLinkedin className="size-4 mr-2 pointer-events-none" />;
+    case "Behance": return <FaBehance className="size-4 mr-2 pointer-events-none" />;
     default: return null;
   }
 };
@@ -440,7 +440,7 @@ export const Contact: React.FC = () => {
                     href={s.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center rounded-full bg-brand-bg px-4 py-2 font-mono text-xs font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-colors shadow-xs border-0"
+                    className="flex items-center rounded-full bg-brand-bg px-4 py-2 font-mono text-xs font-medium text-brand-foreground hover:bg-brand-panel hover:text-brand-panel-foreground transition-all duration-200 shadow-xs border-0"
                   >
                     {getSocialIcon(s.name)}
                     {s.name}

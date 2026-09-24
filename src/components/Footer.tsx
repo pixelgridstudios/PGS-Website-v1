@@ -4,10 +4,10 @@ import { ArrowRight } from "lucide-react";
 
 const getSocialIcon = (name: string) => {
   switch (name) {
-    case "Instagram": return <FaInstagram className="size-5" />;
-    case "X": return <FaXTwitter className="size-5" />;
-    case "LinkedIn": return <FaLinkedin className="size-5" />;
-    case "Behance": return <FaBehance className="size-5" />;
+    case "Instagram": return <FaInstagram className="size-5 pointer-events-none" />;
+    case "X": return <FaXTwitter className="size-5 pointer-events-none" />;
+    case "LinkedIn": return <FaLinkedin className="size-5 pointer-events-none" />;
+    case "Behance": return <FaBehance className="size-5 pointer-events-none" />;
     default: return name;
   }
 };
@@ -103,7 +103,7 @@ export const Footer: React.FC = () => {
                   rel="noreferrer"
                   aria-label={s.name}
                   title={s.name}
-                  className="flex size-10 items-center justify-center rounded-full bg-black/5 dark:bg-white/5 text-neutral-700 hover:text-brand-accent hover:bg-brand-accent/10 dark:text-brand-subtle dark:hover:text-white transition-all duration-300 border-0"
+                  className="flex size-10 items-center justify-center rounded-full bg-black/5 dark:bg-white/5 text-neutral-700 hover:text-brand-accent hover:bg-black/10 dark:hover:bg-white/10 dark:text-brand-subtle dark:hover:text-white transition-colors duration-200 border-0"
                 >
                   {getSocialIcon(s.name)}
                 </a>
