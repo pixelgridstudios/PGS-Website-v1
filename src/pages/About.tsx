@@ -54,12 +54,78 @@ const team = [
 export const About: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
+  // Physics-based Drag to Scroll for Mobile Layout
+  const carouselRef = React.useRef<HTMLDivElement>(null);
+  const isDraggingRef = React.useRef<boolean>(false);
+  const startXRef = React.useRef<number>(0);
+  const scrollLeftRef = React.useRef<number>(0);
+  const velocityRef = React.useRef<number>(0);
+  const lastTimeRef = React.useRef<number>(0);
+  const lastMouseXRef = React.useRef<number>(0);
+  const rafRef = React.useRef<number | null>(null);
+
   const prevSlide = () => {
     setActiveIndex((prev) => (prev === 0 ? services.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
     setActiveIndex((prev) => (prev === services.length - 1 ? 0 : prev + 1));
+  };
+  
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!carouselRef.current) return;
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    isDraggingRef.current = true;
+    startXRef.current = e.pageX - carouselRef.current.offsetLeft;
+    scrollLeftRef.current = carouselRef.current.scrollLeft;
+    lastMouseXRef.current = e.pageX;
+    lastTimeRef.current = performance.now();
+    velocityRef.current = 0;
+  };
+
+  const handleMouseLeave = () => {
+    if (isDraggingRef.current) handleMouseUp();
+  };
+
+  const handleMouseUp = () => {
+    isDraggingRef.current = false;
+    const applyInertia = () => {
+      if (!carouselRef.current) return;
+      if (Math.abs(velocityRef.current) > 0.1) {
+        carouselRef.current.scrollLeft -= velocityRef.current * 16; 
+        velocityRef.current *= 0.92;
+        rafRef.current = requestAnimationFrame(applyInertia);
+      }
+    };
+    if (Math.abs(velocityRef.current) > 0.2) {
+      rafRef.current = requestAnimationFrame(applyInertia);
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDraggingRef.current || !carouselRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - carouselRef.current.offsetLeft;
+    const walk = (x - startXRef.current) * 1.5;
+    carouselRef.current.scrollLeft = scrollLeftRef.current - walk;
+    
+    const now = performance.now();
+    const dt = now - lastTimeRef.current;
+    if (dt > 0) {
+      velocityRef.current = (e.pageX - lastMouseXRef.current) / dt;
+    }
+    lastMouseXRef.current = e.pageX;
+    lastTimeRef.current = now;
+  };
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    if (!carouselRef.current || carouselRef.current.children.length === 0) return;
+    const scrollLeft = e.currentTarget.scrollLeft;
+    const cardWidth = (carouselRef.current.children[0] as HTMLElement).offsetWidth + 24;
+    const newIndex = Math.round(scrollLeft / cardWidth);
+    if (newIndex >= 0 && newIndex < services.length) {
+      setActiveIndex(newIndex);
+    }
   };
 
   return (
@@ -115,7 +181,8 @@ export const About: React.FC = () => {
 
                 {/* Services Section (ApproachSlider Inspired) */}
         <section data-reveal className="w-full">
-          <div className="w-full flex flex-col lg:grid lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_480px] rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground overflow-hidden shadow-sm dark:shadow-2xl border-0">
+        {/* DESKTOP LAYOUT (Hidden on mobile) */}
+        <div className="hidden md:grid w-full lg:grid lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_480px] rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground overflow-hidden shadow-sm dark:shadow-2xl border-0">
             
             {/* Left Column: Text Canvas */}
             <div className="w-full p-6 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-between gap-8 sm:gap-12">
@@ -226,28 +293,65 @@ export const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Mobile Indicator Bar */}
-          <div className="block md:hidden mt-4">
-            <ul className="flex justify-center gap-2 items-center">
-              {services.map((_, i) => (
-                <li key={i} className="h-8 flex-1 flex items-center">
-                  <button
-                    type="button"
-                    onClick={() => setActiveIndex(i)}
-                    className="w-full h-1 rounded-full transition-colors duration-200"
-                  >
-                    <div
-                      className={`w-full h-1 rounded-full transition-colors duration-300 ${
-                        activeIndex === i
-                          ? "bg-brand-foreground"
-                          : "bg-brand-foreground/20"
-                      }`}
-                    />
-                  </button>
-                </li>
-              ))}
-            </ul>
+          {/* MOBILE / TABLET LAYOUT (Dot4 Free-Scroll Native) */}
+        <div className="md:hidden flex flex-col gap-6 w-full mt-4">
+          <h2 className="font-display text-[2.25rem] font-bold tracking-tight text-brand-foreground leading-tight px-4" style={{ fontVariationSettings: "'wght' 700" }}>
+            Services
+          </h2>
+          
+          {/* Native Horizontal Scroll Container */}
+          <div 
+            ref={carouselRef}
+            onScroll={handleScroll}
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            className="flex overflow-x-auto gap-6 px-4 pb-2 [&::-webkit-scrollbar]:hidden cursor-grab active:cursor-grabbing w-full"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+          >
+            {services.map((service, idx) => (
+              <div 
+                key={service.id} 
+                className="shrink-0 w-[85vw] sm:w-[60vw] flex flex-col gap-5 transition-transform duration-300 ease-out hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <div className="w-full aspect-[16/11] rounded-2xl overflow-hidden shadow-sm bg-brand-muted shrink-0">
+                  <img src={service.image} alt={service.title} className="w-full h-full object-cover pointer-events-none" />
+                </div>
+                <div className="flex flex-col">
+                  <h3 className="font-display text-2xl font-bold text-brand-foreground tracking-tight">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 text-[1.05rem] leading-[1.6] text-brand-foreground/80">
+                    {service.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
+          
+          {/* Dot4 Dash Indicators */}
+          <div className="flex justify-center gap-2 items-center px-4 mt-2">
+            {services.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => {
+                   if (carouselRef.current) {
+                     const cardWidth = (carouselRef.current.children[0] as HTMLElement).offsetWidth + 24;
+                     carouselRef.current.scrollTo({ left: cardWidth * i, behavior: 'smooth' });
+                   }
+                }}
+                className={`h-1 rounded-full transition-all duration-300 ${
+                  activeIndex === i 
+                    ? "w-8 bg-brand-foreground" 
+                    : "w-8 bg-brand-foreground/20 hover:bg-brand-foreground/40"
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
         </section>
 
         {/* Bottom CTA Box (Seamless Borderless) */}
