@@ -30,7 +30,7 @@ export const Header: React.FC = () => {
     <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-5 pointer-events-none">
       <div className="mx-auto flex max-w-[1600px] items-center justify-between">
         {/* Left: Emblem Logo Only (Fixed Height Container to prevent layout shift) */}
-        <div className="pointer-events-auto flex h-11 sm:h-12 items-center">
+        <div className="pointer-events-auto flex h-11 sm:h-12 items-center pl-2 sm:pl-2.5">
           <AnimatedHoverLogo setIsOpen={setIsOpen} />
         </div>
 
@@ -113,7 +113,7 @@ export const Header: React.FC = () => {
                 {/* Mobile-only Theme Toggle inside Dropdown */}
                 <li className="sm:hidden mt-1 border-t border-black/5 dark:border-white/5 pt-1">
                   <button
-                    onClick={() => { toggleTheme(); setIsOpen(false); }}
+                    onClick={() => toggleTheme()}
                     className="flex w-full items-center justify-between rounded-xl px-4 py-2.5 font-display text-xs font-medium tracking-wider uppercase text-neutral-800 hover:bg-black/5 hover:text-black dark:text-neutral-200 dark:hover:bg-white/10 dark:hover:text-white transition-colors duration-150 border-0 select-none cursor-pointer"
                   >
                     <span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>
