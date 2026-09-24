@@ -632,13 +632,13 @@ export const TimelineTrack: React.FC = () => {
             onMouseLeave={handleMouseLeave}
             onMouseUp={handleMouseUp}
             onMouseMove={handleMouseMove}
-            className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 -mx-6 px-6 [&::-webkit-scrollbar]:hidden cursor-grab active:cursor-grabbing" 
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            className="flex overflow-x-auto gap-4 pb-8 -mx-6 px-6 [&::-webkit-scrollbar]:hidden cursor-grab active:cursor-grabbing" 
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
           >
             {pipelineSteps.map((s, idx) => (
               <div 
                 key={s.id}
-                className="snap-center shrink-0 w-[85vw] sm:w-[60vw] md:w-[45vw] bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-8 flex flex-col shadow-sm border border-black/5 dark:border-white/5"
+                className="shrink-0 w-[85vw] sm:w-[60vw] md:w-[45vw] bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-8 flex flex-col shadow-sm border border-black/5 dark:border-white/5"
               >
                 <div className="flex flex-col gap-6 h-full">
                   {/* Card Header: Icon & Number */}
