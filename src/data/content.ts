@@ -31,16 +31,16 @@ export interface StatItem {
 
 export const highlightedProjects: Project[] = [
   {
-    id: "xiaomi-redmi-note-12",
-    title: "Xiaomi Redmi Note 12",
+    id: "thinking-architecture",
+    title: "Thinking architecture",
     image: "/assets/chrono-morph-Db8Qrzc2.jpg",
     width: 1200,
     height: 800,
     tags: ["Product Launch", "3D Animation"],
   },
   {
-    id: "tata-power-ez-homes",
-    title: "TATA Power EZ Homes",
+    id: "tata-power",
+    title: "Tata power",
     image: "/assets/void-textiles-DxX08qfd.jpg",
     width: 1200,
     height: 800,
@@ -50,28 +50,22 @@ export const highlightedProjects: Project[] = [
 
 export const allProjects: Project[] = [
   {
-    id: "xiaomi-redmi-note-12",
-    title: "Xiaomi Redmi Note 12",
-    meta: "Product Launch · 3D Animation",
+    id: "thinking-architecture",
+    title: "Thinking architecture",
+    meta: "Product Launch A 3D Animation",
     image: "/assets/chrono-morph-Db8Qrzc2.jpg",
   },
   {
-    id: "tata-power-ez-homes",
-    title: "TATA Power EZ Homes",
-    meta: "Brand Film · Product System",
+    id: "tata-power",
+    title: "Tata power",
+    meta: "Brand Film A Product System",
     image: "/assets/void-textiles-DxX08qfd.jpg",
   },
   {
-    id: "yas-mall",
-    title: "Yas Mall",
-    meta: "Spatial Canvas · Immersive 3D",
+    id: "boat-rockerz-pro",
+    title: "Boat Rockerz Pro",
+    meta: "Product Motion A Short-form",
     image: "/assets/precision-archive-D1t0VcXE.jpg",
-  },
-  {
-    id: "boat",
-    title: "Boat",
-    meta: "Product Motion · Short-form",
-    image: "/assets/chrono-morph-Db8Qrzc2.jpg",
   },
 ];
 
