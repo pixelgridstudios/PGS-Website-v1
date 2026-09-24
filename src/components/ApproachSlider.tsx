@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ApproachItem {
@@ -11,31 +11,31 @@ interface ApproachItem {
 
 const approachItems: ApproachItem[] = [
   {
-    title: "Complexity Simplified",
+    title: "Design a Strong Visual Identity",
     tagline: "Clarity & Character",
-    copy: "We study products, technology, and systems to find the clearest way to explain them through 3D, motion, and visual storytelling.",
-    image: "/assets/chrono-morph.jpg",
-    imageAlt: "Complexity Simplified — styleframe render",
+    copy: "From established brands to fresh beginnings, we make sure every visual element communicates clearly, feels considered, and amplifies your identity. We focus on clarity and character, so your brand resonates wherever it appears.",
+    image: "/assets/styleframe-glass.jpg",
+    imageAlt: "Design a Strong Visual Identity ? styleframe exploration",
   },
   {
     title: "Adaptable Visual Systems",
-    tagline: "Modular Systems",
-    copy: "We create modular 3D and motion assets that can be extended across campaigns, platforms, formats, and markets.",
+    tagline: "Built to Scale",
+    copy: "We approach every project with a design system in mind, built for flexibility and scalability across campaigns, platforms, and applications. Each system is modular, forming a foundation that can grow, adapt, and support the brand over time.",
     image: "/assets/void-textiles.jpg",
-    imageAlt: "Adaptable Visual Systems — modular 3D simulation system",
+    imageAlt: "Adaptable Visual Systems ? modular 3D simulation system",
   },
   {
     title: "Ideas into Storytelling",
     tagline: "Engagement & Reach",
     copy: "We combine clarity, motion, and high-fidelity design to make products and ideas easier to see, understand, and remember.",
     image: "/assets/precision-archive.jpg",
-    imageAlt: "Ideas into Storytelling — high-end product visualization",
+    imageAlt: "Ideas into Storytelling ? high-end product visualization",
   },
 ];
 
 export const ApproachSlider: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+  const touchStartX = useRef<number | null>(null);
 
   const prevSlide = () => {
     setActiveIndex((prev) => (prev === 0 ? approachItems.length - 1 : prev - 1));
@@ -45,21 +45,39 @@ export const ApproachSlider: React.FC = () => {
     setActiveIndex((prev) => (prev === approachItems.length - 1 ? 0 : prev + 1));
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX;
+
+    if (diff > 40) {
+      nextSlide(); // Swiped left
+    } else if (diff < -40) {
+      prevSlide(); // Swiped right
+    }
+    touchStartX.current = null;
+  };
+
   return (
     <section className="py-12 sm:py-16 overflow-hidden w-full">
-      <div className="mx-auto max-w-[1600px]">
-        {/* Single Cohesive Borderless Card Container */}
-        <div className="w-full flex flex-col lg:grid lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_480px] rounded-2xl sm:rounded-3xl bg-brand-muted text-brand-foreground overflow-hidden shadow-sm dark:shadow-2xl border-0">
+      <div className="mx-auto max-w-[1600px] px-4 md:px-0">
+        
+        {/* DESKTOP LAYOUT (Hidden on mobile) */}
+        <div className="hidden md:grid md:grid-cols-[1fr_420px] xl:grid-cols-[1fr_480px] rounded-3xl bg-brand-muted text-brand-foreground overflow-hidden shadow-sm dark:shadow-2xl border-0">
           
           {/* Left Column: Text Canvas */}
-          <div className="w-full p-6 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-between gap-8 sm:gap-12">
+          <div className="w-full p-10 lg:p-12 xl:p-14 flex flex-col justify-between gap-12">
             <div>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-foreground">
+              <h2 className="font-display text-4xl lg:text-5xl font-bold tracking-tight text-brand-foreground">
                 The Value Behind the Visuals
               </h2>
 
               {/* 2-Column Tabs & Continuous Morphing Content */}
-              <div className="mt-8 sm:mt-12 grid gap-6 sm:gap-8 md:grid-cols-[260px_1fr] lg:grid-cols-[280px_1fr] xl:grid-cols-[300px_1fr] items-start">
+              <div className="mt-12 grid gap-8 lg:grid-cols-[280px_1fr] xl:grid-cols-[300px_1fr] items-start">
                 {/* Tab Options with Continuous Variable Font Morphing */}
                 <ul className="flex flex-col gap-3.5 font-display text-lg lg:text-2xl">
                   {approachItems.map((item, idx) => {
@@ -68,11 +86,10 @@ export const ApproachSlider: React.FC = () => {
                       <li key={item.title}>
                           <button
                             type="button"
-                            onMouseEnter={() => setHoverIndex(idx)}
-                            onMouseLeave={() => setHoverIndex(null)}
+                            onMouseEnter={() => setActiveIndex(idx)}
                             onClick={() => setActiveIndex(idx)}
                             style={{
-                              fontVariationSettings: (isActive || hoverIndex === idx) ? "'wght' 700" : "'wght' 600",
+                              fontVariationSettings: isActive ? "'wght' 700" : "'wght' 600",
                               transition: "font-variation-settings 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease, opacity 0.25s ease",
                             }}
                             className={`text-left select-none cursor-pointer block w-full tracking-tight transition-all duration-300 ${
@@ -89,7 +106,7 @@ export const ApproachSlider: React.FC = () => {
                 </ul>
 
                 {/* Vertical Sliding Text Reel */}
-                <div className="relative h-[180px] sm:h-[170px] overflow-hidden border-t md:border-t-0 md:border-l border-brand-foreground/10 pt-5 md:pt-0 md:pl-8">
+                <div className="relative h-[180px] overflow-hidden border-l border-brand-foreground/10 pl-8">
                   <div
                     className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] h-full"
                     style={{ transform: `translateY(-${activeIndex * 100}%) translateZ(0)` }}
@@ -99,12 +116,12 @@ export const ApproachSlider: React.FC = () => {
                       return (
                         <div
                           key={item.title}
-                          className={`h-[180px] sm:h-[170px] shrink-0 flex flex-col justify-start transition-opacity duration-300 ease-out ${
+                          className={`h-[180px] shrink-0 flex flex-col justify-start transition-opacity duration-300 ease-out ${
                             isActive ? "opacity-100" : "opacity-0 pointer-events-none"
                           }`}
                           style={{ backfaceVisibility: "hidden" }}
                         >
-                          <p className="text-base sm:text-lg lg:text-lg leading-relaxed text-brand-foreground/85 font-normal mt-2">
+                          <p className="text-lg lg:text-lg leading-relaxed text-brand-foreground/85 font-normal mt-2">
                             {item.copy}
                           </p>
                         </div>
@@ -114,12 +131,11 @@ export const ApproachSlider: React.FC = () => {
                 </div>
               </div>
             </div>
-
           </div>
 
           {/* Right Column: Physical Sliding Image Strip */}
-          <div className="p-4 sm:p-6 lg:p-6 xl:p-8 flex items-center justify-center bg-brand-bg/40 border-t lg:border-t-0 lg:border-l border-brand-foreground/10">
-            <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] xl:aspect-[1/1] max-h-[460px] rounded-xl sm:rounded-2xl overflow-hidden bg-brand-muted shadow-md group border-0">
+          <div className="p-6 lg:p-6 xl:p-8 flex items-center justify-center bg-brand-bg/40 border-l border-brand-foreground/10">
+            <div className="relative w-full aspect-[4/3] xl:aspect-[1/1] max-h-[460px] rounded-2xl overflow-hidden bg-brand-muted shadow-md group border-0">
               {/* Continuous Horizontal Strip */}
               <div
                 className="flex h-full w-full transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
@@ -142,45 +158,93 @@ export const ApproachSlider: React.FC = () => {
                   type="button"
                   onClick={prevSlide}
                   aria-label="Previous approach"
-                  className="flex size-9 sm:size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md transition-opacity duration-150 hover:opacity-90 cursor-pointer border-0"
+                  className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md transition-opacity duration-150 hover:opacity-90 cursor-pointer border-0"
                 >
-                  <ChevronLeft className="size-4 sm:size-5" />
+                  <ChevronLeft className="size-5" />
                 </button>
                 <button
                   type="button"
                   onClick={nextSlide}
                   aria-label="Next approach"
-                  className="flex size-9 sm:size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md transition-opacity duration-150 hover:opacity-90 cursor-pointer border-0"
+                  className="flex size-10 items-center justify-center rounded-full bg-brand-panel text-brand-panel-foreground shadow-md transition-opacity duration-150 hover:opacity-90 cursor-pointer border-0"
                 >
-                  <ChevronRight className="size-4 sm:size-5" />
+                  <ChevronRight className="size-5" />
                 </button>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Mobile Indicator Bar */}
-        <div className="block md:hidden mt-4">
-          <ul className="flex justify-center gap-2 items-center">
-            {approachItems.map((_, i) => (
-              <li key={i} className="h-8 flex-1 flex items-center">
-                <button
-                  type="button"
-                  onClick={() => setActiveIndex(i)}
-                  className="w-full h-1 rounded-full transition-colors duration-200"
-                >
-                  <div
-                    className={`w-full h-1 rounded-full transition-colors duration-300 ${
-                      activeIndex === i
-                        ? "bg-brand-foreground"
-                        : "bg-brand-foreground/20"
+
+        {/* MOBILE / TABLET LAYOUT (Dot4 Match) */}
+        <div className="md:hidden flex flex-col gap-6 w-full">
+          <h2 className="font-display text-[2rem] sm:text-4xl font-bold tracking-tight text-brand-foreground leading-tight px-1">
+            The Value Behind<br/>the Visuals
+          </h2>
+          
+          {/* Swipable Image Container */}
+          <div 
+            className="w-full aspect-[16/11] rounded-2xl overflow-hidden shadow-sm relative bg-brand-muted touch-pan-y"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
+            <div 
+              className="flex h-full w-full transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+            >
+              {approachItems.map((item) => (
+                <img 
+                  key={item.title} 
+                  src={item.image} 
+                  alt={item.imageAlt}
+                  className="w-full h-full shrink-0 object-cover pointer-events-none" 
+                />
+              ))}
+            </div>
+          </div>
+          
+          {/* Content Reel */}
+          <div className="relative h-[220px] overflow-hidden w-full px-1">
+             <div 
+                className="flex flex-col h-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                style={{ transform: `translateY(-${activeIndex * 100}%)` }}
+              >
+                {approachItems.map((item, idx) => (
+                  <div 
+                    key={item.title} 
+                    className={`h-[220px] shrink-0 flex flex-col justify-start transition-opacity duration-300 ${
+                      activeIndex === idx ? 'opacity-100' : 'opacity-0'
                     }`}
-                  />
-                </button>
-              </li>
+                  >
+                    <h3 className="font-display text-2xl font-bold text-brand-foreground tracking-tight">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 text-[1.05rem] leading-[1.6] text-brand-foreground/80">
+                      {item.copy}
+                    </p>
+                  </div>
+                ))}
+             </div>
+          </div>
+          
+          {/* Dot4 Dash Indicators */}
+          <div className="flex justify-start gap-2 items-center px-1">
+            {approachItems.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setActiveIndex(i)}
+                className={`h-1 rounded-full transition-all duration-300 ${
+                  activeIndex === i 
+                    ? "w-8 bg-brand-foreground" 
+                    : "w-8 bg-brand-foreground/20 hover:bg-brand-foreground/40"
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
             ))}
-          </ul>
+          </div>
         </div>
+
       </div>
     </section>
   );
