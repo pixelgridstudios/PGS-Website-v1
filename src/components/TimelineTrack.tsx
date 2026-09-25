@@ -121,6 +121,7 @@ const getStepFromProgress = (p: number): number => {
 
 export const TimelineTrack: React.FC = () => {
   const [activeStep, setActiveStep] = useState<number>(0);
+  const [mobileActiveStep, setMobileActiveStep] = useState<number>(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(true);
 
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -193,9 +194,8 @@ export const TimelineTrack: React.FC = () => {
     const scrollLeft = e.currentTarget.scrollLeft;
     const cardWidth = (e.currentTarget.children[0] as HTMLElement).offsetWidth + 16;
     const newIndex = Math.round(scrollLeft / cardWidth);
-    if (newIndex !== activeStep && newIndex >= 0 && newIndex < pipelineSteps.length) {
-      setActiveStep(newIndex);
-      activeStepRef.current = newIndex;
+    if (newIndex >= 0 && newIndex < pipelineSteps.length) {
+      setMobileActiveStep(newIndex);
     }
   };
 
@@ -731,13 +731,14 @@ export const TimelineTrack: React.FC = () => {
                   key={i}
                   type="button"
                   onClick={() => {
+                     setMobileActiveStep(i);
                      if (carouselRef.current) {
                        const cardWidth = (carouselRef.current.children[0] as HTMLElement).offsetWidth + 16;
                        carouselRef.current.scrollTo({ left: cardWidth * i, behavior: 'smooth' });
                      }
                   }}
                   className={`h-1.5 rounded-full transition-all duration-300 ${
-                    activeStep === i 
+                    mobileActiveStep === i 
                       ? "w-6 bg-black dark:bg-white" 
                       : "w-1.5 bg-black/20 dark:bg-white/20 hover:bg-black/40 dark:hover:bg-white/40 cursor-pointer"
                   }`}
