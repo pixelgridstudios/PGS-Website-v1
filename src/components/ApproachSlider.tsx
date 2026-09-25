@@ -273,11 +273,11 @@ export const ApproachSlider: React.FC = () => {
                      carouselRef.current.scrollTo({ left: cardWidth * i, behavior: 'smooth' });
                    }
                 }}
-                className={`h-1 rounded-full transition-all duration-300 ${
-                  activeIndex === i 
-                    ? "w-8 bg-brand-foreground" 
-                    : "w-8 bg-black/20 dark:bg-white/20 hover:bg-black/40 dark:hover:bg-white/40"
-                }`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                    activeIndex === i 
+                      ? "w-6 bg-brand-foreground" 
+                      : "w-1.5 bg-black/20 dark:bg-white/20 hover:bg-black/40 dark:hover:bg-white/40 cursor-pointer"
+                  }`}
                 aria-label={`Go to slide ${i + 1}`}
               />
             ))}

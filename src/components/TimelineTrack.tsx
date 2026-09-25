@@ -188,6 +188,17 @@ export const TimelineTrack: React.FC = () => {
     lastTimeRef.current = now;
   };
 
+  
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const scrollLeft = e.currentTarget.scrollLeft;
+    const cardWidth = (e.currentTarget.children[0] as HTMLElement).offsetWidth + 16;
+    const newIndex = Math.round(scrollLeft / cardWidth);
+    if (newIndex !== activeStep && newIndex >= 0 && newIndex < pipelineSteps.length) {
+      setActiveStep(newIndex);
+      activeStepRef.current = newIndex;
+    }
+  };
+
   const playheadRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<number>(5);
   const activeStepRef = useRef<number>(0);
@@ -712,12 +723,27 @@ export const TimelineTrack: React.FC = () => {
             ))}
           </div>
           
-          {/* Visual swipe hint */}
-          <div className="flex justify-center items-center gap-1.5 -mt-2 mb-4">
-            {pipelineSteps.map((_, i) => (
-              <div key={i} className="h-1.5 w-1.5 rounded-full bg-black/10 dark:bg-white/10" />
-            ))}
-          </div>
+          {/* Visual swipe hint / Dot Indicators */}
+            <div className="flex justify-center items-center gap-2 -mt-2 mb-4">
+              {pipelineSteps.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => {
+                     if (carouselRef.current) {
+                       const cardWidth = (carouselRef.current.children[0] as HTMLElement).offsetWidth + 16;
+                       carouselRef.current.scrollTo({ left: cardWidth * i, behavior: 'smooth' });
+                     }
+                  }}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    activeStep === i 
+                      ? "w-6 bg-black dark:bg-white" 
+                      : "w-1.5 bg-black/20 dark:bg-white/20 hover:bg-black/40 dark:hover:bg-white/40 cursor-pointer"
+                  }`}
+                  aria-label={`Go to step ${i + 1}`}
+                />
+              ))}
+            </div>
         </div>
 
     </section>
