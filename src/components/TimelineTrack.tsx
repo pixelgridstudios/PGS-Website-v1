@@ -671,6 +671,7 @@ export const TimelineTrack: React.FC = () => {
         <div className="mt-8 block lg:hidden w-full">
           <div 
             ref={carouselRef}
+            onScroll={handleScroll}
             onMouseDown={handleMouseDown}
             onMouseLeave={handleMouseLeave}
             onMouseUp={handleMouseUp}
