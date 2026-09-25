@@ -194,7 +194,7 @@ export const ApproachSlider: React.FC = () => {
                     <img
                       src={item.image}
                       alt={item.imageAlt}
-                      className="h-full w-full object-cover transition-transform duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                      className="h-full w-full object-cover transition-transform duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] "
                     />
                   </div>
                 ))}
@@ -244,7 +244,7 @@ export const ApproachSlider: React.FC = () => {
             {approachItems.map((item, idx) => (
               <div 
                 key={item.title} 
-                className="shrink-0 w-[85vw] sm:w-[60vw] flex flex-col gap-5 transition-transform duration-300 ease-out hover:scale-[1.02] active:scale-[0.98]"
+                className="shrink-0 w-[85vw] sm:w-[60vw] flex flex-col gap-5 transition-transform duration-300 ease-out"
               >
                 <div className="w-full aspect-[16/11] rounded-2xl overflow-hidden shadow-sm bg-brand-muted shrink-0">
                   <img src={item.image} alt={item.imageAlt} className="w-full h-full object-cover pointer-events-none" />

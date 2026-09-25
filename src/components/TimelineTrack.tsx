@@ -682,7 +682,7 @@ export const TimelineTrack: React.FC = () => {
             {pipelineSteps.map((s, idx) => (
               <div 
                 key={s.id}
-                className="shrink-0 w-[85vw] sm:w-[60vw] md:w-[45vw] bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-8 flex flex-col shadow-sm border border-black/5 dark:border-white/5 transition-transform duration-300 ease-out hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                className="shrink-0 w-[85vw] sm:w-[60vw] md:w-[45vw] bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-8 flex flex-col shadow-sm border border-black/5 dark:border-white/5 transition-transform duration-300 ease-out cursor-pointer"
               >
                 <div className="flex flex-col gap-6 h-full">
                   {/* Card Header: Icon & Number */}
