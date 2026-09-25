@@ -220,7 +220,7 @@ export const Home: React.FC = () => {
                         className={`group isolate transform-gpu overflow-hidden rounded-xl sm:rounded-2xl transition-all duration-300 cursor-pointer border-0 border-transparent outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 focus-visible:ring-0 select-none ${
                         isOpen
                           ? "bg-brand-bg text-brand-foreground shadow-sm"
-                          : "bg-brand-muted text-brand-foreground hover:brightness-[0.97] dark:hover:brightness-110"
+                          : "bg-brand-muted text-brand-foreground shadow-none hover:brightness-[0.97] dark:hover:brightness-110"
                       }`}
                     >
                       <div
@@ -256,7 +256,7 @@ export const Home: React.FC = () => {
                           className={`flex size-7 sm:size-8 shrink-0 items-center justify-center rounded-full transition-all duration-200 ${
                             isOpen
                               ? "bg-brand-panel text-brand-panel-foreground rotate-45 shadow-xs"
-                              : "bg-black/5 dark:bg-white/5 text-brand-foreground group-hover:bg-brand-panel group-hover:text-brand-panel-foreground group-hover:scale-110 group-hover:rotate-90"
+                              : "bg-black/5 dark:bg-white/5 text-brand-foreground shadow-none group-hover:bg-brand-panel group-hover:text-brand-panel-foreground group-hover:scale-110 group-hover:rotate-90"
                           }`}
                         >
                           <Plus className="size-4" />
