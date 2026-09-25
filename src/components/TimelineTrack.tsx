@@ -213,7 +213,7 @@ export const TimelineTrack: React.FC = () => {
         }
         return next;
       });
-    }, 2000);
+    }, 3500);
   };
 
   // Start mobile auto-play on mount

@@ -35,6 +35,7 @@ const approachItems: ApproachItem[] = [
 
 export const ApproachSlider: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const autoPlayRef = React.useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Physics-based Drag to Scroll for Mobile Layout
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -100,6 +101,26 @@ export const ApproachSlider: React.FC = () => {
     lastTimeRef.current = now;
   };
 
+  
+  const resetAutoPlay = () => {
+    if (autoPlayRef.current) clearInterval(autoPlayRef.current);
+    autoPlayRef.current = setInterval(() => {
+      setActiveIndex((prev) => {
+        const next = (prev + 1) % approachItems.length;
+        if (carouselRef.current) {
+          const cardWidth = (carouselRef.current.children[0] as HTMLElement).offsetWidth + 24; // gap is 6 (24px)
+          carouselRef.current.scrollTo({ left: cardWidth * next, behavior: 'smooth' });
+        }
+        return next;
+      });
+    }, 3500);
+  };
+
+  React.useEffect(() => {
+    resetAutoPlay();
+    return () => { if (autoPlayRef.current) clearInterval(autoPlayRef.current); };
+  }, []);
+
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     if (!carouselRef.current || carouselRef.current.children.length === 0) return;
     const scrollLeft = e.currentTarget.scrollLeft;
@@ -108,6 +129,7 @@ export const ApproachSlider: React.FC = () => {
     if (newIndex >= 0 && newIndex < approachItems.length) {
       setActiveIndex(newIndex);
     }
+    resetAutoPlay();
   };
 
   return (
