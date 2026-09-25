@@ -122,6 +122,7 @@ const getStepFromProgress = (p: number): number => {
 export const TimelineTrack: React.FC = () => {
   const [activeStep, setActiveStep] = useState<number>(0);
   const [mobileActiveStep, setMobileActiveStep] = useState<number>(0);
+  const mobileAutoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(true);
 
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -197,7 +198,29 @@ export const TimelineTrack: React.FC = () => {
     if (newIndex >= 0 && newIndex < pipelineSteps.length) {
       setMobileActiveStep(newIndex);
     }
+    // Reset auto-play timer on user interaction
+    resetMobileAutoPlay();
   };
+
+  const resetMobileAutoPlay = () => {
+    if (mobileAutoPlayRef.current) clearInterval(mobileAutoPlayRef.current);
+    mobileAutoPlayRef.current = setInterval(() => {
+      setMobileActiveStep((prev) => {
+        const next = (prev + 1) % pipelineSteps.length;
+        if (carouselRef.current) {
+          const cardWidth = (carouselRef.current.children[0] as HTMLElement).offsetWidth + 16;
+          carouselRef.current.scrollTo({ left: cardWidth * next, behavior: 'smooth' });
+        }
+        return next;
+      });
+    }, 2000);
+  };
+
+  // Start mobile auto-play on mount
+  useEffect(() => {
+    resetMobileAutoPlay();
+    return () => { if (mobileAutoPlayRef.current) clearInterval(mobileAutoPlayRef.current); };
+  }, []);
 
   const playheadRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<number>(5);
@@ -736,6 +759,7 @@ export const TimelineTrack: React.FC = () => {
                        const cardWidth = (carouselRef.current.children[0] as HTMLElement).offsetWidth + 16;
                        carouselRef.current.scrollTo({ left: cardWidth * i, behavior: 'smooth' });
                      }
+                     resetMobileAutoPlay();
                   }}
                   className={`h-1.5 rounded-full transition-all duration-300 ${
                     mobileActiveStep === i 
