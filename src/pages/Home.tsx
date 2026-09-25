@@ -205,7 +205,7 @@ export const Home: React.FC = () => {
             {/* Clean Full-Width Accordion Card */}
             <div data-reveal data-reveal-delay="100" className="mx-auto w-full rounded-2xl sm:rounded-3xl bg-brand-muted p-4 sm:p-6 lg:p-10 shadow-sm dark:shadow-2xl border-0">
               <div
-                onMouseLeave={() => setOpenService(null)}
+                
                 className="flex flex-col gap-3"
               >
                 {motionServices.map((service, i) => {
@@ -213,13 +213,13 @@ export const Home: React.FC = () => {
                   return (
                     <div
                       key={service.id}
-                      onMouseEnter={() => setOpenService(i)}
+                      
                       onClick={() => setOpenService((prev) => (prev === i ? null : i))}
                       tabIndex={-1}
-                      className={`overflow-hidden rounded-xl sm:rounded-2xl transition-all duration-200 cursor-pointer border-0 outline-none ring-0 select-none ${
+                      className={`group overflow-hidden rounded-xl sm:rounded-2xl transition-all duration-300 cursor-pointer border-0 outline-none ring-0 select-none ${
                         isOpen
                           ? "bg-brand-bg text-brand-foreground shadow-sm"
-                          : "bg-brand-muted/70 text-brand-foreground hover:bg-brand-muted"
+                          : "bg-transparent text-brand-foreground hover:bg-black/5 dark:hover:bg-white/5"
                       }`}
                     >
                       <div
@@ -255,7 +255,7 @@ export const Home: React.FC = () => {
                           className={`flex size-7 sm:size-8 shrink-0 items-center justify-center rounded-full transition-all duration-200 ${
                             isOpen
                               ? "bg-brand-panel text-brand-panel-foreground rotate-45 shadow-xs"
-                              : "bg-brand-bg text-brand-foreground"
+                              : "bg-black/5 dark:bg-white/5 text-brand-foreground group-hover:bg-brand-panel group-hover:text-brand-panel-foreground group-hover:scale-110 group-hover:rotate-90"
                           }`}
                         >
                           <Plus className="size-4" />
