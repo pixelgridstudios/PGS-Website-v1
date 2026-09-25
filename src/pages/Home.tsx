@@ -216,10 +216,10 @@ export const Home: React.FC = () => {
                       
                       onClick={() => setOpenService((prev) => (prev === i ? null : i))}
                       tabIndex={-1}
-                      className={`group overflow-hidden rounded-xl sm:rounded-2xl transition-all duration-300 cursor-pointer border-0 outline-none ring-0 select-none ${
+                      className={`group overflow-hidden rounded-xl sm:rounded-2xl transition-all duration-300 cursor-pointer border-0 outline-none focus:outline-none ring-0 focus:ring-0 select-none ${
                         isOpen
                           ? "bg-brand-bg text-brand-foreground shadow-sm"
-                          : "bg-transparent text-brand-foreground hover:bg-black/5 dark:hover:bg-white/5"
+                          : "bg-brand-muted text-brand-foreground hover:brightness-[0.97] dark:hover:brightness-110"
                       }`}
                     >
                       <div
